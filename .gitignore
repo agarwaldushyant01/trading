@@ -1,0 +1,11 @@
+.DS_Store
+.env
+*.key
+__pycache__/
+*.pyc
+.venv/
+data/
+*.parquet
+*.tfvars
+*.tfstate
+.terraform/
