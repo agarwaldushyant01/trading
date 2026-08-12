@@ -1,0 +1,34 @@
+# Scanner thresholds. Every number here is tunable without touching code.
+# Phase 3 will tell you which of these are wrong.
+
+universe:
+  exchanges: [NASDAQ, NYSE, NYSEARCA, AMEX]   # OTC excluded by omission
+  min_price: 0.50
+  max_price: 20.00
+  max_shares_outstanding: 30_000_000          # float proxy until real float data
+  min_avg_20d_volume: 200_000                 # must be tradeable at $50k size
+
+gap:
+  # Cumulative move from prior close. Feeds pre-buy and news setups.
+  min_pct_change: 10.0
+  min_rel_volume: 3.0                         # vs same-time-of-day average
+  min_session_volume: 100_000
+
+velocity:
+  # Rate of change, not cumulative. Catches the vertical premarket spike.
+  window_seconds: 60
+  min_pct_change: 30.0
+  min_window_volume: 50_000                   # shares traded inside the window
+  min_cumulative_volume: 200_000
+
+dedup:
+  # One ticker should not fire forty times in a morning.
+  cooldown_minutes: 15
+  # ...unless it has moved materially further since the last alert
+  reescalate_pct: 15.0
+
+sessions:
+  premarket_start: "04:00"
+  regular_open: "09:30"
+  regular_close: "16:00"
+  afterhours_end: "20:00"
