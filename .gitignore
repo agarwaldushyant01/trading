@@ -4,7 +4,7 @@
 __pycache__/
 *.pyc
 .venv/
-data/
+data/refs/
 *.parquet
 *.tfvars
 *.tfstate
