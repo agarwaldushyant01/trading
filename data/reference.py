@@ -132,7 +132,8 @@ def fetch_listed_symbols(trading_client) -> dict[str, str]:
     }
 
 
-def fetch_daily_bars(data_client, symbols: list[str], as_of: date, lookback: int = 60):
+def fetch_daily_bars(data_client, symbols: list[str], as_of: date,
+                     lookback: int = 60, feed=None):
     """Daily bars for a batch of symbols, ending the day before `as_of`.
 
     Chunked because the request URL length is bounded. 200 symbols per call
@@ -151,6 +152,7 @@ def fetch_daily_bars(data_client, symbols: list[str], as_of: date, lookback: int
             timeframe=TimeFrame.Day,
             start=datetime.combine(start, datetime.min.time()),
             end=datetime.combine(as_of - timedelta(days=1), datetime.max.time()),
+            feed=feed,
         )
         barset = data_client.get_stock_bars(request)
         for symbol, bars in barset.data.items():
@@ -191,7 +193,14 @@ def load_shares_outstanding() -> dict[str, float]:
     return {}
 
 
-def build(as_of: date) -> dict[str, TickerRef]:
+def build(as_of: date, feed=None) -> dict[str, TickerRef]:
+    """Build the daily reference file.
+
+    The feed MUST match whatever the scanner will consume live. A SIP
+    baseline against an IEX stream makes every relative-volume reading about
+    3% of its true value, and the scanner fails silently rather than
+    erroring — it simply never fires.
+    """
     from alpaca.data.historical import StockHistoricalDataClient
     from alpaca.trading.client import TradingClient
 
@@ -211,7 +220,7 @@ def build(as_of: date) -> dict[str, TickerRef]:
         )
 
     print("Fetching daily bars...", file=sys.stderr)
-    bars = fetch_daily_bars(data, sorted(exchanges), as_of)
+    bars = fetch_daily_bars(data, sorted(exchanges), as_of, feed=feed)
 
     refs = {}
     no_shares = short_history = 0
@@ -233,6 +242,32 @@ def build(as_of: date) -> dict[str, TickerRef]:
     return refs
 
 
+def load_refs_for(path: str | None = None) -> dict[str, TickerRef]:
+    """Read back a reference file written by this module.
+
+    With no path, uses the most recent file in data/refs/. Reference data is
+    keyed by the session it was built for, so a backtest spanning months
+    should ideally load the file matching each day rather than one snapshot —
+    share counts and average volumes drift. Using one snapshot across a long
+    range introduces mild look-ahead; acceptable for a first pass, worth
+    fixing before the results are trusted.
+    """
+    directory = pathlib.Path("data/refs")
+    target = pathlib.Path(path) if path else None
+
+    if target is None:
+        available = sorted(directory.glob("*.json"))
+        if not available:
+            raise SystemExit(
+                "No reference files. Build one first:\n"
+                "  python -m data.reference --date YYYY-MM-DD"
+            )
+        target = available[-1]
+
+    payload = json.loads(target.read_text())
+    return {symbol: TickerRef(**fields) for symbol, fields in payload.items()}
+
+
 def main() -> None:
     import argparse
 
@@ -240,12 +275,19 @@ def main() -> None:
     p.add_argument("--date", default=date.today().isoformat(),
                    help="session date the refs are for (YYYY-MM-DD)")
     p.add_argument("--out", default=None)
+    p.add_argument("--feed", default="sip", choices=["sip", "iex"],
+                   help="MUST match the feed the live scanner will use")
     args = p.parse_args()
 
-    as_of = date.fromisoformat(args.date)
-    refs = build(as_of)
+    from alpaca.data.enums import DataFeed
+    feed = DataFeed.SIP if args.feed == "sip" else DataFeed.IEX
 
-    out = pathlib.Path(args.out or f"data/refs/{as_of.isoformat()}.json")
+    as_of = date.fromisoformat(args.date)
+    refs = build(as_of, feed=feed)
+
+    suffix = "" if args.feed == "sip" else f"-{args.feed}"
+    out = pathlib.Path(
+        args.out or f"data/refs/{as_of.isoformat()}{suffix}.json")
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps({s: asdict(r) for s, r in refs.items()}, indent=1))
     print(f"Wrote {len(refs)} refs to {out}", file=sys.stderr)

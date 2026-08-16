@@ -1,0 +1,257 @@
+"""Live scanner — streams real-time bars and alerts on candidates.
+
+    python -m drivers.live                          # live session
+    python -m drivers.live --test-date 2026-02-27   # replay a cached day
+
+PLACES NO ORDERS. It watches, alerts, and writes a journal. Every trading
+decision stays with you.
+
+REQUIRES Algo Trader Plus ($99/month). The free plan's real-time feed is IEX
+only, roughly 3% of market volume, and the scanner's relative-volume
+thresholds are calibrated against full-market data. On IEX the best reading
+in a six-month sample was 0.3 against a threshold of 3.0 — nothing would
+ever fire, and it would fail silently rather than erroring.
+
+The journal is JSON Lines, appended and flushed per alert, so a crash or a
+lost connection cannot cost you the day's record.
+"""
+
+from __future__ import annotations
+
+import asyncio
+import json
+import pathlib
+import signal
+import sys
+from dataclasses import asdict
+from datetime import date, datetime, time
+from zoneinfo import ZoneInfo
+
+import yaml
+
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))
+
+from alerts.notify import Notifier, format_candidate
+from data.reference import load_credentials, load_refs_for
+from risk.sizing import RiskConfig, RiskManager
+from scanner.scanner import Bar, Scanner
+
+ET = ZoneInfo("America/New_York")
+JOURNAL_DIR = pathlib.Path("data/live")
+
+# Reference stop used only to suggest a size in the alert. It is not a
+# recommendation — no setup has passed a backtest yet.
+REFERENCE_STOP_PCT = 10.0
+
+
+class LiveScanner:
+    def __init__(self, scanner: Scanner, refs: dict, risk: RiskManager,
+                 notifier: Notifier) -> None:
+        self.scanner = scanner
+        self.refs = refs
+        self.risk = risk
+        self.notifier = notifier
+        self.alerts_today = 0
+        self.bars_seen = 0
+        self.journal = self._open_journal()
+
+    def _open_journal(self):
+        JOURNAL_DIR.mkdir(parents=True, exist_ok=True)
+        path = JOURNAL_DIR / f"{date.today().isoformat()}.jsonl"
+        return path.open("a", encoding="utf-8")
+
+    def handle(self, bar: Bar) -> None:
+        self.bars_seen += 1
+
+        candidate = self.scanner.on_bar(bar)
+        if candidate is None:
+            return
+
+        ref = self.refs[bar.symbol]
+        sizing = self.risk.size(
+            entry_price=candidate.price,
+            stop_price=candidate.price * (1 - REFERENCE_STOP_PCT / 100),
+            atr=ref.atr_14,
+            avg_20d_volume=ref.avg_20d_volume,
+        )
+
+        title, body = format_candidate(candidate, ref, sizing)
+        self.notifier.send(title, body)
+        self.alerts_today += 1
+
+        row = candidate.to_row()
+        row["timestamp"] = candidate.timestamp.isoformat()
+        row["ref_shares"] = sizing.shares if sizing.allowed else 0
+        row["ref_stop"] = sizing.stop_price if sizing.allowed else None
+        row["logged_at"] = datetime.now(ET).isoformat()
+        self.journal.write(json.dumps(row) + "\n")
+        self.journal.flush()          # per alert: a crash must not lose the day
+
+        print(f"  {candidate.timestamp:%H:%M}  {candidate.symbol:<6} "
+              f"{candidate.price:>7.2f} {candidate.pct_change_from_prior_close:>+6.1f}% "
+              f"relvol {candidate.rel_volume:>5.1f}  {candidate.mode.value}",
+              flush=True)
+
+    def close(self) -> None:
+        self.journal.close()
+
+
+def to_bar(raw) -> Bar | None:
+    """Alpaca stream bar -> scanner Bar, in Eastern time.
+
+    The scanner compares clock times against 04:00 / 09:30 / 16:00. Alpaca
+    sends UTC, so skipping this conversion misclassifies every session.
+    """
+    try:
+        return Bar(
+            symbol=raw.symbol,
+            timestamp=raw.timestamp.astimezone(ET),
+            open=float(raw.open),
+            high=float(raw.high),
+            low=float(raw.low),
+            close=float(raw.close),
+            volume=int(raw.volume),
+            vwap=float(raw.vwap) if getattr(raw, "vwap", None) else None,
+        )
+    except Exception:                                     # noqa: BLE001
+        return None
+
+
+def check_refs_are_current(refs_path: pathlib.Path | None) -> None:
+    """Reference data carries yesterday's close and 20-day volumes. Stale
+    refs mean wrong thresholds all day, silently."""
+    available = sorted(pathlib.Path("data/refs").glob("*.json"))
+    if not available:
+        raise SystemExit(
+            "No reference data. Build it before the session:\n"
+            "  python -m data.reference --date "
+            f"{date.today().isoformat()}"
+        )
+    # Filenames carry a feed suffix on non-SIP builds ("2026-08-17-iex"),
+    # so parse the leading date rather than the whole stem.
+    try:
+        newest = date.fromisoformat(available[-1].stem[:10])
+    except ValueError:
+        print(f"  WARNING: cannot read a date from {available[-1].name}; "
+              f"skipping the freshness check.", file=sys.stderr)
+        return
+    age = (date.today() - newest).days
+    if age > 0:
+        print(f"  WARNING: reference data is {age} day(s) old ({newest}).",
+              file=sys.stderr)
+        print(f"  Rebuild before the open: python -m data.reference "
+              f"--date {date.today().isoformat()}\n", file=sys.stderr)
+
+
+def run_test(live: LiveScanner, test_date: date) -> None:
+    """Replay a cached day through the live code path.
+
+    Same handler, same alerts, same journal — the only difference is where
+    the bars come from. Use it to prove the chain works before a session
+    you care about.
+    """
+    import pandas as pd
+
+    path = pathlib.Path("data/bars") / f"{test_date.isoformat()}.parquet"
+    if not path.exists():
+        raise SystemExit(f"No cached bars for {test_date}. "
+                         "Run tools.backtest over that date first.")
+
+    frame = pd.read_parquet(path).sort_values("timestamp")
+    print(f"Replaying {len(frame):,} bars from {test_date}\n")
+
+    for row in frame.itertuples(index=False):
+        if row.symbol not in live.refs:
+            continue
+        live.handle(Bar(row.symbol, row.timestamp.to_pydatetime().astimezone(ET),
+                        row.open, row.high, row.low, row.close,
+                        int(row.volume), row.vwap))
+
+    print(f"\nReplay complete: {live.alerts_today} alerts from "
+          f"{live.bars_seen:,} bars")
+
+
+async def run_live(live: LiveScanner, key: str, secret: str,
+                   feed_name: str = "sip") -> None:
+    from alpaca.data.enums import DataFeed
+    from alpaca.data.live import StockDataStream
+
+    feed = DataFeed.SIP if feed_name == "sip" else DataFeed.IEX
+    stream = StockDataStream(key, secret, feed=feed)
+
+    async def on_bar(raw):
+        bar = to_bar(raw)
+        if bar and bar.symbol in live.refs:
+            live.handle(bar)
+
+    # Subscribe to every symbol's minute bars and filter in-process. The
+    # universe is ~4,000 names and changes daily; a wildcard avoids
+    # maintaining a subscription list and missing a name that gaps overnight.
+    stream.subscribe_bars(on_bar, "*")
+
+    print("Streaming. Ctrl-C to stop.\n")
+    await stream._run_forever()
+
+
+def main() -> None:
+    import argparse
+
+    p = argparse.ArgumentParser()
+    p.add_argument("--test-date", default=None,
+                   help="replay a cached day instead of streaming live")
+    p.add_argument("--config", default="config/alerts.yaml")
+    p.add_argument("--scanner-config", default="config/scanner.yaml")
+    p.add_argument("--refs", default=None,
+                   help="reference file; defaults to the newest in data/refs")
+    p.add_argument("--feed", default="sip", choices=["sip", "iex"],
+                   help="iex is free but ~3%% of market volume; use "
+                        "config/scanner-iex.yaml and IEX-built refs with it")
+    p.add_argument("--equity", type=float, default=50_000)
+    args = p.parse_args()
+
+    cfg_path = pathlib.Path(args.config)
+    alert_cfg = yaml.safe_load(cfg_path.read_text()) if cfg_path.exists() else {}
+    scanner_cfg = yaml.safe_load(pathlib.Path(args.scanner_config).read_text())
+
+    check_refs_are_current(args.refs)
+    refs = load_refs_for(args.refs)
+    print(f"\nReference     {args.refs or 'newest in data/refs'}")
+
+    risk = RiskManager(RiskConfig(equity=args.equity))
+    risk.start_session()
+
+    notifier = Notifier(alert_cfg.get("alerts", {}))
+    live = LiveScanner(Scanner(scanner_cfg, refs), refs, risk, notifier)
+
+    print(f"Feed          {args.feed.upper()}"
+          + ("   (~3% of market volume — thresholds must be IEX-calibrated)"
+             if args.feed == "iex" else ""))
+    print(f"Universe      {len(refs):,} symbols")
+    print(f"Alerts        {notifier.channel}")
+    print(f"Journal       {JOURNAL_DIR}/{date.today().isoformat()}.jsonl")
+    print(f"Gap trigger   {scanner_cfg['gap']['min_pct_change']}% and "
+          f"{scanner_cfg['gap']['min_rel_volume']}x relative volume")
+    print(f"Velocity      {scanner_cfg['velocity']['min_pct_change']}% in "
+          f"{scanner_cfg['velocity']['window_seconds']}s")
+    print(f"Sessions      {', '.join(scanner_cfg['sessions']['tradeable'])}\n")
+
+    def shutdown(*_):
+        print(f"\nStopped. {live.alerts_today} alerts this session.")
+        live.close()
+        sys.exit(0)
+
+    signal.signal(signal.SIGINT, shutdown)
+    signal.signal(signal.SIGTERM, shutdown)
+
+    try:
+        if args.test_date:
+            run_test(live, date.fromisoformat(args.test_date))
+        else:
+            key, secret = load_credentials()
+            asyncio.run(run_live(live, key, secret, args.feed))
+    finally:
+        live.close()
+
+
+if __name__ == "__main__":
+    main()

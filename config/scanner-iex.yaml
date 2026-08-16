@@ -1,3 +1,26 @@
+# IEX PRESET — for the free Alpaca plan.
+#
+# IEX is one exchange, carrying roughly 2-4% of US consolidated volume.
+# Prices are the same; share counts are not. So:
+#
+#   Ratios carry over unchanged. Relative volume compares IEX-today against
+#   IEX-normal, and 5x normal is still 5x normal. Percent moves are prices,
+#   which IEX reports the same as anyone.
+#
+#   Absolute share thresholds are divided by ~30. These are a starting
+#   estimate, not a measurement — calibrate them with:
+#       python -m tools.diagnose --date <a recent day> --feed iex
+#
+# THE ONE RULE THAT MATTERS: reference data must be built with --feed iex
+# too. A SIP baseline against an IEX stream reads every relative volume at
+# about 3% of its real value, and the scanner fails silently — it just
+# never fires.
+#
+# What you lose: IEX market share varies by stock and by day, so relative
+# volume is noisier than on SIP. Thinly-routed names may print almost
+# nothing on IEX and be missed entirely. Treat this as a usable
+# approximation, not a substitute.
+
 # Scanner thresholds. Every number here is tunable without touching code.
 # Phase 3 will tell you which of these are wrong.
 
@@ -6,13 +29,13 @@ universe:
   min_price: 0.50
   max_price: 20.00
   max_shares_outstanding: 30_000_000          # float proxy until real float data
-  min_avg_20d_volume: 200_000                 # must be tradeable at $50k size
+  min_avg_20d_volume: 3_000                 # must be tradeable at $50k size
 
 gap:
   # Cumulative move from prior close. Feeds pre-buy and news setups.
   min_pct_change: 10.0
   min_rel_volume: 3.0                         # vs same-time-of-day baseline
-  min_session_volume: 100_000
+  min_session_volume: 3_000
 
 velocity:
   # Rate of change, not cumulative. Catches the vertical premarket spike.
@@ -20,9 +43,9 @@ velocity:
   # A minute bar cannot show a one-second move; 12% is the equivalent signal
   # at this resolution.
   window_seconds: 60
-  min_pct_change: 12.0
-  min_window_volume: 50_000                   # shares traded inside the window
-  min_cumulative_volume: 200_000
+  min_pct_change: 7.0
+  min_window_volume: 1_500                   # shares traded inside the window
+  min_cumulative_volume: 6_000
 
 dedup:
   # A re-alert must be a new development, not just elapsed time. The first

@@ -1,0 +1,56 @@
+# Strategy parameters. Separate from scanner.yaml because these change for
+# different reasons: the scanner decides what to look at, this decides what
+# to do about it.
+
+engine:
+  slippage_pct: 0.5          # each way. 2.0 for velocity entries once built.
+  hard_exit_time: "15:50"
+  assumed_adv: 1_000_000     # until per-symbol ADV is threaded through
+
+vwap_reclaim:
+  # Only names that actually ran earlier in the session. A reclaim on a
+  # stock that never went anywhere is not the setup.
+  min_hod_pct: 15.0          # high of day must clear prior close by this much
+
+  # How long it must stay below VWAP before a reclaim counts. Two 5-minute
+  # bars is a genuine pullback; one is noise.
+  min_bars_below_vwap: 2
+
+  no_entry_after: "15:00"
+
+  # Where the stop goes. The first backtest used bar_low and stopped out 68%
+  # of trades for -0.43R — the stop was inside normal noise, not catching
+  # failed theses.
+  #   bar_low  low of the reclaim bar
+  #   vwap     just under VWAP, the line the whole setup rests on
+  #   pct      flat percentage below entry
+  stop_mode: vwap
+  stop_buffer_pct: 1.0       # for stop_mode: vwap
+  stop_pct: 8.0              # for stop_mode: pct
+
+  max_stop_pct: 12.0         # skip the trade if the stop lands wider than this
+  vwap_exit_buffer_pct: 0.5
+
+  target_pct: 15.0
+  exit_on_vwap_loss: true
+
+bounce:
+  # What counts as a former runner, judged only from bars before the session.
+  lookback_sessions: 30
+  runner_move_pct: 50.0        # an intraday range this big marks a runner day
+  min_decline_pct: 40.0        # must have fallen this far from the peak
+  min_lower_low_sessions: 2    # downtrend still active, not already reversing
+
+  # Reversal bar: takes out the prior 5-min bar's high, closes above the
+  # 9-EMA, on this multiple of recent volume.
+  volume_multiple: 2.0
+
+  no_entry_after: "15:00"
+
+  # bar_low / session_low / pct. Stop placement sank the VWAP reclaim, so
+  # sweep this before drawing conclusions.
+  stop_mode: pct
+  stop_pct: 7.0
+  max_stop_pct: 12.0
+
+  target_pct: 25.0

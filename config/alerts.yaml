@@ -1,0 +1,15 @@
+alerts:
+  # console | ntfy | webhook
+  #
+  # ntfy needs no account: pick a long random topic, subscribe to it in the
+  # ntfy app (iOS/Android), and posts to that topic arrive as push
+  # notifications. The topic name is the only secret — anyone who guesses it
+  # can read your alerts, so make it unguessable.
+  channel: ntfy
+
+  ntfy_topic: "dush-d7f7f0d66079de4e2eae0bcc"
+
+  # For Pushover, Telegram, Slack, or your own endpoint.
+  webhook_url: ""
+
+  timeout_seconds: 5
