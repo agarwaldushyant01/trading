@@ -20,6 +20,7 @@ from __future__ import annotations
 
 import asyncio
 import json
+import os
 import pathlib
 import sys
 from dataclasses import asdict
@@ -368,6 +369,16 @@ def main() -> None:
     finally:
         print(f"\nStopped. {live.alerts_today} alerts logged this session.")
         live.close()
+
+        # Exit without interpreter teardown. The websockets layer inside
+        # alpaca-py runs a cleanup coroutine after the event loop is gone and
+        # prints a long, harmless traceback. The journal is flushed on every
+        # alert and closed above, so there is nothing left to lose by
+        # skipping teardown — and a scary-looking traceback on every normal
+        # stop trains you to ignore output that might one day matter.
+        sys.stdout.flush()
+        sys.stderr.flush()
+        os._exit(0)
 
 
 if __name__ == "__main__":
