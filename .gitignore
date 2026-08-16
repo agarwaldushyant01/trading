@@ -9,3 +9,4 @@ data/refs/
 *.tfvars
 *.tfstate
 .terraform/
+data/live/console.log

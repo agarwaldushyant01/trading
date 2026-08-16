@@ -21,7 +21,6 @@ from __future__ import annotations
 import asyncio
 import json
 import pathlib
-import signal
 import sys
 from dataclasses import asdict
 from datetime import date, datetime, time
@@ -47,11 +46,13 @@ REFERENCE_STOP_PCT = 10.0
 
 class LiveScanner:
     def __init__(self, scanner: Scanner, refs: dict, risk: RiskManager,
-                 notifier: Notifier) -> None:
+                 notifier: Notifier, refs_date: date | None = None) -> None:
         self.scanner = scanner
         self.refs = refs
         self.risk = risk
         self.notifier = notifier
+        self.refs_date = refs_date
+        self.warned_stale_for = None
         self.alerts_today = 0
         self.bars_seen = 0
         self.journal = None
@@ -74,11 +75,37 @@ class LiveScanner:
             self.alerts_today = 0
         return self.journal
 
+    def _warn_if_stale(self, day: date) -> None:
+        """Reference data carries the PRIOR session's close and 20-day
+        volumes. Left running across days it silently computes percent
+        change against a stale price, so say so loudly rather than
+        reporting confident nonsense."""
+        if self.refs_date is None or self.warned_stale_for == day:
+            return
+        if day > self.refs_date:
+            self.warned_stale_for = day
+            banner = "!" * 64
+            message = (
+                f"\n{banner}\n"
+                f"  REFERENCE DATA IS FOR {self.refs_date}, TODAY IS {day}.\n"
+                f"  Percent-change and relative-volume readings are being\n"
+                f"  computed against a stale prior close. Stop, rebuild, and\n"
+                f"  restart:\n"
+                f"    python -m data.reference --date {day} --feed iex\n"
+                f"{banner}\n"
+            )
+            print(message, file=sys.stderr, flush=True)
+            self.notifier.send("SCANNER: stale reference data",
+                               f"Refs are for {self.refs_date}, today is {day}. "
+                               f"Rebuild and restart.", priority="high")
+
     def handle(self, bar: Bar, push: bool = True) -> None:
         """push=False during backfill: the journal still records everything,
         but a mid-session start does not fire twenty stale notifications at
         once for moves that already happened."""
         self.bars_seen += 1
+
+        self._warn_if_stale(bar.timestamp.date())
 
         candidate = self.scanner.on_bar(bar)
         if candidate is None:
@@ -135,6 +162,20 @@ def to_bar(raw) -> Bar | None:
             vwap=float(raw.vwap) if getattr(raw, "vwap", None) else None,
         )
     except Exception:                                     # noqa: BLE001
+        return None
+
+
+def refs_date_of(path: pathlib.Path | None) -> date | None:
+    """The session a reference file was built for, from its filename."""
+    target = path
+    if target is None:
+        available = sorted(pathlib.Path("data/refs").glob("*.json"))
+        if not available:
+            return None
+        target = available[-1]
+    try:
+        return date.fromisoformat(pathlib.Path(target).stem[:10])
+    except ValueError:
         return None
 
 
@@ -247,7 +288,17 @@ async def run_live(live: LiveScanner, key: str, secret: str,
     stream.subscribe_bars(on_bar, "*")
 
     print("Streaming. Ctrl-C to stop.\n")
-    await stream._run_forever()
+    try:
+        await stream._run_forever()
+    except asyncio.CancelledError:
+        pass
+    finally:
+        # Close the socket before the loop tears down, or websockets raises
+        # "no running event loop" from its own cleanup coroutine.
+        try:
+            await stream.stop_ws()
+        except Exception:                                 # noqa: BLE001
+            pass
 
 
 def main() -> None:
@@ -281,7 +332,8 @@ def main() -> None:
     risk.start_session()
 
     notifier = Notifier(alert_cfg.get("alerts", {}))
-    live = LiveScanner(Scanner(scanner_cfg, refs), refs, risk, notifier)
+    live = LiveScanner(Scanner(scanner_cfg, refs), refs, risk, notifier,
+                       refs_date=refs_date_of(args.refs))
 
     print(f"Feed          {args.feed.upper()}"
           + ("   (~3% of market volume — thresholds must be IEX-calibrated)"
@@ -294,14 +346,6 @@ def main() -> None:
     print(f"Velocity      {scanner_cfg['velocity']['min_pct_change']}% in "
           f"{scanner_cfg['velocity']['window_seconds']}s")
     print(f"Sessions      {', '.join(scanner_cfg['sessions']['tradeable'])}\n")
-
-    def shutdown(*_):
-        print(f"\nStopped. {live.alerts_today} alerts this session.")
-        live.close()
-        sys.exit(0)
-
-    signal.signal(signal.SIGINT, shutdown)
-    signal.signal(signal.SIGTERM, shutdown)
 
     try:
         if args.test_date:
@@ -319,7 +363,10 @@ def main() -> None:
                 backfill(live, client, scanner_cfg, feed, now.date())
 
             asyncio.run(run_live(live, key, secret, args.feed))
+    except KeyboardInterrupt:
+        pass                          # Ctrl-C is a normal way to stop this
     finally:
+        print(f"\nStopped. {live.alerts_today} alerts logged this session.")
         live.close()
 
 
