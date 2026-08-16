@@ -33,6 +33,7 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))
 
 from alerts.notify import Notifier, format_candidate
 from data.reference import load_credentials, load_refs_for
+from drivers.replay import fetch_daily, fetch_minutes, prescreen
 from risk.sizing import RiskConfig, RiskManager
 from scanner.scanner import Bar, Scanner
 
@@ -53,14 +54,30 @@ class LiveScanner:
         self.notifier = notifier
         self.alerts_today = 0
         self.bars_seen = 0
-        self.journal = self._open_journal()
+        self.journal = None
+        self.journal_date = None
 
-    def _open_journal(self):
-        JOURNAL_DIR.mkdir(parents=True, exist_ok=True)
-        path = JOURNAL_DIR / f"{date.today().isoformat()}.jsonl"
-        return path.open("a", encoding="utf-8")
+    def _journal_for(self, day: date):
+        """One file per session date, rolled when the date changes.
 
-    def handle(self, bar: Bar) -> None:
+        Matters when the process runs overnight: started on a Sunday
+        evening, a fixed filename would file Monday's premarket alerts under
+        Sunday, and every subsequent day into the same file.
+        """
+        if self.journal_date != day:
+            if self.journal:
+                self.journal.close()
+            JOURNAL_DIR.mkdir(parents=True, exist_ok=True)
+            self.journal = (JOURNAL_DIR / f"{day.isoformat()}.jsonl").open(
+                "a", encoding="utf-8")
+            self.journal_date = day
+            self.alerts_today = 0
+        return self.journal
+
+    def handle(self, bar: Bar, push: bool = True) -> None:
+        """push=False during backfill: the journal still records everything,
+        but a mid-session start does not fire twenty stale notifications at
+        once for moves that already happened."""
         self.bars_seen += 1
 
         candidate = self.scanner.on_bar(bar)
@@ -76,7 +93,8 @@ class LiveScanner:
         )
 
         title, body = format_candidate(candidate, ref, sizing)
-        self.notifier.send(title, body)
+        if push:
+            self.notifier.send(title, body)
         self.alerts_today += 1
 
         row = candidate.to_row()
@@ -84,16 +102,19 @@ class LiveScanner:
         row["ref_shares"] = sizing.shares if sizing.allowed else 0
         row["ref_stop"] = sizing.stop_price if sizing.allowed else None
         row["logged_at"] = datetime.now(ET).isoformat()
-        self.journal.write(json.dumps(row) + "\n")
-        self.journal.flush()          # per alert: a crash must not lose the day
+        journal = self._journal_for(candidate.timestamp.date())
+        journal.write(json.dumps(row) + "\n")
+        journal.flush()               # per alert: a crash must not lose the day
 
-        print(f"  {candidate.timestamp:%H:%M}  {candidate.symbol:<6} "
+        print(f"  {'' if push else '(missed) '}"
+              f"{candidate.timestamp:%H:%M}  {candidate.symbol:<6} "
               f"{candidate.price:>7.2f} {candidate.pct_change_from_prior_close:>+6.1f}% "
               f"relvol {candidate.rel_volume:>5.1f}  {candidate.mode.value}",
               flush=True)
 
     def close(self) -> None:
-        self.journal.close()
+        if self.journal:
+            self.journal.close()
 
 
 def to_bar(raw) -> Bar | None:
@@ -141,6 +162,42 @@ def check_refs_are_current(refs_path: pathlib.Path | None) -> None:
               file=sys.stderr)
         print(f"  Rebuild before the open: python -m data.reference "
               f"--date {date.today().isoformat()}\n", file=sys.stderr)
+
+
+def backfill(live: LiveScanner, client, cfg: dict, feed, day: date) -> None:
+    """Replay today's bars so far before going live.
+
+    Without this a mid-session start is broken in a way that produces no
+    error: the scanner has counted no volume yet, while the time-of-day
+    curve expects a good share of the day already traded, so relative
+    volume reads near zero and nothing ever fires.
+
+    Candidates found here are journalled and printed but not pushed — they
+    are moves that already happened.
+    """
+    print("Backfilling today's session...", flush=True)
+
+    daily = fetch_daily(client, sorted(live.refs), day, feed)
+    if not daily:
+        print("  no bars yet today (market holiday, or before 04:00)\n")
+        return
+
+    survivors = [s for s, bar in daily.items() if prescreen(bar, live.refs[s], cfg)]
+    print(f"  {len(daily)} traded, {len(survivors)} pre-screened", flush=True)
+    if not survivors:
+        print()
+        return
+
+    minutes = fetch_minutes(client, survivors, day, feed)
+    stream = sorted((bar for bars in minutes.values() for bar in bars),
+                    key=lambda b: b.timestamp)
+
+    before = live.alerts_today
+    for bar in stream:
+        live.handle(bar, push=False)
+
+    print(f"  {len(stream):,} bars, {live.alerts_today - before} candidate(s) "
+          f"already logged\n", flush=True)
 
 
 def run_test(live: LiveScanner, test_date: date) -> None:
@@ -207,6 +264,9 @@ def main() -> None:
                    help="iex is free but ~3%% of market volume; use "
                         "config/scanner-iex.yaml and IEX-built refs with it")
     p.add_argument("--equity", type=float, default=50_000)
+    p.add_argument("--no-backfill", action="store_true",
+                   help="skip catching up on today's session. Only safe when "
+                        "starting before 04:00 ET.")
     args = p.parse_args()
 
     cfg_path = pathlib.Path(args.config)
@@ -228,7 +288,7 @@ def main() -> None:
              if args.feed == "iex" else ""))
     print(f"Universe      {len(refs):,} symbols")
     print(f"Alerts        {notifier.channel}")
-    print(f"Journal       {JOURNAL_DIR}/{date.today().isoformat()}.jsonl")
+    print(f"Journal       {JOURNAL_DIR}/ (one file per session date)")
     print(f"Gap trigger   {scanner_cfg['gap']['min_pct_change']}% and "
           f"{scanner_cfg['gap']['min_rel_volume']}x relative volume")
     print(f"Velocity      {scanner_cfg['velocity']['min_pct_change']}% in "
@@ -247,7 +307,17 @@ def main() -> None:
         if args.test_date:
             run_test(live, date.fromisoformat(args.test_date))
         else:
+            from alpaca.data.enums import DataFeed
+            from alpaca.data.historical import StockHistoricalDataClient
+
             key, secret = load_credentials()
+            feed = DataFeed.SIP if args.feed == "sip" else DataFeed.IEX
+
+            now = datetime.now(ET)
+            if not args.no_backfill and now.time() > time(4, 5):
+                client = StockHistoricalDataClient(key, secret)
+                backfill(live, client, scanner_cfg, feed, now.date())
+
             asyncio.run(run_live(live, key, secret, args.feed))
     finally:
         live.close()
