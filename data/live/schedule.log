@@ -1,0 +1,9 @@
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+/bin/bash: /Users/kanikagupta/Downloads/trading_agent/trading/start.sh: Operation not permitted
+
+=== 2026-08-17 21:53:03 EDT — startup, feed iex ===
+  python: /usr/local/bin/python3
+  reference data: data/refs/2026-08-17-iex.json (already built)
+  starting scanner...
+  RUNNING (pid 64693)
+  Expect a 'Scanner started' notification on your phone.

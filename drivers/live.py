@@ -54,6 +54,8 @@ class LiveScanner:
         self.notifier = notifier
         self.refs_date = refs_date
         self.warned_stale_for = None
+        self.last_heartbeat = None
+        self.last_bar_at = None
         self.alerts_today = 0
         self.bars_seen = 0
         self.journal = None
@@ -99,6 +101,22 @@ class LiveScanner:
             self.notifier.send("SCANNER: stale reference data",
                                f"Refs are for {self.refs_date}, today is {day}. "
                                f"Rebuild and restart.", priority="high")
+
+    def _heartbeat(self, now: datetime) -> None:
+        """Print a liveness line every few minutes.
+
+        Silence is ambiguous: a healthy stream on a quiet morning and a dead
+        socket look exactly the same from the outside. This makes the
+        difference visible without waiting for a candidate.
+        """
+        interval = 300                                    # seconds
+        if self.last_heartbeat and (now - self.last_heartbeat).total_seconds() < interval:
+            return
+        self.last_heartbeat = now
+        age = ("never" if self.last_bar_at is None
+               else f"{(now - self.last_bar_at).total_seconds():.0f}s ago")
+        print(f"  [{now:%H:%M}] {self.bars_seen:,} bars received, "
+              f"last {age}, {self.alerts_today} alerts", flush=True)
 
     def handle(self, bar: Bar, push: bool = True) -> None:
         """push=False during backfill: the journal still records everything,
@@ -288,12 +306,32 @@ async def run_live(live: LiveScanner, key: str, secret: str,
     # maintaining a subscription list and missing a name that gaps overnight.
     stream.subscribe_bars(on_bar, "*")
 
-    print("Streaming. Ctrl-C to stop.\n")
+    print("Streaming. Ctrl-C to stop.")
+    print("A heartbeat prints every 5 minutes once bars start arriving.")
+    print("If you see no heartbeat during market hours, the stream is not "
+          "delivering data.\n")
+
+    async def watchdog():
+        """Say something if nothing arrives at all — an idle socket during
+        market hours is a failure, not a quiet market."""
+        while True:
+            await asyncio.sleep(600)
+            if live.bars_seen == 0:
+                now = datetime.now(ET)
+                if time(9, 35) <= now.time() <= time(15, 55):
+                    print(f"  [{now:%H:%M}] NO BARS RECEIVED since start. "
+                          f"The subscription is not delivering. Restart, and "
+                          f"check the Alpaca dashboard for an active session "
+                          f"elsewhere — only one connection is allowed.",
+                          file=sys.stderr, flush=True)
+
+    watcher = asyncio.create_task(watchdog())
     try:
         await stream._run_forever()
     except asyncio.CancelledError:
         pass
     finally:
+        watcher.cancel()
         # Close the socket before the loop tears down, or websockets raises
         # "no running event loop" from its own cleanup coroutine.
         try:
@@ -348,6 +386,19 @@ def main() -> None:
           f"{scanner_cfg['velocity']['window_seconds']}s")
     print(f"Sessions      {', '.join(scanner_cfg['sessions']['tradeable'])}\n")
 
+    # Push on start and stop, so silence is never ambiguous. A scanner that
+    # was never running and a quiet market look identical from the phone —
+    # that cost a full session once already.
+    notifier.send(
+        "Scanner started",
+        f"{len(refs):,} symbols on {args.feed.upper()}\n"
+        f"refs {refs_date_of(args.refs) or 'unknown'}\n"
+        f"gap {scanner_cfg['gap']['min_pct_change']}% / "
+        f"{scanner_cfg['gap']['min_rel_volume']}x, "
+        f"velocity {scanner_cfg['velocity']['min_pct_change']}%",
+        priority="low",
+    )
+
     try:
         if args.test_date:
             run_test(live, date.fromisoformat(args.test_date))
@@ -368,6 +419,13 @@ def main() -> None:
         pass                          # Ctrl-C is a normal way to stop this
     finally:
         print(f"\nStopped. {live.alerts_today} alerts logged this session.")
+        notifier.send(
+            "Scanner STOPPED",
+            f"{live.alerts_today} alerts logged, "
+            f"{live.bars_seen:,} bars seen.\n"
+            f"Nothing is watching the market now.",
+            priority="high",
+        )
         live.close()
 
         # Exit without interpreter teardown. The websockets layer inside
