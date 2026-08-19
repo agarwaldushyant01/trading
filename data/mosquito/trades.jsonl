@@ -1,0 +1,1 @@
+{"kind": "dry_run_entry", "at": "2026-08-18T18:51:51.440762-04:00", "symbol": "ABCD", "shares": 2083, "signal_price": 2.4, "stop": 2.16, "target": 2.88, "setup": "repeat", "reason": "appearance #4, +12.5%, float turned 3.0x", "opened_at": "2026-08-18T18:51:51.207410-04:00"}

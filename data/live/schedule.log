@@ -7,3 +7,278 @@ shell-init: error retrieving current directory: getcwd: cannot access parent dir
   starting scanner...
   RUNNING (pid 64693)
   Expect a 'Scanner started' notification on your phone.
+
+=== 2026-08-18 03:42:25 EDT — startup, feed iex ===
+  python: /usr/local/bin/python3
+  building reference data — about 10 minutes...
+Fetching asset list...
+  13072 listed, tradable US equities
+Fetching daily bars...
+  fetched 200/13072 symbols
+  fetched 400/13072 symbols
+  fetched 600/13072 symbols
+  fetched 800/13072 symbols
+  fetched 1000/13072 symbols
+  fetched 1200/13072 symbols
+  fetched 1400/13072 symbols
+  fetched 1600/13072 symbols
+  fetched 1800/13072 symbols
+  fetched 2000/13072 symbols
+  fetched 2200/13072 symbols
+  fetched 2400/13072 symbols
+  fetched 2600/13072 symbols
+  fetched 2800/13072 symbols
+  fetched 3000/13072 symbols
+  fetched 3200/13072 symbols
+  fetched 3400/13072 symbols
+  fetched 3600/13072 symbols
+  fetched 3800/13072 symbols
+  fetched 4000/13072 symbols
+  fetched 4200/13072 symbols
+  fetched 4400/13072 symbols
+  fetched 4600/13072 symbols
+  fetched 4800/13072 symbols
+  fetched 5000/13072 symbols
+  fetched 5200/13072 symbols
+  fetched 5400/13072 symbols
+  fetched 5600/13072 symbols
+  fetched 5800/13072 symbols
+  fetched 6000/13072 symbols
+  fetched 6200/13072 symbols
+  fetched 6400/13072 symbols
+  fetched 6600/13072 symbols
+  fetched 6800/13072 symbols
+  fetched 7000/13072 symbols
+  fetched 7200/13072 symbols
+  fetched 7400/13072 symbols
+  fetched 7600/13072 symbols
+  fetched 7800/13072 symbols
+  fetched 8000/13072 symbols
+  fetched 8200/13072 symbols
+  fetched 8400/13072 symbols
+  fetched 8600/13072 symbols
+  fetched 8800/13072 symbols
+  fetched 9000/13072 symbols
+  fetched 9200/13072 symbols
+  fetched 9400/13072 symbols
+  fetched 9600/13072 symbols
+  fetched 9800/13072 symbols
+  fetched 10000/13072 symbols
+  fetched 10200/13072 symbols
+  fetched 10400/13072 symbols
+  fetched 10600/13072 symbols
+  fetched 10800/13072 symbols
+  fetched 11000/13072 symbols
+  fetched 11200/13072 symbols
+  fetched 11400/13072 symbols
+  fetched 11600/13072 symbols
+  fetched 11800/13072 symbols
+  fetched 12000/13072 symbols
+  fetched 12200/13072 symbols
+  fetched 12400/13072 symbols
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/urllib3/response.py", line 903, in _error_catcher
+    yield
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/urllib3/response.py", line 1418, in read_chunked
+    self._update_chunk_length()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/urllib3/response.py", line 1333, in _update_chunk_length
+    line = self._fp.fp.readline()  # type: ignore[union-attr]
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/socket.py", line 725, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/ssl.py", line 1304, in recv_into
+    return self.read(nbytes, buffer)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/ssl.py", line 1138, in read
+    return self._sslobj.read(len, buffer)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+ConnectionResetError: [Errno 54] Connection reset by peer
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/requests/models.py", line 822, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/urllib3/response.py", line 1250, in stream
+    yield from self.read_chunked(amt, decode_content=decode_content)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/urllib3/response.py", line 1397, in read_chunked
+    with self._error_catcher():
+         ~~~~~~~~~~~~~~~~~~~^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/urllib3/response.py", line 930, in _error_catcher
+    raise ProtocolError(f"Connection broken: {e!r}", e) from e
+urllib3.exceptions.ProtocolError: ("Connection broken: ConnectionResetError(54, 'Connection reset by peer')", ConnectionResetError(54, 'Connection reset by peer'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/kanikagupta/trading/data/reference.py", line 297, in <module>
+    main()
+    ~~~~^^
+  File "/Users/kanikagupta/trading/data/reference.py", line 286, in main
+    refs = build(as_of, feed=feed)
+  File "/Users/kanikagupta/trading/data/reference.py", line 223, in build
+    bars = fetch_daily_bars(data, sorted(exchanges), as_of, feed=feed)
+  File "/Users/kanikagupta/trading/data/reference.py", line 157, in fetch_daily_bars
+    barset = data_client.get_stock_bars(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/historical/stock.py", line 87, in get_stock_bars
+    raw_bars = self._get_marketdata(
+        path="/stocks/bars",
+        params=request_params.to_request_fields(),
+        page_size=10_000,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/common/rest.py", line 393, in _get_marketdata
+    response = self.get(path=path, data=params)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/common/rest.py", line 225, in get
+    return self._request("GET", path, data, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/common/rest.py", line 131, in _request
+    return self._one_request(method, url, opts, retry)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/common/rest.py", line 195, in _one_request
+    response = self._session.request(method, url, **opts)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/requests/sessions.py", line 592, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/requests/sessions.py", line 749, in send
+    r.content
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/requests/models.py", line 904, in content
+    self._content = b"".join(self.iter_content(CONTENT_CHUNK_SIZE)) or b""
+                    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/requests/models.py", line 824, in generate
+    raise ChunkedEncodingError(e)
+requests.exceptions.ChunkedEncodingError: ("Connection broken: ConnectionResetError(54, 'Connection reset by peer')", ConnectionResetError(54, 'Connection reset by peer'))
+  FAILED to build reference data. Not starting.
+
+=== 2026-08-19 03:41:21 EDT — startup, feed iex ===
+  python: /usr/local/bin/python3
+  building reference data — about 10 minutes...
+Fetching asset list...
+  13077 listed, tradable US equities
+Fetching daily bars...
+  fetched 200/13077 symbols
+  fetched 400/13077 symbols
+  fetched 600/13077 symbols
+  fetched 800/13077 symbols
+  fetched 1000/13077 symbols
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/urllib3/connection.py", line 571, in getresponse
+    httplib_response = super().getresponse()
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/http/client.py", line 1450, in getresponse
+    response.begin()
+    ~~~~~~~~~~~~~~^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/http/client.py", line 336, in begin
+    version, status, reason = self._read_status()
+                              ~~~~~~~~~~~~~~~~~^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/http/client.py", line 297, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+               ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/socket.py", line 725, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/ssl.py", line 1304, in recv_into
+    return self.read(nbytes, buffer)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/ssl.py", line 1138, in read
+    return self._sslobj.read(len, buffer)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+ConnectionResetError: [Errno 54] Connection reset by peer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/requests/adapters.py", line 645, in send
+    resp = conn.urlopen(
+        method=request.method,
+    ...<9 lines>...
+        chunked=chunked,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/urllib3/util/retry.py", line 490, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/urllib3/util/util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/urllib3/connection.py", line 571, in getresponse
+    httplib_response = super().getresponse()
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/http/client.py", line 1450, in getresponse
+    response.begin()
+    ~~~~~~~~~~~~~~^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/http/client.py", line 336, in begin
+    version, status, reason = self._read_status()
+                              ~~~~~~~~~~~~~~~~~^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/http/client.py", line 297, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+               ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/socket.py", line 725, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/ssl.py", line 1304, in recv_into
+    return self.read(nbytes, buffer)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/ssl.py", line 1138, in read
+    return self._sslobj.read(len, buffer)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+urllib3.exceptions.ProtocolError: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/kanikagupta/trading/data/reference.py", line 297, in <module>
+    main()
+    ~~~~^^
+  File "/Users/kanikagupta/trading/data/reference.py", line 286, in main
+    refs = build(as_of, feed=feed)
+  File "/Users/kanikagupta/trading/data/reference.py", line 223, in build
+    bars = fetch_daily_bars(data, sorted(exchanges), as_of, feed=feed)
+  File "/Users/kanikagupta/trading/data/reference.py", line 157, in fetch_daily_bars
+    barset = data_client.get_stock_bars(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/historical/stock.py", line 87, in get_stock_bars
+    raw_bars = self._get_marketdata(
+        path="/stocks/bars",
+        params=request_params.to_request_fields(),
+        page_size=10_000,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/common/rest.py", line 393, in _get_marketdata
+    response = self.get(path=path, data=params)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/common/rest.py", line 225, in get
+    return self._request("GET", path, data, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/common/rest.py", line 131, in _request
+    return self._one_request(method, url, opts, retry)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/common/rest.py", line 195, in _one_request
+    response = self._session.request(method, url, **opts)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/requests/sessions.py", line 592, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/requests/sessions.py", line 706, in send
+    r = adapter.send(request, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/requests/adapters.py", line 660, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+  FAILED to build reference data. Not starting.

@@ -1,0 +1,53 @@
+# Rules for paper-trading the mosquito feed.
+#
+# Every number here is a first guess. They exist to be corrected by what the
+# paper log shows, not to be trusted. The rejection reasons in
+# data/mosquito/trades.jsonl are the fastest way to find the wrong one: if
+# almost everything is skipped for "float unknown", that is the threshold to
+# change, not the strategy.
+
+universe:
+  min_price: 0.50
+  max_price: 20.00
+  # Real float from the feed, not SEC shares-outstanding. This can be much
+  # tighter than the old 30M proxy because the number is actually right.
+  max_float: 20_000_000
+  min_daily_volume: 500_000
+
+risk:
+  risk_per_trade_pct: 0.5        # of equity, so a stop costs this much
+  max_position_pct: 10.0         # ceiling regardless of how tight the stop is
+  max_concurrent: 3
+  fallback_equity: 50_000        # only used if the account query fails
+
+execution:
+  entry_slippage_pct: 2.0        # limit placed this far above the alert price
+  hard_exit_time: "15:50"        # nothing carries overnight in v1
+
+# --- Setups ------------------------------------------------------------
+# Each needs a stop wide enough to survive normal movement in these names.
+# The six-month study put median adverse excursion near -5% and the 25th
+# percentile near -11%, so anything under ~8% is inside the noise.
+
+spike:
+  # The vertical move. Rate, not cumulative gain.
+  min_pct_change: 10.0
+  min_rel_volume_1m: 15.0        # this minute vs the day's average minute
+  min_float_turnover: 1.0        # whole float has changed hands today
+  stop_pct: 12.0
+  target_pct: 25.0
+
+repeat:
+  # Your "seen it two or three times" rule, using the feed's own counter.
+  min_alert_count: 3
+  min_pct_change: 5.0
+  min_float_turnover: 0.5
+  stop_pct: 10.0
+  target_pct: 20.0
+
+new_high:
+  # NSH is the feed's tag for a new session high.
+  min_pct_change: 5.0
+  min_rel_volume_1m: 8.0
+  stop_pct: 10.0
+  target_pct: 20.0
