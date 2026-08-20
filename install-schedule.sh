@@ -21,10 +21,13 @@ cd "$(dirname "$0")" || exit 1
 REPO="$(pwd)"
 LABEL="com.trading.scanner"
 PLIST="$HOME/Library/LaunchAgents/${LABEL}.plist"
+HEALTH_LABEL="com.trading.healthcheck"
+HEALTH_PLIST="$HOME/Library/LaunchAgents/${HEALTH_LABEL}.plist"
 
 if [ "${1:-}" = "--remove" ]; then
     launchctl unload "$PLIST" 2>/dev/null
-    rm -f "$PLIST"
+    launchctl unload "$HEALTH_PLIST" 2>/dev/null
+    rm -f "$PLIST" "$HEALTH_PLIST"
     echo "Removed. The scanner will no longer start on its own."
     echo "To also stop waking the Mac:  sudo pmset repeat cancel"
     exit 0
@@ -76,8 +79,41 @@ if ! launchctl load "$PLIST"; then
     exit 1
 fi
 
+# Health check: pushes only when something is wrong. Without it, a scanner
+# that dies mid-morning is indistinguishable from a quiet market.
+PYTHON_BIN="$(command -v python3)"
+{
+    echo '<?xml version="1.0" encoding="UTF-8"?>'
+    echo '<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">'
+    echo '<plist version="1.0"><dict>'
+    echo "  <key>Label</key><string>${HEALTH_LABEL}</string>"
+    echo '  <key>ProgramArguments</key><array>'
+    echo "    <string>${PYTHON_BIN}</string>"
+    echo '    <string>-m</string><string>tools.healthcheck</string>'
+    echo '  </array>'
+    echo "  <key>WorkingDirectory</key><string>${REPO}</string>"
+    echo '  <key>StartCalendarInterval</key><array>'
+    for DAY in 1 2 3 4 5; do
+        for CHECK_HOUR in 8 9 11 14; do
+            echo "    <dict><key>Weekday</key><integer>${DAY}</integer>"
+            echo "          <key>Hour</key><integer>${CHECK_HOUR}</integer>"
+            echo "          <key>Minute</key><integer>20</integer></dict>"
+        done
+    done
+    echo '  </array>'
+    echo "  <key>StandardOutPath</key><string>${REPO}/data/live/healthcheck.log</string>"
+    echo "  <key>StandardErrorPath</key><string>${REPO}/data/live/healthcheck.log</string>"
+    echo '  <key>RunAtLoad</key><false/>'
+    echo '</dict></plist>'
+} > "$HEALTH_PLIST"
+
+launchctl unload "$HEALTH_PLIST" 2>/dev/null
+launchctl load "$HEALTH_PLIST" 2>/dev/null
+
 echo ""
 echo "Scheduled: weekdays at ${WHEN} local time."
+echo "Health checks at 08:20, 09:20, 11:20 and 14:20 — these push ONLY if"
+echo "the scanner is down or has stopped receiving data."
 echo "  job:   $PLIST"
 echo "  log:   ${REPO}/data/live/schedule.log"
 echo ""
