@@ -22,7 +22,7 @@ approval:
   # adds no safety there — and it would quietly cancel every premarket
   # signal, since a 04:00 request times out unanswered while you are asleep.
   # That would waste the exact window the SIP subscription was bought for.
-  enabled: false
+  enabled: true
 
   # Which setups need a human. Leave a setup out and it fires automatically.
   #
