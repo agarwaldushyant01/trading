@@ -14,6 +14,31 @@ universe:
   max_float: 20_000_000
   min_daily_volume: 500_000
 
+approval:
+  # Ask before entering. EXITS ARE NEVER GATED — a stop that waits for a tap
+  # is not a stop, so only entries reach this queue.
+  #
+  # OFF for paper trading, ON before live. Paper risks nothing, so a gate
+  # adds no safety there — and it would quietly cancel every premarket
+  # signal, since a 04:00 request times out unanswered while you are asleep.
+  # That would waste the exact window the SIP subscription was bought for.
+  enabled: false
+
+  # Which setups need a human. Leave a setup out and it fires automatically.
+  #
+  # Worth thinking about per setup rather than all-or-nothing: "spike" is
+  # the vertical move, and 60 seconds of deliberation means the move is over
+  # before you tap. If you keep it here, expect most spikes to expire
+  # unanswered — which is itself a finding worth having.
+  require_for: [spike, repeat, new_high]
+
+  # A pending request always resolves, so the queue cannot grow overnight and
+  # then fire a dozen stale orders when you look at your phone.
+  timeout_seconds: 120
+  on_timeout: reject           # reject | approve
+
+  port: 8765                   # the phone page, on your local network
+
 risk:
   risk_per_trade_pct: 0.5        # of equity, so a stop costs this much
   max_position_pct: 10.0         # ceiling regardless of how tight the stop is

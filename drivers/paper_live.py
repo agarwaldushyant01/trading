@@ -121,8 +121,11 @@ def main() -> None:
     from alpaca.trading.client import TradingClient
 
     p = argparse.ArgumentParser()
-    p.add_argument("--feed", default="iex", choices=["sip", "iex"])
-    p.add_argument("--scanner-config", default="config/scanner-iex.yaml")
+    # SIP by default now that Algo Trader Plus is active. IEX remains
+    # available but is blind before 08:00 and sees ~3% of volume, so it needs
+    # config/scanner-iex.yaml with its separately scaled thresholds.
+    p.add_argument("--feed", default="sip", choices=["sip", "iex"])
+    p.add_argument("--scanner-config", default="config/scanner.yaml")
     p.add_argument("--rules-config", default="config/rules.yaml")
     p.add_argument("--refs", default=None)
     p.add_argument("--dry-run", action="store_true",
