@@ -214,10 +214,8 @@ def build(as_of: date, feed=None) -> dict[str, TickerRef]:
 
     shares = load_shares_outstanding()
     if not shares:
-        raise SystemExit(
-            "No shares-outstanding data. Build it first:\n"
-            "  python -m data.shares_outstanding --email you@example.com"
-        )
+        print("  WARNING: no shares-outstanding data; every symbol will carry "
+              "float 0 and float-based rules will not apply.", file=sys.stderr)
 
     print("Fetching daily bars...", file=sys.stderr)
     bars = fetch_daily_bars(data, sorted(exchanges), as_of, feed=feed)
@@ -225,17 +223,26 @@ def build(as_of: date, feed=None) -> dict[str, TickerRef]:
     refs = {}
     no_shares = short_history = 0
     for symbol, daily in bars.items():
-        if symbol not in shares:
-            no_shares += 1        # ETF, fund, warrant, unit or non-filer
-            continue
-        ref = compute_ref(symbol, exchanges[symbol], daily, shares[symbol])
+        # A missing SEC share count is NOT grounds for exclusion. Foreign
+        # private issuers file 20-F annually rather than 10-Q quarterly, so
+        # they are largely absent from the quarterly frames data — and those
+        # are precisely the sub-$1 names this scanner exists to catch. Only
+        # about 5,100 of 13,000 listed symbols have a count at all.
+        #
+        # Store 0 for unknown and let the strategy rules decide what to do
+        # with it. A universe filter that silently deletes symbols is the
+        # worst place for this: it produces no error and no candidate.
+        share_count = shares.get(symbol, 0.0)
+        if not share_count:
+            no_shares += 1
+        ref = compute_ref(symbol, exchanges[symbol], daily, share_count)
         if ref is None:
             short_history += 1
             continue
         refs[symbol] = ref
 
-    print(f"  {no_shares} dropped: no SEC share count (ETFs, funds, warrants)",
-          file=sys.stderr)
+    print(f"  {no_shares} kept without a share count (foreign filers, funds, "
+          f"warrants) — rules decide", file=sys.stderr)
     print(f"  {short_history} dropped: under {ATR_PERIOD} sessions of history",
           file=sys.stderr)
     print(f"  {len(refs)} symbols in the universe", file=sys.stderr)

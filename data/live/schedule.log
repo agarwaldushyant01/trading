@@ -282,3 +282,14 @@ Traceback (most recent call last):
     raise ConnectionError(err, request=request)
 requests.exceptions.ConnectionError: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
   FAILED to build reference data. Not starting.
+
+=== 2026-08-20 03:30:02 EDT — startup, feed sip ===
+  python: /usr/local/bin/python3
+  stopping drivers.paper_live...
+  reference data: data/refs/2026-08-20.json (already built)
+  starting paper trader...
+  RUNNING (pid 18337)
+  Expect a 'Paper trader started' notification on your phone.
+
+  watch:  tail -f data/live/console.log
+  stop:   pkill -f drivers.paper_live

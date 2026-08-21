@@ -147,6 +147,18 @@ class ApprovalQueue:
             def log_message(self, *args):        # silence request logging
                 pass
 
+            def handle_one_request(self):
+                """Swallow dropped connections.
+
+                Phones close the page constantly — switching apps, locking the
+                screen — and each one raised ConnectionResetError straight into
+                the trading log, burying anything that mattered.
+                """
+                try:
+                    super().handle_one_request()
+                except (ConnectionResetError, BrokenPipeError, TimeoutError):
+                    self.close_connection = True
+
             def do_GET(self):
                 parsed = urlparse(self.path)
                 params = parse_qs(parsed.query)

@@ -1,6 +1,6 @@
 """The buy/sell rules, applied to mosquito alerts.
 
-Every threshold lives in config/rules.yaml. These are a first pass built
+Every threshold lives in config/mosquito.yaml. These are a first pass built
 from how you described trading — they are meant to be argued with and
 changed, not trusted.
 
@@ -36,9 +36,10 @@ def _universe_ok(alert: Alert, cfg: dict) -> str | None:
     u = cfg["universe"]
     if not (u["min_price"] <= alert.price <= u["max_price"]):
         return f"price {alert.price}"
-    if alert.float_shares is None:
-        return "float unknown"
-    if alert.float_shares > u["max_float"]:
+    # Unknown float is common and not disqualifying — most foreign filers
+    # have none in SEC quarterly data. Only reject a float we can see and
+    # that is too large.
+    if alert.float_shares and alert.float_shares > u["max_float"]:
         return f"float {alert.float_shares / 1e6:.1f}M"
     if alert.volume_1d < u["min_daily_volume"]:
         return f"daily volume {alert.volume_1d / 1e6:.2f}M"
@@ -66,10 +67,14 @@ def decide(alert: Alert, cfg: dict) -> Decision:
     # Your premarket spike. Not the cumulative gain but the rate: a minute
     # trading many multiples of normal, on a name whose whole float is
     # turning over.
+    # When float is unknown, turnover cannot be computed. Require it only
+    # where it is available rather than rejecting the whole setup.
     spike = cfg["spike"]
+    turnover_ok = lambda need: alert.float_shares is None or turnover >= need
+
     if (alert.pct_change >= spike["min_pct_change"]
             and rel_1m >= spike["min_rel_volume_1m"]
-            and turnover >= spike["min_float_turnover"]):
+            and turnover_ok(spike["min_float_turnover"])):
         return Decision(
             True, "spike",
             f"{alert.pct_change:+.1f}%, {rel_1m:.0f}x minute volume, "
@@ -82,7 +87,7 @@ def decide(alert: Alert, cfg: dict) -> Decision:
     repeat = cfg["repeat"]
     if (alert.alert_count >= repeat["min_alert_count"]
             and alert.pct_change >= repeat["min_pct_change"]
-            and turnover >= repeat["min_float_turnover"]):
+            and turnover_ok(repeat["min_float_turnover"])):
         return Decision(
             True, "repeat",
             f"appearance #{alert.alert_count}, {alert.pct_change:+.1f}%, "

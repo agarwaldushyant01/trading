@@ -1,0 +1,112 @@
+{
+ "BIOT": {
+  "symbol": "BIOT",
+  "shares": 7817,
+  "signal_price": 0.4877,
+  "stop": 0.4292,
+  "target": 0.6096,
+  "setup": "adopted",
+  "reason": "position found at startup, not opened by this process",
+  "opened_at": "2026-08-20T17:16:47.822456-04:00"
+ },
+ "BIVI": {
+  "symbol": "BIVI",
+  "shares": 2311,
+  "signal_price": 2.0,
+  "stop": 1.76,
+  "target": 2.5,
+  "setup": "adopted",
+  "reason": "position found at startup, not opened by this process",
+  "opened_at": "2026-08-20T17:16:47.823265-04:00"
+ },
+ "BRNX": {
+  "symbol": "BRNX",
+  "shares": 1122,
+  "signal_price": 3.671257,
+  "stop": 3.2307,
+  "target": 4.5891,
+  "setup": "adopted",
+  "reason": "position found at startup, not opened by this process",
+  "opened_at": "2026-08-20T17:16:47.823649-04:00"
+ },
+ "CBAT": {
+  "symbol": "CBAT",
+  "shares": 4677,
+  "signal_price": 0.8487,
+  "stop": 0.7469,
+  "target": 1.0609,
+  "setup": "adopted",
+  "reason": "position found at startup, not opened by this process",
+  "opened_at": "2026-08-20T17:16:47.823952-04:00"
+ },
+ "IPST": {
+  "symbol": "IPST",
+  "shares": 303,
+  "signal_price": 12.172607,
+  "stop": 10.7119,
+  "target": 15.2158,
+  "setup": "adopted",
+  "reason": "position found at startup, not opened by this process",
+  "opened_at": "2026-08-20T17:16:47.824228-04:00"
+ },
+ "MGN": {
+  "symbol": "MGN",
+  "shares": 23226,
+  "signal_price": 0.162909,
+  "stop": 0.1434,
+  "target": 0.2036,
+  "setup": "adopted",
+  "reason": "position found at startup, not opened by this process",
+  "opened_at": "2026-08-20T17:16:47.824517-04:00"
+ },
+ "PCLA": {
+  "symbol": "PCLA",
+  "shares": 376,
+  "signal_price": 10.23,
+  "stop": 9.0024,
+  "target": 12.7875,
+  "setup": "adopted",
+  "reason": "position found at startup, not opened by this process",
+  "opened_at": "2026-08-20T17:16:47.824792-04:00"
+ },
+ "RITR": {
+  "symbol": "RITR",
+  "shares": 27805,
+  "signal_price": 0.15,
+  "stop": 0.132,
+  "target": 0.1875,
+  "setup": "adopted",
+  "reason": "position found at startup, not opened by this process",
+  "opened_at": "2026-08-20T17:16:47.825058-04:00"
+ },
+ "SGLY": {
+  "symbol": "SGLY",
+  "shares": 666,
+  "signal_price": 7.51,
+  "stop": 6.6088,
+  "target": 9.3875,
+  "setup": "adopted",
+  "reason": "position found at startup, not opened by this process",
+  "opened_at": "2026-08-20T17:16:47.825567-04:00"
+ },
+ "STKH": {
+  "symbol": "STKH",
+  "shares": 804,
+  "signal_price": 5.189204,
+  "stop": 4.5665,
+  "target": 6.4865,
+  "setup": "adopted",
+  "reason": "position found at startup, not opened by this process",
+  "opened_at": "2026-08-20T17:16:47.826042-04:00"
+ },
+ "XOS": {
+  "symbol": "XOS",
+  "shares": 1003,
+  "signal_price": 3.897309,
+  "stop": 3.4296,
+  "target": 4.8716,
+  "setup": "adopted",
+  "reason": "position found at startup, not opened by this process",
+  "opened_at": "2026-08-20T17:16:47.826468-04:00"
+ }
+}

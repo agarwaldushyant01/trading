@@ -68,6 +68,7 @@ def to_alert(candidate, ref) -> Alert:
         volume_2m=0.0,                   # scanner keeps a 1-minute window only
         volume_5m=0.0,
         volume_1d=float(candidate.session_volume),
+        # 0 means the SEC had no count; None is how the rules read 'unknown'.
         float_shares=ref.shares_outstanding or None,
         alert_count=candidate.appearances_10d,
         tags=tags,
@@ -82,6 +83,7 @@ async def run(scanner, refs, trader, key, secret, feed_name, cfg):
     feed = DataFeed.SIP if feed_name == "sip" else DataFeed.IEX
     stream = StockDataStream(key, secret, feed=feed)
     state = {"bars": 0, "last_beat": None}
+    # Reconnects build a fresh stream; alpaca-py cannot restart a closed one.
 
     async def on_bar(raw):
         bar = to_bar(raw)
@@ -100,19 +102,49 @@ async def run(scanner, refs, trader, key, secret, feed_name, cfg):
         if candidate is not None:
             trader.consider(to_alert(candidate, refs[bar.symbol]))
 
-    stream.subscribe_bars(on_bar, "*")
     asyncio.create_task(trader.monitor())
-
     print("Listening. Ctrl-C to stop.\n", flush=True)
-    try:
-        await stream._run_forever()
-    except asyncio.CancelledError:
-        pass
-    finally:
+
+    # Reconnect rather than exit. The first live session died at 03:30 because
+    # an unhandled websocket error propagated out of asyncio.run and hit the
+    # os._exit in the caller's finally block — the process vanished with no
+    # message, mid-premarket, and nothing noticed until the 08:20 health check
+    # would have. A dropped socket is routine; it must never end the session.
+    attempt = 0
+    while True:
+        try:
+            stream.subscribe_bars(on_bar, "*")
+            await stream._run_forever()
+            print(f"  [{datetime.now(ET):%H:%M}] stream ended cleanly, "
+                  f"reconnecting", file=sys.stderr, flush=True)
+        except asyncio.CancelledError:
+            break
+        except Exception as exc:                          # noqa: BLE001
+            attempt += 1
+            print(f"  [{datetime.now(ET):%H:%M}] stream error ({exc}); "
+                  f"reconnect #{attempt}", file=sys.stderr, flush=True)
+            if attempt in (3, 10, 30):
+                trader.notifier.send(
+                    "Scanner reconnecting",
+                    f"Data stream has dropped {attempt} times. Still trying, "
+                    f"but the connection is unstable.",
+                    priority="high",
+                )
+
         try:
             await stream.stop_ws()
         except Exception:                                 # noqa: BLE001
             pass
+
+        # Back off gently, capped, so a persistent outage does not hammer the
+        # endpoint and does not give up either.
+        await asyncio.sleep(min(5 * attempt, 60) or 5)
+        stream = StockDataStream(key, secret, feed=feed)
+
+    try:
+        await stream.stop_ws()
+    except Exception:                                     # noqa: BLE001
+        pass
 
 
 def main() -> None:
@@ -157,6 +189,12 @@ def main() -> None:
 
     account = trading.get_account()
     print(f"\nPaper equity   ${float(account.equity):,.0f}")
+
+    # Adopt anything the broker already holds. A restart used to orphan open
+    # positions — they kept running with no stop, no target and no time exit.
+    adopted = trader.reconcile()
+    if adopted:
+        print(f"Adopted        {adopted} existing position(s) — now managed")
     print(f"Feed           {args.feed.upper()}")
     print(f"Universe       {len(refs):,} symbols")
     print(f"Reference      {refs_date_of(args.refs) or 'newest in data/refs'}")

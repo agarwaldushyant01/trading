@@ -7,7 +7,7 @@
 # change, not the strategy.
 
 universe:
-  min_price: 0.50
+  min_price: 0.10
   max_price: 20.00
   # Real float from the feed, not SEC shares-outstanding. This can be much
   # tighter than the old 30M proxy because the number is actually right.
@@ -43,9 +43,21 @@ risk:
   risk_per_trade_pct: 0.5        # of equity, so a stop costs this much
   max_position_pct: 10.0         # ceiling regardless of how tight the stop is
   max_concurrent: 3
+
+  # Flatten and stop for the day past this drawdown. Counts UNREALISED loss,
+  # not just realised — on 2026-08-20 nothing ever closed, so a realised-only
+  # cap sat satisfied while the account fell 10%.
+  max_daily_loss_pct: 2.0
   fallback_equity: 50_000        # only used if the account query fails
 
 execution:
+  # Applied to positions found at the broker that this process did not open,
+  # after a restart. Their original stop and target are unrecoverable, so
+  # these rebuild them from the entry price. Approximate management beats
+  # none — an unmanaged position has no stop at all.
+  adopted_stop_pct: 12.0
+  adopted_target_pct: 25.0
+
   entry_slippage_pct: 2.0        # limit placed this far above the alert price
   hard_exit_time: "15:50"        # nothing carries overnight in v1
 
