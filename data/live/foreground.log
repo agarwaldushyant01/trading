@@ -1,0 +1,179 @@
+  restored 11 position(s) with their original stops and targets
+    BIOT   entry 0.4877  stop 0.4292  target 0.6096  [adopted]
+    BIVI   entry 2.0000  stop 1.7600  target 2.5000  [adopted]
+    BRNX   entry 3.6713  stop 3.2307  target 4.5891  [adopted]
+    CBAT   entry 0.8487  stop 0.7469  target 1.0609  [adopted]
+    IPST   entry 12.1726  stop 10.7119  target 15.2158  [adopted]
+    MGN    entry 0.1629  stop 0.1434  target 0.2036  [adopted]
+    PCLA   entry 10.2300  stop 9.0024  target 12.7875  [adopted]
+    RITR   entry 0.1500  stop 0.1320  target 0.1875  [adopted]
+    SGLY   entry 7.5100  stop 6.6088  target 9.3875  [adopted]
+    STKH   entry 5.1892  stop 4.5665  target 6.4865  [adopted]
+    XOS    entry 3.8973  stop 3.4296  target 4.8716  [adopted]
+
+Paper equity   $89,677
+Feed           SIP
+Universe       12,951 symbols
+Reference      2026-08-21
+Mode           PAPER ORDERS
+Risk           0.5% per trade, max 15 positions
+Journal        data/mosquito/trades.jsonl
+Approvals      http://192.168.10.180:8765   <- open this on your phone
+
+Listening. Ctrl-C to stop.
+
+  [05:10] 1 bars, 0 alerts seen, 0 entries, 11 open
+  05:10  ASK  GAUZ x7952 @ 0.47  [spike]
+  close failed for BIOT: {"available":"0","code":40310000,"existing_qty":"7817","held_for_orders":"7817","message":"insufficient qty available for order (requested: 7817, available: 0)","symbol":"BIOT"}
+  close failed for MGN: {"available":"0","code":40310000,"existing_qty":"23226","held_for_orders":"23226","message":"insufficient qty available for order (requested: 23226, available: 0)","symbol":"MGN"}
+  close failed for PCLA: {"available":"0","code":40310000,"existing_qty":"376","held_for_orders":"376","message":"insufficient qty available for order (requested: 376, available: 0)","symbol":"PCLA"}
+  close failed for RITR: {"available":"0","code":40310000,"existing_qty":"27805","held_for_orders":"27805","message":"insufficient qty available for order (requested: 27805, available: 0)","symbol":"RITR"}
+  close failed for SGLY: {"available":"0","code":40310000,"existing_qty":"666","held_for_orders":"666","message":"insufficient qty available for order (requested: 666, available: 0)","symbol":"SGLY"}
+  close failed for STKH: {"available":"0","code":40310000,"existing_qty":"804","held_for_orders":"804","message":"insufficient qty available for order (requested: 804, available: 0)","symbol":"STKH"}
+  05:10  SKIP GAUZ (not approved)
+  close failed for BIOT: {"available":"0","code":40310000,"existing_qty":"7817","held_for_orders":"7817","message":"insufficient qty available for order (requested: 7817, available: 0)","symbol":"BIOT"}
+  close failed for MGN: {"available":"0","code":40310000,"existing_qty":"23226","held_for_orders":"23226","message":"insufficient qty available for order (requested: 23226, available: 0)","symbol":"MGN"}
+  close failed for PCLA: {"available":"0","code":40310000,"existing_qty":"376","held_for_orders":"376","message":"insufficient qty available for order (requested: 376, available: 0)","symbol":"PCLA"}
+  close failed for RITR: {"available":"0","code":40310000,"existing_qty":"27805","held_for_orders":"27805","message":"insufficient qty available for order (requested: 27805, available: 0)","symbol":"RITR"}
+  close failed for SGLY: {"available":"0","code":40310000,"existing_qty":"666","held_for_orders":"666","message":"insufficient qty available for order (requested: 666, available: 0)","symbol":"SGLY"}
+  close failed for STKH: {"available":"0","code":40310000,"existing_qty":"804","held_for_orders":"804","message":"insufficient qty available for order (requested: 804, available: 0)","symbol":"STKH"}
+  close failed for BIOT: {"available":"0","code":40310000,"existing_qty":"7817","held_for_orders":"7817","message":"insufficient qty available for order (requested: 7817, available: 0)","symbol":"BIOT"}
+  close failed for MGN: {"available":"0","code":40310000,"existing_qty":"23226","held_for_orders":"23226","message":"insufficient qty available for order (requested: 23226, available: 0)","symbol":"MGN"}
+  close failed for PCLA: {"available":"0","code":40310000,"existing_qty":"376","held_for_orders":"376","message":"insufficient qty available for order (requested: 376, available: 0)","symbol":"PCLA"}
+  close failed for RITR: {"available":"0","code":40310000,"existing_qty":"27805","held_for_orders":"27805","message":"insufficient qty available for order (requested: 27805, available: 0)","symbol":"RITR"}
+  close failed for SGLY: {"available":"0","code":40310000,"existing_qty":"666","held_for_orders":"666","message":"insufficient qty available for order (requested: 666, available: 0)","symbol":"SGLY"}
+  close failed for STKH: {"available":"0","code":40310000,"existing_qty":"804","held_for_orders":"804","message":"insufficient qty available for order (requested: 804, available: 0)","symbol":"STKH"}
+  close failed for BIOT: {"available":"0","code":40310000,"existing_qty":"7817","held_for_orders":"7817","message":"insufficient qty available for order (requested: 7817, available: 0)","symbol":"BIOT"}
+  close failed for MGN: {"available":"0","code":40310000,"existing_qty":"23226","held_for_orders":"23226","message":"insufficient qty available for order (requested: 23226, available: 0)","symbol":"MGN"}
+  close failed for PCLA: {"available":"0","code":40310000,"existing_qty":"376","held_for_orders":"376","message":"insufficient qty available for order (requested: 376, available: 0)","symbol":"PCLA"}
+  close failed for RITR: {"available":"0","code":40310000,"existing_qty":"27805","held_for_orders":"27805","message":"insufficient qty available for order (requested: 27805, available: 0)","symbol":"RITR"}
+  close failed for SGLY: {"available":"0","code":40310000,"existing_qty":"666","held_for_orders":"666","message":"insufficient qty available for order (requested: 666, available: 0)","symbol":"SGLY"}
+  close failed for STKH: {"available":"0","code":40310000,"existing_qty":"804","held_for_orders":"804","message":"insufficient qty available for order (requested: 804, available: 0)","symbol":"STKH"}
+  close failed for BIOT: {"available":"0","code":40310000,"existing_qty":"7817","held_for_orders":"7817","message":"insufficient qty available for order (requested: 7817, available: 0)","symbol":"BIOT"}
+  close failed for MGN: {"available":"0","code":40310000,"existing_qty":"23226","held_for_orders":"23226","message":"insufficient qty available for order (requested: 23226, available: 0)","symbol":"MGN"}
+  close failed for PCLA: {"available":"0","code":40310000,"existing_qty":"376","held_for_orders":"376","message":"insufficient qty available for order (requested: 376, available: 0)","symbol":"PCLA"}
+  close failed for RITR: {"available":"0","code":40310000,"existing_qty":"27805","held_for_orders":"27805","message":"insufficient qty available for order (requested: 27805, available: 0)","symbol":"RITR"}
+  close failed for SGLY: {"available":"0","code":40310000,"existing_qty":"666","held_for_orders":"666","message":"insufficient qty available for order (requested: 666, available: 0)","symbol":"SGLY"}
+  close failed for STKH: {"available":"0","code":40310000,"existing_qty":"804","held_for_orders":"804","message":"insufficient qty available for order (requested: 804, available: 0)","symbol":"STKH"}
+  close failed for BIOT: {"available":"0","code":40310000,"existing_qty":"7817","held_for_orders":"7817","message":"insufficient qty available for order (requested: 7817, available: 0)","symbol":"BIOT"}
+  close failed for MGN: {"available":"0","code":40310000,"existing_qty":"23226","held_for_orders":"23226","message":"insufficient qty available for order (requested: 23226, available: 0)","symbol":"MGN"}
+  close failed for PCLA: {"available":"0","code":40310000,"existing_qty":"376","held_for_orders":"376","message":"insufficient qty available for order (requested: 376, available: 0)","symbol":"PCLA"}
+  close failed for RITR: {"available":"0","code":40310000,"existing_qty":"27805","held_for_orders":"27805","message":"insufficient qty available for order (requested: 27805, available: 0)","symbol":"RITR"}
+  close failed for SGLY: {"available":"0","code":40310000,"existing_qty":"666","held_for_orders":"666","message":"insufficient qty available for order (requested: 666, available: 0)","symbol":"SGLY"}
+  close failed for STKH: {"available":"0","code":40310000,"existing_qty":"804","held_for_orders":"804","message":"insufficient qty available for order (requested: 804, available: 0)","symbol":"STKH"}
+  close failed for BIOT: {"available":"0","code":40310000,"existing_qty":"7817","held_for_orders":"7817","message":"insufficient qty available for order (requested: 7817, available: 0)","symbol":"BIOT"}
+  close failed for MGN: {"available":"0","code":40310000,"existing_qty":"23226","held_for_orders":"23226","message":"insufficient qty available for order (requested: 23226, available: 0)","symbol":"MGN"}
+  close failed for PCLA: {"available":"0","code":40310000,"existing_qty":"376","held_for_orders":"376","message":"insufficient qty available for order (requested: 376, available: 0)","symbol":"PCLA"}
+  close failed for RITR: {"available":"0","code":40310000,"existing_qty":"27805","held_for_orders":"27805","message":"insufficient qty available for order (requested: 27805, available: 0)","symbol":"RITR"}
+  close failed for SGLY: {"available":"0","code":40310000,"existing_qty":"666","held_for_orders":"666","message":"insufficient qty available for order (requested: 666, available: 0)","symbol":"SGLY"}
+  close failed for STKH: {"available":"0","code":40310000,"existing_qty":"804","held_for_orders":"804","message":"insufficient qty available for order (requested: 804, available: 0)","symbol":"STKH"}
+  restored 11 position(s) with their original stops and targets
+    BIOT   entry 0.4877  stop 0.4292  target 0.6096  [adopted]
+    BIVI   entry 2.0000  stop 1.7600  target 2.5000  [adopted]
+    BRNX   entry 3.6713  stop 3.2307  target 4.5891  [adopted]
+    CBAT   entry 0.8487  stop 0.7469  target 1.0609  [adopted]
+    IPST   entry 12.1726  stop 10.7119  target 15.2158  [adopted]
+    MGN    entry 0.1629  stop 0.1434  target 0.2036  [adopted]
+    PCLA   entry 10.2300  stop 9.0024  target 12.7875  [adopted]
+    RITR   entry 0.1500  stop 0.1320  target 0.1875  [adopted]
+    SGLY   entry 7.5100  stop 6.6088  target 9.3875  [adopted]
+    STKH   entry 5.1892  stop 4.5665  target 6.4865  [adopted]
+    XOS    entry 3.8973  stop 3.4296  target 4.8716  [adopted]
+
+Paper equity   $89,593
+Feed           SIP
+Universe       12,951 symbols
+Reference      2026-08-21
+Mode           PAPER ORDERS
+Risk           0.5% per trade, max 15 positions
+Journal        data/mosquito/trades.jsonl
+Approvals      http://192.168.10.180:8765   <- open this on your phone
+
+Listening. Ctrl-C to stop.
+
+  05:13  SELL BIOT @ 0.39 (-19.6%) — stop
+  05:13  SELL MGN @ 0.11 (-33.5%) — stop
+  05:13  SELL PCLA @ 7.60 (-25.7%) — stop
+  05:13  SELL RITR @ 0.08 (-46.9%) — stop
+  05:13  SELL SGLY @ 3.00 (-60.1%) — stop
+  05:13  SELL STKH @ 3.84 (-26.0%) — stop
+  [05:14] 1 bars, 0 alerts seen, 0 entries, 5 open
+  close failed for BIOT: {"available":"0","code":40310000,"existing_qty":"7817","held_for_orders":"7817","message":"insufficient qty available for order (requested: 7817, available: 0)","symbol":"BIOT"}
+  close failed for MGN: {"available":"0","code":40310000,"existing_qty":"23226","held_for_orders":"23226","message":"insufficient qty available for order (requested: 23226, available: 0)","symbol":"MGN"}
+  close failed for PCLA: {"available":"0","code":40310000,"existing_qty":"376","held_for_orders":"376","message":"insufficient qty available for order (requested: 376, available: 0)","symbol":"PCLA"}
+  close failed for RITR: {"available":"0","code":40310000,"existing_qty":"27805","held_for_orders":"27805","message":"insufficient qty available for order (requested: 27805, available: 0)","symbol":"RITR"}
+  close failed for SGLY: {"available":"0","code":40310000,"existing_qty":"666","held_for_orders":"666","message":"insufficient qty available for order (requested: 666, available: 0)","symbol":"SGLY"}
+  close failed for STKH: {"available":"0","code":40310000,"existing_qty":"804","held_for_orders":"804","message":"insufficient qty available for order (requested: 804, available: 0)","symbol":"STKH"}
+  close failed for BIOT: {"available":"0","code":40310000,"existing_qty":"7817","held_for_orders":"7817","message":"insufficient qty available for order (requested: 7817, available: 0)","symbol":"BIOT"}
+  close failed for MGN: {"available":"0","code":40310000,"existing_qty":"23226","held_for_orders":"23226","message":"insufficient qty available for order (requested: 23226, available: 0)","symbol":"MGN"}
+  close failed for PCLA: {"available":"0","code":40310000,"existing_qty":"376","held_for_orders":"376","message":"insufficient qty available for order (requested: 376, available: 0)","symbol":"PCLA"}
+  close failed for RITR: {"available":"0","code":40310000,"existing_qty":"27805","held_for_orders":"27805","message":"insufficient qty available for order (requested: 27805, available: 0)","symbol":"RITR"}
+  close failed for SGLY: {"available":"0","code":40310000,"existing_qty":"666","held_for_orders":"666","message":"insufficient qty available for order (requested: 666, available: 0)","symbol":"SGLY"}
+  close failed for STKH: {"available":"0","code":40310000,"existing_qty":"804","held_for_orders":"804","message":"insufficient qty available for order (requested: 804, available: 0)","symbol":"STKH"}
+  close failed for BIOT: {"available":"0","code":40310000,"existing_qty":"7817","held_for_orders":"7817","message":"insufficient qty available for order (requested: 7817, available: 0)","symbol":"BIOT"}
+  close failed for MGN: {"available":"0","code":40310000,"existing_qty":"23226","held_for_orders":"23226","message":"insufficient qty available for order (requested: 23226, available: 0)","symbol":"MGN"}
+  close failed for PCLA: {"available":"0","code":40310000,"existing_qty":"376","held_for_orders":"376","message":"insufficient qty available for order (requested: 376, available: 0)","symbol":"PCLA"}
+  close failed for RITR: {"available":"0","code":40310000,"existing_qty":"27805","held_for_orders":"27805","message":"insufficient qty available for order (requested: 27805, available: 0)","symbol":"RITR"}
+  close failed for SGLY: {"available":"0","code":40310000,"existing_qty":"666","held_for_orders":"666","message":"insufficient qty available for order (requested: 666, available: 0)","symbol":"SGLY"}
+  close failed for STKH: {"available":"0","code":40310000,"existing_qty":"804","held_for_orders":"804","message":"insufficient qty available for order (requested: 804, available: 0)","symbol":"STKH"}
+  close failed for BIOT: {"available":"0","code":40310000,"existing_qty":"7817","held_for_orders":"7817","message":"insufficient qty available for order (requested: 7817, available: 0)","symbol":"BIOT"}
+  close failed for MGN: {"available":"0","code":40310000,"existing_qty":"23226","held_for_orders":"23226","message":"insufficient qty available for order (requested: 23226, available: 0)","symbol":"MGN"}
+  close failed for PCLA: {"available":"0","code":40310000,"existing_qty":"376","held_for_orders":"376","message":"insufficient qty available for order (requested: 376, available: 0)","symbol":"PCLA"}
+  close failed for RITR: {"available":"0","code":40310000,"existing_qty":"27805","held_for_orders":"27805","message":"insufficient qty available for order (requested: 27805, available: 0)","symbol":"RITR"}
+  close failed for SGLY: {"available":"0","code":40310000,"existing_qty":"666","held_for_orders":"666","message":"insufficient qty available for order (requested: 666, available: 0)","symbol":"SGLY"}
+  close failed for STKH: {"available":"0","code":40310000,"existing_qty":"804","held_for_orders":"804","message":"insufficient qty available for order (requested: 804, available: 0)","symbol":"STKH"}
+  close failed for BIOT: {"available":"0","code":40310000,"existing_qty":"7817","held_for_orders":"7817","message":"insufficient qty available for order (requested: 7817, available: 0)","symbol":"BIOT"}
+  close failed for MGN: {"available":"0","code":40310000,"existing_qty":"23226","held_for_orders":"23226","message":"insufficient qty available for order (requested: 23226, available: 0)","symbol":"MGN"}
+  close failed for PCLA: {"available":"0","code":40310000,"existing_qty":"376","held_for_orders":"376","message":"insufficient qty available for order (requested: 376, available: 0)","symbol":"PCLA"}
+  close failed for RITR: {"available":"0","code":40310000,"existing_qty":"27805","held_for_orders":"27805","message":"insufficient qty available for order (requested: 27805, available: 0)","symbol":"RITR"}
+  close failed for SGLY: {"available":"0","code":40310000,"existing_qty":"666","held_for_orders":"666","message":"insufficient qty available for order (requested: 666, available: 0)","symbol":"SGLY"}
+  close failed for STKH: {"available":"0","code":40310000,"existing_qty":"804","held_for_orders":"804","message":"insufficient qty available for order (requested: 804, available: 0)","symbol":"STKH"}
+  close failed for BIOT: {"available":"0","code":40310000,"existing_qty":"7817","held_for_orders":"7817","message":"insufficient qty available for order (requested: 7817, available: 0)","symbol":"BIOT"}
+  close failed for MGN: {"available":"0","code":40310000,"existing_qty":"23226","held_for_orders":"23226","message":"insufficient qty available for order (requested: 23226, available: 0)","symbol":"MGN"}
+  close failed for PCLA: {"available":"0","code":40310000,"existing_qty":"376","held_for_orders":"376","message":"insufficient qty available for order (requested: 376, available: 0)","symbol":"PCLA"}
+  close failed for RITR: {"available":"0","code":40310000,"existing_qty":"27805","held_for_orders":"27805","message":"insufficient qty available for order (requested: 27805, available: 0)","symbol":"RITR"}
+  close failed for SGLY: {"available":"0","code":40310000,"existing_qty":"666","held_for_orders":"666","message":"insufficient qty available for order (requested: 666, available: 0)","symbol":"SGLY"}
+  close failed for STKH: {"available":"0","code":40310000,"existing_qty":"804","held_for_orders":"804","message":"insufficient qty available for order (requested: 804, available: 0)","symbol":"STKH"}
+  close failed for BIOT: {"available":"0","code":40310000,"existing_qty":"7817","held_for_orders":"7817","message":"insufficient qty available for order (requested: 7817, available: 0)","symbol":"BIOT"}
+  close failed for MGN: {"available":"0","code":40310000,"existing_qty":"23226","held_for_orders":"23226","message":"insufficient qty available for order (requested: 23226, available: 0)","symbol":"MGN"}
+  close failed for PCLA: {"available":"0","code":40310000,"existing_qty":"376","held_for_orders":"376","message":"insufficient qty available for order (requested: 376, available: 0)","symbol":"PCLA"}
+  close failed for RITR: {"available":"0","code":40310000,"existing_qty":"27805","held_for_orders":"27805","message":"insufficient qty available for order (requested: 27805, available: 0)","symbol":"RITR"}
+  close failed for SGLY: {"available":"0","code":40310000,"existing_qty":"666","held_for_orders":"666","message":"insufficient qty available for order (requested: 666, available: 0)","symbol":"SGLY"}
+  close failed for STKH: {"available":"0","code":40310000,"existing_qty":"804","held_for_orders":"804","message":"insufficient qty available for order (requested: 804, available: 0)","symbol":"STKH"}
+  close failed for BIOT: {"available":"0","code":40310000,"existing_qty":"7817","held_for_orders":"7817","message":"insufficient qty available for order (requested: 7817, available: 0)","symbol":"BIOT"}
+  close failed for MGN: {"available":"0","code":40310000,"existing_qty":"23226","held_for_orders":"23226","message":"insufficient qty available for order (requested: 23226, available: 0)","symbol":"MGN"}
+  close failed for PCLA: {"available":"0","code":40310000,"existing_qty":"376","held_for_orders":"376","message":"insufficient qty available for order (requested: 376, available: 0)","symbol":"PCLA"}
+  close failed for RITR: {"available":"0","code":40310000,"existing_qty":"27805","held_for_orders":"27805","message":"insufficient qty available for order (requested: 27805, available: 0)","symbol":"RITR"}
+  close failed for SGLY: {"available":"0","code":40310000,"existing_qty":"666","held_for_orders":"666","message":"insufficient qty available for order (requested: 666, available: 0)","symbol":"SGLY"}
+  close failed for STKH: {"available":"0","code":40310000,"existing_qty":"804","held_for_orders":"804","message":"insufficient qty available for order (requested: 804, available: 0)","symbol":"STKH"}
+  restored 11 position(s) with their original stops and targets
+    BIVI   entry 2.0000  stop 1.7600  target 2.5000  [adopted]
+    BRNX   entry 3.6713  stop 3.2307  target 4.5891  [adopted]
+    CBAT   entry 0.8487  stop 0.7469  target 1.0609  [adopted]
+    IPST   entry 12.1726  stop 10.7119  target 15.2158  [adopted]
+    XOS    entry 3.8973  stop 3.4296  target 4.8716  [adopted]
+    BIOT   entry 0.4877  stop 0.4292  target 0.6096  [adopted]
+    MGN    entry 0.1629  stop 0.1434  target 0.2036  [adopted]
+    PCLA   entry 10.2300  stop 9.0024  target 12.7875  [adopted]
+    RITR   entry 0.1500  stop 0.1320  target 0.1875  [adopted]
+    SGLY   entry 7.5100  stop 6.6088  target 9.3875  [adopted]
+    STKH   entry 5.1892  stop 4.5665  target 6.4865  [adopted]
+
+Paper equity   $89,532
+Feed           SIP
+Universe       12,951 symbols
+Reference      2026-08-21
+Mode           PAPER ORDERS
+Risk           0.5% per trade, max 15 positions
+Journal        data/mosquito/trades.jsonl
+Approvals      http://192.168.10.180:8765   <- open this on your phone
+
+Listening. Ctrl-C to stop.
+
+  close failed for BIOT: {"available":"0","code":40310000,"existing_qty":"7817","held_for_orders":"7817","message":"insufficient qty available for order (requested: 7817, available: 0)","symbol":"BIOT"}
+  close failed for MGN: {"available":"0","code":40310000,"existing_qty":"23226","held_for_orders":"23226","message":"insufficient qty available for order (requested: 23226, available: 0)","symbol":"MGN"}
+  close failed for PCLA: {"available":"0","code":40310000,"existing_qty":"376","held_for_orders":"376","message":"insufficient qty available for order (requested: 376, available: 0)","symbol":"PCLA"}
+  close failed for RITR: {"available":"0","code":40310000,"existing_qty":"27805","held_for_orders":"27805","message":"insufficient qty available for order (requested: 27805, available: 0)","symbol":"RITR"}
+  close failed for SGLY: {"available":"0","code":40310000,"existing_qty":"666","held_for_orders":"666","message":"insufficient qty available for order (requested: 666, available: 0)","symbol":"SGLY"}
+  close failed for STKH: {"available":"0","code":40310000,"existing_qty":"804","held_for_orders":"804","message":"insufficient qty available for order (requested: 804, available: 0)","symbol":"STKH"}
+  [05:18] 1 bars, 0 alerts seen, 0 entries, 11 open

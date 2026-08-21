@@ -63,6 +63,11 @@ class PaperTrader:
         self.taken_today: set = set()
         self.halted_for_day = False
         self._overexposure_warned = False
+        # Symbols with a close order already submitted. A queued sell does not
+        # remove the position at the broker, so without this the exit sweep
+        # sees it again, re-adopts it, and closes it again — every 20 seconds,
+        # forever. Cleared when the position actually disappears.
+        self.closing: set = set()
         self._load_state()
         self.seen = self.filled = self.skipped = 0
         self.session_date = None
@@ -484,11 +489,18 @@ class PaperTrader:
         now = datetime.now(ET)
         hard_exit = time.fromisoformat(self.cfg["execution"]["hard_exit_time"])
 
+        # Drop anything that has finished closing.
+        self.closing &= set(live)
+
         for symbol in live:
+            if symbol in self.closing:
+                continue                      # close already submitted
             if symbol not in self.open_positions:
                 self.adopt(live[symbol])
 
         for symbol, entry in list(self.open_positions.items()):
+            if symbol in self.closing:
+                continue                      # waiting on a submitted close
             position = live.get(symbol)
             if position is None:
                 # Closed at the broker, by us or otherwise.
@@ -512,6 +524,9 @@ class PaperTrader:
 
     def _close(self, symbol: str, entry: dict, price: float,
                pnl_pct: float, reason: str) -> None:
+        # Mark before submitting. Whether the order is accepted or rejected,
+        # retrying every 20 seconds helps nothing and floods the log.
+        self.closing.add(symbol)
         try:
             self.client.close_position(symbol)
         except Exception as exc:                          # noqa: BLE001

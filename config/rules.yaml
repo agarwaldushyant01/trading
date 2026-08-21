@@ -12,7 +12,7 @@ universe:
   # Real float from the feed, not SEC shares-outstanding. This can be much
   # tighter than the old 30M proxy because the number is actually right.
   max_float: 20_000_000
-  min_daily_volume: 500_000
+  min_daily_volume: 50_000
 
 approval:
   # Ask before entering. EXITS ARE NEVER GATED — a stop that waits for a tap
@@ -22,7 +22,7 @@ approval:
   # adds no safety there — and it would quietly cancel every premarket
   # signal, since a 04:00 request times out unanswered while you are asleep.
   # That would waste the exact window the SIP subscription was bought for.
-  enabled: true
+  enabled: false
 
   # Which setups need a human. Leave a setup out and it fires automatically.
   #

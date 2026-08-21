@@ -293,3 +293,86 @@ requests.exceptions.ConnectionError: ('Connection aborted.', ConnectionResetErro
 
   watch:  tail -f data/live/console.log
   stop:   pkill -f drivers.paper_live
+
+=== 2026-08-21 03:30:04 EDT — startup, feed sip ===
+  python: /usr/local/bin/python3
+  building reference data — about 10 minutes...
+Fetching asset list...
+  13115 listed, tradable US equities
+Fetching daily bars...
+  fetched 200/13115 symbols
+  fetched 400/13115 symbols
+  fetched 600/13115 symbols
+  fetched 800/13115 symbols
+  fetched 1000/13115 symbols
+  fetched 1200/13115 symbols
+  fetched 1400/13115 symbols
+  fetched 1600/13115 symbols
+  fetched 1800/13115 symbols
+  fetched 2000/13115 symbols
+  fetched 2200/13115 symbols
+  fetched 2400/13115 symbols
+  fetched 2600/13115 symbols
+  fetched 2800/13115 symbols
+  fetched 3000/13115 symbols
+  fetched 3200/13115 symbols
+  fetched 3400/13115 symbols
+  fetched 3600/13115 symbols
+  fetched 3800/13115 symbols
+  fetched 4000/13115 symbols
+  fetched 4200/13115 symbols
+  fetched 4400/13115 symbols
+  fetched 4600/13115 symbols
+  fetched 4800/13115 symbols
+  fetched 5000/13115 symbols
+  fetched 5200/13115 symbols
+  fetched 5400/13115 symbols
+  fetched 5600/13115 symbols
+  fetched 5800/13115 symbols
+  fetched 6000/13115 symbols
+  fetched 6200/13115 symbols
+  fetched 6400/13115 symbols
+  fetched 6600/13115 symbols
+  fetched 6800/13115 symbols
+  fetched 7000/13115 symbols
+  fetched 7200/13115 symbols
+  fetched 7400/13115 symbols
+  fetched 7600/13115 symbols
+  fetched 7800/13115 symbols
+  fetched 8000/13115 symbols
+  fetched 8200/13115 symbols
+  fetched 8400/13115 symbols
+  fetched 8600/13115 symbols
+  fetched 8800/13115 symbols
+  fetched 9000/13115 symbols
+  fetched 9200/13115 symbols
+  fetched 9400/13115 symbols
+  fetched 9600/13115 symbols
+  fetched 9800/13115 symbols
+  fetched 10000/13115 symbols
+  fetched 10200/13115 symbols
+  fetched 10400/13115 symbols
+  fetched 10600/13115 symbols
+  fetched 10800/13115 symbols
+  fetched 11000/13115 symbols
+  fetched 11200/13115 symbols
+  fetched 11400/13115 symbols
+  fetched 11600/13115 symbols
+  fetched 11800/13115 symbols
+  fetched 12000/13115 symbols
+  fetched 12200/13115 symbols
+  fetched 12400/13115 symbols
+  fetched 12600/13115 symbols
+  fetched 12800/13115 symbols
+  fetched 13000/13115 symbols
+  fetched 13115/13115 symbols
+  9041 kept without a share count (foreign filers, funds, warrants) — rules decide
+  149 dropped: under 14 sessions of history
+  12951 symbols in the universe
+Wrote 12951 refs to data/refs/2026-08-21.json
+  starting paper trader...
+  RUNNING (pid 31977)
+  Expect a 'Paper trader started' notification on your phone.
+
+  watch:  tail -f data/live/console.log
+  stop:   pkill -f drivers.paper_live
