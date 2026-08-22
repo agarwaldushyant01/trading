@@ -37,18 +37,29 @@ def load_jsonl(path: pathlib.Path) -> list[dict]:
 
 
 def fills(day: date) -> list:
-    """Every execution the broker recorded. The authority on what happened."""
+    """Every execution the broker recorded. The authority on what happened.
+
+    Read from filled orders rather than account activities: the activities
+    endpoint is not exposed on TradingClient in every alpaca-py release, and
+    filled orders carry the same fill price and quantity.
+    """
     from alpaca.trading.client import TradingClient
-    from alpaca.trading.enums import ActivityType
+    from alpaca.trading.enums import QueryOrderStatus
+    from alpaca.trading.requests import GetOrdersRequest
 
     key, secret = load_credentials()
     client = TradingClient(key, secret, paper=True)
     try:
-        return client.get_account_activities(
-            activity_types=[ActivityType.FILL], date=day)
+        orders = client.get_orders(GetOrdersRequest(
+            status=QueryOrderStatus.CLOSED,
+            after=datetime.combine(day, time(0, 0)),
+            limit=500))
     except Exception as exc:                              # noqa: BLE001
         print(f"  could not fetch fills: {exc}", file=sys.stderr)
         return []
+
+    return [o for o in orders
+            if o.filled_at and o.filled_qty and float(o.filled_qty) > 0]
 
 
 def report(day: date) -> None:
@@ -98,8 +109,11 @@ def report(day: date) -> None:
     buys = [f for f in executed if f.side.value.startswith("buy")]
     sells = [f for f in executed if f.side.value.startswith("sell")]
 
-    bought = sum(float(f.price) * float(f.qty) for f in buys)
-    sold = sum(float(f.price) * float(f.qty) for f in sells)
+    def notional(orders):
+        return sum(float(o.filled_avg_price or 0) * float(o.filled_qty)
+                   for o in orders)
+
+    bought, sold = notional(buys), notional(sells)
 
     print(f"\nEXECUTED AT THE BROKER")
     print(f"  {len(buys):>5} buys   ${bought:>12,.2f}")

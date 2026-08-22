@@ -34,6 +34,20 @@ class Decision:
 def _universe_ok(alert: Alert, cfg: dict) -> str | None:
     """Returns a rejection reason, or None if the name is tradeable."""
     u = cfg["universe"]
+
+    # Ceiling on how far the move has already run. Over 146 live candidates,
+    # winners had a LOWER median percent change at alert than losers (13.4%
+    # vs 18.9%) and lower relative volume (68x vs 89x). Buying a name already
+    # up 50-150% is buying the end of the move, and the data says so.
+    #
+    # Two sessions is not enough to be sure of this. It is a hypothesis being
+    # tested forward, and the nightly study measures both sides of it.
+    if u.get("max_pct_change") and alert.pct_change > u["max_pct_change"]:
+        return f"already up {alert.pct_change:.0f}%"
+    if (u.get("max_rel_volume_1m") and alert.rel_volume_1m
+            and alert.rel_volume_1m > u["max_rel_volume_1m"]):
+        return f"rel volume {alert.rel_volume_1m:.0f}x"
+
     if not (u["min_price"] <= alert.price <= u["max_price"]):
         return f"price {alert.price}"
     # Unknown float is common and not disqualifying — most foreign filers
