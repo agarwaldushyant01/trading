@@ -1,1 +1,12 @@
-{}
+{
+ "AVAT": {
+  "symbol": "AVAT",
+  "shares": 10108,
+  "signal_price": 0.56,
+  "stop": 0.5152,
+  "target": 0.644,
+  "setup": "spike",
+  "reason": "+14.2%, 41x minute volume, float turned 0.0x",
+  "opened_at": "2026-08-24T07:47:00.071700-04:00"
+ }
+}

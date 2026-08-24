@@ -10,3 +10,4 @@ data/refs/
 *.tfstate
 .terraform/
 data/live/console.log
+data/bars/

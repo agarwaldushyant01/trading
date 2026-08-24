@@ -67,7 +67,13 @@ mkdir -p "$HOME/Library/LaunchAgents" "$REPO/data/live"
         echo "          <key>Minute</key><integer>${MINUTE}</integer></dict>"
     done
     echo '  </array>'
-    echo "  <key>StandardOutPath</key><string>${REPO}/data/live/schedule.log</string>"
+    echo "  <!-- The trader runs for the whole session now, rather than being
+       backgrounded by a script that exits. KeepAlive restarts it if it
+       crashes; SuccessfulExit false means a clean exit stays exited. -->
+  <key>KeepAlive</key>
+  <dict><key>SuccessfulExit</key><false/></dict>
+  <key>ThrottleInterval</key><integer>60</integer>
+  <key>StandardOutPath</key><string>${REPO}/data/live/schedule.log</string>"
     echo "  <key>StandardErrorPath</key><string>${REPO}/data/live/schedule.log</string>"
     echo '  <key>RunAtLoad</key><false/>'
     echo '</dict></plist>'
@@ -93,11 +99,16 @@ PYTHON_BIN="$(command -v python3)"
     echo '  </array>'
     echo "  <key>WorkingDirectory</key><string>${REPO}</string>"
     echo '  <key>StartCalendarInterval</key><array>'
+    # Every 15 minutes across the whole session. The check restarts the
+    # trader rather than warning about it, so running it often is the point:
+    # a stall at 05:00 should cost fifteen minutes, not five hours.
     for DAY in 1 2 3 4 5; do
-        for CHECK_HOUR in 8 9 11 14; do
-            echo "    <dict><key>Weekday</key><integer>${DAY}</integer>"
-            echo "          <key>Hour</key><integer>${CHECK_HOUR}</integer>"
-            echo "          <key>Minute</key><integer>20</integer></dict>"
+        for CHECK_HOUR in $(seq 4 19); do
+            for CHECK_MIN in 0 15 30 45; do
+                echo "    <dict><key>Weekday</key><integer>${DAY}</integer>"
+                echo "          <key>Hour</key><integer>${CHECK_HOUR}</integer>"
+                echo "          <key>Minute</key><integer>${CHECK_MIN}</integer></dict>"
+            done
         done
     done
     echo '  </array>'
@@ -112,8 +123,8 @@ launchctl load "$HEALTH_PLIST" 2>/dev/null
 
 echo ""
 echo "Scheduled: weekdays at ${WHEN} local time."
-echo "Health checks at 08:20, 09:20, 11:20 and 14:20 — these push ONLY if"
-echo "the scanner is down or has stopped receiving data."
+echo "Health checks every 15 minutes, 04:00 to 19:45. They RESTART the"
+echo "scanner if it is down or stalled, and tell you what they did."
 echo "  job:   $PLIST"
 echo "  log:   ${REPO}/data/live/schedule.log"
 echo ""

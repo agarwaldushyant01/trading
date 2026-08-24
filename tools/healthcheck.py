@@ -1,22 +1,35 @@
-"""Is the scanner alive? — pushes only when something is wrong.
+"""Check the trader, and fix it. Do not ask.
 
-    python -m tools.healthcheck
+    python -m tools.healthcheck              # check, restart if needed
+    python -m tools.healthcheck --dry-run    # report only
 
-Run on a schedule during market hours. Silent when healthy; a high-priority
-push when not.
+Runs every 15 minutes during market hours. If the trader is dead or has
+stopped receiving data, it restarts the launchd job and sends a note saying
+what it did — not a question.
 
-This exists because absence of alerts is ambiguous. A dead scanner and a
-quiet market look identical from a phone, and that ambiguity already cost a
-full session. A positive "something is wrong" message removes it.
+This used to only warn. That was useless twice over: it needed someone to
+read the alert and act on it, and until 24 August the restart path it would
+have pointed at was itself broken. A warning nobody can act on is worse than
+nothing, because it looks like coverage.
 
-Checks, in order:
-  1. Is a drivers.live process running at all?
-  2. Has it received a bar recently? A connected socket delivering nothing
-     is as useless as no socket.
+Two states count as failure:
+
+  DEAD    — no process. launchd's KeepAlive should catch this, so seeing it
+            here means KeepAlive did not fire, which is itself worth knowing.
+
+  STALLED — process alive but no heartbeat for longer than the threshold.
+            KeepAlive cannot see this: the process is running perfectly, just
+            not receiving anything. This is the case this file exists for.
+
+Restarts are rate-limited. A restart loop against a real outage — expired
+credentials, a feed down — would produce dozens of notifications and fix
+nothing, so after a few attempts it stops and says so once.
 """
 
 from __future__ import annotations
 
+import json
+import os
 import pathlib
 import re
 import subprocess
@@ -24,96 +37,183 @@ import sys
 from datetime import datetime, time, timedelta
 from zoneinfo import ZoneInfo
 
-import yaml
-
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))
 
-from alerts.notify import Notifier
-
 ET = ZoneInfo("America/New_York")
-CONSOLE_LOG = pathlib.Path("data/live/console.log")
+CONSOLE = pathlib.Path("data/live/console.log")
+STATE = pathlib.Path("data/live/healthcheck-state.json")
+JOB = "com.trading.scanner"
 
-# IEX does not open until 08:00, so a check before then would fire every day
-# for a reason that is not a fault.
-MARKET_OPEN = time(8, 15)
-MARKET_CLOSE = time(16, 0)
+SESSION_START = time(4, 0)
+SESSION_END = time(20, 0)
+STALL_MINUTES = 20          # premarket can be genuinely quiet
+MAX_RESTARTS_PER_DAY = 6
+MIN_MINUTES_BETWEEN = 10
 
-# A heartbeat prints every 5 minutes, so nothing for 20 means trouble.
-STALE_MINUTES = 20
-
-
-def process_running() -> bool:
-    result = subprocess.run(["pgrep", "-f", "drivers.live"],
-                            capture_output=True, text=True)
-    return bool(result.stdout.strip())
+HEARTBEAT = re.compile(r"\[(\d{2}):(\d{2})\]\s+([\d,]+) bars")
 
 
-def last_heartbeat() -> datetime | None:
-    """Most recent heartbeat time from the console log.
+def in_session(now: datetime) -> bool:
+    return now.weekday() < 5 and SESSION_START <= now.time() <= SESSION_END
 
-    Heartbeat lines look like:  [09:35] 2,140 bars received, last 2s ago, ...
+
+def process_alive() -> bool:
+    return subprocess.run(["pgrep", "-f", "drivers.paper_live"],
+                          capture_output=True).returncode == 0
+
+
+def last_heartbeat(now: datetime) -> datetime | None:
+    """Timestamp of the most recent heartbeat line.
+
+    Heartbeats carry only HH:MM, so the date comes from today, and a time in
+    the future is read as yesterday's.
     """
-    if not CONSOLE_LOG.exists():
+    if not CONSOLE.exists():
+        return None
+    try:
+        tail = CONSOLE.read_text(errors="replace").splitlines()[-400:]
+    except Exception:                                     # noqa: BLE001
         return None
 
-    tail = CONSOLE_LOG.read_text(errors="ignore").splitlines()[-400:]
-    today = datetime.now(ET).date()
-    latest = None
+    for line in reversed(tail):
+        m = HEARTBEAT.search(line)
+        if not m:
+            continue
+        hh, mm = int(m.group(1)), int(m.group(2))
+        stamp = now.replace(hour=hh, minute=mm, second=0, microsecond=0)
+        if stamp > now + timedelta(minutes=5):
+            stamp -= timedelta(days=1)
+        return stamp
+    return None
 
-    for line in tail:
-        match = re.search(r"\[(\d{2}):(\d{2})\]\s+[\d,]+ bars received", line)
-        if match:
-            latest = datetime.combine(
-                today, time(int(match.group(1)), int(match.group(2))), tzinfo=ET
-            )
-    return latest
+
+def load_state(today: str) -> dict:
+    if STATE.exists():
+        try:
+            s = json.loads(STATE.read_text())
+            if s.get("date") == today:
+                return s
+        except Exception:                                 # noqa: BLE001
+            pass
+    return {"date": today, "restarts": 0, "last_restart": None,
+            "gave_up": False}
+
+
+def save_state(state: dict) -> None:
+    STATE.parent.mkdir(parents=True, exist_ok=True)
+    STATE.write_text(json.dumps(state, indent=1))
+
+
+def restart() -> tuple[bool, str]:
+    """Restart the launchd job. kickstart -k kills and relaunches in one step.
+
+    Falls back to unload/load for older launchd.
+    """
+    uid = os.getuid()
+    for domain in ("gui", "user"):
+        cmd = ["launchctl", "kickstart", "-k", f"{domain}/{uid}/{JOB}"]
+        if subprocess.run(cmd, capture_output=True).returncode == 0:
+            return (True, f"kickstart {domain}")
+
+    plist = pathlib.Path.home() / f"Library/LaunchAgents/{JOB}.plist"
+    if plist.exists():
+        subprocess.run(["launchctl", "unload", str(plist)], capture_output=True)
+        r = subprocess.run(["launchctl", "load", str(plist)], capture_output=True)
+        if r.returncode == 0:
+            subprocess.run(["launchctl", "start", JOB], capture_output=True)
+            return (True, "unload/load")
+
+    return (False, "no working restart path")
+
+
+def notify(title: str, body: str, priority: str = "high") -> None:
+    try:
+        import yaml
+        from alerts.notify import Notifier
+        p = pathlib.Path("config/alerts.yaml")
+        cfg = yaml.safe_load(p.read_text()) if p.exists() else {}
+        Notifier(cfg.get("alerts", {})).send(title, body, priority=priority)
+    except Exception as exc:                              # noqa: BLE001
+        print(f"  could not notify: {exc}", file=sys.stderr)
 
 
 def main() -> None:
-    now = datetime.now(ET)
+    import argparse
 
-    if now.weekday() > 4 or not (MARKET_OPEN <= now.time() <= MARKET_CLOSE):
+    p = argparse.ArgumentParser()
+    p.add_argument("--dry-run", action="store_true")
+    args = p.parse_args()
+
+    now = datetime.now(ET)
+    if not in_session(now):
         print(f"{now:%H:%M} outside market hours, not checking.")
         return
 
-    cfg_path = pathlib.Path("config/alerts.yaml")
-    cfg = yaml.safe_load(cfg_path.read_text()) if cfg_path.exists() else {}
-    notifier = Notifier(cfg.get("alerts", {}))
+    state = load_state(now.date().isoformat())
+    alive = process_alive()
+    beat = last_heartbeat(now)
+    stale_for = (now - beat).total_seconds() / 60 if beat else None
 
-    if not process_running():
-        print(f"{now:%H:%M} FAIL: no scanner process")
-        notifier.send(
-            "SCANNER IS DOWN",
-            f"No scanner process at {now:%H:%M} ET.\n"
-            f"Nothing is watching the market.\n"
-            f"Fix: cd to the repo and run ./start.sh",
-            priority="urgent",
-        )
-        sys.exit(1)
+    if alive and stale_for is not None and stale_for < STALL_MINUTES:
+        print(f"{now:%H:%M} healthy — last heartbeat {stale_for:.0f}m ago.")
+        return
 
-    beat = last_heartbeat()
-    if beat is None:
-        print(f"{now:%H:%M} FAIL: running but no heartbeat yet")
-        notifier.send(
-            "SCANNER NOT RECEIVING DATA",
-            f"Process is running but no bars have arrived by {now:%H:%M} ET.\n"
-            f"The websocket is connected to nothing useful.",
-            priority="urgent",
-        )
-        sys.exit(1)
+    if alive and beat is None and now.time() < time(4, 30):
+        print(f"{now:%H:%M} alive, no heartbeat yet (just started).")
+        return
 
-    age = (now - beat).total_seconds() / 60
-    if age > STALE_MINUTES:
-        print(f"{now:%H:%M} FAIL: last heartbeat {age:.0f} min ago")
-        notifier.send(
-            "SCANNER STALLED",
-            f"Last data {age:.0f} minutes ago (at {beat:%H:%M}).\n"
-            f"The stream has probably dropped. Restart with ./start.sh",
-            priority="urgent",
-        )
-        sys.exit(1)
+    if not alive:
+        problem = "process is not running"
+    elif stale_for is None:
+        problem = "no heartbeat found in the log"
+    else:
+        problem = f"no data for {stale_for:.0f} minutes"
 
-    print(f"{now:%H:%M} OK: heartbeat {age:.0f} min ago")
+    print(f"{now:%H:%M} PROBLEM: {problem}")
+
+    if args.dry_run:
+        print("  dry run, not restarting.")
+        return
+
+    if state["gave_up"]:
+        print("  already gave up today, not retrying.")
+        return
+
+    if state["restarts"] >= MAX_RESTARTS_PER_DAY:
+        state["gave_up"] = True
+        save_state(state)
+        notify("Scanner keeps failing",
+               f"Restarted {state['restarts']} times today and it will not "
+               f"stay up ({problem}). Not trying again — this needs a look.",
+               priority="urgent")
+        print("  restart limit reached; giving up for today.")
+        return
+
+    if state["last_restart"]:
+        since = (now - datetime.fromisoformat(
+            state["last_restart"])).total_seconds() / 60
+        if since < MIN_MINUTES_BETWEEN:
+            print(f"  restarted {since:.0f}m ago, waiting.")
+            return
+
+    ok, how = restart()
+    state["restarts"] += 1
+    state["last_restart"] = now.isoformat()
+    save_state(state)
+
+    if ok:
+        print(f"  restarted via {how} (attempt {state['restarts']} today)")
+        notify("Scanner restarted",
+               f"It was down ({problem}). Restarted automatically — attempt "
+               f"{state['restarts']} today. Nothing needed from you.",
+               priority="default")
+    else:
+        state["gave_up"] = True
+        save_state(state)
+        print(f"  RESTART FAILED: {how}", file=sys.stderr)
+        notify("Scanner down, restart failed",
+               f"{problem}, and the automatic restart did not work ({how}). "
+               f"This one needs a person.", priority="urgent")
 
 
 if __name__ == "__main__":
