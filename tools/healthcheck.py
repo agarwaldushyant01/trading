@@ -45,7 +45,7 @@ STATE = pathlib.Path("data/live/healthcheck-state.json")
 JOB = "com.trading.scanner"
 
 SESSION_START = time(4, 0)
-SESSION_END = time(20, 0)
+SESSION_END = time(16, 0)
 STALL_MINUTES = 20          # premarket can be genuinely quiet
 MAX_RESTARTS_PER_DAY = 6
 MIN_MINUTES_BETWEEN = 10
