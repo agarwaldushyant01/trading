@@ -8,5 +8,15 @@
   "setup": "spike",
   "reason": "+14.2%, 41x minute volume, float turned 0.0x",
   "opened_at": "2026-08-24T07:47:00.071700-04:00"
+ },
+ "DXST": {
+  "symbol": "DXST",
+  "shares": 1933,
+  "signal_price": 2.92,
+  "stop": 2.6864,
+  "target": 3.358,
+  "setup": "spike",
+  "reason": "+15.9%, 44x minute volume, float turned 0.0x",
+  "opened_at": "2026-08-24T09:32:00.256663-04:00"
  }
 }

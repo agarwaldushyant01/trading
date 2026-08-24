@@ -8,3 +8,79 @@
 14:20 FAIL: no scanner process
 08:00 PROBLEM: no data for 22 minutes
   restarted 10m ago, waiting.
+08:15 PROBLEM: no data for 37 minutes
+  restarted 7m ago, waiting.
+08:30 PROBLEM: no data for 52 minutes
+  restarted via kickstart gui (attempt 3 today)
+08:45 PROBLEM: no data for 67 minutes
+  restarted via kickstart gui (attempt 4 today)
+09:00 PROBLEM: no data for 82 minutes
+  restarted via kickstart gui (attempt 5 today)
+09:15 PROBLEM: no data for 97 minutes
+  restarted via kickstart gui (attempt 6 today)
+09:30 PROBLEM: no data for 112 minutes
+  restart limit reached; giving up for today.
+09:45 PROBLEM: no data for 127 minutes
+  already gave up today, not retrying.
+10:00 PROBLEM: no data for 142 minutes
+  already gave up today, not retrying.
+10:15 PROBLEM: no data for 157 minutes
+  already gave up today, not retrying.
+10:30 PROBLEM: no data for 172 minutes
+  already gave up today, not retrying.
+10:45 PROBLEM: no data for 187 minutes
+  already gave up today, not retrying.
+11:00 PROBLEM: no data for 202 minutes
+  already gave up today, not retrying.
+11:15 PROBLEM: no data for 217 minutes
+  already gave up today, not retrying.
+11:30 PROBLEM: no data for 232 minutes
+  already gave up today, not retrying.
+11:45 PROBLEM: no data for 247 minutes
+  already gave up today, not retrying.
+12:00 PROBLEM: no data for 262 minutes
+  already gave up today, not retrying.
+12:15 PROBLEM: no data for 277 minutes
+  already gave up today, not retrying.
+12:30 PROBLEM: no data for 292 minutes
+  already gave up today, not retrying.
+12:45 PROBLEM: no data for 307 minutes
+  already gave up today, not retrying.
+13:00 PROBLEM: no data for 322 minutes
+  already gave up today, not retrying.
+13:15 PROBLEM: no data for 337 minutes
+  already gave up today, not retrying.
+13:30 PROBLEM: no data for 352 minutes
+  already gave up today, not retrying.
+13:45 PROBLEM: no data for 367 minutes
+  already gave up today, not retrying.
+14:00 PROBLEM: no data for 382 minutes
+  already gave up today, not retrying.
+14:15 PROBLEM: no data for 397 minutes
+  already gave up today, not retrying.
+14:30 PROBLEM: no data for 412 minutes
+  already gave up today, not retrying.
+14:45 PROBLEM: no data for 427 minutes
+  already gave up today, not retrying.
+15:00 PROBLEM: no data for 442 minutes
+  already gave up today, not retrying.
+15:15 PROBLEM: no data for 457 minutes
+  already gave up today, not retrying.
+15:30 PROBLEM: no data for 472 minutes
+  already gave up today, not retrying.
+15:45 PROBLEM: no data for 487 minutes
+  already gave up today, not retrying.
+16:00 PROBLEM: no data for 502 minutes
+  already gave up today, not retrying.
+16:15 PROBLEM: no data for 517 minutes
+  already gave up today, not retrying.
+16:30 PROBLEM: no data for 532 minutes
+  already gave up today, not retrying.
+16:45 PROBLEM: no data for 547 minutes
+  already gave up today, not retrying.
+17:00 PROBLEM: no data for 562 minutes
+  already gave up today, not retrying.
+17:15 PROBLEM: no data for 577 minutes
+  already gave up today, not retrying.
+17:30 PROBLEM: no data for 592 minutes
+  already gave up today, not retrying.

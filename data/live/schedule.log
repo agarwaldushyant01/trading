@@ -571,3 +571,200 @@ Journal        data/mosquito/trades.jsonl
 Listening. Ctrl-C to stop.
 
   [08:07] 1 bars, 0 alerts seen, 0 entries, 1 open
+  [08:13] 2,099 bars, 2 alerts seen, 0 entries, 1 open
+  [08:18] 4,316 bars, 2 alerts seen, 0 entries, 1 open
+  [08:23] 6,385 bars, 2 alerts seen, 0 entries, 1 open
+  [08:28] 8,471 bars, 2 alerts seen, 0 entries, 1 open
+  08:28  BUY DXST x1916 @ ~2.95 stop 2.71 target 3.39  [spike]
+
+=== 2026-08-24 08:30:05 EDT — startup, feed sip ===
+  reference data: data/refs/2026-08-24.json (already built)
+  starting paper trader (in the foreground, as this process)...
+
+  restored 2 position(s) with their original stops and targets
+    AVAT   entry 0.5600  stop 0.5152  target 0.6440  [spike]
+    DXST   entry 2.9500  stop 2.7140  target 3.3925  [spike]
+
+Paper equity   $90,411
+Feed           SIP
+Universe       12,970 symbols
+Reference      2026-08-24
+Mode           PAPER ORDERS
+Risk           0.5% per trade, max 3 positions
+Journal        data/mosquito/trades.jsonl
+
+Listening. Ctrl-C to stop.
+
+  [08:30] 1 bars, 0 alerts seen, 0 entries, 2 open
+  [08:36] 2,717 bars, 2 alerts seen, 0 entries, 2 open
+  [08:41] 5,030 bars, 2 alerts seen, 0 entries, 2 open
+
+=== 2026-08-24 08:45:03 EDT — startup, feed sip ===
+  reference data: data/refs/2026-08-24.json (already built)
+  starting paper trader (in the foreground, as this process)...
+
+  restored 2 position(s) with their original stops and targets
+    AVAT   entry 0.5600  stop 0.5152  target 0.6440  [spike]
+    DXST   entry 2.9500  stop 2.7140  target 3.3925  [spike]
+
+Paper equity   $90,186
+Feed           SIP
+Universe       12,970 symbols
+Reference      2026-08-24
+Mode           PAPER ORDERS
+Risk           0.5% per trade, max 3 positions
+Journal        data/mosquito/trades.jsonl
+
+Listening. Ctrl-C to stop.
+
+  [08:46] 1 bars, 0 alerts seen, 0 entries, 2 open
+  [08:51] 2,244 bars, 1 alerts seen, 0 entries, 2 open
+  [08:56] 4,636 bars, 2 alerts seen, 0 entries, 2 open
+
+=== 2026-08-24 09:00:04 EDT — startup, feed sip ===
+  reference data: data/refs/2026-08-24.json (already built)
+  starting paper trader (in the foreground, as this process)...
+
+  restored 2 position(s) with their original stops and targets
+    AVAT   entry 0.5600  stop 0.5152  target 0.6440  [spike]
+    DXST   entry 2.9500  stop 2.7140  target 3.3925  [spike]
+
+Paper equity   $90,479
+Feed           SIP
+Universe       12,970 symbols
+Reference      2026-08-24
+Mode           PAPER ORDERS
+Risk           0.5% per trade, max 3 positions
+Journal        data/mosquito/trades.jsonl
+
+Listening. Ctrl-C to stop.
+
+  [09:01] 1 bars, 0 alerts seen, 0 entries, 2 open
+  [09:06] 2,587 bars, 1 alerts seen, 0 entries, 2 open
+  [09:11] 5,234 bars, 2 alerts seen, 0 entries, 2 open
+
+=== 2026-08-24 09:15:04 EDT — startup, feed sip ===
+  reference data: data/refs/2026-08-24.json (already built)
+  starting paper trader (in the foreground, as this process)...
+
+  restored 2 position(s) with their original stops and targets
+    AVAT   entry 0.5600  stop 0.5152  target 0.6440  [spike]
+    DXST   entry 2.9500  stop 2.7140  target 3.3925  [spike]
+
+Paper equity   $90,426
+Feed           SIP
+Universe       12,970 symbols
+Reference      2026-08-24
+Mode           PAPER ORDERS
+Risk           0.5% per trade, max 3 positions
+Journal        data/mosquito/trades.jsonl
+
+Listening. Ctrl-C to stop.
+
+  [09:15] 1 bars, 0 alerts seen, 0 entries, 2 open
+  [09:21] 2,820 bars, 2 alerts seen, 0 entries, 2 open
+  [09:26] 5,804 bars, 2 alerts seen, 0 entries, 2 open
+  [09:31] 11,509 bars, 6 alerts seen, 0 entries, 2 open
+  09:31  BUY CRCG x347 @ ~16.25 stop 14.95 target 18.69  [new_high]
+  09:32  BUY DXST x1933 @ ~2.92 stop 2.69 target 3.36  [spike]
+  09:32  BUY GEMI x1242 @ ~4.54 stop 4.18 target 5.23  [new_high]
+  09:33  BUY CANG x2265 @ ~2.50 stop 2.30 target 2.87  [spike]
+  [09:36] 38,207 bars, 19 alerts seen, 4 entries, 5 open
+  HALTED: 5 positions open against a limit of 3. No new entries until this is resolved.
+  alert delivery failed: 'latin-1' codec can't encode character '\u2014' in position 15: ordinal not in range(256)
+  [09:41] 61,340 bars, 21 alerts seen, 4 entries, 5 open
+  09:44  SELL CRCG @ 14.87 (-7.9%) — stop
+  [09:46] 85,425 bars, 26 alerts seen, 4 entries, 4 open
+  [09:51] 107,706 bars, 27 alerts seen, 4 entries, 4 open
+  [09:56] 130,566 bars, 29 alerts seen, 4 entries, 4 open
+  [10:01] 151,461 bars, 30 alerts seen, 4 entries, 4 open
+  [10:06] 177,052 bars, 34 alerts seen, 4 entries, 4 open
+  [10:11] 197,337 bars, 36 alerts seen, 4 entries, 4 open
+  [10:16] 222,824 bars, 37 alerts seen, 4 entries, 4 open
+  [10:22] 246,208 bars, 37 alerts seen, 4 entries, 4 open
+  [10:27] 269,651 bars, 38 alerts seen, 4 entries, 4 open
+  [10:32] 290,928 bars, 38 alerts seen, 4 entries, 4 open
+  [10:37] 312,657 bars, 40 alerts seen, 4 entries, 4 open
+  [10:42] 333,455 bars, 41 alerts seen, 4 entries, 4 open
+  [10:47] 354,529 bars, 42 alerts seen, 4 entries, 4 open
+  [10:52] 376,757 bars, 42 alerts seen, 4 entries, 4 open
+  [10:57] 400,335 bars, 44 alerts seen, 4 entries, 4 open
+  [11:02] 421,128 bars, 45 alerts seen, 4 entries, 4 open
+  [11:07] 441,793 bars, 47 alerts seen, 4 entries, 4 open
+  [11:13] 462,516 bars, 49 alerts seen, 4 entries, 4 open
+  [11:18] 482,815 bars, 50 alerts seen, 4 entries, 4 open
+  [11:24] 506,526 bars, 50 alerts seen, 4 entries, 4 open
+  [11:29] 527,223 bars, 50 alerts seen, 4 entries, 4 open
+  [11:34] 549,759 bars, 51 alerts seen, 4 entries, 4 open
+  [11:39] 570,215 bars, 51 alerts seen, 4 entries, 4 open
+  [11:45] 595,221 bars, 52 alerts seen, 4 entries, 4 open
+  11:46  SELL CANG @ 2.21 (-8.5%) — stop
+  [11:51] 619,891 bars, 53 alerts seen, 4 entries, 3 open
+  [11:56] 639,705 bars, 54 alerts seen, 4 entries, 3 open
+  [12:01] 659,313 bars, 54 alerts seen, 4 entries, 3 open
+  [12:06] 680,209 bars, 54 alerts seen, 4 entries, 3 open
+  [12:12] 703,404 bars, 54 alerts seen, 4 entries, 3 open
+  [12:17] 722,951 bars, 54 alerts seen, 4 entries, 3 open
+  [12:22] 741,771 bars, 54 alerts seen, 4 entries, 3 open
+  [12:27] 760,903 bars, 55 alerts seen, 4 entries, 3 open
+  [12:32] 780,059 bars, 56 alerts seen, 4 entries, 3 open
+  [12:37] 799,681 bars, 56 alerts seen, 4 entries, 3 open
+  [12:42] 818,411 bars, 56 alerts seen, 4 entries, 3 open
+  [12:47] 838,278 bars, 57 alerts seen, 4 entries, 3 open
+  [12:52] 856,261 bars, 58 alerts seen, 4 entries, 3 open
+  [12:57] 874,593 bars, 59 alerts seen, 4 entries, 3 open
+  [13:02] 893,138 bars, 61 alerts seen, 4 entries, 3 open
+  [13:07] 913,110 bars, 62 alerts seen, 4 entries, 3 open
+  13:08  SELL GEMI @ 4.17 (-7.2%) — stop
+  [13:13] 935,068 bars, 62 alerts seen, 4 entries, 2 open
+  [13:18] 954,084 bars, 62 alerts seen, 4 entries, 2 open
+  [13:23] 973,489 bars, 62 alerts seen, 4 entries, 2 open
+  [13:28] 993,181 bars, 62 alerts seen, 4 entries, 2 open
+  [13:33] 1,011,842 bars, 62 alerts seen, 4 entries, 2 open
+  DAILY LOSS LIMIT: -2.1% vs cap -2.0% — flattening
+  [13:38] 1,033,384 bars, 62 alerts seen, 4 entries, 2 open
+  [13:43] 1,050,694 bars, 62 alerts seen, 4 entries, 2 open
+  [13:48] 1,069,032 bars, 63 alerts seen, 4 entries, 2 open
+  [13:53] 1,088,840 bars, 63 alerts seen, 4 entries, 2 open
+  [13:58] 1,108,057 bars, 63 alerts seen, 4 entries, 2 open
+  [14:03] 1,131,311 bars, 63 alerts seen, 4 entries, 2 open
+  [14:09] 1,150,273 bars, 63 alerts seen, 4 entries, 2 open
+  [14:14] 1,169,805 bars, 63 alerts seen, 4 entries, 2 open
+  [14:19] 1,189,113 bars, 63 alerts seen, 4 entries, 2 open
+  [14:24] 1,208,580 bars, 64 alerts seen, 4 entries, 2 open
+  [14:29] 1,228,374 bars, 64 alerts seen, 4 entries, 2 open
+  [14:34] 1,248,256 bars, 64 alerts seen, 4 entries, 2 open
+  [14:39] 1,267,803 bars, 64 alerts seen, 4 entries, 2 open
+  [14:44] 1,287,989 bars, 64 alerts seen, 4 entries, 2 open
+  [14:49] 1,307,423 bars, 64 alerts seen, 4 entries, 2 open
+  [14:54] 1,327,715 bars, 64 alerts seen, 4 entries, 2 open
+  [14:59] 1,347,219 bars, 64 alerts seen, 4 entries, 2 open
+  [15:04] 1,368,713 bars, 64 alerts seen, 4 entries, 2 open
+  [15:09] 1,388,466 bars, 64 alerts seen, 4 entries, 2 open
+  [15:14] 1,409,993 bars, 64 alerts seen, 4 entries, 2 open
+  [15:19] 1,433,339 bars, 65 alerts seen, 4 entries, 2 open
+  [15:24] 1,452,236 bars, 65 alerts seen, 4 entries, 2 open
+  [15:30] 1,478,410 bars, 65 alerts seen, 4 entries, 2 open
+  [15:35] 1,501,797 bars, 65 alerts seen, 4 entries, 2 open
+  [15:40] 1,525,141 bars, 65 alerts seen, 4 entries, 2 open
+  [15:45] 1,550,124 bars, 65 alerts seen, 4 entries, 2 open
+  [15:50] 1,573,667 bars, 66 alerts seen, 4 entries, 2 open
+  [15:55] 1,601,854 bars, 66 alerts seen, 4 entries, 2 open
+  [16:00] 1,631,568 bars, 66 alerts seen, 4 entries, 2 open
+  [16:05] 1,647,061 bars, 66 alerts seen, 4 entries, 2 open
+  [16:11] 1,649,418 bars, 66 alerts seen, 4 entries, 2 open
+  [16:17] 1,651,668 bars, 66 alerts seen, 4 entries, 2 open
+  [16:23] 1,653,794 bars, 66 alerts seen, 4 entries, 2 open
+  [16:28] 1,655,781 bars, 66 alerts seen, 4 entries, 2 open
+  [16:33] 1,657,002 bars, 66 alerts seen, 4 entries, 2 open
+  [16:39] 1,658,879 bars, 66 alerts seen, 4 entries, 2 open
+  [16:44] 1,660,873 bars, 66 alerts seen, 4 entries, 2 open
+  [16:50] 1,662,289 bars, 66 alerts seen, 4 entries, 2 open
+  [16:55] 1,663,708 bars, 66 alerts seen, 4 entries, 2 open
+  [17:01] 1,665,428 bars, 66 alerts seen, 4 entries, 2 open
+  [17:07] 1,666,962 bars, 66 alerts seen, 4 entries, 2 open
+  [17:13] 1,668,333 bars, 66 alerts seen, 4 entries, 2 open
+  [17:18] 1,669,564 bars, 66 alerts seen, 4 entries, 2 open
+  [17:23] 1,671,026 bars, 66 alerts seen, 4 entries, 2 open
+  [17:29] 1,672,203 bars, 66 alerts seen, 4 entries, 2 open
+  [17:34] 1,673,366 bars, 66 alerts seen, 4 entries, 2 open

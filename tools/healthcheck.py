@@ -40,7 +40,14 @@ from zoneinfo import ZoneInfo
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))
 
 ET = ZoneInfo("America/New_York")
-CONSOLE = pathlib.Path("data/live/console.log")
+# Both, because the trader's output moved. It used to be redirected into
+# console.log by start.sh; now that start.sh execs the trader, launchd owns
+# the process and writes to the plist's StandardOutPath instead. Reading only
+# one file made a healthy scanner look nine hours dead on 25 August, and the
+# check killed it six times before giving up. Taking the newest heartbeat
+# from either file is immune to where the output lands.
+LOGS = [pathlib.Path("data/live/console.log"),
+        pathlib.Path("data/live/schedule.log")]
 STATE = pathlib.Path("data/live/healthcheck-state.json")
 JOB = "com.trading.scanner"
 
@@ -68,16 +75,11 @@ def process_alive() -> bool:
                           capture_output=True).returncode == 0
 
 
-def last_heartbeat(now: datetime) -> datetime | None:
-    """Timestamp of the most recent heartbeat line.
-
-    Heartbeats carry only HH:MM, so the date comes from today, and a time in
-    the future is read as yesterday's.
-    """
-    if not CONSOLE.exists():
+def _heartbeat_in(path: pathlib.Path, now: datetime) -> datetime | None:
+    if not path.exists():
         return None
     try:
-        tail = CONSOLE.read_text(errors="replace").splitlines()[-400:]
+        tail = path.read_text(errors="replace").splitlines()[-400:]
     except Exception:                                     # noqa: BLE001
         return None
 
@@ -91,6 +93,16 @@ def last_heartbeat(now: datetime) -> datetime | None:
             stamp -= timedelta(days=1)
         return stamp
     return None
+
+
+def last_heartbeat(now: datetime) -> datetime | None:
+    """The most recent heartbeat across every log the trader might write to.
+
+    Heartbeats carry only HH:MM, so the date comes from today, and a time in
+    the future is read as yesterday's.
+    """
+    found = [b for b in (_heartbeat_in(p, now) for p in LOGS) if b]
+    return max(found) if found else None
 
 
 def todays_trades(today: str) -> tuple[list, list]:
