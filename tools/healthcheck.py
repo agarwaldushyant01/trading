@@ -45,10 +45,16 @@ STATE = pathlib.Path("data/live/healthcheck-state.json")
 JOB = "com.trading.scanner"
 
 SESSION_START = time(4, 0)
-SESSION_END = time(16, 0)
+SESSION_END = time(20, 0)
 STALL_MINUTES = 20          # premarket can be genuinely quiet
 MAX_RESTARTS_PER_DAY = 6
 MIN_MINUTES_BETWEEN = 10
+
+# A status line every half hour, whether or not anything is wrong. Sent at
+# low priority so it lands silently in the notification list: the point is a
+# scrollable record you can glance at, not an interruption. Without it,
+# silence is ambiguous — a healthy scanner and a dead phone look identical.
+STATUS_EVERY_MINUTES = 30
 
 HEARTBEAT = re.compile(r"\[(\d{2}):(\d{2})\]\s+([\d,]+) bars")
 
@@ -87,6 +93,90 @@ def last_heartbeat(now: datetime) -> datetime | None:
     return None
 
 
+def todays_trades(today: str) -> tuple[list, list]:
+    """Entries and exits recorded so far today."""
+    path = pathlib.Path("data/mosquito/trades.jsonl")
+    if not path.exists():
+        return ([], [])
+    entries, exits = [], []
+    for line in path.read_text(errors="replace").splitlines():
+        if not line.strip() or today not in line:
+            continue
+        try:
+            r = json.loads(line)
+        except Exception:                                 # noqa: BLE001
+            continue
+        if r.get("at", "").startswith(today):
+            if r.get("kind") == "entry":
+                entries.append(r)
+            elif r.get("kind") == "exit":
+                exits.append(r)
+    return (entries, exits)
+
+
+def account_snapshot() -> str:
+    """Equity and open positions, straight from the broker."""
+    try:
+        from alpaca.trading.client import TradingClient
+        from data.reference import load_credentials
+        key, secret = load_credentials()
+        client = TradingClient(key, secret, paper=True)
+        acct = client.get_account()
+        positions = client.get_all_positions()
+        equity = float(acct.equity)
+        start = float(acct.last_equity)
+        change = equity - start
+        line = f"${equity:,.0f} ({change:+,.0f} today), {len(positions)} open"
+        if positions:
+            line += "\n" + "\n".join(
+                f"  {p.symbol} {float(p.unrealized_plpc) * 100:+.1f}%"
+                for p in positions[:4])
+        return line
+    except Exception as exc:                              # noqa: BLE001
+        return f"broker unreachable ({type(exc).__name__})"
+
+
+def send_status(now: datetime, state: dict, healthy: bool,
+                problem: str | None) -> None:
+    """The half-hourly line: is it alive, and what has it done today."""
+    last = state.get("last_status")
+    if last:
+        since = (now - datetime.fromisoformat(last)).total_seconds() / 60
+        if since < STATUS_EVERY_MINUTES - 1:
+            return
+
+    today = now.date().isoformat()
+    entries, exits = todays_trades(today)
+    beat = last_heartbeat(now)
+    age = f"{(now - beat).total_seconds() / 60:.0f}m ago" if beat else "none yet"
+
+    if healthy:
+        headline = f"Running · {len(entries)} bought, {len(exits)} sold"
+    else:
+        headline = f"PROBLEM · {problem}"
+
+    body = [f"Last data: {age}", account_snapshot()]
+
+    recent = sorted(entries + exits, key=lambda r: r["at"])[-4:]
+    if recent:
+        body.append("")
+        for r in recent:
+            when = r["at"][11:16]
+            if r["kind"] == "entry":
+                body.append(f"{when} BUY  {r['symbol']} x{r['shares']:,} "
+                            f"@ {r['signal_price']:.2f}")
+            else:
+                body.append(f"{when} SELL {r['symbol']} "
+                            f"{r.get('pnl_pct', 0):+.1f}% ({r.get('exit_reason','')})")
+    else:
+        body.append("")
+        body.append("No trades yet today.")
+
+    notify(f"{now:%H:%M} {headline}", "\n".join(body), priority="low")
+    state["last_status"] = now.isoformat()
+    save_state(state)
+
+
 def load_state(today: str) -> dict:
     if STATE.exists():
         try:
@@ -96,7 +186,7 @@ def load_state(today: str) -> dict:
         except Exception:                                 # noqa: BLE001
             pass
     return {"date": today, "restarts": 0, "last_restart": None,
-            "gave_up": False}
+            "gave_up": False, "last_status": None}
 
 
 def save_state(state: dict) -> None:
@@ -156,10 +246,14 @@ def main() -> None:
 
     if alive and stale_for is not None and stale_for < STALL_MINUTES:
         print(f"{now:%H:%M} healthy — last heartbeat {stale_for:.0f}m ago.")
+        if not args.dry_run:
+            send_status(now, state, healthy=True, problem=None)
         return
 
     if alive and beat is None and now.time() < time(4, 30):
         print(f"{now:%H:%M} alive, no heartbeat yet (just started).")
+        if not args.dry_run:
+            send_status(now, state, healthy=True, problem="starting up")
         return
 
     if not alive:
@@ -174,6 +268,8 @@ def main() -> None:
     if args.dry_run:
         print("  dry run, not restarting.")
         return
+
+    send_status(now, state, healthy=False, problem=problem)
 
     if state["gave_up"]:
         print("  already gave up today, not retrying.")

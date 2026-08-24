@@ -1,6 +1,7 @@
 {
  "date": "2026-08-24",
- "restarts": 1,
- "last_restart": "2026-08-24T07:50:30.367173-04:00",
- "gave_up": false
+ "restarts": 2,
+ "last_restart": "2026-08-24T08:07:48.308731-04:00",
+ "gave_up": false,
+ "last_status": "2026-08-24T08:07:48.308731-04:00"
 }

@@ -551,3 +551,23 @@ Listening. Ctrl-C to stop.
 
   [07:53] 1 bars, 0 alerts seen, 0 entries, 1 open
   [07:58] 1,983 bars, 1 alerts seen, 0 entries, 1 open
+  [08:03] 4,069 bars, 3 alerts seen, 0 entries, 1 open
+
+=== 2026-08-24 08:07:49 EDT — startup, feed sip ===
+  reference data: data/refs/2026-08-24.json (already built)
+  starting paper trader (in the foreground, as this process)...
+
+  restored 1 position(s) with their original stops and targets
+    AVAT   entry 0.5600  stop 0.5152  target 0.6440  [spike]
+
+Paper equity   $90,217
+Feed           SIP
+Universe       12,970 symbols
+Reference      2026-08-24
+Mode           PAPER ORDERS
+Risk           0.5% per trade, max 3 positions
+Journal        data/mosquito/trades.jsonl
+
+Listening. Ctrl-C to stop.
+
+  [08:07] 1 bars, 0 alerts seen, 0 entries, 1 open
