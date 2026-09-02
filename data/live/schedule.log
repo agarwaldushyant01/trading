@@ -768,3 +768,2961 @@ Listening. Ctrl-C to stop.
   [17:23] 1,671,026 bars, 66 alerts seen, 4 entries, 2 open
   [17:29] 1,672,203 bars, 66 alerts seen, 4 entries, 2 open
   [17:34] 1,673,366 bars, 66 alerts seen, 4 entries, 2 open
+  [17:40] 1,674,622 bars, 66 alerts seen, 4 entries, 2 open
+  [17:46] 1,675,906 bars, 66 alerts seen, 4 entries, 2 open
+  [17:52] 1,677,210 bars, 66 alerts seen, 4 entries, 2 open
+  [17:57] 1,678,308 bars, 66 alerts seen, 4 entries, 2 open
+  [18:03] 1,679,646 bars, 66 alerts seen, 4 entries, 2 open
+  [18:08] 1,680,723 bars, 66 alerts seen, 4 entries, 2 open
+  [18:14] 1,682,016 bars, 66 alerts seen, 4 entries, 2 open
+  [18:19] 1,683,101 bars, 66 alerts seen, 4 entries, 2 open
+  [18:25] 1,684,334 bars, 66 alerts seen, 4 entries, 2 open
+  [18:30] 1,685,393 bars, 66 alerts seen, 4 entries, 2 open
+  [18:35] 1,686,468 bars, 66 alerts seen, 4 entries, 2 open
+  [18:40] 1,687,768 bars, 66 alerts seen, 4 entries, 2 open
+  [18:46] 1,688,791 bars, 66 alerts seen, 4 entries, 2 open
+  [18:52] 1,690,086 bars, 66 alerts seen, 4 entries, 2 open
+  [18:57] 1,691,185 bars, 66 alerts seen, 4 entries, 2 open
+  [19:03] 1,692,487 bars, 66 alerts seen, 4 entries, 2 open
+  [19:08] 1,693,483 bars, 66 alerts seen, 4 entries, 2 open
+  [19:13] 1,694,529 bars, 66 alerts seen, 4 entries, 2 open
+  [19:19] 1,695,794 bars, 66 alerts seen, 4 entries, 2 open
+  [19:24] 1,696,946 bars, 66 alerts seen, 4 entries, 2 open
+  [19:30] 1,698,234 bars, 66 alerts seen, 4 entries, 2 open
+  [19:35] 1,699,344 bars, 66 alerts seen, 4 entries, 2 open
+  [19:41] 1,700,696 bars, 66 alerts seen, 4 entries, 2 open
+  [19:46] 1,701,972 bars, 66 alerts seen, 4 entries, 2 open
+  [19:52] 1,703,451 bars, 66 alerts seen, 4 entries, 2 open
+  [19:57] 1,704,717 bars, 66 alerts seen, 4 entries, 2 open
+
+=== 2026-08-25 04:00:03 EDT — startup, feed sip ===
+  building reference data — about 10 minutes...
+Fetching asset list...
+  13091 listed, tradable US equities
+Fetching daily bars...
+  fetched 200/13091 symbols
+  fetched 400/13091 symbols
+  fetched 600/13091 symbols
+  fetched 800/13091 symbols
+  fetched 1000/13091 symbols
+  fetched 1200/13091 symbols
+  fetched 1400/13091 symbols
+  fetched 1600/13091 symbols
+  fetched 1800/13091 symbols
+  fetched 2000/13091 symbols
+  fetched 2200/13091 symbols
+  fetched 2400/13091 symbols
+  fetched 2600/13091 symbols
+  fetched 2800/13091 symbols
+  fetched 3000/13091 symbols
+  fetched 3200/13091 symbols
+  fetched 3400/13091 symbols
+  fetched 3600/13091 symbols
+  fetched 3800/13091 symbols
+  fetched 4000/13091 symbols
+  fetched 4200/13091 symbols
+  fetched 4400/13091 symbols
+  fetched 4600/13091 symbols
+  fetched 4800/13091 symbols
+  fetched 5000/13091 symbols
+  fetched 5200/13091 symbols
+  fetched 5400/13091 symbols
+  fetched 5600/13091 symbols
+  fetched 5800/13091 symbols
+  fetched 6000/13091 symbols
+  fetched 6200/13091 symbols
+  fetched 6400/13091 symbols
+  fetched 6600/13091 symbols
+  fetched 6800/13091 symbols
+  fetched 7000/13091 symbols
+  fetched 7200/13091 symbols
+  fetched 7400/13091 symbols
+  fetched 7600/13091 symbols
+  fetched 7800/13091 symbols
+  fetched 8000/13091 symbols
+  fetched 8200/13091 symbols
+  fetched 8400/13091 symbols
+  fetched 8600/13091 symbols
+  fetched 8800/13091 symbols
+  fetched 9000/13091 symbols
+  fetched 9200/13091 symbols
+  fetched 9400/13091 symbols
+  fetched 9600/13091 symbols
+  fetched 9800/13091 symbols
+  fetched 10000/13091 symbols
+  fetched 10200/13091 symbols
+  fetched 10400/13091 symbols
+  fetched 10600/13091 symbols
+  fetched 10800/13091 symbols
+  fetched 11000/13091 symbols
+  fetched 11200/13091 symbols
+  fetched 11400/13091 symbols
+  fetched 11600/13091 symbols
+  fetched 11800/13091 symbols
+  fetched 12000/13091 symbols
+  fetched 12200/13091 symbols
+  fetched 12400/13091 symbols
+  fetched 12600/13091 symbols
+  fetched 12800/13091 symbols
+  fetched 13000/13091 symbols
+  fetched 13091/13091 symbols
+  9039 kept without a share count (foreign filers, funds, warrants) — rules decide
+  133 dropped: under 14 sessions of history
+  12951 symbols in the universe
+Wrote 12951 refs to data/refs/2026-08-25.json
+  starting paper trader (in the foreground, as this process)...
+
+  2 saved position(s) no longer held; discarded
+
+Paper equity   $88,711
+Feed           SIP
+Universe       12,951 symbols
+Reference      2026-08-25
+Mode           PAPER ORDERS
+Risk           0.5% per trade, max 3 positions
+Journal        data/mosquito/trades.jsonl
+
+Listening. Ctrl-C to stop.
+
+  [04:02] 1 bars, 0 alerts seen, 0 entries, 0 open
+  DAILY LOSS LIMIT: -2.1% vs cap -2.0% — flattening
+  [04:07] 2,588 bars, 11 alerts seen, 0 entries, 0 open
+  [04:13] 4,262 bars, 13 alerts seen, 0 entries, 0 open
+  [04:18] 5,475 bars, 13 alerts seen, 0 entries, 0 open
+  [04:23] 6,682 bars, 13 alerts seen, 0 entries, 0 open
+  [04:29] 8,496 bars, 14 alerts seen, 0 entries, 0 open
+  [04:35] 9,863 bars, 15 alerts seen, 0 entries, 0 open
+  [04:41] 11,248 bars, 15 alerts seen, 0 entries, 0 open
+  [04:46] 12,399 bars, 15 alerts seen, 0 entries, 0 open
+  [04:51] 13,366 bars, 15 alerts seen, 0 entries, 0 open
+  [04:56] 14,375 bars, 15 alerts seen, 0 entries, 0 open
+  [05:01] 15,376 bars, 15 alerts seen, 0 entries, 0 open
+  [05:06] 16,511 bars, 15 alerts seen, 0 entries, 0 open
+  [05:12] 17,991 bars, 15 alerts seen, 0 entries, 0 open
+  [05:18] 19,351 bars, 15 alerts seen, 0 entries, 0 open
+  [05:23] 20,411 bars, 15 alerts seen, 0 entries, 0 open
+  [05:29] 21,724 bars, 15 alerts seen, 0 entries, 0 open
+  [05:34] 22,749 bars, 16 alerts seen, 0 entries, 0 open
+  [05:39] 24,071 bars, 16 alerts seen, 0 entries, 0 open
+  [05:45] 25,464 bars, 16 alerts seen, 0 entries, 0 open
+  [05:50] 26,570 bars, 17 alerts seen, 0 entries, 0 open
+  [05:56] 28,238 bars, 18 alerts seen, 0 entries, 0 open
+  [06:01] 29,632 bars, 18 alerts seen, 0 entries, 0 open
+  [06:07] 31,167 bars, 18 alerts seen, 0 entries, 0 open
+  [06:12] 32,399 bars, 18 alerts seen, 0 entries, 0 open
+  [06:18] 33,922 bars, 18 alerts seen, 0 entries, 0 open
+  [06:23] 35,156 bars, 18 alerts seen, 0 entries, 0 open
+  [06:28] 36,320 bars, 19 alerts seen, 0 entries, 0 open
+  [06:34] 37,718 bars, 20 alerts seen, 0 entries, 0 open
+  [06:39] 38,859 bars, 20 alerts seen, 0 entries, 0 open
+  [06:45] 40,188 bars, 21 alerts seen, 0 entries, 0 open
+  [06:50] 41,333 bars, 21 alerts seen, 0 entries, 0 open
+  [06:56] 42,637 bars, 21 alerts seen, 0 entries, 0 open
+  [07:01] 43,707 bars, 22 alerts seen, 0 entries, 0 open
+  [07:06] 46,813 bars, 24 alerts seen, 0 entries, 0 open
+  [07:11] 49,156 bars, 26 alerts seen, 0 entries, 0 open
+  [07:17] 51,539 bars, 27 alerts seen, 0 entries, 0 open
+  [07:23] 53,868 bars, 30 alerts seen, 0 entries, 0 open
+  [07:29] 56,020 bars, 31 alerts seen, 0 entries, 0 open
+  [07:34] 58,199 bars, 32 alerts seen, 0 entries, 0 open
+  [07:39] 59,711 bars, 32 alerts seen, 0 entries, 0 open
+  [07:44] 61,494 bars, 32 alerts seen, 0 entries, 0 open
+  [07:50] 63,763 bars, 32 alerts seen, 0 entries, 0 open
+  [07:55] 65,877 bars, 33 alerts seen, 0 entries, 0 open
+  [08:01] 68,267 bars, 33 alerts seen, 0 entries, 0 open
+  [08:06] 70,549 bars, 39 alerts seen, 0 entries, 0 open
+  [08:11] 73,136 bars, 40 alerts seen, 0 entries, 0 open
+  [08:16] 75,155 bars, 40 alerts seen, 0 entries, 0 open
+  [08:21] 77,522 bars, 41 alerts seen, 0 entries, 0 open
+  [08:27] 80,211 bars, 41 alerts seen, 0 entries, 0 open
+  [08:32] 82,388 bars, 42 alerts seen, 0 entries, 0 open
+  [08:37] 84,944 bars, 43 alerts seen, 0 entries, 0 open
+  [08:42] 87,002 bars, 44 alerts seen, 0 entries, 0 open
+  [08:48] 89,519 bars, 45 alerts seen, 0 entries, 0 open
+  [08:53] 91,680 bars, 46 alerts seen, 0 entries, 0 open
+  [08:58] 93,807 bars, 46 alerts seen, 0 entries, 0 open
+  [09:03] 96,406 bars, 49 alerts seen, 0 entries, 0 open
+  [09:08] 98,607 bars, 50 alerts seen, 0 entries, 0 open
+  [09:14] 101,656 bars, 50 alerts seen, 0 entries, 0 open
+  [09:19] 104,152 bars, 53 alerts seen, 0 entries, 0 open
+  [09:24] 107,003 bars, 53 alerts seen, 0 entries, 0 open
+  [09:29] 110,592 bars, 53 alerts seen, 0 entries, 0 open
+  [09:34] 129,978 bars, 65 alerts seen, 0 entries, 0 open
+  [09:39] 152,360 bars, 73 alerts seen, 0 entries, 0 open
+  [09:44] 173,783 bars, 74 alerts seen, 0 entries, 0 open
+  [09:49] 195,774 bars, 77 alerts seen, 0 entries, 0 open
+  [09:54] 217,233 bars, 78 alerts seen, 0 entries, 0 open
+  [09:59] 239,058 bars, 79 alerts seen, 0 entries, 0 open
+  [10:05] 263,735 bars, 82 alerts seen, 0 entries, 0 open
+  [10:10] 285,561 bars, 82 alerts seen, 0 entries, 0 open
+  [10:15] 307,159 bars, 85 alerts seen, 0 entries, 0 open
+  [10:20] 330,097 bars, 88 alerts seen, 0 entries, 0 open
+  [10:25] 351,713 bars, 93 alerts seen, 0 entries, 0 open
+  [10:30] 375,033 bars, 95 alerts seen, 0 entries, 0 open
+  [10:35] 398,699 bars, 95 alerts seen, 0 entries, 0 open
+  [10:40] 418,106 bars, 97 alerts seen, 0 entries, 0 open
+  [10:45] 437,598 bars, 99 alerts seen, 0 entries, 0 open
+  [10:50] 457,466 bars, 101 alerts seen, 0 entries, 0 open
+  [10:55] 482,498 bars, 105 alerts seen, 0 entries, 0 open
+  [11:00] 498,790 bars, 105 alerts seen, 0 entries, 0 open
+  [11:05] 520,672 bars, 105 alerts seen, 0 entries, 0 open
+  [11:11] 542,817 bars, 105 alerts seen, 0 entries, 0 open
+  [11:16] 567,078 bars, 105 alerts seen, 0 entries, 0 open
+  [11:22] 587,302 bars, 107 alerts seen, 0 entries, 0 open
+  [11:27] 606,999 bars, 109 alerts seen, 0 entries, 0 open
+  [11:32] 626,982 bars, 109 alerts seen, 0 entries, 0 open
+  [11:37] 648,494 bars, 109 alerts seen, 0 entries, 0 open
+  [11:42] 669,034 bars, 110 alerts seen, 0 entries, 0 open
+  [11:47] 690,316 bars, 110 alerts seen, 0 entries, 0 open
+  [11:53] 711,770 bars, 110 alerts seen, 0 entries, 0 open
+  [11:58] 731,744 bars, 111 alerts seen, 0 entries, 0 open
+  [12:03] 754,910 bars, 111 alerts seen, 0 entries, 0 open
+  [12:09] 774,199 bars, 111 alerts seen, 0 entries, 0 open
+  [12:14] 793,561 bars, 111 alerts seen, 0 entries, 0 open
+  [12:20] 816,278 bars, 111 alerts seen, 0 entries, 0 open
+  [12:25] 835,108 bars, 111 alerts seen, 0 entries, 0 open
+  [12:30] 853,331 bars, 112 alerts seen, 0 entries, 0 open
+  [12:35] 872,987 bars, 112 alerts seen, 0 entries, 0 open
+  [12:40] 889,911 bars, 112 alerts seen, 0 entries, 0 open
+  [12:45] 912,142 bars, 115 alerts seen, 0 entries, 0 open
+  [12:51] 930,877 bars, 116 alerts seen, 0 entries, 0 open
+  [12:56] 949,193 bars, 116 alerts seen, 0 entries, 0 open
+  [13:01] 967,888 bars, 117 alerts seen, 0 entries, 0 open
+  [13:06] 986,888 bars, 117 alerts seen, 0 entries, 0 open
+  [13:11] 1,005,269 bars, 117 alerts seen, 0 entries, 0 open
+  [13:16] 1,023,889 bars, 118 alerts seen, 0 entries, 0 open
+  [13:21] 1,041,819 bars, 119 alerts seen, 0 entries, 0 open
+  [13:26] 1,061,197 bars, 120 alerts seen, 0 entries, 0 open
+  [13:31] 1,079,026 bars, 120 alerts seen, 0 entries, 0 open
+  [13:36] 1,101,827 bars, 121 alerts seen, 0 entries, 0 open
+  [13:42] 1,120,687 bars, 121 alerts seen, 0 entries, 0 open
+  [13:47] 1,141,101 bars, 121 alerts seen, 0 entries, 0 open
+  [13:52] 1,158,963 bars, 121 alerts seen, 0 entries, 0 open
+  [13:57] 1,177,438 bars, 121 alerts seen, 0 entries, 0 open
+  [14:02] 1,197,525 bars, 121 alerts seen, 0 entries, 0 open
+  [14:07] 1,215,550 bars, 121 alerts seen, 0 entries, 0 open
+  [14:12] 1,234,474 bars, 121 alerts seen, 0 entries, 0 open
+  [14:17] 1,253,507 bars, 121 alerts seen, 0 entries, 0 open
+  [14:22] 1,274,432 bars, 121 alerts seen, 0 entries, 0 open
+  [14:28] 1,295,549 bars, 121 alerts seen, 0 entries, 0 open
+  [14:33] 1,315,046 bars, 122 alerts seen, 0 entries, 0 open
+  [14:38] 1,334,485 bars, 122 alerts seen, 0 entries, 0 open
+  [14:43] 1,354,009 bars, 122 alerts seen, 0 entries, 0 open
+  [14:48] 1,374,182 bars, 124 alerts seen, 0 entries, 0 open
+  [14:54] 1,398,534 bars, 124 alerts seen, 0 entries, 0 open
+  [14:59] 1,418,564 bars, 124 alerts seen, 0 entries, 0 open
+  [15:04] 1,439,787 bars, 124 alerts seen, 0 entries, 0 open
+  [15:09] 1,459,765 bars, 124 alerts seen, 0 entries, 0 open
+  [15:15] 1,484,961 bars, 125 alerts seen, 0 entries, 0 open
+  [15:20] 1,506,682 bars, 126 alerts seen, 0 entries, 0 open
+  [15:25] 1,528,387 bars, 126 alerts seen, 0 entries, 0 open
+  [15:30] 1,551,152 bars, 126 alerts seen, 0 entries, 0 open
+  [15:35] 1,573,989 bars, 126 alerts seen, 0 entries, 0 open
+  [15:40] 1,597,039 bars, 126 alerts seen, 0 entries, 0 open
+  [15:45] 1,621,484 bars, 126 alerts seen, 0 entries, 0 open
+  [15:50] 1,645,636 bars, 127 alerts seen, 0 entries, 0 open
+  [15:55] 1,672,790 bars, 127 alerts seen, 0 entries, 0 open
+  [16:00] 1,705,161 bars, 127 alerts seen, 0 entries, 0 open
+  [16:06] 1,719,571 bars, 127 alerts seen, 0 entries, 0 open
+  [16:11] 1,721,979 bars, 127 alerts seen, 0 entries, 0 open
+  [16:16] 1,724,158 bars, 127 alerts seen, 0 entries, 0 open
+  [16:22] 1,726,399 bars, 127 alerts seen, 0 entries, 0 open
+  [16:27] 1,728,286 bars, 127 alerts seen, 0 entries, 0 open
+  [16:33] 1,730,507 bars, 127 alerts seen, 0 entries, 0 open
+  [16:38] 1,732,161 bars, 127 alerts seen, 0 entries, 0 open
+  [16:44] 1,734,422 bars, 127 alerts seen, 0 entries, 0 open
+  [16:49] 1,736,113 bars, 127 alerts seen, 0 entries, 0 open
+  [16:54] 1,737,717 bars, 127 alerts seen, 0 entries, 0 open
+  [17:00] 1,739,532 bars, 127 alerts seen, 0 entries, 0 open
+  [17:05] 1,741,138 bars, 127 alerts seen, 0 entries, 0 open
+  [17:10] 1,742,405 bars, 127 alerts seen, 0 entries, 0 open
+  [17:16] 1,744,122 bars, 127 alerts seen, 0 entries, 0 open
+  [17:21] 1,745,404 bars, 127 alerts seen, 0 entries, 0 open
+  [17:27] 1,746,905 bars, 127 alerts seen, 0 entries, 0 open
+  [17:32] 1,748,190 bars, 127 alerts seen, 0 entries, 0 open
+  [17:38] 1,749,666 bars, 127 alerts seen, 0 entries, 0 open
+  [17:43] 1,750,872 bars, 127 alerts seen, 0 entries, 0 open
+  [17:49] 1,752,349 bars, 127 alerts seen, 0 entries, 0 open
+  [17:54] 1,753,530 bars, 127 alerts seen, 0 entries, 0 open
+  [18:00] 1,755,005 bars, 127 alerts seen, 0 entries, 0 open
+  [18:05] 1,756,248 bars, 127 alerts seen, 0 entries, 0 open
+  [18:11] 1,757,737 bars, 127 alerts seen, 0 entries, 0 open
+  [18:16] 1,758,903 bars, 127 alerts seen, 0 entries, 0 open
+  [18:21] 1,760,105 bars, 127 alerts seen, 0 entries, 0 open
+  [18:27] 1,761,370 bars, 127 alerts seen, 0 entries, 0 open
+  [18:32] 1,762,487 bars, 127 alerts seen, 0 entries, 0 open
+  [18:38] 1,763,817 bars, 127 alerts seen, 0 entries, 0 open
+  [18:43] 1,764,985 bars, 127 alerts seen, 0 entries, 0 open
+  [18:49] 1,766,189 bars, 127 alerts seen, 0 entries, 0 open
+  [18:54] 1,767,248 bars, 127 alerts seen, 0 entries, 0 open
+  [18:59] 1,768,381 bars, 127 alerts seen, 0 entries, 0 open
+  [19:05] 1,769,708 bars, 127 alerts seen, 0 entries, 0 open
+  [19:10] 1,770,782 bars, 127 alerts seen, 0 entries, 0 open
+  [19:16] 1,772,141 bars, 127 alerts seen, 0 entries, 0 open
+  [19:21] 1,773,160 bars, 127 alerts seen, 0 entries, 0 open
+  [19:27] 1,774,501 bars, 127 alerts seen, 0 entries, 0 open
+  [19:32] 1,775,681 bars, 127 alerts seen, 0 entries, 0 open
+  [19:37] 1,777,018 bars, 127 alerts seen, 0 entries, 0 open
+  [19:43] 1,778,160 bars, 127 alerts seen, 0 entries, 0 open
+  [19:48] 1,779,447 bars, 127 alerts seen, 0 entries, 0 open
+  [19:54] 1,781,118 bars, 127 alerts seen, 0 entries, 0 open
+  [19:59] 1,782,521 bars, 127 alerts seen, 0 entries, 0 open
+data websocket error, restarting connection: no close frame received or sent
+error during websocket communication: 
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/websockets/legacy/client.py", line 650, in __await_impl__
+    _transport, protocol = await self._create_connection()
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/base_events.py", line 1119, in create_connection
+    infos = await self._ensure_resolved(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        (host, port), family=family,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        type=socket.SOCK_STREAM, proto=proto, flags=flags, loop=self)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/base_events.py", line 1516, in _ensure_resolved
+    return await loop.getaddrinfo(host, port, family=family, type=type,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                  proto=proto, flags=flags)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/base_events.py", line 936, in getaddrinfo
+    return await self.run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        None, getaddr_func, host, port, family, type, proto, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 454, in _run_forever
+    await self._start_ws()
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 207, in _start_ws
+    await self._connect()
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 171, in _connect
+    self._ws = await websockets_legacy.connect(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/websockets/legacy/client.py", line 648, in __await_impl__
+    async with asyncio_timeout(self.open_timeout):
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/timeouts.py", line 114, in __aexit__
+    raise TimeoutError from exc_val
+TimeoutError
+error during websocket communication: 
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/websockets/legacy/client.py", line 650, in __await_impl__
+    _transport, protocol = await self._create_connection()
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/base_events.py", line 1119, in create_connection
+    infos = await self._ensure_resolved(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        (host, port), family=family,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        type=socket.SOCK_STREAM, proto=proto, flags=flags, loop=self)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/base_events.py", line 1516, in _ensure_resolved
+    return await loop.getaddrinfo(host, port, family=family, type=type,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                  proto=proto, flags=flags)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/base_events.py", line 936, in getaddrinfo
+    return await self.run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        None, getaddr_func, host, port, family, type, proto, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 454, in _run_forever
+    await self._start_ws()
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 207, in _start_ws
+    await self._connect()
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 171, in _connect
+    self._ws = await websockets_legacy.connect(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/websockets/legacy/client.py", line 648, in __await_impl__
+    async with asyncio_timeout(self.open_timeout):
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/timeouts.py", line 114, in __aexit__
+    raise TimeoutError from exc_val
+TimeoutError
+error during websocket communication: 
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/websockets/legacy/client.py", line 650, in __await_impl__
+    _transport, protocol = await self._create_connection()
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/base_events.py", line 1119, in create_connection
+    infos = await self._ensure_resolved(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        (host, port), family=family,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        type=socket.SOCK_STREAM, proto=proto, flags=flags, loop=self)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/base_events.py", line 1516, in _ensure_resolved
+    return await loop.getaddrinfo(host, port, family=family, type=type,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                  proto=proto, flags=flags)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/base_events.py", line 936, in getaddrinfo
+    return await self.run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        None, getaddr_func, host, port, family, type, proto, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 454, in _run_forever
+    await self._start_ws()
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 207, in _start_ws
+    await self._connect()
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 171, in _connect
+    self._ws = await websockets_legacy.connect(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/websockets/legacy/client.py", line 648, in __await_impl__
+    async with asyncio_timeout(self.open_timeout):
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/timeouts.py", line 114, in __aexit__
+    raise TimeoutError from exc_val
+TimeoutError
+error during websocket communication: 
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/websockets/legacy/client.py", line 650, in __await_impl__
+    _transport, protocol = await self._create_connection()
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/base_events.py", line 1119, in create_connection
+    infos = await self._ensure_resolved(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        (host, port), family=family,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        type=socket.SOCK_STREAM, proto=proto, flags=flags, loop=self)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/base_events.py", line 1516, in _ensure_resolved
+    return await loop.getaddrinfo(host, port, family=family, type=type,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                  proto=proto, flags=flags)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/base_events.py", line 936, in getaddrinfo
+    return await self.run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        None, getaddr_func, host, port, family, type, proto, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 454, in _run_forever
+    await self._start_ws()
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 207, in _start_ws
+    await self._connect()
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 171, in _connect
+    self._ws = await websockets_legacy.connect(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/websockets/legacy/client.py", line 648, in __await_impl__
+    async with asyncio_timeout(self.open_timeout):
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/timeouts.py", line 114, in __aexit__
+    raise TimeoutError from exc_val
+TimeoutError
+error during websocket communication: 
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/websockets/legacy/client.py", line 650, in __await_impl__
+    _transport, protocol = await self._create_connection()
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/base_events.py", line 1119, in create_connection
+    infos = await self._ensure_resolved(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        (host, port), family=family,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        type=socket.SOCK_STREAM, proto=proto, flags=flags, loop=self)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/base_events.py", line 1516, in _ensure_resolved
+    return await loop.getaddrinfo(host, port, family=family, type=type,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                  proto=proto, flags=flags)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/base_events.py", line 936, in getaddrinfo
+    return await self.run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        None, getaddr_func, host, port, family, type, proto, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 454, in _run_forever
+    await self._start_ws()
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 207, in _start_ws
+    await self._connect()
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 171, in _connect
+    self._ws = await websockets_legacy.connect(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/websockets/legacy/client.py", line 648, in __await_impl__
+    async with asyncio_timeout(self.open_timeout):
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/timeouts.py", line 114, in __aexit__
+    raise TimeoutError from exc_val
+TimeoutError
+error during websocket communication: 
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/websockets/legacy/client.py", line 650, in __await_impl__
+    _transport, protocol = await self._create_connection()
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/base_events.py", line 1119, in create_connection
+    infos = await self._ensure_resolved(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        (host, port), family=family,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        type=socket.SOCK_STREAM, proto=proto, flags=flags, loop=self)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/base_events.py", line 1516, in _ensure_resolved
+    return await loop.getaddrinfo(host, port, family=family, type=type,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                  proto=proto, flags=flags)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/base_events.py", line 936, in getaddrinfo
+    return await self.run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        None, getaddr_func, host, port, family, type, proto, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 454, in _run_forever
+    await self._start_ws()
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 207, in _start_ws
+    await self._connect()
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 171, in _connect
+    self._ws = await websockets_legacy.connect(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/websockets/legacy/client.py", line 648, in __await_impl__
+    async with asyncio_timeout(self.open_timeout):
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/timeouts.py", line 114, in __aexit__
+    raise TimeoutError from exc_val
+TimeoutError
+
+=== 2026-08-26 04:00:06 EDT — startup, feed sip ===
+  building reference data — about 10 minutes...
+Fetching asset list...
+  13100 listed, tradable US equities
+Fetching daily bars...
+  fetched 200/13100 symbols
+  fetched 400/13100 symbols
+  fetched 600/13100 symbols
+  fetched 800/13100 symbols
+  fetched 1000/13100 symbols
+  fetched 1200/13100 symbols
+  fetched 1400/13100 symbols
+  fetched 1600/13100 symbols
+  fetched 1800/13100 symbols
+  fetched 2000/13100 symbols
+  fetched 2200/13100 symbols
+  fetched 2400/13100 symbols
+  fetched 2600/13100 symbols
+  fetched 2800/13100 symbols
+  fetched 3000/13100 symbols
+  fetched 3200/13100 symbols
+  fetched 3400/13100 symbols
+  fetched 3600/13100 symbols
+  fetched 3800/13100 symbols
+  fetched 4000/13100 symbols
+  fetched 4200/13100 symbols
+  fetched 4400/13100 symbols
+  fetched 4600/13100 symbols
+  fetched 4800/13100 symbols
+  fetched 5000/13100 symbols
+  fetched 5200/13100 symbols
+  fetched 5400/13100 symbols
+  fetched 5600/13100 symbols
+  fetched 5800/13100 symbols
+  fetched 6000/13100 symbols
+  fetched 6200/13100 symbols
+  fetched 6400/13100 symbols
+  fetched 6600/13100 symbols
+  fetched 6800/13100 symbols
+  fetched 7000/13100 symbols
+  fetched 7200/13100 symbols
+  fetched 7400/13100 symbols
+  fetched 7600/13100 symbols
+  fetched 7800/13100 symbols
+  fetched 8000/13100 symbols
+  fetched 8200/13100 symbols
+  fetched 8400/13100 symbols
+  fetched 8600/13100 symbols
+  fetched 8800/13100 symbols
+  fetched 9000/13100 symbols
+  fetched 9200/13100 symbols
+  fetched 9400/13100 symbols
+  fetched 9600/13100 symbols
+  fetched 9800/13100 symbols
+  fetched 10000/13100 symbols
+  fetched 10200/13100 symbols
+  fetched 10400/13100 symbols
+  fetched 10600/13100 symbols
+  fetched 10800/13100 symbols
+  fetched 11000/13100 symbols
+  fetched 11200/13100 symbols
+  fetched 11400/13100 symbols
+  fetched 11600/13100 symbols
+  fetched 11800/13100 symbols
+  fetched 12000/13100 symbols
+  fetched 12200/13100 symbols
+  fetched 12400/13100 symbols
+  fetched 12600/13100 symbols
+  fetched 12800/13100 symbols
+  fetched 13000/13100 symbols
+  fetched 13100/13100 symbols
+  9040 kept without a share count (foreign filers, funds, warrants) — rules decide
+  127 dropped: under 14 sessions of history
+  12956 symbols in the universe
+Wrote 12956 refs to data/refs/2026-08-26.json
+  starting paper trader (in the foreground, as this process)...
+
+  2 saved position(s) no longer held; discarded
+
+Paper equity   $88,706
+Feed           SIP
+Universe       12,956 symbols
+Reference      2026-08-26
+Mode           PAPER ORDERS
+Risk           0.5% per trade, max 3 positions
+Journal        data/mosquito/trades.jsonl
+
+Listening. Ctrl-C to stop.
+
+  [04:03] 1 bars, 0 alerts seen, 0 entries, 0 open
+  [04:08] 1,435 bars, 7 alerts seen, 0 entries, 0 open
+  [04:14] 2,907 bars, 9 alerts seen, 0 entries, 0 open
+  04:17  BUY CRML x646 @ ~8.58 stop 7.89 target 9.87  [new_high]
+  [04:19] 4,005 bars, 11 alerts seen, 1 entries, 1 open
+  [04:25] 5,349 bars, 11 alerts seen, 1 entries, 1 open
+  [04:30] 6,408 bars, 11 alerts seen, 1 entries, 1 open
+  [04:35] 7,365 bars, 12 alerts seen, 1 entries, 1 open
+  [04:40] 8,223 bars, 13 alerts seen, 1 entries, 1 open
+  [04:45] 9,125 bars, 13 alerts seen, 1 entries, 1 open
+  04:45  BUY OKLL x1740 @ ~3.19 stop 2.93 target 3.67  [new_high]
+  [04:51] 10,153 bars, 14 alerts seen, 2 entries, 2 open
+  [04:56] 11,047 bars, 15 alerts seen, 2 entries, 2 open
+  [05:02] 12,182 bars, 16 alerts seen, 2 entries, 2 open
+  [05:07] 13,098 bars, 16 alerts seen, 2 entries, 2 open
+  [05:12] 13,898 bars, 17 alerts seen, 2 entries, 2 open
+  [05:18] 14,880 bars, 17 alerts seen, 2 entries, 2 open
+  [05:23] 15,748 bars, 17 alerts seen, 2 entries, 2 open
+  [05:29] 16,860 bars, 18 alerts seen, 2 entries, 2 open
+  [05:34] 17,689 bars, 18 alerts seen, 2 entries, 2 open
+  [05:39] 18,598 bars, 19 alerts seen, 2 entries, 2 open
+  05:42  BUY VVOS x17774 @ ~0.31 stop 0.29 target 0.36  [new_high]
+  05:43  SELL VVOS @ 0.28 (-9.8%) — stop
+  [05:45] 19,374 bars, 21 alerts seen, 3 entries, 2 open
+  [05:51] 20,361 bars, 21 alerts seen, 3 entries, 2 open
+  [05:56] 21,142 bars, 21 alerts seen, 3 entries, 2 open
+  [06:01] 21,880 bars, 22 alerts seen, 3 entries, 2 open
+  [06:07] 22,945 bars, 24 alerts seen, 3 entries, 2 open
+  [06:12] 23,765 bars, 24 alerts seen, 3 entries, 2 open
+  [06:18] 24,763 bars, 24 alerts seen, 3 entries, 2 open
+  [06:23] 25,589 bars, 24 alerts seen, 3 entries, 2 open
+  [06:29] 26,590 bars, 25 alerts seen, 3 entries, 2 open
+  [06:34] 27,465 bars, 25 alerts seen, 3 entries, 2 open
+  [06:39] 28,375 bars, 25 alerts seen, 3 entries, 2 open
+  [06:45] 29,468 bars, 25 alerts seen, 3 entries, 2 open
+  [06:50] 30,407 bars, 26 alerts seen, 3 entries, 2 open
+  [06:55] 31,348 bars, 26 alerts seen, 3 entries, 2 open
+  [07:00] 32,048 bars, 26 alerts seen, 3 entries, 2 open
+  [07:05] 34,806 bars, 29 alerts seen, 3 entries, 2 open
+  [07:10] 36,696 bars, 30 alerts seen, 3 entries, 2 open
+  [07:15] 38,328 bars, 31 alerts seen, 3 entries, 2 open
+  [07:21] 40,472 bars, 32 alerts seen, 3 entries, 2 open
+  [07:26] 42,127 bars, 33 alerts seen, 3 entries, 2 open
+  [07:32] 44,063 bars, 35 alerts seen, 3 entries, 2 open
+  [07:37] 45,844 bars, 35 alerts seen, 3 entries, 2 open
+  [07:43] 48,203 bars, 35 alerts seen, 3 entries, 2 open
+  [07:48] 49,965 bars, 36 alerts seen, 3 entries, 2 open
+  [07:53] 51,809 bars, 38 alerts seen, 3 entries, 2 open
+  [07:59] 53,915 bars, 38 alerts seen, 3 entries, 2 open
+  [08:04] 55,779 bars, 40 alerts seen, 3 entries, 2 open
+  [08:09] 58,115 bars, 42 alerts seen, 3 entries, 2 open
+  [08:15] 60,028 bars, 43 alerts seen, 3 entries, 2 open
+  [08:20] 62,138 bars, 44 alerts seen, 3 entries, 2 open
+  [08:25] 63,958 bars, 46 alerts seen, 3 entries, 2 open
+  [08:31] 66,316 bars, 46 alerts seen, 3 entries, 2 open
+  [08:36] 69,403 bars, 51 alerts seen, 3 entries, 2 open
+  [08:41] 71,637 bars, 51 alerts seen, 3 entries, 2 open
+  [08:46] 74,523 bars, 51 alerts seen, 3 entries, 2 open
+  [08:52] 76,824 bars, 51 alerts seen, 3 entries, 2 open
+  [08:57] 79,399 bars, 52 alerts seen, 3 entries, 2 open
+  [09:02] 82,107 bars, 54 alerts seen, 3 entries, 2 open
+  [09:08] 84,828 bars, 55 alerts seen, 3 entries, 2 open
+  09:11  SELL CRML @ 7.89 (-8.5%) — stop
+  [09:13] 87,807 bars, 55 alerts seen, 3 entries, 1 open
+  [09:18] 90,266 bars, 55 alerts seen, 3 entries, 1 open
+  [09:23] 92,926 bars, 55 alerts seen, 3 entries, 1 open
+  [09:28] 96,344 bars, 56 alerts seen, 3 entries, 1 open
+  DAILY LOSS LIMIT: -2.0% vs cap -2.0% — flattening
+  [09:33] 111,986 bars, 65 alerts seen, 3 entries, 1 open
+  [09:38] 135,141 bars, 69 alerts seen, 3 entries, 1 open
+  [09:43] 156,168 bars, 71 alerts seen, 3 entries, 1 open
+  [09:48] 179,216 bars, 74 alerts seen, 3 entries, 1 open
+  [09:53] 199,423 bars, 75 alerts seen, 3 entries, 1 open
+  [09:58] 219,688 bars, 76 alerts seen, 3 entries, 1 open
+  [10:03] 240,046 bars, 76 alerts seen, 3 entries, 1 open
+  [10:08] 261,144 bars, 77 alerts seen, 3 entries, 1 open
+  [10:13] 286,057 bars, 81 alerts seen, 3 entries, 1 open
+  [10:19] 308,297 bars, 82 alerts seen, 3 entries, 1 open
+  [10:24] 330,208 bars, 82 alerts seen, 3 entries, 1 open
+  [10:29] 352,421 bars, 83 alerts seen, 3 entries, 1 open
+  [10:34] 373,768 bars, 83 alerts seen, 3 entries, 1 open
+  [10:40] 398,360 bars, 84 alerts seen, 3 entries, 1 open
+  [10:45] 418,389 bars, 84 alerts seen, 3 entries, 1 open
+  [10:50] 438,984 bars, 85 alerts seen, 3 entries, 1 open
+  [10:55] 459,899 bars, 86 alerts seen, 3 entries, 1 open
+  [11:00] 479,664 bars, 87 alerts seen, 3 entries, 1 open
+  [11:05] 498,562 bars, 88 alerts seen, 3 entries, 1 open
+  [11:11] 521,887 bars, 90 alerts seen, 3 entries, 1 open
+  [11:16] 541,426 bars, 91 alerts seen, 3 entries, 1 open
+  [11:21] 562,032 bars, 92 alerts seen, 3 entries, 1 open
+  [11:26] 580,769 bars, 92 alerts seen, 3 entries, 1 open
+  [11:31] 600,712 bars, 92 alerts seen, 3 entries, 1 open
+  [11:36] 619,460 bars, 93 alerts seen, 3 entries, 1 open
+  [11:41] 638,752 bars, 93 alerts seen, 3 entries, 1 open
+  [11:46] 657,223 bars, 93 alerts seen, 3 entries, 1 open
+  [11:51] 676,132 bars, 93 alerts seen, 3 entries, 1 open
+  [11:56] 696,604 bars, 94 alerts seen, 3 entries, 1 open
+  [12:01] 715,428 bars, 94 alerts seen, 3 entries, 1 open
+  [12:07] 738,296 bars, 94 alerts seen, 3 entries, 1 open
+  [12:13] 761,522 bars, 94 alerts seen, 3 entries, 1 open
+  [12:18] 780,024 bars, 94 alerts seen, 3 entries, 1 open
+  [12:23] 798,376 bars, 94 alerts seen, 3 entries, 1 open
+  [12:29] 820,331 bars, 94 alerts seen, 3 entries, 1 open
+  [12:34] 838,465 bars, 94 alerts seen, 3 entries, 1 open
+  [12:39] 856,539 bars, 94 alerts seen, 3 entries, 1 open
+  [12:44] 875,956 bars, 94 alerts seen, 3 entries, 1 open
+  [12:49] 894,964 bars, 94 alerts seen, 3 entries, 1 open
+  [12:54] 912,312 bars, 94 alerts seen, 3 entries, 1 open
+  [12:59] 932,151 bars, 94 alerts seen, 3 entries, 1 open
+  [13:05] 952,208 bars, 94 alerts seen, 3 entries, 1 open
+  [13:10] 971,287 bars, 94 alerts seen, 3 entries, 1 open
+  [13:15] 988,550 bars, 96 alerts seen, 3 entries, 1 open
+  [13:20] 1,006,538 bars, 96 alerts seen, 3 entries, 1 open
+  [13:25] 1,024,705 bars, 96 alerts seen, 3 entries, 1 open
+  [13:30] 1,042,843 bars, 97 alerts seen, 3 entries, 1 open
+  [13:35] 1,063,490 bars, 97 alerts seen, 3 entries, 1 open
+  [13:40] 1,079,161 bars, 97 alerts seen, 3 entries, 1 open
+  [13:45] 1,097,150 bars, 97 alerts seen, 3 entries, 1 open
+  [13:50] 1,115,645 bars, 98 alerts seen, 3 entries, 1 open
+  [13:55] 1,133,631 bars, 99 alerts seen, 3 entries, 1 open
+  [14:00] 1,154,382 bars, 99 alerts seen, 3 entries, 1 open
+  [14:05] 1,170,575 bars, 99 alerts seen, 3 entries, 1 open
+  [14:10] 1,187,878 bars, 99 alerts seen, 3 entries, 1 open
+  [14:15] 1,208,060 bars, 100 alerts seen, 3 entries, 1 open
+  [14:20] 1,225,432 bars, 100 alerts seen, 3 entries, 1 open
+  [14:25] 1,245,618 bars, 100 alerts seen, 3 entries, 1 open
+  [14:30] 1,262,369 bars, 101 alerts seen, 3 entries, 1 open
+  [14:36] 1,284,938 bars, 101 alerts seen, 3 entries, 1 open
+  [14:42] 1,307,736 bars, 102 alerts seen, 3 entries, 1 open
+  [14:47] 1,327,417 bars, 102 alerts seen, 3 entries, 1 open
+  [14:53] 1,350,903 bars, 102 alerts seen, 3 entries, 1 open
+  [14:58] 1,370,629 bars, 102 alerts seen, 3 entries, 1 open
+  [15:03] 1,391,676 bars, 103 alerts seen, 3 entries, 1 open
+  [15:08] 1,412,325 bars, 103 alerts seen, 3 entries, 1 open
+  [15:13] 1,432,761 bars, 104 alerts seen, 3 entries, 1 open
+  [15:19] 1,457,972 bars, 104 alerts seen, 3 entries, 1 open
+  [15:24] 1,479,240 bars, 104 alerts seen, 3 entries, 1 open
+  [15:29] 1,502,476 bars, 104 alerts seen, 3 entries, 1 open
+  [15:34] 1,524,399 bars, 105 alerts seen, 3 entries, 1 open
+  [15:39] 1,549,894 bars, 105 alerts seen, 3 entries, 1 open
+  [15:44] 1,571,393 bars, 105 alerts seen, 3 entries, 1 open
+  [15:49] 1,598,573 bars, 106 alerts seen, 3 entries, 1 open
+  [15:54] 1,620,708 bars, 106 alerts seen, 3 entries, 1 open
+  [16:00] 1,655,378 bars, 106 alerts seen, 3 entries, 1 open
+  [16:05] 1,672,644 bars, 107 alerts seen, 3 entries, 1 open
+  [16:11] 1,675,045 bars, 107 alerts seen, 3 entries, 1 open
+  [16:17] 1,677,686 bars, 107 alerts seen, 3 entries, 1 open
+  [16:23] 1,680,489 bars, 107 alerts seen, 3 entries, 1 open
+  [16:28] 1,683,075 bars, 107 alerts seen, 3 entries, 1 open
+  [16:33] 1,685,177 bars, 107 alerts seen, 3 entries, 1 open
+  [16:38] 1,687,157 bars, 107 alerts seen, 3 entries, 1 open
+  [16:44] 1,689,776 bars, 107 alerts seen, 3 entries, 1 open
+  [16:49] 1,691,630 bars, 107 alerts seen, 3 entries, 1 open
+  [16:55] 1,694,105 bars, 107 alerts seen, 3 entries, 1 open
+  [17:00] 1,696,105 bars, 107 alerts seen, 3 entries, 1 open
+  [17:06] 1,698,709 bars, 107 alerts seen, 3 entries, 1 open
+  [17:11] 1,701,617 bars, 107 alerts seen, 3 entries, 1 open
+  [17:16] 1,703,860 bars, 107 alerts seen, 3 entries, 1 open
+  [17:22] 1,706,594 bars, 107 alerts seen, 3 entries, 1 open
+  [17:27] 1,708,737 bars, 107 alerts seen, 3 entries, 1 open
+  [17:33] 1,711,075 bars, 107 alerts seen, 3 entries, 1 open
+  [17:38] 1,713,356 bars, 107 alerts seen, 3 entries, 1 open
+  [17:43] 1,715,206 bars, 107 alerts seen, 3 entries, 1 open
+  [17:48] 1,717,135 bars, 107 alerts seen, 3 entries, 1 open
+  [17:54] 1,719,596 bars, 107 alerts seen, 3 entries, 1 open
+  [17:59] 1,721,647 bars, 107 alerts seen, 3 entries, 1 open
+  [18:04] 1,723,671 bars, 107 alerts seen, 3 entries, 1 open
+  [18:10] 1,725,994 bars, 107 alerts seen, 3 entries, 1 open
+  [18:15] 1,727,787 bars, 107 alerts seen, 3 entries, 1 open
+  [18:20] 1,729,614 bars, 107 alerts seen, 3 entries, 1 open
+  [18:25] 1,731,541 bars, 107 alerts seen, 3 entries, 1 open
+  [18:30] 1,733,274 bars, 107 alerts seen, 3 entries, 1 open
+  [18:36] 1,735,314 bars, 107 alerts seen, 3 entries, 1 open
+  [18:41] 1,737,026 bars, 107 alerts seen, 3 entries, 1 open
+  [18:47] 1,738,958 bars, 107 alerts seen, 3 entries, 1 open
+  [18:52] 1,740,462 bars, 107 alerts seen, 3 entries, 1 open
+  [18:57] 1,742,059 bars, 107 alerts seen, 3 entries, 1 open
+  [19:03] 1,743,876 bars, 107 alerts seen, 3 entries, 1 open
+  [19:08] 1,745,198 bars, 107 alerts seen, 3 entries, 1 open
+  [19:13] 1,746,659 bars, 107 alerts seen, 3 entries, 1 open
+  [19:19] 1,748,215 bars, 107 alerts seen, 3 entries, 1 open
+  [19:24] 1,749,967 bars, 107 alerts seen, 3 entries, 1 open
+  [19:30] 1,751,441 bars, 107 alerts seen, 3 entries, 1 open
+  [19:35] 1,752,865 bars, 107 alerts seen, 3 entries, 1 open
+  [19:41] 1,754,643 bars, 107 alerts seen, 3 entries, 1 open
+  [19:46] 1,756,232 bars, 107 alerts seen, 3 entries, 1 open
+  [19:52] 1,758,235 bars, 107 alerts seen, 3 entries, 1 open
+  [19:58] 1,760,372 bars, 107 alerts seen, 3 entries, 1 open
+
+=== 2026-08-27 04:00:06 EDT — startup, feed sip ===
+  building reference data — about 10 minutes...
+Fetching asset list...
+  13103 listed, tradable US equities
+Fetching daily bars...
+  fetched 200/13103 symbols
+  fetched 400/13103 symbols
+  fetched 600/13103 symbols
+  fetched 800/13103 symbols
+  fetched 1000/13103 symbols
+  fetched 1200/13103 symbols
+  fetched 1400/13103 symbols
+  fetched 1600/13103 symbols
+  fetched 1800/13103 symbols
+  fetched 2000/13103 symbols
+  fetched 2200/13103 symbols
+  fetched 2400/13103 symbols
+  fetched 2600/13103 symbols
+  fetched 2800/13103 symbols
+  fetched 3000/13103 symbols
+  fetched 3200/13103 symbols
+  fetched 3400/13103 symbols
+  fetched 3600/13103 symbols
+  fetched 3800/13103 symbols
+  fetched 4000/13103 symbols
+  fetched 4200/13103 symbols
+  fetched 4400/13103 symbols
+  fetched 4600/13103 symbols
+  fetched 4800/13103 symbols
+  fetched 5000/13103 symbols
+  fetched 5200/13103 symbols
+  fetched 5400/13103 symbols
+  fetched 5600/13103 symbols
+  fetched 5800/13103 symbols
+  fetched 6000/13103 symbols
+  fetched 6200/13103 symbols
+  fetched 6400/13103 symbols
+  fetched 6600/13103 symbols
+  fetched 6800/13103 symbols
+  fetched 7000/13103 symbols
+  fetched 7200/13103 symbols
+  fetched 7400/13103 symbols
+  fetched 7600/13103 symbols
+  fetched 7800/13103 symbols
+  fetched 8000/13103 symbols
+  fetched 8200/13103 symbols
+  fetched 8400/13103 symbols
+  fetched 8600/13103 symbols
+  fetched 8800/13103 symbols
+  fetched 9000/13103 symbols
+  fetched 9200/13103 symbols
+  fetched 9400/13103 symbols
+  fetched 9600/13103 symbols
+  fetched 9800/13103 symbols
+  fetched 10000/13103 symbols
+  fetched 10200/13103 symbols
+  fetched 10400/13103 symbols
+  fetched 10600/13103 symbols
+  fetched 10800/13103 symbols
+  fetched 11000/13103 symbols
+  fetched 11200/13103 symbols
+  fetched 11400/13103 symbols
+  fetched 11600/13103 symbols
+  fetched 11800/13103 symbols
+  fetched 12000/13103 symbols
+  fetched 12200/13103 symbols
+  fetched 12400/13103 symbols
+  fetched 12600/13103 symbols
+  fetched 12800/13103 symbols
+  fetched 13000/13103 symbols
+  fetched 13103/13103 symbols
+  9036 kept without a share count (foreign filers, funds, warrants) — rules decide
+  131 dropped: under 14 sessions of history
+  12944 symbols in the universe
+Wrote 12944 refs to data/refs/2026-08-27.json
+  starting paper trader (in the foreground, as this process)...
+
+  1 saved position(s) no longer held; discarded
+
+Paper equity   $87,109
+Feed           SIP
+Universe       12,944 symbols
+Reference      2026-08-27
+Mode           PAPER ORDERS
+Risk           0.5% per trade, max 3 positions
+Journal        data/mosquito/trades.jsonl
+
+Listening. Ctrl-C to stop.
+
+  [04:02] 1 bars, 0 alerts seen, 0 entries, 0 open
+  04:06  BUY CYCU x10765 @ ~0.51 stop 0.47 target 0.58  [spike]
+  [04:07] 2,866 bars, 6 alerts seen, 1 entries, 1 open
+  [04:12] 4,614 bars, 6 alerts seen, 1 entries, 1 open
+  04:12  BUY DAIC x946 @ ~5.75 stop 5.29 target 6.61  [spike]
+  04:15  BUY INTW x290 @ ~18.87 stop 17.36 target 21.70  [new_high]
+  [04:18] 6,577 bars, 8 alerts seen, 3 entries, 3 open
+  [04:24] 8,350 bars, 8 alerts seen, 3 entries, 3 open
+  [04:29] 9,789 bars, 11 alerts seen, 3 entries, 3 open
+  [04:35] 11,634 bars, 13 alerts seen, 3 entries, 3 open
+  [04:40] 13,019 bars, 15 alerts seen, 3 entries, 3 open
+  [04:46] 14,653 bars, 16 alerts seen, 3 entries, 3 open
+  [04:52] 16,431 bars, 16 alerts seen, 3 entries, 3 open
+  [04:57] 17,819 bars, 17 alerts seen, 3 entries, 3 open
+  [05:03] 19,397 bars, 17 alerts seen, 3 entries, 3 open
+  [05:08] 20,829 bars, 18 alerts seen, 3 entries, 3 open
+  [05:14] 22,211 bars, 19 alerts seen, 3 entries, 3 open
+  [05:19] 23,422 bars, 19 alerts seen, 3 entries, 3 open
+  [05:25] 24,840 bars, 19 alerts seen, 3 entries, 3 open
+  05:29  SELL CYCU @ 0.46 (-10.6%) — stop
+  [05:30] 26,160 bars, 19 alerts seen, 3 entries, 2 open
+  [05:35] 27,409 bars, 20 alerts seen, 3 entries, 2 open
+  [05:41] 28,797 bars, 21 alerts seen, 3 entries, 2 open
+  [05:46] 29,935 bars, 21 alerts seen, 3 entries, 2 open
+  [05:52] 31,319 bars, 21 alerts seen, 3 entries, 2 open
+  [05:57] 32,428 bars, 21 alerts seen, 3 entries, 2 open
+  [06:03] 33,758 bars, 21 alerts seen, 3 entries, 2 open
+  [06:08] 35,014 bars, 22 alerts seen, 3 entries, 2 open
+  [06:13] 36,094 bars, 23 alerts seen, 3 entries, 2 open
+  [06:19] 37,332 bars, 23 alerts seen, 3 entries, 2 open
+  [06:24] 38,369 bars, 23 alerts seen, 3 entries, 2 open
+  [06:30] 39,711 bars, 24 alerts seen, 3 entries, 2 open
+  [06:35] 40,852 bars, 25 alerts seen, 3 entries, 2 open
+  [06:40] 42,195 bars, 26 alerts seen, 3 entries, 2 open
+  [06:46] 43,276 bars, 26 alerts seen, 3 entries, 2 open
+  [06:51] 44,307 bars, 27 alerts seen, 3 entries, 2 open
+  [06:56] 45,577 bars, 27 alerts seen, 3 entries, 2 open
+  [07:02] 47,642 bars, 27 alerts seen, 3 entries, 2 open
+  [07:07] 50,447 bars, 28 alerts seen, 3 entries, 2 open
+  [07:12] 52,355 bars, 29 alerts seen, 3 entries, 2 open
+  [07:17] 54,398 bars, 31 alerts seen, 3 entries, 2 open
+  [07:22] 56,376 bars, 33 alerts seen, 3 entries, 2 open
+  [07:28] 58,760 bars, 33 alerts seen, 3 entries, 2 open
+  [07:33] 61,273 bars, 36 alerts seen, 3 entries, 2 open
+  [07:39] 63,255 bars, 37 alerts seen, 3 entries, 2 open
+  [07:45] 65,516 bars, 38 alerts seen, 3 entries, 2 open
+  [07:50] 67,592 bars, 38 alerts seen, 3 entries, 2 open
+  [07:56] 69,947 bars, 39 alerts seen, 3 entries, 2 open
+  [08:01] 71,758 bars, 41 alerts seen, 3 entries, 2 open
+  [08:06] 74,228 bars, 43 alerts seen, 3 entries, 2 open
+  [08:12] 76,289 bars, 43 alerts seen, 3 entries, 2 open
+  [08:17] 78,733 bars, 44 alerts seen, 3 entries, 2 open
+  [08:22] 80,659 bars, 44 alerts seen, 3 entries, 2 open
+  [08:28] 82,656 bars, 44 alerts seen, 3 entries, 2 open
+  [08:33] 84,757 bars, 46 alerts seen, 3 entries, 2 open
+  [08:38] 87,048 bars, 46 alerts seen, 3 entries, 2 open
+  [08:43] 89,434 bars, 46 alerts seen, 3 entries, 2 open
+  [08:48] 91,420 bars, 46 alerts seen, 3 entries, 2 open
+  [08:53] 93,593 bars, 46 alerts seen, 3 entries, 2 open
+  [08:59] 96,302 bars, 47 alerts seen, 3 entries, 2 open
+  [09:04] 98,676 bars, 48 alerts seen, 3 entries, 2 open
+  [09:09] 101,105 bars, 49 alerts seen, 3 entries, 2 open
+  [09:15] 104,010 bars, 50 alerts seen, 3 entries, 2 open
+  [09:20] 106,573 bars, 50 alerts seen, 3 entries, 2 open
+  [09:25] 109,672 bars, 51 alerts seen, 3 entries, 2 open
+  [09:31] 114,537 bars, 51 alerts seen, 3 entries, 2 open
+  09:33  BUY IONL x378 @ ~14.33 stop 13.19 target 16.48  [new_high]
+  09:34  BUY NOWL x763 @ ~7.10 stop 6.53 target 8.16  [new_high]
+  [09:36] 144,766 bars, 62 alerts seen, 5 entries, 4 open
+  HALTED: 4 positions open against a limit of 3. No new entries until this is resolved.
+  alert delivery failed: 'latin-1' codec can't encode character '\u2014' in position 15: ordinal not in range(256)
+  [09:42] 166,637 bars, 66 alerts seen, 5 entries, 4 open
+  [09:47] 188,842 bars, 66 alerts seen, 5 entries, 4 open
+  09:49  SELL DAIC @ 5.12 (-10.9%) — stop
+  [09:52] 211,238 bars, 68 alerts seen, 5 entries, 3 open
+  [09:57] 232,133 bars, 69 alerts seen, 5 entries, 3 open
+  [10:02] 253,469 bars, 70 alerts seen, 5 entries, 3 open
+  [10:08] 279,228 bars, 72 alerts seen, 5 entries, 3 open
+  [10:13] 301,247 bars, 72 alerts seen, 5 entries, 3 open
+  [10:18] 323,470 bars, 75 alerts seen, 5 entries, 3 open
+  [10:23] 345,966 bars, 77 alerts seen, 5 entries, 3 open
+  [10:28] 366,751 bars, 79 alerts seen, 5 entries, 3 open
+  [10:33] 389,299 bars, 79 alerts seen, 5 entries, 3 open
+  [10:38] 411,892 bars, 80 alerts seen, 5 entries, 3 open
+  [10:43] 432,025 bars, 81 alerts seen, 5 entries, 3 open
+  [10:48] 454,461 bars, 81 alerts seen, 5 entries, 3 open
+  [10:53] 473,668 bars, 81 alerts seen, 5 entries, 3 open
+  [10:58] 493,772 bars, 82 alerts seen, 5 entries, 3 open
+  [11:04] 517,912 bars, 82 alerts seen, 5 entries, 3 open
+  [11:09] 538,948 bars, 82 alerts seen, 5 entries, 3 open
+  [11:14] 559,079 bars, 82 alerts seen, 5 entries, 3 open
+  [11:19] 580,602 bars, 83 alerts seen, 5 entries, 3 open
+  [11:24] 599,675 bars, 84 alerts seen, 5 entries, 3 open
+  [11:29] 620,157 bars, 84 alerts seen, 5 entries, 3 open
+  [11:34] 641,404 bars, 84 alerts seen, 5 entries, 3 open
+  [11:39] 660,894 bars, 84 alerts seen, 5 entries, 3 open
+  [11:44] 681,283 bars, 87 alerts seen, 5 entries, 3 open
+  [11:49] 700,815 bars, 88 alerts seen, 5 entries, 3 open
+  [11:54] 722,029 bars, 89 alerts seen, 5 entries, 3 open
+  [12:00] 740,922 bars, 89 alerts seen, 5 entries, 3 open
+  [12:05] 760,591 bars, 89 alerts seen, 5 entries, 3 open
+  [12:10] 779,651 bars, 91 alerts seen, 5 entries, 3 open
+  [12:15] 799,796 bars, 92 alerts seen, 5 entries, 3 open
+  [12:20] 821,054 bars, 92 alerts seen, 5 entries, 3 open
+  [12:25] 837,057 bars, 92 alerts seen, 5 entries, 3 open
+  [12:30] 859,611 bars, 94 alerts seen, 5 entries, 3 open
+  [12:36] 878,207 bars, 94 alerts seen, 5 entries, 3 open
+  [12:41] 896,840 bars, 94 alerts seen, 5 entries, 3 open
+  [12:46] 917,060 bars, 94 alerts seen, 5 entries, 3 open
+  [12:51] 933,834 bars, 95 alerts seen, 5 entries, 3 open
+  [12:57] 956,629 bars, 95 alerts seen, 5 entries, 3 open
+  [13:02] 975,656 bars, 95 alerts seen, 5 entries, 3 open
+  [13:07] 994,864 bars, 95 alerts seen, 5 entries, 3 open
+  [13:12] 1,013,115 bars, 97 alerts seen, 5 entries, 3 open
+  [13:17] 1,031,770 bars, 97 alerts seen, 5 entries, 3 open
+  [13:22] 1,050,538 bars, 99 alerts seen, 5 entries, 3 open
+  [13:27] 1,072,550 bars, 100 alerts seen, 5 entries, 3 open
+  [13:33] 1,091,800 bars, 100 alerts seen, 5 entries, 3 open
+  [13:38] 1,110,228 bars, 100 alerts seen, 5 entries, 3 open
+  [13:43] 1,129,919 bars, 102 alerts seen, 5 entries, 3 open
+  [13:49] 1,152,322 bars, 102 alerts seen, 5 entries, 3 open
+  [13:54] 1,171,209 bars, 103 alerts seen, 5 entries, 3 open
+  [13:59] 1,190,143 bars, 104 alerts seen, 5 entries, 3 open
+  [14:04] 1,211,582 bars, 104 alerts seen, 5 entries, 3 open
+  [14:09] 1,230,070 bars, 105 alerts seen, 5 entries, 3 open
+  [14:14] 1,251,607 bars, 106 alerts seen, 5 entries, 3 open
+  [14:19] 1,269,373 bars, 106 alerts seen, 5 entries, 3 open
+  [14:24] 1,291,202 bars, 106 alerts seen, 5 entries, 3 open
+  [14:29] 1,309,081 bars, 106 alerts seen, 5 entries, 3 open
+  [14:34] 1,328,232 bars, 106 alerts seen, 5 entries, 3 open
+  [14:40] 1,351,299 bars, 106 alerts seen, 5 entries, 3 open
+  [14:45] 1,370,728 bars, 106 alerts seen, 5 entries, 3 open
+  [14:50] 1,391,345 bars, 106 alerts seen, 5 entries, 3 open
+  [14:55] 1,410,567 bars, 106 alerts seen, 5 entries, 3 open
+  [15:00] 1,430,471 bars, 106 alerts seen, 5 entries, 3 open
+  [15:05] 1,453,794 bars, 107 alerts seen, 5 entries, 3 open
+  [15:10] 1,472,829 bars, 107 alerts seen, 5 entries, 3 open
+  [15:15] 1,495,398 bars, 107 alerts seen, 5 entries, 3 open
+  [15:20] 1,515,758 bars, 107 alerts seen, 5 entries, 3 open
+  [15:25] 1,537,724 bars, 108 alerts seen, 5 entries, 3 open
+  [15:30] 1,560,384 bars, 108 alerts seen, 5 entries, 3 open
+  [15:35] 1,584,798 bars, 108 alerts seen, 5 entries, 3 open
+  [15:40] 1,609,585 bars, 108 alerts seen, 5 entries, 3 open
+  [15:45] 1,632,218 bars, 108 alerts seen, 5 entries, 3 open
+  [15:50] 1,657,899 bars, 108 alerts seen, 5 entries, 3 open
+  15:50  SELL INTW @ 19.18 (+1.5%) — time
+  15:50  SELL IONL @ 14.84 (+6.7%) — time
+  15:50  SELL NOWL @ 7.81 (+8.7%) — time
+  [15:56] 1,689,537 bars, 108 alerts seen, 5 entries, 0 open
+  [16:01] 1,721,042 bars, 108 alerts seen, 5 entries, 0 open
+  [16:07] 1,731,010 bars, 108 alerts seen, 5 entries, 0 open
+  [16:12] 1,733,343 bars, 108 alerts seen, 5 entries, 0 open
+  [16:17] 1,735,590 bars, 108 alerts seen, 5 entries, 0 open
+  [16:22] 1,737,812 bars, 108 alerts seen, 5 entries, 0 open
+  [16:28] 1,740,038 bars, 108 alerts seen, 5 entries, 0 open
+  [16:33] 1,741,801 bars, 108 alerts seen, 5 entries, 0 open
+  [16:38] 1,743,476 bars, 108 alerts seen, 5 entries, 0 open
+  [16:44] 1,745,449 bars, 108 alerts seen, 5 entries, 0 open
+  [16:49] 1,747,111 bars, 108 alerts seen, 5 entries, 0 open
+  [16:55] 1,748,975 bars, 108 alerts seen, 5 entries, 0 open
+  [17:00] 1,750,670 bars, 108 alerts seen, 5 entries, 0 open
+  [17:06] 1,752,354 bars, 108 alerts seen, 5 entries, 0 open
+  [17:11] 1,753,742 bars, 108 alerts seen, 5 entries, 0 open
+  [17:17] 1,755,567 bars, 108 alerts seen, 5 entries, 0 open
+  [17:22] 1,757,086 bars, 108 alerts seen, 5 entries, 0 open
+  [17:27] 1,758,463 bars, 108 alerts seen, 5 entries, 0 open
+  [17:33] 1,760,085 bars, 108 alerts seen, 5 entries, 0 open
+  [17:38] 1,761,444 bars, 108 alerts seen, 5 entries, 0 open
+  [17:44] 1,762,962 bars, 108 alerts seen, 5 entries, 0 open
+  [17:49] 1,764,267 bars, 108 alerts seen, 5 entries, 0 open
+  [17:54] 1,765,481 bars, 108 alerts seen, 5 entries, 0 open
+  [17:59] 1,766,769 bars, 108 alerts seen, 5 entries, 0 open
+  [18:04] 1,768,396 bars, 108 alerts seen, 5 entries, 0 open
+  [18:09] 1,769,712 bars, 108 alerts seen, 5 entries, 0 open
+  [18:15] 1,770,923 bars, 108 alerts seen, 5 entries, 0 open
+  [18:21] 1,772,389 bars, 108 alerts seen, 5 entries, 0 open
+  [18:26] 1,773,692 bars, 108 alerts seen, 5 entries, 0 open
+  [18:31] 1,774,943 bars, 108 alerts seen, 5 entries, 0 open
+  [18:37] 1,776,438 bars, 108 alerts seen, 5 entries, 0 open
+  [18:43] 1,777,813 bars, 108 alerts seen, 5 entries, 0 open
+  [18:49] 1,779,168 bars, 108 alerts seen, 5 entries, 0 open
+  [18:54] 1,780,277 bars, 108 alerts seen, 5 entries, 0 open
+  [18:59] 1,781,699 bars, 108 alerts seen, 5 entries, 0 open
+  [19:05] 1,782,823 bars, 108 alerts seen, 5 entries, 0 open
+  [19:10] 1,784,208 bars, 108 alerts seen, 5 entries, 0 open
+  [19:16] 1,785,375 bars, 108 alerts seen, 5 entries, 0 open
+  [19:21] 1,786,575 bars, 108 alerts seen, 5 entries, 0 open
+  [19:26] 1,787,730 bars, 108 alerts seen, 5 entries, 0 open
+  [19:32] 1,789,128 bars, 108 alerts seen, 5 entries, 0 open
+  [19:37] 1,790,459 bars, 108 alerts seen, 5 entries, 0 open
+  [19:43] 1,791,583 bars, 108 alerts seen, 5 entries, 0 open
+  [19:48] 1,792,862 bars, 108 alerts seen, 5 entries, 0 open
+  [19:54] 1,794,442 bars, 108 alerts seen, 5 entries, 0 open
+  [20:00] 1,796,145 bars, 108 alerts seen, 5 entries, 0 open
+data websocket error, restarting connection: no close frame received or sent
+data websocket error, restarting connection: no close frame received or sent
+
+=== 2026-08-28 04:00:02 EDT — startup, feed sip ===
+  building reference data — about 10 minutes...
+Fetching asset list...
+  13096 listed, tradable US equities
+Fetching daily bars...
+  fetched 200/13096 symbols
+  fetched 400/13096 symbols
+  fetched 600/13096 symbols
+  fetched 800/13096 symbols
+  fetched 1000/13096 symbols
+  fetched 1200/13096 symbols
+  fetched 1400/13096 symbols
+  fetched 1600/13096 symbols
+  fetched 1800/13096 symbols
+  fetched 2000/13096 symbols
+  fetched 2200/13096 symbols
+  fetched 2400/13096 symbols
+  fetched 2600/13096 symbols
+  fetched 2800/13096 symbols
+  fetched 3000/13096 symbols
+  fetched 3200/13096 symbols
+  fetched 3400/13096 symbols
+  fetched 3600/13096 symbols
+  fetched 3800/13096 symbols
+  fetched 4000/13096 symbols
+  fetched 4200/13096 symbols
+  fetched 4400/13096 symbols
+  fetched 4600/13096 symbols
+  fetched 4800/13096 symbols
+  fetched 5000/13096 symbols
+  fetched 5200/13096 symbols
+  fetched 5400/13096 symbols
+  fetched 5600/13096 symbols
+  fetched 5800/13096 symbols
+  fetched 6000/13096 symbols
+  fetched 6200/13096 symbols
+  fetched 6400/13096 symbols
+  fetched 6600/13096 symbols
+  fetched 6800/13096 symbols
+  fetched 7000/13096 symbols
+  fetched 7200/13096 symbols
+  fetched 7400/13096 symbols
+  fetched 7600/13096 symbols
+  fetched 7800/13096 symbols
+  fetched 8000/13096 symbols
+  fetched 8200/13096 symbols
+  fetched 8400/13096 symbols
+  fetched 8600/13096 symbols
+  fetched 8800/13096 symbols
+  fetched 9000/13096 symbols
+  fetched 9200/13096 symbols
+  fetched 9400/13096 symbols
+  fetched 9600/13096 symbols
+  fetched 9800/13096 symbols
+  fetched 10000/13096 symbols
+  fetched 10200/13096 symbols
+  fetched 10400/13096 symbols
+  fetched 10600/13096 symbols
+  fetched 10800/13096 symbols
+  fetched 11000/13096 symbols
+  fetched 11200/13096 symbols
+  fetched 11400/13096 symbols
+  fetched 11600/13096 symbols
+  fetched 11800/13096 symbols
+  fetched 12000/13096 symbols
+  fetched 12200/13096 symbols
+  fetched 12400/13096 symbols
+  fetched 12600/13096 symbols
+  fetched 12800/13096 symbols
+  fetched 13000/13096 symbols
+  fetched 13096/13096 symbols
+  9049 kept without a share count (foreign filers, funds, warrants) — rules decide
+  145 dropped: under 14 sessions of history
+  12941 symbols in the universe
+Wrote 12941 refs to data/refs/2026-08-28.json
+  starting paper trader (in the foreground, as this process)...
+
+
+Paper equity   $86,929
+Feed           SIP
+Universe       12,941 symbols
+Reference      2026-08-28
+Mode           PAPER ORDERS
+Risk           0.5% per trade, max 3 positions
+Journal        data/mosquito/trades.jsonl
+
+Listening. Ctrl-C to stop.
+
+error during websocket communication: 
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/websockets/legacy/client.py", line 652, in __await_impl__
+    await protocol.handshake(
+    ...<5 lines>...
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/websockets/legacy/client.py", line 312, in handshake
+    status_code, response_headers = await self.read_http_response()
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/websockets/legacy/client.py", line 130, in read_http_response
+    status_code, reason, headers = await read_response(self.reader)
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/websockets/legacy/http.py", line 120, in read_response
+    status_line = await read_line(stream)
+                  ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/websockets/legacy/http.py", line 194, in read_line
+    line = await stream.readline()
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/streams.py", line 562, in readline
+    line = await self.readuntil(sep)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/streams.py", line 677, in readuntil
+    await self._wait_for_data('readuntil')
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/streams.py", line 539, in _wait_for_data
+    await self._waiter
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 454, in _run_forever
+    await self._start_ws()
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 207, in _start_ws
+    await self._connect()
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 171, in _connect
+    self._ws = await websockets_legacy.connect(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/websockets/legacy/client.py", line 648, in __await_impl__
+    async with asyncio_timeout(self.open_timeout):
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/timeouts.py", line 114, in __aexit__
+    raise TimeoutError from exc_val
+TimeoutError
+error during websocket communication: 
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/websockets/legacy/client.py", line 652, in __await_impl__
+    await protocol.handshake(
+    ...<5 lines>...
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/websockets/legacy/client.py", line 312, in handshake
+    status_code, response_headers = await self.read_http_response()
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/websockets/legacy/client.py", line 130, in read_http_response
+    status_code, reason, headers = await read_response(self.reader)
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/websockets/legacy/http.py", line 120, in read_response
+    status_line = await read_line(stream)
+                  ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/websockets/legacy/http.py", line 194, in read_line
+    line = await stream.readline()
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/streams.py", line 562, in readline
+    line = await self.readuntil(sep)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/streams.py", line 677, in readuntil
+    await self._wait_for_data('readuntil')
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/streams.py", line 539, in _wait_for_data
+    await self._waiter
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 454, in _run_forever
+    await self._start_ws()
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 207, in _start_ws
+    await self._connect()
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 171, in _connect
+    self._ws = await websockets_legacy.connect(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/websockets/legacy/client.py", line 648, in __await_impl__
+    async with asyncio_timeout(self.open_timeout):
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/timeouts.py", line 114, in __aexit__
+    raise TimeoutError from exc_val
+TimeoutError
+error during websocket communication: 
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/websockets/legacy/client.py", line 652, in __await_impl__
+    await protocol.handshake(
+    ...<5 lines>...
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/websockets/legacy/client.py", line 312, in handshake
+    status_code, response_headers = await self.read_http_response()
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/websockets/legacy/client.py", line 130, in read_http_response
+    status_code, reason, headers = await read_response(self.reader)
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/websockets/legacy/http.py", line 120, in read_response
+    status_line = await read_line(stream)
+                  ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/websockets/legacy/http.py", line 194, in read_line
+    line = await stream.readline()
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/streams.py", line 562, in readline
+    line = await self.readuntil(sep)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/streams.py", line 677, in readuntil
+    await self._wait_for_data('readuntil')
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/streams.py", line 539, in _wait_for_data
+    await self._waiter
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 454, in _run_forever
+    await self._start_ws()
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 207, in _start_ws
+    await self._connect()
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 171, in _connect
+    self._ws = await websockets_legacy.connect(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/websockets/legacy/client.py", line 648, in __await_impl__
+    async with asyncio_timeout(self.open_timeout):
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/timeouts.py", line 114, in __aexit__
+    raise TimeoutError from exc_val
+TimeoutError
+error during websocket communication: 
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/websockets/legacy/client.py", line 652, in __await_impl__
+    await protocol.handshake(
+    ...<5 lines>...
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/websockets/legacy/client.py", line 312, in handshake
+    status_code, response_headers = await self.read_http_response()
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/websockets/legacy/client.py", line 130, in read_http_response
+    status_code, reason, headers = await read_response(self.reader)
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/websockets/legacy/http.py", line 120, in read_response
+    status_line = await read_line(stream)
+                  ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/websockets/legacy/http.py", line 194, in read_line
+    line = await stream.readline()
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/streams.py", line 562, in readline
+    line = await self.readuntil(sep)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/streams.py", line 677, in readuntil
+    await self._wait_for_data('readuntil')
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/streams.py", line 539, in _wait_for_data
+    await self._waiter
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 454, in _run_forever
+    await self._start_ws()
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 207, in _start_ws
+    await self._connect()
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 171, in _connect
+    self._ws = await websockets_legacy.connect(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/websockets/legacy/client.py", line 648, in __await_impl__
+    async with asyncio_timeout(self.open_timeout):
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/timeouts.py", line 114, in __aexit__
+    raise TimeoutError from exc_val
+TimeoutError
+error during websocket communication: 
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/websockets/legacy/client.py", line 652, in __await_impl__
+    await protocol.handshake(
+    ...<5 lines>...
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/websockets/legacy/client.py", line 312, in handshake
+    status_code, response_headers = await self.read_http_response()
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/websockets/legacy/client.py", line 130, in read_http_response
+    status_code, reason, headers = await read_response(self.reader)
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/websockets/legacy/http.py", line 120, in read_response
+    status_line = await read_line(stream)
+                  ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/websockets/legacy/http.py", line 194, in read_line
+    line = await stream.readline()
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/streams.py", line 562, in readline
+    line = await self.readuntil(sep)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/streams.py", line 677, in readuntil
+    await self._wait_for_data('readuntil')
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/streams.py", line 539, in _wait_for_data
+    await self._waiter
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 454, in _run_forever
+    await self._start_ws()
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 207, in _start_ws
+    await self._connect()
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 171, in _connect
+    self._ws = await websockets_legacy.connect(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/websockets/legacy/client.py", line 648, in __await_impl__
+    async with asyncio_timeout(self.open_timeout):
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/timeouts.py", line 114, in __aexit__
+    raise TimeoutError from exc_val
+TimeoutError
+  [04:04] 1 bars, 0 alerts seen, 0 entries, 0 open
+  [04:10] 1,775 bars, 4 alerts seen, 0 entries, 0 open
+  [04:15] 3,088 bars, 4 alerts seen, 0 entries, 0 open
+  04:16  BUY GCL x7304 @ ~0.74 stop 0.68 target 0.86  [spike]
+  04:17  SELL GCL @ 0.68 (-8.5%) — stop
+  [04:20] 4,263 bars, 5 alerts seen, 1 entries, 0 open
+  [04:25] 5,437 bars, 5 alerts seen, 1 entries, 0 open
+  [04:31] 6,491 bars, 5 alerts seen, 1 entries, 0 open
+  [04:37] 7,790 bars, 6 alerts seen, 1 entries, 0 open
+  [04:42] 8,748 bars, 7 alerts seen, 1 entries, 0 open
+  [04:47] 9,930 bars, 8 alerts seen, 1 entries, 0 open
+  [04:53] 10,858 bars, 8 alerts seen, 1 entries, 0 open
+  [04:58] 11,974 bars, 10 alerts seen, 1 entries, 0 open
+  [05:04] 12,905 bars, 10 alerts seen, 1 entries, 0 open
+  [05:09] 14,011 bars, 10 alerts seen, 1 entries, 0 open
+  [05:15] 14,875 bars, 11 alerts seen, 1 entries, 0 open
+  [05:20] 15,713 bars, 11 alerts seen, 1 entries, 0 open
+  [05:26] 16,765 bars, 11 alerts seen, 1 entries, 0 open
+  [05:32] 17,730 bars, 11 alerts seen, 1 entries, 0 open
+  [05:38] 18,712 bars, 11 alerts seen, 1 entries, 0 open
+  [05:43] 19,724 bars, 13 alerts seen, 1 entries, 0 open
+  [05:48] 20,555 bars, 14 alerts seen, 1 entries, 0 open
+  [05:54] 21,433 bars, 15 alerts seen, 1 entries, 0 open
+  [05:59] 22,237 bars, 15 alerts seen, 1 entries, 0 open
+  [06:05] 23,333 bars, 16 alerts seen, 1 entries, 0 open
+  [06:10] 24,326 bars, 17 alerts seen, 1 entries, 0 open
+  [06:16] 25,366 bars, 18 alerts seen, 1 entries, 0 open
+  [06:21] 26,241 bars, 18 alerts seen, 1 entries, 0 open
+  [06:27] 27,284 bars, 18 alerts seen, 1 entries, 0 open
+  [06:32] 28,147 bars, 18 alerts seen, 1 entries, 0 open
+  [06:37] 29,147 bars, 18 alerts seen, 1 entries, 0 open
+  [06:43] 30,065 bars, 19 alerts seen, 1 entries, 0 open
+  [06:48] 30,901 bars, 19 alerts seen, 1 entries, 0 open
+  [06:54] 31,871 bars, 19 alerts seen, 1 entries, 0 open
+  [07:00] 33,008 bars, 19 alerts seen, 1 entries, 0 open
+  07:01  BUY XPON x562 @ ~9.62 stop 8.85 target 11.06  [new_high]
+  07:02  SELL XPON @ 8.81 (-8.4%) — stop
+  [07:05] 35,764 bars, 20 alerts seen, 2 entries, 0 open
+  [07:10] 37,394 bars, 20 alerts seen, 2 entries, 0 open
+  [07:16] 39,364 bars, 21 alerts seen, 2 entries, 0 open
+  [07:21] 41,059 bars, 22 alerts seen, 2 entries, 0 open
+  [07:26] 42,680 bars, 24 alerts seen, 2 entries, 0 open
+  [07:31] 44,281 bars, 24 alerts seen, 2 entries, 0 open
+  [07:36] 45,957 bars, 24 alerts seen, 2 entries, 0 open
+  [07:41] 47,577 bars, 24 alerts seen, 2 entries, 0 open
+  [07:46] 49,138 bars, 24 alerts seen, 2 entries, 0 open
+  [07:51] 50,647 bars, 24 alerts seen, 2 entries, 0 open
+  [07:56] 52,236 bars, 25 alerts seen, 2 entries, 0 open
+  [08:01] 53,850 bars, 25 alerts seen, 2 entries, 0 open
+  [08:06] 55,902 bars, 25 alerts seen, 2 entries, 0 open
+  [08:11] 57,643 bars, 25 alerts seen, 2 entries, 0 open
+  [08:16] 59,447 bars, 25 alerts seen, 2 entries, 0 open
+  [08:21] 61,346 bars, 26 alerts seen, 2 entries, 0 open
+  [08:26] 63,282 bars, 26 alerts seen, 2 entries, 0 open
+  [08:31] 65,124 bars, 26 alerts seen, 2 entries, 0 open
+  [08:37] 67,079 bars, 26 alerts seen, 2 entries, 0 open
+  [08:42] 69,024 bars, 26 alerts seen, 2 entries, 0 open
+  [08:48] 71,296 bars, 28 alerts seen, 2 entries, 0 open
+  [08:53] 73,138 bars, 28 alerts seen, 2 entries, 0 open
+  [08:59] 75,400 bars, 28 alerts seen, 2 entries, 0 open
+  [09:04] 77,667 bars, 29 alerts seen, 2 entries, 0 open
+  09:05  BUY BRNX x1260 @ ~4.26 stop 3.92 target 4.90  [spike]
+  [09:09] 80,150 bars, 30 alerts seen, 3 entries, 1 open
+  DAILY LOSS LIMIT: -2.1% vs cap -2.0% — flattening
+  [09:14] 82,297 bars, 31 alerts seen, 3 entries, 1 open
+  [09:19] 84,536 bars, 31 alerts seen, 3 entries, 1 open
+  [09:24] 87,324 bars, 31 alerts seen, 3 entries, 1 open
+  [09:29] 90,327 bars, 31 alerts seen, 3 entries, 1 open
+ConnectionClosedError exception in shielded future
+future: <Future finished exception=ConnectionClosedError(None, None, None)>
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/websockets/legacy/protocol.py", line 940, in transfer_data
+    message = await self.read_message()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/websockets/legacy/protocol.py", line 1010, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/websockets/legacy/protocol.py", line 1087, in read_data_frame
+    frame = await self.read_frame(max_size)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/websockets/legacy/protocol.py", line 1144, in read_frame
+    frame = await Frame.read(
+            ^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/websockets/legacy/framing.py", line 70, in read
+    data = await reader(2)
+           ^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/streams.py", line 767, in readexactly
+    raise exceptions.IncompleteReadError(incomplete, n)
+asyncio.exceptions.IncompleteReadError: 0 bytes read on a total of 2 expected bytes
+
+The above exception was the direct cause of the following exception:
+
+websockets.exceptions.ConnectionClosedError: no close frame received or sent
+data websocket error, restarting connection: no close frame received or sent
+  [09:34] 101,148 bars, 35 alerts seen, 3 entries, 1 open
+  [09:39] 121,766 bars, 38 alerts seen, 3 entries, 1 open
+  [09:44] 142,697 bars, 41 alerts seen, 3 entries, 1 open
+  [09:49] 163,233 bars, 43 alerts seen, 3 entries, 1 open
+  [09:54] 185,367 bars, 44 alerts seen, 3 entries, 1 open
+  [09:59] 205,229 bars, 45 alerts seen, 3 entries, 1 open
+  [10:04] 227,276 bars, 46 alerts seen, 3 entries, 1 open
+  [10:09] 249,059 bars, 48 alerts seen, 3 entries, 1 open
+  [10:14] 273,005 bars, 49 alerts seen, 3 entries, 1 open
+  [10:19] 294,278 bars, 52 alerts seen, 3 entries, 1 open
+  [10:24] 315,055 bars, 53 alerts seen, 3 entries, 1 open
+  [10:29] 338,607 bars, 53 alerts seen, 3 entries, 1 open
+  [10:34] 357,937 bars, 53 alerts seen, 3 entries, 1 open
+  [10:39] 380,855 bars, 54 alerts seen, 3 entries, 1 open
+  [10:44] 400,411 bars, 55 alerts seen, 3 entries, 1 open
+  [10:49] 423,014 bars, 57 alerts seen, 3 entries, 1 open
+  [10:54] 442,116 bars, 58 alerts seen, 3 entries, 1 open
+  [11:00] 464,827 bars, 59 alerts seen, 3 entries, 1 open
+  [11:05] 485,710 bars, 59 alerts seen, 3 entries, 1 open
+  [11:10] 507,661 bars, 59 alerts seen, 3 entries, 1 open
+  [11:16] 530,621 bars, 61 alerts seen, 3 entries, 1 open
+  [11:21] 551,495 bars, 61 alerts seen, 3 entries, 1 open
+  [11:26] 571,928 bars, 61 alerts seen, 3 entries, 1 open
+  [11:31] 591,207 bars, 61 alerts seen, 3 entries, 1 open
+  [11:36] 611,569 bars, 62 alerts seen, 3 entries, 1 open
+  [11:41] 633,542 bars, 62 alerts seen, 3 entries, 1 open
+  [11:46] 653,256 bars, 64 alerts seen, 3 entries, 1 open
+  [11:51] 676,262 bars, 64 alerts seen, 3 entries, 1 open
+  [11:56] 694,685 bars, 64 alerts seen, 3 entries, 1 open
+  [12:01] 720,757 bars, 65 alerts seen, 3 entries, 1 open
+  [12:06] 741,630 bars, 65 alerts seen, 3 entries, 1 open
+  [12:11] 762,045 bars, 65 alerts seen, 3 entries, 1 open
+  [12:16] 782,795 bars, 65 alerts seen, 3 entries, 1 open
+  [12:22] 804,067 bars, 65 alerts seen, 3 entries, 1 open
+  [12:27] 825,121 bars, 65 alerts seen, 3 entries, 1 open
+  [12:32] 844,572 bars, 66 alerts seen, 3 entries, 1 open
+  [12:38] 868,462 bars, 66 alerts seen, 3 entries, 1 open
+  [12:43] 888,757 bars, 66 alerts seen, 3 entries, 1 open
+  [12:48] 908,941 bars, 66 alerts seen, 3 entries, 1 open
+  [12:53] 926,161 bars, 66 alerts seen, 3 entries, 1 open
+  [12:58] 946,052 bars, 66 alerts seen, 3 entries, 1 open
+  [13:03] 965,917 bars, 66 alerts seen, 3 entries, 1 open
+  [13:08] 984,185 bars, 66 alerts seen, 3 entries, 1 open
+  [13:13] 1,002,311 bars, 67 alerts seen, 3 entries, 1 open
+  [13:18] 1,024,147 bars, 68 alerts seen, 3 entries, 1 open
+  [13:23] 1,040,796 bars, 68 alerts seen, 3 entries, 1 open
+  [13:28] 1,058,644 bars, 68 alerts seen, 3 entries, 1 open
+  [13:33] 1,079,565 bars, 68 alerts seen, 3 entries, 1 open
+  [13:38] 1,095,981 bars, 68 alerts seen, 3 entries, 1 open
+  [13:43] 1,117,708 bars, 68 alerts seen, 3 entries, 1 open
+  [13:49] 1,137,331 bars, 68 alerts seen, 3 entries, 1 open
+  [13:54] 1,155,453 bars, 69 alerts seen, 3 entries, 1 open
+  [13:59] 1,173,786 bars, 69 alerts seen, 3 entries, 1 open
+  [14:04] 1,192,160 bars, 70 alerts seen, 3 entries, 1 open
+  [14:09] 1,210,659 bars, 70 alerts seen, 3 entries, 1 open
+  [14:14] 1,229,133 bars, 70 alerts seen, 3 entries, 1 open
+  [14:19] 1,248,250 bars, 70 alerts seen, 3 entries, 1 open
+  [14:24] 1,266,878 bars, 70 alerts seen, 3 entries, 1 open
+  [14:29] 1,286,666 bars, 70 alerts seen, 3 entries, 1 open
+  [14:34] 1,308,174 bars, 70 alerts seen, 3 entries, 1 open
+  [14:39] 1,325,905 bars, 70 alerts seen, 3 entries, 1 open
+  [14:44] 1,344,891 bars, 70 alerts seen, 3 entries, 1 open
+  [14:49] 1,365,927 bars, 70 alerts seen, 3 entries, 1 open
+  [14:54] 1,385,110 bars, 70 alerts seen, 3 entries, 1 open
+  [15:00] 1,409,193 bars, 70 alerts seen, 3 entries, 1 open
+  [15:05] 1,430,191 bars, 70 alerts seen, 3 entries, 1 open
+  [15:10] 1,451,590 bars, 70 alerts seen, 3 entries, 1 open
+  [15:15] 1,471,927 bars, 70 alerts seen, 3 entries, 1 open
+  [15:20] 1,493,090 bars, 70 alerts seen, 3 entries, 1 open
+  [15:25] 1,514,645 bars, 70 alerts seen, 3 entries, 1 open
+  [15:30] 1,537,770 bars, 70 alerts seen, 3 entries, 1 open
+  [15:35] 1,563,587 bars, 70 alerts seen, 3 entries, 1 open
+  [15:40] 1,582,464 bars, 70 alerts seen, 3 entries, 1 open
+  [15:45] 1,606,780 bars, 70 alerts seen, 3 entries, 1 open
+  [15:50] 1,634,680 bars, 70 alerts seen, 3 entries, 1 open
+  [15:56] 1,663,601 bars, 70 alerts seen, 3 entries, 1 open
+  [16:01] 1,695,400 bars, 70 alerts seen, 3 entries, 1 open
+  [16:06] 1,704,752 bars, 70 alerts seen, 3 entries, 1 open
+  [16:11] 1,706,626 bars, 70 alerts seen, 3 entries, 1 open
+  [16:17] 1,709,023 bars, 70 alerts seen, 3 entries, 1 open
+  [16:22] 1,710,855 bars, 70 alerts seen, 3 entries, 1 open
+  [16:28] 1,712,947 bars, 70 alerts seen, 3 entries, 1 open
+  [16:34] 1,714,873 bars, 70 alerts seen, 3 entries, 1 open
+  [16:39] 1,716,728 bars, 70 alerts seen, 3 entries, 1 open
+  [16:44] 1,718,434 bars, 70 alerts seen, 3 entries, 1 open
+  [16:50] 1,720,175 bars, 70 alerts seen, 3 entries, 1 open
+  [16:55] 1,721,655 bars, 70 alerts seen, 3 entries, 1 open
+  [17:00] 1,723,042 bars, 70 alerts seen, 3 entries, 1 open
+  [17:06] 1,724,560 bars, 70 alerts seen, 3 entries, 1 open
+  [17:11] 1,725,816 bars, 70 alerts seen, 3 entries, 1 open
+  [17:17] 1,727,324 bars, 70 alerts seen, 3 entries, 1 open
+  [17:23] 1,728,808 bars, 70 alerts seen, 3 entries, 1 open
+  [17:28] 1,729,958 bars, 70 alerts seen, 3 entries, 1 open
+  [17:33] 1,731,153 bars, 70 alerts seen, 3 entries, 1 open
+  [17:39] 1,732,509 bars, 70 alerts seen, 3 entries, 1 open
+  [17:44] 1,733,613 bars, 70 alerts seen, 3 entries, 1 open
+  [17:50] 1,734,958 bars, 70 alerts seen, 3 entries, 1 open
+  [17:55] 1,736,114 bars, 70 alerts seen, 3 entries, 1 open
+  [18:00] 1,737,216 bars, 70 alerts seen, 3 entries, 1 open
+  [18:05] 1,738,510 bars, 70 alerts seen, 3 entries, 1 open
+  [18:10] 1,739,618 bars, 70 alerts seen, 3 entries, 1 open
+  [18:16] 1,740,736 bars, 70 alerts seen, 3 entries, 1 open
+  [18:21] 1,741,657 bars, 70 alerts seen, 3 entries, 1 open
+  [18:26] 1,742,690 bars, 70 alerts seen, 3 entries, 1 open
+  [18:31] 1,743,868 bars, 70 alerts seen, 3 entries, 1 open
+  [18:36] 1,744,873 bars, 70 alerts seen, 3 entries, 1 open
+  [18:41] 1,745,769 bars, 70 alerts seen, 3 entries, 1 open
+  [18:47] 1,746,940 bars, 70 alerts seen, 3 entries, 1 open
+  [18:52] 1,747,976 bars, 70 alerts seen, 3 entries, 1 open
+  [18:58] 1,749,213 bars, 70 alerts seen, 3 entries, 1 open
+  [19:03] 1,750,378 bars, 70 alerts seen, 3 entries, 1 open
+  [19:08] 1,751,237 bars, 70 alerts seen, 3 entries, 1 open
+  [19:13] 1,752,215 bars, 70 alerts seen, 3 entries, 1 open
+  [19:18] 1,753,269 bars, 70 alerts seen, 3 entries, 1 open
+  [19:24] 1,754,444 bars, 70 alerts seen, 3 entries, 1 open
+  [19:29] 1,755,522 bars, 70 alerts seen, 3 entries, 1 open
+  [19:34] 1,756,605 bars, 70 alerts seen, 3 entries, 1 open
+  [19:40] 1,757,886 bars, 70 alerts seen, 3 entries, 1 open
+  [19:46] 1,759,204 bars, 70 alerts seen, 3 entries, 1 open
+  [19:51] 1,760,410 bars, 70 alerts seen, 3 entries, 1 open
+  [19:56] 1,761,599 bars, 70 alerts seen, 3 entries, 1 open
+
+=== 2026-08-31 04:00:08 EDT — startup, feed sip ===
+  building reference data — about 10 minutes...
+Fetching asset list...
+  13091 listed, tradable US equities
+Fetching daily bars...
+  fetched 200/13091 symbols
+  fetched 400/13091 symbols
+  fetched 600/13091 symbols
+  fetched 800/13091 symbols
+  fetched 1000/13091 symbols
+  fetched 1200/13091 symbols
+  fetched 1400/13091 symbols
+  fetched 1600/13091 symbols
+  fetched 1800/13091 symbols
+  fetched 2000/13091 symbols
+  fetched 2200/13091 symbols
+  fetched 2400/13091 symbols
+  fetched 2600/13091 symbols
+  fetched 2800/13091 symbols
+  fetched 3000/13091 symbols
+  fetched 3200/13091 symbols
+  fetched 3400/13091 symbols
+  fetched 3600/13091 symbols
+  fetched 3800/13091 symbols
+  fetched 4000/13091 symbols
+  fetched 4200/13091 symbols
+  fetched 4400/13091 symbols
+  fetched 4600/13091 symbols
+  fetched 4800/13091 symbols
+  fetched 5000/13091 symbols
+  fetched 5200/13091 symbols
+  fetched 5400/13091 symbols
+  fetched 5600/13091 symbols
+  fetched 5800/13091 symbols
+  fetched 6000/13091 symbols
+  fetched 6200/13091 symbols
+  fetched 6400/13091 symbols
+  fetched 6600/13091 symbols
+  fetched 6800/13091 symbols
+  fetched 7000/13091 symbols
+  fetched 7200/13091 symbols
+  fetched 7400/13091 symbols
+  fetched 7600/13091 symbols
+  fetched 7800/13091 symbols
+  fetched 8000/13091 symbols
+  fetched 8200/13091 symbols
+  fetched 8400/13091 symbols
+  fetched 8600/13091 symbols
+  fetched 8800/13091 symbols
+  fetched 9000/13091 symbols
+  fetched 9200/13091 symbols
+  fetched 9400/13091 symbols
+  fetched 9600/13091 symbols
+  fetched 9800/13091 symbols
+  fetched 10000/13091 symbols
+  fetched 10200/13091 symbols
+  fetched 10400/13091 symbols
+  fetched 10600/13091 symbols
+  fetched 10800/13091 symbols
+  fetched 11000/13091 symbols
+  fetched 11200/13091 symbols
+  fetched 11400/13091 symbols
+  fetched 11600/13091 symbols
+  fetched 11800/13091 symbols
+  fetched 12000/13091 symbols
+  fetched 12200/13091 symbols
+  fetched 12400/13091 symbols
+  fetched 12600/13091 symbols
+  fetched 12800/13091 symbols
+  fetched 13000/13091 symbols
+  fetched 13091/13091 symbols
+  9046 kept without a share count (foreign filers, funds, warrants) — rules decide
+  137 dropped: under 14 sessions of history
+  12945 symbols in the universe
+Wrote 12945 refs to data/refs/2026-08-31.json
+  starting paper trader (in the foreground, as this process)...
+
+  1 saved position(s) no longer held; discarded
+
+Paper equity   $85,103
+Feed           SIP
+Universe       12,945 symbols
+Reference      2026-08-31
+Mode           PAPER ORDERS
+Risk           0.5% per trade, max 3 positions
+Journal        data/mosquito/trades.jsonl
+
+Listening. Ctrl-C to stop.
+
+  [04:02] 1 bars, 0 alerts seen, 0 entries, 0 open
+  04:03  BUY RITR x51640 @ ~0.10 stop 0.09 target 0.12  [spike]
+  [04:08] 3,059 bars, 7 alerts seen, 1 entries, 0 open
+  04:08  BUY WETO x751 @ ~7.07 stop 6.50 target 8.13  [spike]
+  [04:13] 4,531 bars, 8 alerts seen, 2 entries, 2 open
+  [04:18] 5,946 bars, 10 alerts seen, 2 entries, 2 open
+  04:19  BUY BRNX x1230 @ ~4.30 stop 3.96 target 4.95  [spike]
+  [04:23] 7,158 bars, 11 alerts seen, 3 entries, 3 open
+  04:24  SELL RITR @ 0.09 (-10.7%) — stop
+  [04:29] 8,302 bars, 11 alerts seen, 3 entries, 2 open
+  [04:34] 9,316 bars, 13 alerts seen, 3 entries, 2 open
+  [04:39] 10,348 bars, 13 alerts seen, 3 entries, 2 open
+  [04:45] 11,594 bars, 13 alerts seen, 3 entries, 2 open
+  [04:50] 12,522 bars, 13 alerts seen, 3 entries, 2 open
+  [04:55] 13,432 bars, 14 alerts seen, 3 entries, 2 open
+  [05:00] 14,542 bars, 15 alerts seen, 3 entries, 2 open
+  [05:06] 15,507 bars, 15 alerts seen, 3 entries, 2 open
+  [05:12] 16,718 bars, 15 alerts seen, 3 entries, 2 open
+  [05:18] 17,904 bars, 16 alerts seen, 3 entries, 2 open
+  [05:23] 18,964 bars, 18 alerts seen, 3 entries, 2 open
+  [05:29] 19,839 bars, 19 alerts seen, 3 entries, 2 open
+  [05:35] 20,921 bars, 20 alerts seen, 3 entries, 2 open
+  [05:40] 21,766 bars, 20 alerts seen, 3 entries, 2 open
+  [05:46] 22,824 bars, 21 alerts seen, 3 entries, 2 open
+  [05:51] 23,884 bars, 21 alerts seen, 3 entries, 2 open
+  [05:56] 24,795 bars, 22 alerts seen, 3 entries, 2 open
+  [06:02] 25,917 bars, 22 alerts seen, 3 entries, 2 open
+  [06:07] 26,964 bars, 22 alerts seen, 3 entries, 2 open
+  [06:13] 28,078 bars, 23 alerts seen, 3 entries, 2 open
+  [06:18] 28,936 bars, 23 alerts seen, 3 entries, 2 open
+  [06:24] 30,000 bars, 23 alerts seen, 3 entries, 2 open
+  [06:29] 30,852 bars, 23 alerts seen, 3 entries, 2 open
+  [06:34] 31,707 bars, 23 alerts seen, 3 entries, 2 open
+  [06:40] 32,706 bars, 23 alerts seen, 3 entries, 2 open
+  [06:45] 33,488 bars, 23 alerts seen, 3 entries, 2 open
+  [06:51] 34,490 bars, 24 alerts seen, 3 entries, 2 open
+  [06:56] 35,440 bars, 24 alerts seen, 3 entries, 2 open
+  [07:01] 37,345 bars, 25 alerts seen, 3 entries, 2 open
+  [07:07] 39,755 bars, 26 alerts seen, 3 entries, 2 open
+  [07:12] 41,955 bars, 26 alerts seen, 3 entries, 2 open
+  [07:18] 43,706 bars, 28 alerts seen, 3 entries, 2 open
+  [07:23] 45,431 bars, 29 alerts seen, 3 entries, 2 open
+  [07:29] 47,320 bars, 29 alerts seen, 3 entries, 2 open
+  [07:34] 49,068 bars, 29 alerts seen, 3 entries, 2 open
+  [07:40] 51,134 bars, 30 alerts seen, 3 entries, 2 open
+  [07:45] 52,887 bars, 30 alerts seen, 3 entries, 2 open
+  [07:51] 54,929 bars, 30 alerts seen, 3 entries, 2 open
+  [07:56] 56,630 bars, 31 alerts seen, 3 entries, 2 open
+  [08:01] 58,222 bars, 33 alerts seen, 3 entries, 2 open
+  [08:07] 60,593 bars, 35 alerts seen, 3 entries, 2 open
+  [08:12] 62,841 bars, 35 alerts seen, 3 entries, 2 open
+  [08:17] 64,665 bars, 36 alerts seen, 3 entries, 2 open
+  [08:23] 66,855 bars, 36 alerts seen, 3 entries, 2 open
+
+=== 2026-08-31 08:17:41 EDT — startup, feed sip ===
+  reference data: data/refs/2026-08-31.json (already built)
+  starting paper trader (in the foreground, as this process)...
+
+  restored 2 position(s) with their original stops and targets
+    WETO   entry 7.0700  stop 6.5044  target 8.1305  [spike]
+    BRNX   entry 4.3000  stop 3.9560  target 4.9450  [spike]
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/urllib3/connection.py", line 204, in _new_conn
+    sock = connection.create_connection(
+        (self._dns_host, self.port),
+    ...<2 lines>...
+        socket_options=self.socket_options,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/socket.py", line 983, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/urllib3/connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/urllib3/connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/urllib3/connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+    ~~~~~~~~~~~~^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/urllib3/connection.py", line 759, in connect
+    self.sock = sock = self._new_conn()
+                       ~~~~~~~~~~~~~~^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: HTTPSConnection(host='paper-api.alpaca.markets', port=443): Failed to resolve 'paper-api.alpaca.markets' ([Errno 8] nodename nor servname provided, or not known)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/requests/adapters.py", line 645, in send
+    resp = conn.urlopen(
+        method=request.method,
+    ...<9 lines>...
+        chunked=chunked,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/urllib3/util/retry.py", line 535, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='paper-api.alpaca.markets', port=443): Max retries exceeded with url: /v2/account (Caused by NameResolutionError("HTTPSConnection(host='paper-api.alpaca.markets', port=443): Failed to resolve 'paper-api.alpaca.markets' ([Errno 8] nodename nor servname provided, or not known)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/kanikagupta/trading/drivers/paper_live.py", line 228, in <module>
+    main()
+    ~~~~^^
+  File "/Users/kanikagupta/trading/drivers/paper_live.py", line 190, in main
+    account = trading.get_account()
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/trading/client.py", line 474, in get_account
+    response = self.get("/account")
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/common/rest.py", line 225, in get
+    return self._request("GET", path, data, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/common/rest.py", line 131, in _request
+    return self._one_request(method, url, opts, retry)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/common/rest.py", line 195, in _one_request
+    response = self._session.request(method, url, **opts)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/requests/sessions.py", line 592, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/requests/sessions.py", line 706, in send
+    r = adapter.send(request, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/requests/adapters.py", line 678, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='paper-api.alpaca.markets', port=443): Max retries exceeded with url: /v2/account (Caused by NameResolutionError("HTTPSConnection(host='paper-api.alpaca.markets', port=443): Failed to resolve 'paper-api.alpaca.markets' ([Errno 8] nodename nor servname provided, or not known)"))
+
+=== 2026-08-31 08:30:23 EDT — startup, feed sip ===
+  reference data: data/refs/2026-08-31.json (already built)
+  starting paper trader (in the foreground, as this process)...
+
+  restored 2 position(s) with their original stops and targets
+    WETO   entry 7.0700  stop 6.5044  target 8.1305  [spike]
+    BRNX   entry 4.3000  stop 3.9560  target 4.9450  [spike]
+
+Paper equity   $84,867
+  adopted RITR x51640 @ 0.1018 (-12.0%) stop 0.0937
+Adopted        1 existing position(s) — now managed
+Feed           SIP
+Universe       12,945 symbols
+Reference      2026-08-31
+Mode           PAPER ORDERS
+Risk           0.5% per trade, max 3 positions
+Journal        data/mosquito/trades.jsonl
+
+Listening. Ctrl-C to stop.
+
+  close failed for RITR: {"available":"0","code":40310000,"existing_qty":"51640","held_for_orders":"51640","message":"insufficient qty available for order (requested: 51640, available: 0)","symbol":"RITR"}
+  [08:30] 1 bars, 0 alerts seen, 0 entries, 3 open
+  [08:35] 2,328 bars, 4 alerts seen, 0 entries, 3 open
+  [08:40] 4,427 bars, 7 alerts seen, 0 entries, 3 open
+  [08:45] 6,479 bars, 9 alerts seen, 0 entries, 3 open
+  [08:51] 8,637 bars, 9 alerts seen, 0 entries, 3 open
+  08:53  SELL WETO @ 8.37 (+16.2%) — target
+  [08:56] 11,046 bars, 11 alerts seen, 0 entries, 2 open
+  [09:01] 13,267 bars, 12 alerts seen, 0 entries, 2 open
+  [09:06] 15,812 bars, 15 alerts seen, 0 entries, 2 open
+  [09:11] 18,107 bars, 15 alerts seen, 0 entries, 2 open
+  [09:16] 20,593 bars, 16 alerts seen, 0 entries, 2 open
+  [09:22] 23,406 bars, 18 alerts seen, 0 entries, 2 open
+  [09:27] 26,238 bars, 19 alerts seen, 0 entries, 2 open
+  [09:32] 38,492 bars, 21 alerts seen, 0 entries, 2 open
+  09:34  BUY MOVE x384 @ ~13.75 stop 12.65 target 15.82  [spike]
+  [09:37] 61,457 bars, 28 alerts seen, 1 entries, 3 open
+  [09:42] 83,933 bars, 35 alerts seen, 1 entries, 2 open
+  09:42  SELL MOVE @ 12.10 (-4.9%) — stop
+  [09:47] 106,250 bars, 36 alerts seen, 1 entries, 1 open
+  [09:52] 125,437 bars, 36 alerts seen, 1 entries, 1 open
+  [09:57] 147,668 bars, 37 alerts seen, 1 entries, 1 open
+  [10:02] 168,110 bars, 39 alerts seen, 1 entries, 1 open
+  [10:07] 191,161 bars, 44 alerts seen, 1 entries, 1 open
+  [10:12] 211,996 bars, 44 alerts seen, 1 entries, 1 open
+  10:17  BUY BIOX x11338 @ ~0.47 stop 0.43 target 0.54  [spike]
+  [10:17] 233,811 bars, 46 alerts seen, 2 entries, 2 open
+  [10:23] 259,958 bars, 46 alerts seen, 2 entries, 2 open
+  [10:28] 282,772 bars, 47 alerts seen, 2 entries, 2 open
+  [10:33] 304,692 bars, 47 alerts seen, 2 entries, 2 open
+  [10:38] 325,800 bars, 49 alerts seen, 2 entries, 2 open
+  [10:43] 347,121 bars, 49 alerts seen, 2 entries, 2 open
+  [10:48] 367,925 bars, 50 alerts seen, 2 entries, 2 open
+  [10:53] 388,164 bars, 50 alerts seen, 2 entries, 2 open
+  10:53  SELL BIOX @ 0.54 (+15.8%) — target
+  [10:58] 409,158 bars, 52 alerts seen, 2 entries, 1 open
+  [11:03] 429,585 bars, 55 alerts seen, 2 entries, 1 open
+  11:07  BUY GPRO x7148 @ ~0.74 stop 0.68 target 0.85  [new_high]
+  [11:08] 449,662 bars, 56 alerts seen, 3 entries, 2 open
+  11:08  BUY TSL x385 @ ~13.78 stop 12.68 target 15.85  [new_high]
+  [11:13] 470,787 bars, 57 alerts seen, 4 entries, 3 open
+  [11:18] 490,668 bars, 58 alerts seen, 4 entries, 3 open
+  11:22  SELL BRNX @ 3.88 (-10.8%) — stop
+  [11:23] 510,685 bars, 58 alerts seen, 4 entries, 2 open
+  [11:29] 534,379 bars, 61 alerts seen, 4 entries, 2 open
+  [11:34] 554,712 bars, 61 alerts seen, 4 entries, 2 open
+  [11:39] 573,991 bars, 62 alerts seen, 4 entries, 2 open
+  [11:44] 593,525 bars, 62 alerts seen, 4 entries, 2 open
+  [11:49] 616,594 bars, 62 alerts seen, 4 entries, 2 open
+  [11:55] 635,412 bars, 62 alerts seen, 4 entries, 2 open
+  [12:00] 655,246 bars, 63 alerts seen, 4 entries, 2 open
+  12:04  BUY SST x2316 @ ~2.27 stop 2.09 target 2.61  [spike]
+  [12:05] 674,472 bars, 64 alerts seen, 5 entries, 3 open
+  [12:10] 692,754 bars, 64 alerts seen, 5 entries, 3 open
+  [12:15] 715,013 bars, 64 alerts seen, 5 entries, 3 open
+  12:15  SELL SST @ 2.07 (-8.9%) — stop
+  [12:20] 731,089 bars, 64 alerts seen, 5 entries, 2 open
+  [12:25] 749,912 bars, 64 alerts seen, 5 entries, 2 open
+  [12:30] 769,591 bars, 64 alerts seen, 5 entries, 2 open
+  [12:35] 787,870 bars, 64 alerts seen, 5 entries, 2 open
+  [12:40] 809,637 bars, 64 alerts seen, 5 entries, 2 open
+  [12:45] 825,791 bars, 64 alerts seen, 5 entries, 2 open
+  [12:50] 845,612 bars, 64 alerts seen, 5 entries, 2 open
+  [12:55] 864,298 bars, 64 alerts seen, 5 entries, 2 open
+  [13:00] 881,587 bars, 64 alerts seen, 5 entries, 2 open
+  [13:05] 902,456 bars, 65 alerts seen, 5 entries, 2 open
+  [13:10] 918,801 bars, 65 alerts seen, 5 entries, 2 open
+  [13:16] 941,126 bars, 66 alerts seen, 5 entries, 2 open
+  [13:21] 960,354 bars, 66 alerts seen, 5 entries, 2 open
+  [13:26] 978,274 bars, 66 alerts seen, 5 entries, 2 open
+  [13:31] 1,000,277 bars, 66 alerts seen, 5 entries, 2 open
+  [13:36] 1,017,449 bars, 66 alerts seen, 5 entries, 2 open
+  [13:41] 1,036,138 bars, 66 alerts seen, 5 entries, 2 open
+  [13:46] 1,055,167 bars, 66 alerts seen, 5 entries, 2 open
+  [13:51] 1,070,744 bars, 67 alerts seen, 5 entries, 2 open
+  [13:56] 1,090,983 bars, 67 alerts seen, 5 entries, 2 open
+  [14:01] 1,109,286 bars, 67 alerts seen, 5 entries, 2 open
+  [14:06] 1,130,158 bars, 68 alerts seen, 5 entries, 2 open
+  [14:11] 1,147,889 bars, 68 alerts seen, 5 entries, 2 open
+  [14:16] 1,166,717 bars, 68 alerts seen, 5 entries, 2 open
+  [14:21] 1,186,828 bars, 68 alerts seen, 5 entries, 2 open
+  [14:26] 1,204,891 bars, 68 alerts seen, 5 entries, 2 open
+  [14:31] 1,227,710 bars, 68 alerts seen, 5 entries, 2 open
+  [14:36] 1,244,820 bars, 68 alerts seen, 5 entries, 2 open
+  [14:41] 1,266,152 bars, 68 alerts seen, 5 entries, 2 open
+  [14:46] 1,285,892 bars, 68 alerts seen, 5 entries, 2 open
+  [14:51] 1,304,488 bars, 68 alerts seen, 5 entries, 2 open
+  [14:56] 1,324,719 bars, 68 alerts seen, 5 entries, 2 open
+  [15:01] 1,346,726 bars, 68 alerts seen, 5 entries, 2 open
+  [15:06] 1,366,912 bars, 68 alerts seen, 5 entries, 2 open
+  [15:11] 1,390,074 bars, 68 alerts seen, 5 entries, 2 open
+  [15:16] 1,409,881 bars, 68 alerts seen, 5 entries, 2 open
+  [15:22] 1,435,388 bars, 68 alerts seen, 5 entries, 2 open
+  [15:27] 1,458,331 bars, 68 alerts seen, 5 entries, 2 open
+  [15:32] 1,481,647 bars, 68 alerts seen, 5 entries, 2 open
+  [15:37] 1,506,763 bars, 68 alerts seen, 5 entries, 2 open
+  [15:42] 1,529,430 bars, 68 alerts seen, 5 entries, 2 open
+  [15:47] 1,557,064 bars, 68 alerts seen, 5 entries, 2 open
+  15:50  SELL GPRO @ 0.84 (+14.2%) — time
+  15:50  SELL TSL @ 13.85 (+0.6%) — time
+  [15:52] 1,582,278 bars, 69 alerts seen, 5 entries, 0 open
+  [15:57] 1,610,213 bars, 69 alerts seen, 5 entries, 0 open
+  [16:03] 1,644,941 bars, 70 alerts seen, 5 entries, 0 open
+  [16:08] 1,648,677 bars, 70 alerts seen, 5 entries, 0 open
+  [16:13] 1,651,222 bars, 70 alerts seen, 5 entries, 0 open
+  [16:18] 1,653,237 bars, 70 alerts seen, 5 entries, 0 open
+  [16:23] 1,654,834 bars, 70 alerts seen, 5 entries, 0 open
+  [16:29] 1,656,487 bars, 70 alerts seen, 5 entries, 0 open
+  [16:34] 1,658,296 bars, 70 alerts seen, 5 entries, 0 open
+  [16:40] 1,660,148 bars, 70 alerts seen, 5 entries, 0 open
+  [16:45] 1,661,551 bars, 70 alerts seen, 5 entries, 0 open
+  [16:50] 1,662,932 bars, 70 alerts seen, 5 entries, 0 open
+  [16:55] 1,664,415 bars, 70 alerts seen, 5 entries, 0 open
+  [17:00] 1,665,495 bars, 70 alerts seen, 5 entries, 0 open
+  [17:06] 1,667,031 bars, 70 alerts seen, 5 entries, 0 open
+  [17:11] 1,668,250 bars, 70 alerts seen, 5 entries, 0 open
+  [17:17] 1,669,667 bars, 70 alerts seen, 5 entries, 0 open
+  [17:22] 1,670,784 bars, 70 alerts seen, 5 entries, 0 open
+  [17:27] 1,671,905 bars, 70 alerts seen, 5 entries, 0 open
+  [17:33] 1,673,256 bars, 70 alerts seen, 5 entries, 0 open
+  [17:39] 1,674,515 bars, 70 alerts seen, 5 entries, 0 open
+  [17:44] 1,675,544 bars, 70 alerts seen, 5 entries, 0 open
+  [17:50] 1,676,748 bars, 70 alerts seen, 5 entries, 0 open
+  [17:55] 1,677,844 bars, 70 alerts seen, 5 entries, 0 open
+  [18:01] 1,679,090 bars, 70 alerts seen, 5 entries, 0 open
+  [18:07] 1,680,389 bars, 70 alerts seen, 5 entries, 0 open
+  [18:13] 1,681,608 bars, 70 alerts seen, 5 entries, 0 open
+  [18:18] 1,682,608 bars, 70 alerts seen, 5 entries, 0 open
+  [18:23] 1,683,640 bars, 70 alerts seen, 5 entries, 0 open
+  [18:29] 1,684,744 bars, 70 alerts seen, 5 entries, 0 open
+  [18:34] 1,685,704 bars, 70 alerts seen, 5 entries, 0 open
+  [18:39] 1,686,927 bars, 70 alerts seen, 5 entries, 0 open
+  [18:45] 1,687,891 bars, 70 alerts seen, 5 entries, 0 open
+  [18:50] 1,688,903 bars, 70 alerts seen, 5 entries, 0 open
+  [18:56] 1,690,114 bars, 70 alerts seen, 5 entries, 0 open
+  [19:01] 1,691,066 bars, 70 alerts seen, 5 entries, 0 open
+  [19:06] 1,692,269 bars, 70 alerts seen, 5 entries, 0 open
+  [19:12] 1,693,219 bars, 70 alerts seen, 5 entries, 0 open
+  [19:17] 1,694,094 bars, 70 alerts seen, 5 entries, 0 open
+  [19:23] 1,695,270 bars, 70 alerts seen, 5 entries, 0 open
+  [19:28] 1,696,195 bars, 70 alerts seen, 5 entries, 0 open
+  [19:34] 1,697,401 bars, 70 alerts seen, 5 entries, 0 open
+  [19:39] 1,698,345 bars, 70 alerts seen, 5 entries, 0 open
+  [19:44] 1,699,312 bars, 70 alerts seen, 5 entries, 0 open
+  [19:50] 1,700,581 bars, 70 alerts seen, 5 entries, 0 open
+  [19:56] 1,701,873 bars, 70 alerts seen, 5 entries, 0 open
+  [20:01] 1,703,198 bars, 70 alerts seen, 5 entries, 0 open
+data websocket error, restarting connection: no close frame received or sent
+data websocket error, restarting connection: no close frame received or sent
+error during websocket communication: 
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/websockets/legacy/client.py", line 650, in __await_impl__
+    _transport, protocol = await self._create_connection()
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/base_events.py", line 1143, in create_connection
+    sock = await self._connect_sock(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+        exceptions, addrinfo, laddr_infos)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/base_events.py", line 1042, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/selector_events.py", line 645, in sock_connect
+    return await fut
+           ^^^^^^^^^
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 454, in _run_forever
+    await self._start_ws()
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 207, in _start_ws
+    await self._connect()
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 171, in _connect
+    self._ws = await websockets_legacy.connect(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/websockets/legacy/client.py", line 648, in __await_impl__
+    async with asyncio_timeout(self.open_timeout):
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/timeouts.py", line 114, in __aexit__
+    raise TimeoutError from exc_val
+TimeoutError
+error during websocket communication: 
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/websockets/legacy/client.py", line 650, in __await_impl__
+    _transport, protocol = await self._create_connection()
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/base_events.py", line 1143, in create_connection
+    sock = await self._connect_sock(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+        exceptions, addrinfo, laddr_infos)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/base_events.py", line 1042, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/selector_events.py", line 645, in sock_connect
+    return await fut
+           ^^^^^^^^^
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 454, in _run_forever
+    await self._start_ws()
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 207, in _start_ws
+    await self._connect()
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 171, in _connect
+    self._ws = await websockets_legacy.connect(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/websockets/legacy/client.py", line 648, in __await_impl__
+    async with asyncio_timeout(self.open_timeout):
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/timeouts.py", line 114, in __aexit__
+    raise TimeoutError from exc_val
+TimeoutError
+error during websocket communication: 
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/websockets/legacy/client.py", line 650, in __await_impl__
+    _transport, protocol = await self._create_connection()
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/base_events.py", line 1143, in create_connection
+    sock = await self._connect_sock(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+        exceptions, addrinfo, laddr_infos)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/base_events.py", line 1042, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/selector_events.py", line 645, in sock_connect
+    return await fut
+           ^^^^^^^^^
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 454, in _run_forever
+    await self._start_ws()
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 207, in _start_ws
+    await self._connect()
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 171, in _connect
+    self._ws = await websockets_legacy.connect(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/websockets/legacy/client.py", line 648, in __await_impl__
+    async with asyncio_timeout(self.open_timeout):
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/timeouts.py", line 114, in __aexit__
+    raise TimeoutError from exc_val
+TimeoutError
+error during websocket communication: 
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/websockets/legacy/client.py", line 650, in __await_impl__
+    _transport, protocol = await self._create_connection()
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/base_events.py", line 1143, in create_connection
+    sock = await self._connect_sock(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+        exceptions, addrinfo, laddr_infos)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/base_events.py", line 1042, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/selector_events.py", line 645, in sock_connect
+    return await fut
+           ^^^^^^^^^
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 454, in _run_forever
+    await self._start_ws()
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 207, in _start_ws
+    await self._connect()
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 171, in _connect
+    self._ws = await websockets_legacy.connect(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/websockets/legacy/client.py", line 648, in __await_impl__
+    async with asyncio_timeout(self.open_timeout):
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/timeouts.py", line 114, in __aexit__
+    raise TimeoutError from exc_val
+TimeoutError
+error during websocket communication: 
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/websockets/legacy/client.py", line 650, in __await_impl__
+    _transport, protocol = await self._create_connection()
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/base_events.py", line 1143, in create_connection
+    sock = await self._connect_sock(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+        exceptions, addrinfo, laddr_infos)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/base_events.py", line 1042, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/selector_events.py", line 645, in sock_connect
+    return await fut
+           ^^^^^^^^^
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 454, in _run_forever
+    await self._start_ws()
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 207, in _start_ws
+    await self._connect()
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 171, in _connect
+    self._ws = await websockets_legacy.connect(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/websockets/legacy/client.py", line 648, in __await_impl__
+    async with asyncio_timeout(self.open_timeout):
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/timeouts.py", line 114, in __aexit__
+    raise TimeoutError from exc_val
+TimeoutError
+
+=== 2026-09-01 04:00:07 EDT — startup, feed sip ===
+  building reference data — about 10 minutes...
+Fetching asset list...
+  13100 listed, tradable US equities
+Fetching daily bars...
+  fetched 200/13100 symbols
+  fetched 400/13100 symbols
+  fetched 600/13100 symbols
+  fetched 800/13100 symbols
+  fetched 1000/13100 symbols
+  fetched 1200/13100 symbols
+  fetched 1400/13100 symbols
+  fetched 1600/13100 symbols
+  fetched 1800/13100 symbols
+  fetched 2000/13100 symbols
+  fetched 2200/13100 symbols
+  fetched 2400/13100 symbols
+  fetched 2600/13100 symbols
+  fetched 2800/13100 symbols
+  fetched 3000/13100 symbols
+  fetched 3200/13100 symbols
+  fetched 3400/13100 symbols
+  fetched 3600/13100 symbols
+  fetched 3800/13100 symbols
+  fetched 4000/13100 symbols
+  fetched 4200/13100 symbols
+  fetched 4400/13100 symbols
+  fetched 4600/13100 symbols
+  fetched 4800/13100 symbols
+  fetched 5000/13100 symbols
+  fetched 5200/13100 symbols
+  fetched 5400/13100 symbols
+  fetched 5600/13100 symbols
+  fetched 5800/13100 symbols
+  fetched 6000/13100 symbols
+  fetched 6200/13100 symbols
+  fetched 6400/13100 symbols
+  fetched 6600/13100 symbols
+  fetched 6800/13100 symbols
+  fetched 7000/13100 symbols
+  fetched 7200/13100 symbols
+  fetched 7400/13100 symbols
+  fetched 7600/13100 symbols
+  fetched 7800/13100 symbols
+  fetched 8000/13100 symbols
+  fetched 8200/13100 symbols
+  fetched 8400/13100 symbols
+  fetched 8600/13100 symbols
+  fetched 8800/13100 symbols
+  fetched 9000/13100 symbols
+  fetched 9200/13100 symbols
+  fetched 9400/13100 symbols
+  fetched 9600/13100 symbols
+  fetched 9800/13100 symbols
+  fetched 10000/13100 symbols
+  fetched 10200/13100 symbols
+  fetched 10400/13100 symbols
+  fetched 10600/13100 symbols
+  fetched 10800/13100 symbols
+  fetched 11000/13100 symbols
+  fetched 11200/13100 symbols
+  fetched 11400/13100 symbols
+  fetched 11600/13100 symbols
+  fetched 11800/13100 symbols
+  fetched 12000/13100 symbols
+  fetched 12200/13100 symbols
+  fetched 12400/13100 symbols
+  fetched 12600/13100 symbols
+  fetched 12800/13100 symbols
+  fetched 13000/13100 symbols
+  fetched 13100/13100 symbols
+  9056 kept without a share count (foreign filers, funds, warrants) — rules decide
+  128 dropped: under 14 sessions of history
+  12964 symbols in the universe
+Wrote 12964 refs to data/refs/2026-09-01.json
+  starting paper trader (in the foreground, as this process)...
+
+
+Paper equity   $84,651
+Feed           SIP
+Universe       12,964 symbols
+Reference      2026-09-01
+Mode           PAPER ORDERS
+Risk           0.5% per trade, max 3 positions
+Journal        data/mosquito/trades.jsonl
+
+Listening. Ctrl-C to stop.
+
+  [04:02] 1 bars, 0 alerts seen, 0 entries, 0 open
+  [04:07] 2,141 bars, 7 alerts seen, 0 entries, 0 open
+  [04:12] 4,014 bars, 8 alerts seen, 0 entries, 0 open
+  [04:18] 5,283 bars, 8 alerts seen, 0 entries, 0 open
+  [04:24] 6,941 bars, 8 alerts seen, 0 entries, 0 open
+  04:25  BUY YYGH x3623 @ ~1.46 stop 1.34 target 1.68  [spike]
+  [04:30] 8,796 bars, 9 alerts seen, 1 entries, 1 open
+  [04:36] 10,633 bars, 10 alerts seen, 1 entries, 1 open
+  [04:41] 11,949 bars, 11 alerts seen, 1 entries, 1 open
+  [04:46] 13,557 bars, 12 alerts seen, 1 entries, 1 open
+  [04:51] 14,663 bars, 13 alerts seen, 1 entries, 1 open
+  [04:57] 16,159 bars, 13 alerts seen, 1 entries, 1 open
+  [05:02] 17,389 bars, 15 alerts seen, 1 entries, 1 open
+  [05:07] 19,226 bars, 15 alerts seen, 1 entries, 1 open
+  [05:13] 20,471 bars, 15 alerts seen, 1 entries, 1 open
+  [05:18] 21,774 bars, 15 alerts seen, 1 entries, 1 open
+  [05:23] 22,923 bars, 15 alerts seen, 1 entries, 1 open
+  [05:28] 24,073 bars, 15 alerts seen, 1 entries, 1 open
+  [05:34] 25,474 bars, 15 alerts seen, 1 entries, 1 open
+  [05:39] 26,606 bars, 15 alerts seen, 1 entries, 1 open
+  [05:45] 27,970 bars, 15 alerts seen, 1 entries, 1 open
+  [05:50] 29,065 bars, 15 alerts seen, 1 entries, 1 open
+  [05:56] 30,282 bars, 15 alerts seen, 1 entries, 1 open
+  [06:02] 31,546 bars, 15 alerts seen, 1 entries, 1 open
+  [06:07] 32,563 bars, 16 alerts seen, 1 entries, 1 open
+  [06:13] 33,747 bars, 17 alerts seen, 1 entries, 1 open
+  [06:18] 34,741 bars, 17 alerts seen, 1 entries, 1 open
+  [06:24] 36,026 bars, 18 alerts seen, 1 entries, 1 open
+  [06:29] 37,060 bars, 18 alerts seen, 1 entries, 1 open
+  [06:35] 38,259 bars, 18 alerts seen, 1 entries, 1 open
+  [06:41] 39,413 bars, 18 alerts seen, 1 entries, 1 open
+  [06:47] 40,576 bars, 19 alerts seen, 1 entries, 1 open
+  [06:52] 41,682 bars, 19 alerts seen, 1 entries, 1 open
+  [06:57] 42,749 bars, 19 alerts seen, 1 entries, 1 open
+  [07:02] 44,936 bars, 20 alerts seen, 1 entries, 1 open
+  [07:07] 47,483 bars, 21 alerts seen, 1 entries, 1 open
+  [07:12] 49,724 bars, 22 alerts seen, 1 entries, 1 open
+  [07:17] 51,857 bars, 23 alerts seen, 1 entries, 1 open
+  [07:22] 53,487 bars, 23 alerts seen, 1 entries, 1 open
+  [07:28] 55,632 bars, 23 alerts seen, 1 entries, 1 open
+  [07:33] 57,446 bars, 23 alerts seen, 1 entries, 1 open
+  [07:39] 59,585 bars, 24 alerts seen, 1 entries, 1 open
+  [07:44] 61,486 bars, 25 alerts seen, 1 entries, 1 open
+  [07:50] 63,691 bars, 26 alerts seen, 1 entries, 1 open
+  [07:56] 65,829 bars, 27 alerts seen, 1 entries, 1 open
+  [08:01] 68,205 bars, 28 alerts seen, 1 entries, 1 open
+  [08:06] 70,920 bars, 29 alerts seen, 1 entries, 1 open
+  [08:11] 72,962 bars, 29 alerts seen, 1 entries, 1 open
+  [08:16] 75,643 bars, 29 alerts seen, 1 entries, 1 open
+  08:18  SELL YYGH @ 1.71 (+15.6%) — target
+  08:21  BUY SST x2092 @ ~2.54 stop 2.34 target 2.92  [spike]
+  [08:21] 77,683 bars, 32 alerts seen, 2 entries, 1 open
+  [08:27] 80,351 bars, 33 alerts seen, 2 entries, 1 open
+  [08:32] 82,673 bars, 33 alerts seen, 2 entries, 1 open
+  [08:37] 85,086 bars, 33 alerts seen, 2 entries, 1 open
+  [08:42] 87,961 bars, 34 alerts seen, 2 entries, 1 open
+  [08:47] 90,405 bars, 35 alerts seen, 2 entries, 1 open
+  [08:52] 92,938 bars, 35 alerts seen, 2 entries, 1 open
+  [08:57] 95,295 bars, 36 alerts seen, 2 entries, 1 open
+  [09:02] 97,881 bars, 36 alerts seen, 2 entries, 1 open
+  [09:07] 101,091 bars, 36 alerts seen, 2 entries, 1 open
+  09:11  BUY SKYQ x1881 @ ~2.82 stop 2.59 target 3.24  [new_high]
+  [09:12] 104,091 bars, 37 alerts seen, 3 entries, 2 open
+  [09:17] 107,198 bars, 37 alerts seen, 3 entries, 2 open
+  [09:22] 110,033 bars, 37 alerts seen, 3 entries, 2 open
+  [09:27] 113,661 bars, 38 alerts seen, 3 entries, 2 open
+  [09:32] 125,797 bars, 38 alerts seen, 3 entries, 2 open
+  [09:37] 148,906 bars, 38 alerts seen, 3 entries, 2 open
+  09:38  BUY ATER x11565 @ ~0.46 stop 0.42 target 0.53  [new_high]
+  09:39  SELL ATER @ 0.42 (-8.1%) — stop
+  [09:42] 172,007 bars, 40 alerts seen, 4 entries, 2 open
+  [09:47] 194,726 bars, 40 alerts seen, 4 entries, 2 open
+  [09:53] 221,451 bars, 40 alerts seen, 4 entries, 2 open
+  09:53  SELL SST @ 2.31 (-9.4%) — stop
+  [09:58] 243,126 bars, 43 alerts seen, 4 entries, 1 open
+  [10:03] 265,286 bars, 43 alerts seen, 4 entries, 1 open
+  [10:08] 287,951 bars, 43 alerts seen, 4 entries, 1 open
+  [10:13] 309,794 bars, 44 alerts seen, 4 entries, 1 open
+  10:15  BUY GOTU x2598 @ ~2.02 stop 1.85 target 2.32  [new_high]
+  [10:18] 333,326 bars, 48 alerts seen, 5 entries, 2 open
+  [10:23] 356,605 bars, 48 alerts seen, 5 entries, 2 open
+  [10:28] 378,489 bars, 48 alerts seen, 5 entries, 2 open
+  [10:33] 404,810 bars, 48 alerts seen, 5 entries, 2 open
+  [10:38] 426,620 bars, 48 alerts seen, 5 entries, 2 open
+  [10:44] 447,913 bars, 48 alerts seen, 5 entries, 2 open
+  [10:49] 469,580 bars, 48 alerts seen, 5 entries, 2 open
+  [10:54] 491,265 bars, 49 alerts seen, 5 entries, 2 open
+  [10:59] 512,716 bars, 50 alerts seen, 5 entries, 2 open
+  [11:04] 533,261 bars, 51 alerts seen, 5 entries, 2 open
+  [11:09] 557,764 bars, 51 alerts seen, 5 entries, 2 open
+  [11:14] 576,917 bars, 51 alerts seen, 5 entries, 2 open
+  [11:19] 597,810 bars, 51 alerts seen, 5 entries, 2 open
+  [11:24] 618,498 bars, 52 alerts seen, 5 entries, 2 open
+  11:24  BUY NCI x393 @ ~13.35 stop 12.28 target 15.35  [new_high]
+  [11:29] 636,623 bars, 54 alerts seen, 6 entries, 3 open
+  [11:35] 660,914 bars, 54 alerts seen, 6 entries, 3 open
+  [11:40] 680,743 bars, 54 alerts seen, 6 entries, 3 open
+  [11:45] 705,042 bars, 54 alerts seen, 6 entries, 3 open
+  [11:51] 724,840 bars, 55 alerts seen, 6 entries, 3 open
+  [11:56] 744,997 bars, 55 alerts seen, 6 entries, 3 open
+  [12:01] 764,757 bars, 55 alerts seen, 6 entries, 3 open
+  [12:06] 783,934 bars, 55 alerts seen, 6 entries, 3 open
+  [12:11] 804,974 bars, 55 alerts seen, 6 entries, 3 open
+  [12:16] 824,321 bars, 55 alerts seen, 6 entries, 3 open
+  [12:21] 844,513 bars, 55 alerts seen, 6 entries, 3 open
+  [12:26] 867,914 bars, 55 alerts seen, 6 entries, 3 open
+  [12:31] 886,809 bars, 55 alerts seen, 6 entries, 3 open
+  [12:36] 907,931 bars, 58 alerts seen, 6 entries, 3 open
+  [12:41] 931,900 bars, 58 alerts seen, 6 entries, 3 open
+  [12:47] 952,716 bars, 58 alerts seen, 6 entries, 3 open
+  [12:52] 972,546 bars, 58 alerts seen, 6 entries, 3 open
+  [12:57] 991,617 bars, 58 alerts seen, 6 entries, 3 open
+  [13:02] 1,012,217 bars, 59 alerts seen, 6 entries, 3 open
+  [13:07] 1,031,084 bars, 59 alerts seen, 6 entries, 3 open
+  [13:12] 1,050,572 bars, 59 alerts seen, 6 entries, 3 open
+  [13:17] 1,069,953 bars, 59 alerts seen, 6 entries, 3 open
+  [13:22] 1,088,976 bars, 59 alerts seen, 6 entries, 3 open
+  [13:27] 1,109,143 bars, 60 alerts seen, 6 entries, 3 open
+  [13:32] 1,129,214 bars, 60 alerts seen, 6 entries, 3 open
+  [13:37] 1,147,928 bars, 60 alerts seen, 6 entries, 3 open
+  [13:43] 1,170,938 bars, 60 alerts seen, 6 entries, 3 open
+  [13:48] 1,189,888 bars, 61 alerts seen, 6 entries, 3 open
+  [13:54] 1,213,131 bars, 61 alerts seen, 6 entries, 3 open
+  [13:59] 1,232,469 bars, 62 alerts seen, 6 entries, 3 open
+  [14:04] 1,252,638 bars, 62 alerts seen, 6 entries, 3 open
+  [14:09] 1,272,282 bars, 62 alerts seen, 6 entries, 3 open
+  [14:14] 1,291,876 bars, 62 alerts seen, 6 entries, 3 open
+  [14:19] 1,313,758 bars, 63 alerts seen, 6 entries, 3 open
+  [14:24] 1,332,851 bars, 63 alerts seen, 6 entries, 3 open
+  [14:29] 1,352,576 bars, 63 alerts seen, 6 entries, 3 open
+  [14:34] 1,373,448 bars, 64 alerts seen, 6 entries, 3 open
+  [14:39] 1,394,047 bars, 64 alerts seen, 6 entries, 3 open
+  [14:44] 1,415,339 bars, 64 alerts seen, 6 entries, 3 open
+  [14:49] 1,437,234 bars, 64 alerts seen, 6 entries, 3 open
+  [14:54] 1,458,617 bars, 64 alerts seen, 6 entries, 3 open
+  [14:59] 1,480,161 bars, 64 alerts seen, 6 entries, 3 open
+  [15:04] 1,502,311 bars, 64 alerts seen, 6 entries, 3 open
+  [15:09] 1,525,655 bars, 64 alerts seen, 6 entries, 3 open
+  [15:14] 1,546,660 bars, 64 alerts seen, 6 entries, 3 open
+  [15:19] 1,571,466 bars, 65 alerts seen, 6 entries, 3 open
+  [15:24] 1,591,877 bars, 65 alerts seen, 6 entries, 3 open
+  [15:30] 1,618,973 bars, 65 alerts seen, 6 entries, 3 open
+  [15:35] 1,643,164 bars, 65 alerts seen, 6 entries, 3 open
+  [15:40] 1,667,371 bars, 65 alerts seen, 6 entries, 3 open
+  [15:45] 1,695,358 bars, 65 alerts seen, 6 entries, 3 open
+  [15:50] 1,718,107 bars, 66 alerts seen, 6 entries, 3 open
+  15:50  SELL SKYQ @ 2.82 (+0.0%) — time
+  15:50  SELL GOTU @ 2.11 (+4.5%) — time
+  15:50  SELL NCI @ 13.09 (-1.9%) — time
+  [15:55] 1,744,291 bars, 67 alerts seen, 6 entries, 0 open
+  [16:00] 1,774,309 bars, 68 alerts seen, 6 entries, 0 open
+  [16:06] 1,791,521 bars, 68 alerts seen, 6 entries, 0 open
+  [16:11] 1,794,176 bars, 68 alerts seen, 6 entries, 0 open
+  [16:16] 1,796,181 bars, 68 alerts seen, 6 entries, 0 open
+  [16:22] 1,798,785 bars, 68 alerts seen, 6 entries, 0 open
+  [16:27] 1,800,820 bars, 68 alerts seen, 6 entries, 0 open
+  [16:32] 1,803,189 bars, 68 alerts seen, 6 entries, 0 open
+  [16:37] 1,804,839 bars, 68 alerts seen, 6 entries, 0 open
+  [16:42] 1,806,212 bars, 68 alerts seen, 6 entries, 0 open
+  [16:48] 1,808,342 bars, 68 alerts seen, 6 entries, 0 open
+  [16:53] 1,809,861 bars, 68 alerts seen, 6 entries, 0 open
+  [16:58] 1,811,349 bars, 68 alerts seen, 6 entries, 0 open
+  [17:03] 1,812,790 bars, 68 alerts seen, 6 entries, 0 open
+  [17:08] 1,814,138 bars, 68 alerts seen, 6 entries, 0 open
+  [17:14] 1,815,712 bars, 68 alerts seen, 6 entries, 0 open
+  [17:19] 1,817,051 bars, 68 alerts seen, 6 entries, 0 open
+  [17:25] 1,818,534 bars, 68 alerts seen, 6 entries, 0 open
+  [17:31] 1,820,038 bars, 68 alerts seen, 6 entries, 0 open
+  [17:37] 1,821,495 bars, 68 alerts seen, 6 entries, 0 open
+  [17:43] 1,822,872 bars, 68 alerts seen, 6 entries, 0 open
+  [17:48] 1,824,042 bars, 68 alerts seen, 6 entries, 0 open
+  [17:54] 1,825,433 bars, 68 alerts seen, 6 entries, 0 open
+  [18:00] 1,826,777 bars, 68 alerts seen, 6 entries, 0 open
+  [18:05] 1,828,064 bars, 68 alerts seen, 6 entries, 0 open
+  [18:10] 1,829,287 bars, 68 alerts seen, 6 entries, 0 open
+  [18:16] 1,830,764 bars, 68 alerts seen, 6 entries, 0 open
+  [18:21] 1,831,956 bars, 68 alerts seen, 6 entries, 0 open
+  [18:27] 1,833,413 bars, 68 alerts seen, 6 entries, 0 open
+  [18:32] 1,834,600 bars, 68 alerts seen, 6 entries, 0 open
+  [18:38] 1,835,949 bars, 68 alerts seen, 6 entries, 0 open
+  [18:43] 1,837,053 bars, 68 alerts seen, 6 entries, 0 open
+  [18:48] 1,838,138 bars, 68 alerts seen, 6 entries, 0 open
+  [18:54] 1,839,512 bars, 68 alerts seen, 6 entries, 0 open
+  [19:00] 1,840,804 bars, 68 alerts seen, 6 entries, 0 open
+  [19:05] 1,841,848 bars, 68 alerts seen, 6 entries, 0 open
+  [19:11] 1,843,052 bars, 68 alerts seen, 6 entries, 0 open
+  [19:16] 1,844,018 bars, 68 alerts seen, 6 entries, 0 open
+  [19:21] 1,845,024 bars, 68 alerts seen, 6 entries, 0 open
+  [19:26] 1,846,107 bars, 68 alerts seen, 6 entries, 0 open
+  [19:32] 1,847,401 bars, 68 alerts seen, 6 entries, 0 open
+  [19:37] 1,848,473 bars, 68 alerts seen, 6 entries, 0 open
+  [19:43] 1,849,804 bars, 68 alerts seen, 6 entries, 0 open
+  [19:48] 1,851,029 bars, 68 alerts seen, 6 entries, 0 open
+  [19:54] 1,852,445 bars, 68 alerts seen, 6 entries, 0 open
+  [19:59] 1,853,709 bars, 68 alerts seen, 6 entries, 0 open
+data websocket error, restarting connection: no close frame received or sent
+
+=== 2026-09-02 04:00:05 EDT — startup, feed sip ===
+  building reference data — about 10 minutes...
+Fetching asset list...
+  13105 listed, tradable US equities
+Fetching daily bars...
+  fetched 200/13105 symbols
+  fetched 400/13105 symbols
+  fetched 600/13105 symbols
+  fetched 800/13105 symbols
+  fetched 1000/13105 symbols
+  fetched 1200/13105 symbols
+  fetched 1400/13105 symbols
+  fetched 1600/13105 symbols
+  fetched 1800/13105 symbols
+  fetched 2000/13105 symbols
+  fetched 2200/13105 symbols
+  fetched 2400/13105 symbols
+  fetched 2600/13105 symbols
+  fetched 2800/13105 symbols
+  fetched 3000/13105 symbols
+  fetched 3200/13105 symbols
+  fetched 3400/13105 symbols
+  fetched 3600/13105 symbols
+  fetched 3800/13105 symbols
+  fetched 4000/13105 symbols
+  fetched 4200/13105 symbols
+  fetched 4400/13105 symbols
+  fetched 4600/13105 symbols
+  fetched 4800/13105 symbols
+  fetched 5000/13105 symbols
+  fetched 5200/13105 symbols
+  fetched 5400/13105 symbols
+  fetched 5600/13105 symbols
+  fetched 5800/13105 symbols
+  fetched 6000/13105 symbols
+  fetched 6200/13105 symbols
+  fetched 6400/13105 symbols
+  fetched 6600/13105 symbols
+  fetched 6800/13105 symbols
+  fetched 7000/13105 symbols
+  fetched 7200/13105 symbols
+  fetched 7400/13105 symbols
+  fetched 7600/13105 symbols
+  fetched 7800/13105 symbols
+  fetched 8000/13105 symbols
+  fetched 8200/13105 symbols
+  fetched 8400/13105 symbols
+  fetched 8600/13105 symbols
+  fetched 8800/13105 symbols
+  fetched 9000/13105 symbols
+  fetched 9200/13105 symbols
+  fetched 9400/13105 symbols
+  fetched 9600/13105 symbols
+  fetched 9800/13105 symbols
+  fetched 10000/13105 symbols
+  fetched 10200/13105 symbols
+  fetched 10400/13105 symbols
+  fetched 10600/13105 symbols
+  fetched 10800/13105 symbols
+  fetched 11000/13105 symbols
+  fetched 11200/13105 symbols
+  fetched 11400/13105 symbols
+  fetched 11600/13105 symbols
+  fetched 11800/13105 symbols
+  fetched 12000/13105 symbols
+  fetched 12200/13105 symbols
+  fetched 12400/13105 symbols
+  fetched 12600/13105 symbols
+  fetched 12800/13105 symbols
+  fetched 13000/13105 symbols
+  fetched 13105/13105 symbols
+  9058 kept without a share count (foreign filers, funds, warrants) — rules decide
+  115 dropped: under 14 sessions of history
+  12976 symbols in the universe
+Wrote 12976 refs to data/refs/2026-09-02.json
+  starting paper trader (in the foreground, as this process)...
+
+
+Paper equity   $84,003
+Feed           SIP
+Universe       12,976 symbols
+Reference      2026-09-02
+Mode           PAPER ORDERS
+Risk           0.5% per trade, max 3 positions
+Journal        data/mosquito/trades.jsonl
+
+Listening. Ctrl-C to stop.
+
+  [04:02] 1 bars, 0 alerts seen, 0 entries, 0 open
+error during websocket communication: unsupported operand type(s) for /: 'NoneType' and 'int'
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 457, in _run_forever
+    stale = await self._consume()
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 274, in _consume
+    await self._dispatch(msg)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 368, in _dispatch
+    await handler(self._cast(msg))
+  File "/Users/kanikagupta/trading/drivers/paper_live.py", line 103, in on_bar
+    trader.consider(to_alert(candidate, refs[bar.symbol]))
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kanikagupta/trading/engine/paper.py", line 289, in consider
+    target = round(alert.price * (1 + verdict.target_pct / 100), 4)
+                                      ~~~~~~~~~~~~~~~~~~~^~~~~
+TypeError: unsupported operand type(s) for /: 'NoneType' and 'int'
+error during websocket communication: unsupported operand type(s) for /: 'NoneType' and 'int'
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 457, in _run_forever
+    stale = await self._consume()
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 274, in _consume
+    await self._dispatch(msg)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 368, in _dispatch
+    await handler(self._cast(msg))
+  File "/Users/kanikagupta/trading/drivers/paper_live.py", line 103, in on_bar
+    trader.consider(to_alert(candidate, refs[bar.symbol]))
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kanikagupta/trading/engine/paper.py", line 289, in consider
+    target = round(alert.price * (1 + verdict.target_pct / 100), 4)
+                                      ~~~~~~~~~~~~~~~~~~~^~~~~
+TypeError: unsupported operand type(s) for /: 'NoneType' and 'int'
+  [04:08] 1,268 bars, 5 alerts seen, 0 entries, 0 open
+  [04:13] 2,583 bars, 5 alerts seen, 0 entries, 0 open
+  [04:18] 3,642 bars, 6 alerts seen, 0 entries, 0 open
+  [04:24] 4,705 bars, 6 alerts seen, 0 entries, 0 open
+  [04:29] 5,766 bars, 8 alerts seen, 0 entries, 0 open
+  [04:34] 6,707 bars, 9 alerts seen, 0 entries, 0 open
+  [04:40] 7,820 bars, 9 alerts seen, 0 entries, 0 open
+  [04:45] 8,726 bars, 9 alerts seen, 0 entries, 0 open
+  [04:51] 9,960 bars, 9 alerts seen, 0 entries, 0 open
+  [04:56] 11,455 bars, 9 alerts seen, 0 entries, 0 open
+  [05:01] 12,857 bars, 9 alerts seen, 0 entries, 0 open
+  [05:07] 13,955 bars, 9 alerts seen, 0 entries, 0 open
+  [05:12] 14,922 bars, 9 alerts seen, 0 entries, 0 open
+  [05:18] 16,079 bars, 9 alerts seen, 0 entries, 0 open
+  [05:23] 17,031 bars, 9 alerts seen, 0 entries, 0 open
+  [05:29] 18,299 bars, 10 alerts seen, 0 entries, 0 open
+  [05:34] 19,295 bars, 11 alerts seen, 0 entries, 0 open
+  [05:39] 20,477 bars, 12 alerts seen, 0 entries, 0 open
+  [05:45] 21,765 bars, 12 alerts seen, 0 entries, 0 open
+  [05:50] 22,770 bars, 12 alerts seen, 0 entries, 0 open
+  [05:56] 23,811 bars, 12 alerts seen, 0 entries, 0 open
+  [06:02] 24,925 bars, 12 alerts seen, 0 entries, 0 open
+  [06:08] 26,111 bars, 12 alerts seen, 0 entries, 0 open
+error during websocket communication: unsupported operand type(s) for /: 'NoneType' and 'int'
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 457, in _run_forever
+    stale = await self._consume()
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 274, in _consume
+    await self._dispatch(msg)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 368, in _dispatch
+    await handler(self._cast(msg))
+  File "/Users/kanikagupta/trading/drivers/paper_live.py", line 103, in on_bar
+    trader.consider(to_alert(candidate, refs[bar.symbol]))
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kanikagupta/trading/engine/paper.py", line 289, in consider
+    target = round(alert.price * (1 + verdict.target_pct / 100), 4)
+                                      ~~~~~~~~~~~~~~~~~~~^~~~~
+TypeError: unsupported operand type(s) for /: 'NoneType' and 'int'
+  [06:13] 27,013 bars, 13 alerts seen, 0 entries, 0 open
+  [06:19] 28,161 bars, 13 alerts seen, 0 entries, 0 open
+  [06:24] 28,999 bars, 13 alerts seen, 0 entries, 0 open
+  [06:29] 30,022 bars, 14 alerts seen, 0 entries, 0 open
+  [06:35] 31,255 bars, 14 alerts seen, 0 entries, 0 open
+  [06:41] 32,354 bars, 14 alerts seen, 0 entries, 0 open
+  [06:46] 33,280 bars, 14 alerts seen, 0 entries, 0 open
+  [06:52] 34,446 bars, 14 alerts seen, 0 entries, 0 open
+  [06:58] 35,658 bars, 14 alerts seen, 0 entries, 0 open
+  [07:03] 37,984 bars, 15 alerts seen, 0 entries, 0 open
+  [07:08] 40,255 bars, 15 alerts seen, 0 entries, 0 open
+  [07:13] 42,819 bars, 15 alerts seen, 0 entries, 0 open
+  [07:19] 44,921 bars, 15 alerts seen, 0 entries, 0 open
+  [07:25] 46,979 bars, 15 alerts seen, 0 entries, 0 open
+  [07:30] 48,725 bars, 15 alerts seen, 0 entries, 0 open
+error during websocket communication: unsupported operand type(s) for /: 'NoneType' and 'int'
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 457, in _run_forever
+    stale = await self._consume()
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 274, in _consume
+    await self._dispatch(msg)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 368, in _dispatch
+    await handler(self._cast(msg))
+  File "/Users/kanikagupta/trading/drivers/paper_live.py", line 103, in on_bar
+    trader.consider(to_alert(candidate, refs[bar.symbol]))
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kanikagupta/trading/engine/paper.py", line 289, in consider
+    target = round(alert.price * (1 + verdict.target_pct / 100), 4)
+                                      ~~~~~~~~~~~~~~~~~~~^~~~~
+TypeError: unsupported operand type(s) for /: 'NoneType' and 'int'
+  [07:36] 51,048 bars, 16 alerts seen, 0 entries, 0 open
+  [07:42] 53,499 bars, 18 alerts seen, 0 entries, 0 open
+  [07:48] 55,753 bars, 18 alerts seen, 0 entries, 0 open
+  [07:53] 57,498 bars, 18 alerts seen, 0 entries, 0 open
+  [07:58] 59,616 bars, 18 alerts seen, 0 entries, 0 open
+  [08:04] 61,795 bars, 19 alerts seen, 0 entries, 0 open
+  [08:09] 64,035 bars, 21 alerts seen, 0 entries, 0 open
+  [08:14] 66,699 bars, 21 alerts seen, 0 entries, 0 open
+  [08:19] 69,040 bars, 21 alerts seen, 0 entries, 0 open
+  [08:24] 71,561 bars, 21 alerts seen, 0 entries, 0 open
+  [08:30] 73,753 bars, 21 alerts seen, 0 entries, 0 open
+  [08:35] 75,954 bars, 21 alerts seen, 0 entries, 0 open
+  [08:40] 78,409 bars, 21 alerts seen, 0 entries, 0 open
+  [08:45] 80,100 bars, 21 alerts seen, 0 entries, 0 open
+  [08:50] 82,458 bars, 21 alerts seen, 0 entries, 0 open
+  [08:55] 84,418 bars, 21 alerts seen, 0 entries, 0 open
+  [09:00] 86,606 bars, 21 alerts seen, 0 entries, 0 open
+  [09:05] 88,921 bars, 21 alerts seen, 0 entries, 0 open
+  [09:10] 90,952 bars, 21 alerts seen, 0 entries, 0 open
+  [09:15] 93,187 bars, 21 alerts seen, 0 entries, 0 open
+  [09:20] 95,626 bars, 21 alerts seen, 0 entries, 0 open
+  [09:25] 98,112 bars, 21 alerts seen, 0 entries, 0 open
+  [09:31] 102,506 bars, 21 alerts seen, 0 entries, 0 open
+  [09:36] 128,154 bars, 29 alerts seen, 0 entries, 0 open
+  [09:41] 150,887 bars, 30 alerts seen, 0 entries, 0 open
+error during websocket communication: unsupported operand type(s) for /: 'NoneType' and 'int'
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 457, in _run_forever
+    stale = await self._consume()
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 274, in _consume
+    await self._dispatch(msg)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 368, in _dispatch
+    await handler(self._cast(msg))
+  File "/Users/kanikagupta/trading/drivers/paper_live.py", line 103, in on_bar
+    trader.consider(to_alert(candidate, refs[bar.symbol]))
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kanikagupta/trading/engine/paper.py", line 289, in consider
+    target = round(alert.price * (1 + verdict.target_pct / 100), 4)
+                                      ~~~~~~~~~~~~~~~~~~~^~~~~
+TypeError: unsupported operand type(s) for /: 'NoneType' and 'int'
+  [09:46] 172,753 bars, 34 alerts seen, 0 entries, 0 open
+  [09:51] 195,290 bars, 35 alerts seen, 0 entries, 0 open
+  [09:56] 217,006 bars, 36 alerts seen, 0 entries, 0 open
+  [10:01] 238,069 bars, 36 alerts seen, 0 entries, 0 open
+  [10:06] 261,308 bars, 38 alerts seen, 0 entries, 0 open
+error during websocket communication: unsupported operand type(s) for /: 'NoneType' and 'int'
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 457, in _run_forever
+    stale = await self._consume()
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 274, in _consume
+    await self._dispatch(msg)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 368, in _dispatch
+    await handler(self._cast(msg))
+  File "/Users/kanikagupta/trading/drivers/paper_live.py", line 103, in on_bar
+    trader.consider(to_alert(candidate, refs[bar.symbol]))
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kanikagupta/trading/engine/paper.py", line 289, in consider
+    target = round(alert.price * (1 + verdict.target_pct / 100), 4)
+                                      ~~~~~~~~~~~~~~~~~~~^~~~~
+TypeError: unsupported operand type(s) for /: 'NoneType' and 'int'
+  [10:11] 282,330 bars, 39 alerts seen, 0 entries, 0 open
+error during websocket communication: unsupported operand type(s) for /: 'NoneType' and 'int'
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 457, in _run_forever
+    stale = await self._consume()
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 274, in _consume
+    await self._dispatch(msg)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 368, in _dispatch
+    await handler(self._cast(msg))
+  File "/Users/kanikagupta/trading/drivers/paper_live.py", line 103, in on_bar
+    trader.consider(to_alert(candidate, refs[bar.symbol]))
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kanikagupta/trading/engine/paper.py", line 289, in consider
+    target = round(alert.price * (1 + verdict.target_pct / 100), 4)
+                                      ~~~~~~~~~~~~~~~~~~~^~~~~
+TypeError: unsupported operand type(s) for /: 'NoneType' and 'int'
+  [10:16] 304,883 bars, 40 alerts seen, 0 entries, 0 open
+error during websocket communication: unsupported operand type(s) for /: 'NoneType' and 'int'
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 457, in _run_forever
+    stale = await self._consume()
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 274, in _consume
+    await self._dispatch(msg)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 368, in _dispatch
+    await handler(self._cast(msg))
+  File "/Users/kanikagupta/trading/drivers/paper_live.py", line 103, in on_bar
+    trader.consider(to_alert(candidate, refs[bar.symbol]))
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kanikagupta/trading/engine/paper.py", line 289, in consider
+    target = round(alert.price * (1 + verdict.target_pct / 100), 4)
+                                      ~~~~~~~~~~~~~~~~~~~^~~~~
+TypeError: unsupported operand type(s) for /: 'NoneType' and 'int'
+error during websocket communication: unsupported operand type(s) for /: 'NoneType' and 'int'
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 457, in _run_forever
+    stale = await self._consume()
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 274, in _consume
+    await self._dispatch(msg)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 368, in _dispatch
+    await handler(self._cast(msg))
+  File "/Users/kanikagupta/trading/drivers/paper_live.py", line 103, in on_bar
+    trader.consider(to_alert(candidate, refs[bar.symbol]))
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kanikagupta/trading/engine/paper.py", line 289, in consider
+    target = round(alert.price * (1 + verdict.target_pct / 100), 4)
+                                      ~~~~~~~~~~~~~~~~~~~^~~~~
+TypeError: unsupported operand type(s) for /: 'NoneType' and 'int'
+  [10:21] 331,168 bars, 42 alerts seen, 0 entries, 0 open
+  [10:26] 349,840 bars, 43 alerts seen, 0 entries, 0 open
+  [10:31] 374,211 bars, 44 alerts seen, 0 entries, 0 open
+  [10:36] 397,482 bars, 45 alerts seen, 0 entries, 0 open
+  [10:41] 418,751 bars, 47 alerts seen, 0 entries, 0 open
+  [10:46] 439,692 bars, 47 alerts seen, 0 entries, 0 open
+  [10:52] 460,654 bars, 47 alerts seen, 0 entries, 0 open
+  [10:57] 482,167 bars, 48 alerts seen, 0 entries, 0 open
+  [11:02] 502,208 bars, 49 alerts seen, 0 entries, 0 open
+  [11:07] 523,175 bars, 50 alerts seen, 0 entries, 0 open
+  [11:12] 544,585 bars, 50 alerts seen, 0 entries, 0 open
+  [11:17] 563,750 bars, 51 alerts seen, 0 entries, 0 open
+  [11:22] 584,408 bars, 52 alerts seen, 0 entries, 0 open
+  [11:27] 604,900 bars, 53 alerts seen, 0 entries, 0 open
+error during websocket communication: unsupported operand type(s) for /: 'NoneType' and 'int'
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 457, in _run_forever
+    stale = await self._consume()
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 274, in _consume
+    await self._dispatch(msg)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 368, in _dispatch
+    await handler(self._cast(msg))
+  File "/Users/kanikagupta/trading/drivers/paper_live.py", line 103, in on_bar
+    trader.consider(to_alert(candidate, refs[bar.symbol]))
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kanikagupta/trading/engine/paper.py", line 289, in consider
+    target = round(alert.price * (1 + verdict.target_pct / 100), 4)
+                                      ~~~~~~~~~~~~~~~~~~~^~~~~
+TypeError: unsupported operand type(s) for /: 'NoneType' and 'int'
+  [11:32] 629,295 bars, 55 alerts seen, 0 entries, 0 open
+  [11:37] 649,321 bars, 55 alerts seen, 0 entries, 0 open
+  [11:43] 669,102 bars, 55 alerts seen, 0 entries, 0 open
+  [11:48] 689,466 bars, 55 alerts seen, 0 entries, 0 open
+  [11:53] 708,734 bars, 55 alerts seen, 0 entries, 0 open
+  [11:58] 729,422 bars, 55 alerts seen, 0 entries, 0 open
+  [12:03] 747,917 bars, 55 alerts seen, 0 entries, 0 open
+  [12:08] 766,670 bars, 55 alerts seen, 0 entries, 0 open
+  [12:13] 785,913 bars, 56 alerts seen, 0 entries, 0 open
+  [12:19] 809,128 bars, 59 alerts seen, 0 entries, 0 open
+  [12:24] 829,681 bars, 59 alerts seen, 0 entries, 0 open
+  [12:29] 847,294 bars, 59 alerts seen, 0 entries, 0 open
+  [12:34] 868,741 bars, 59 alerts seen, 0 entries, 0 open
+error during websocket communication: unsupported operand type(s) for /: 'NoneType' and 'int'
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 457, in _run_forever
+    stale = await self._consume()
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 274, in _consume
+    await self._dispatch(msg)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 368, in _dispatch
+    await handler(self._cast(msg))
+  File "/Users/kanikagupta/trading/drivers/paper_live.py", line 103, in on_bar
+    trader.consider(to_alert(candidate, refs[bar.symbol]))
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kanikagupta/trading/engine/paper.py", line 289, in consider
+    target = round(alert.price * (1 + verdict.target_pct / 100), 4)
+                                      ~~~~~~~~~~~~~~~~~~~^~~~~
+TypeError: unsupported operand type(s) for /: 'NoneType' and 'int'
+  [12:39] 886,609 bars, 60 alerts seen, 0 entries, 0 open
+  [12:44] 903,359 bars, 60 alerts seen, 0 entries, 0 open
+  [12:50] 926,270 bars, 60 alerts seen, 0 entries, 0 open
+  [12:55] 945,336 bars, 60 alerts seen, 0 entries, 0 open
+  [13:00] 964,457 bars, 60 alerts seen, 0 entries, 0 open
+  [13:05] 983,437 bars, 60 alerts seen, 0 entries, 0 open
+  [13:10] 1,003,508 bars, 61 alerts seen, 0 entries, 0 open
+  [13:15] 1,022,559 bars, 61 alerts seen, 0 entries, 0 open
+  [13:20] 1,041,886 bars, 62 alerts seen, 0 entries, 0 open
+  [13:25] 1,059,460 bars, 62 alerts seen, 0 entries, 0 open
+  [13:31] 1,081,015 bars, 62 alerts seen, 0 entries, 0 open
+  [13:36] 1,099,697 bars, 63 alerts seen, 0 entries, 0 open
+  [13:42] 1,122,217 bars, 63 alerts seen, 0 entries, 0 open
+  [13:47] 1,143,060 bars, 63 alerts seen, 0 entries, 0 open
+  [13:52] 1,165,454 bars, 63 alerts seen, 0 entries, 0 open
+  [13:57] 1,182,418 bars, 63 alerts seen, 0 entries, 0 open
+  [14:02] 1,204,938 bars, 63 alerts seen, 0 entries, 0 open
+  [14:07] 1,223,423 bars, 63 alerts seen, 0 entries, 0 open
+  [14:12] 1,241,419 bars, 63 alerts seen, 0 entries, 0 open
+  [14:17] 1,263,111 bars, 63 alerts seen, 0 entries, 0 open
+  [14:22] 1,282,416 bars, 63 alerts seen, 0 entries, 0 open
+  [14:27] 1,301,373 bars, 63 alerts seen, 0 entries, 0 open
+  [14:32] 1,322,485 bars, 63 alerts seen, 0 entries, 0 open
+  [14:37] 1,341,960 bars, 64 alerts seen, 0 entries, 0 open
+  [14:42] 1,361,204 bars, 64 alerts seen, 0 entries, 0 open
+  [14:47] 1,382,909 bars, 64 alerts seen, 0 entries, 0 open
+  [14:53] 1,406,349 bars, 64 alerts seen, 0 entries, 0 open
+  [14:58] 1,426,464 bars, 64 alerts seen, 0 entries, 0 open
+  [15:03] 1,447,727 bars, 64 alerts seen, 0 entries, 0 open
+  [15:08] 1,469,135 bars, 64 alerts seen, 0 entries, 0 open
+  [15:13] 1,490,944 bars, 64 alerts seen, 0 entries, 0 open
+  [15:18] 1,515,136 bars, 64 alerts seen, 0 entries, 0 open
+  [15:23] 1,535,772 bars, 64 alerts seen, 0 entries, 0 open
+  [15:28] 1,557,540 bars, 64 alerts seen, 0 entries, 0 open
+  [15:33] 1,582,137 bars, 64 alerts seen, 0 entries, 0 open
+  [15:38] 1,604,199 bars, 64 alerts seen, 0 entries, 0 open
+  [15:43] 1,630,731 bars, 64 alerts seen, 0 entries, 0 open
+  [15:48] 1,654,160 bars, 64 alerts seen, 0 entries, 0 open
+  [15:53] 1,681,499 bars, 64 alerts seen, 0 entries, 0 open
+  [15:58] 1,708,739 bars, 64 alerts seen, 0 entries, 0 open
+  [16:03] 1,735,649 bars, 64 alerts seen, 0 entries, 0 open
+  [16:09] 1,738,695 bars, 64 alerts seen, 0 entries, 0 open
+  [16:14] 1,740,811 bars, 64 alerts seen, 0 entries, 0 open
+  [16:19] 1,743,146 bars, 64 alerts seen, 0 entries, 0 open
+  [16:25] 1,745,729 bars, 64 alerts seen, 0 entries, 0 open
+  [16:30] 1,747,576 bars, 64 alerts seen, 0 entries, 0 open
+  [16:36] 1,749,927 bars, 64 alerts seen, 0 entries, 0 open
+  [16:41] 1,751,581 bars, 64 alerts seen, 0 entries, 0 open
+  [16:47] 1,753,500 bars, 64 alerts seen, 0 entries, 0 open
+  [16:52] 1,755,018 bars, 64 alerts seen, 0 entries, 0 open
+  [16:58] 1,756,771 bars, 64 alerts seen, 0 entries, 0 open
+  [17:03] 1,758,187 bars, 64 alerts seen, 0 entries, 0 open
+  [17:08] 1,759,486 bars, 64 alerts seen, 0 entries, 0 open
+  [17:13] 1,760,832 bars, 64 alerts seen, 0 entries, 0 open
+  [17:19] 1,762,326 bars, 64 alerts seen, 0 entries, 0 open
+  [17:25] 1,764,022 bars, 64 alerts seen, 0 entries, 0 open
+  [17:30] 1,765,476 bars, 64 alerts seen, 0 entries, 0 open
+  [17:35] 1,767,074 bars, 64 alerts seen, 0 entries, 0 open
+  [17:41] 1,768,373 bars, 64 alerts seen, 0 entries, 0 open
+  [17:46] 1,769,596 bars, 64 alerts seen, 0 entries, 0 open
+  [17:52] 1,771,050 bars, 64 alerts seen, 0 entries, 0 open
+  [17:57] 1,772,491 bars, 64 alerts seen, 0 entries, 0 open
+  [18:03] 1,773,762 bars, 64 alerts seen, 0 entries, 0 open
+  [18:08] 1,775,172 bars, 64 alerts seen, 0 entries, 0 open
+  [18:14] 1,776,343 bars, 64 alerts seen, 0 entries, 0 open
+  [18:19] 1,777,414 bars, 64 alerts seen, 0 entries, 0 open

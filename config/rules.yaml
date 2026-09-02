@@ -60,10 +60,13 @@ execution:
   # after a restart. Their original stop and target are unrecoverable, so
   # these rebuild them from the entry price. Approximate management beats
   # none — an unmanaged position has no stop at all.
-  adopted_stop_pct: 8.0
-  adopted_target_pct: 15.0
+  adopted_stop_pct: 12.0
+  adopted_target_pct: null
 
   entry_slippage_pct: 2.0        # limit placed this far above the alert price
+  trail_pct: 12.0
+  trail_arms_at_pct: 10.0
+
   hard_exit_time: "15:50"        # nothing carries overnight in v1
 
 # --- Setups ------------------------------------------------------------
@@ -76,20 +79,20 @@ spike:
   min_pct_change: 10.0
   min_rel_volume_1m: 15.0        # this minute vs the day's average minute
   min_float_turnover: 1.0        # whole float has changed hands today
-  stop_pct: 8.0
-  target_pct: 15.0
+  stop_pct: 12.0
+  target_pct: null
 
 repeat:
   # Your "seen it two or three times" rule, using the feed's own counter.
   min_alert_count: 3
   min_pct_change: 5.0
   min_float_turnover: 0.5
-  stop_pct: 8.0
-  target_pct: 15.0
+  stop_pct: 12.0
+  target_pct: null
 
 new_high:
   # NSH is the feed's tag for a new session high.
   min_pct_change: 5.0
   min_rel_volume_1m: 8.0
-  stop_pct: 8.0
-  target_pct: 15.0
+  stop_pct: 12.0
+  target_pct: null

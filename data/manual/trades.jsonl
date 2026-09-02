@@ -1,0 +1,33 @@
+{"kind": "trade", "date": "2026-08-24", "symbol": "BTCT", "entry": 1.19, "exit": 2.13, "note": "news", "logged_at": "2026-08-24T16:00:00-04:00"}
+{"kind": "trade", "date": "2026-08-24", "symbol": "LUCY", "entry": 0.71, "exit": 1.0, "note": "news", "logged_at": "2026-08-24T16:00:00-04:00"}
+{"kind": "trade", "date": "2026-08-24", "symbol": "XPON", "entry": 4.07, "exit": 7.89, "note": "news", "logged_at": "2026-08-24T16:00:00-04:00"}
+{"kind": "trade", "date": "2026-08-24", "symbol": "DAIC", "entry": 0.88, "exit": 1.9, "note": "volume", "logged_at": "2026-08-24T16:00:00-04:00"}
+{"kind": "trade", "date": "2026-08-24", "symbol": "GIPR", "entry": 0.5941, "exit": 0.97, "note": "volume + ascending triangle", "logged_at": "2026-08-24T16:00:00-04:00"}
+{"kind": "trade", "date": "2026-08-24", "symbol": "JEM", "entry": 4.66, "exit": 5.56, "note": "volume + former runner", "logged_at": "2026-08-24T16:00:00-04:00"}
+{"kind": "trade", "date": "2026-08-24", "symbol": "JEM", "entry": 5.19, "exit": 6.0, "note": "volume + former runner", "logged_at": "2026-08-24T16:00:00-04:00"}
+{"kind": "trade", "date": "2026-08-25", "symbol": "TNMG", "entry": 0.538, "exit": 0.7845, "note": "volume + premarket", "logged_at": "2026-08-25T16:00:00-04:00"}
+{"kind": "trade", "date": "2026-08-25", "symbol": "SWVL", "entry": 1.82, "exit": 3.0, "note": "volume", "logged_at": "2026-08-25T16:00:00-04:00"}
+{"kind": "trade", "date": "2026-08-25", "symbol": "FNGR", "entry": 0.32, "exit": 0.39, "note": "volume", "logged_at": "2026-08-25T16:00:00-04:00"}
+{"kind": "trade", "date": "2026-08-25", "symbol": "NCPL", "entry": 0.48, "exit": 0.74, "note": "volume + ascending triangle", "logged_at": "2026-08-25T16:00:00-04:00"}
+{"kind": "trade", "date": "2026-08-26", "symbol": "VNRX", "entry": 0.4, "exit": 0.6, "note": "news", "logged_at": "2026-08-26T16:00:00-04:00"}
+{"kind": "trade", "date": "2026-08-26", "symbol": "RPGL", "entry": 1.72, "exit": 2.18, "note": "volume", "logged_at": "2026-08-26T16:00:00-04:00"}
+{"kind": "trade", "date": "2026-08-26", "symbol": "WKSP", "entry": 0.64, "exit": 0.75, "note": "volume + premarket", "logged_at": "2026-08-26T16:00:00-04:00"}
+{"kind": "trade", "date": "2026-08-27", "symbol": "GSUN", "entry": 0.29, "exit": 0.37, "note": "volume + former runner", "logged_at": "2026-08-27T16:00:00-04:00"}
+{"kind": "trade", "date": "2026-08-27", "symbol": "EPOW", "entry": 0.48, "exit": 0.59, "note": "news", "logged_at": "2026-08-27T16:00:00-04:00"}
+{"kind": "trade", "date": "2026-08-24", "symbol": "OLOX", "entry": 2.52, "exit": 2.24, "note": "", "logged_at": "2026-08-24T16:00:00-04:00"}
+{"kind": "trade", "date": "2026-08-25", "symbol": "PRZO", "entry": 0.93, "exit": 0.8, "note": "", "logged_at": "2026-08-25T16:00:00-04:00"}
+{"kind": "trade", "date": "2026-08-25", "symbol": "CBAT", "entry": 0.98, "exit": 0.84, "note": "", "logged_at": "2026-08-25T16:00:00-04:00"}
+{"kind": "trade", "date": "2026-08-25", "symbol": "RIME", "entry": 0.39, "exit": 0.26, "note": "", "logged_at": "2026-08-25T16:00:00-04:00"}
+{"kind": "trade", "date": "2026-08-25", "symbol": "RMSG", "entry": 0.44, "exit": 0.34, "note": "", "logged_at": "2026-08-25T16:00:00-04:00"}
+{"kind": "trade", "date": "2026-08-25", "symbol": "DFNS", "entry": 16.7, "exit": 13.72, "note": "", "logged_at": "2026-08-25T16:00:00-04:00"}
+{"kind": "trade", "date": "2026-08-25", "symbol": "LHSW", "entry": 3.65, "exit": 3.44, "note": "", "logged_at": "2026-08-25T16:00:00-04:00"}
+{"kind": "trade", "date": "2026-08-25", "symbol": "SCAG", "entry": 0.3, "exit": 0.28, "note": "", "logged_at": "2026-08-25T16:00:00-04:00"}
+{"kind": "trade", "date": "2026-08-25", "symbol": "AKAN", "entry": 4.63, "exit": 4.31, "note": "", "logged_at": "2026-08-25T16:00:00-04:00"}
+{"kind": "trade", "date": "2026-08-26", "symbol": "TRUG", "entry": 0.82, "exit": 0.71, "note": "", "logged_at": "2026-08-26T16:00:00-04:00"}
+{"kind": "trade", "date": "2026-08-26", "symbol": "SMTK", "entry": 5.54, "exit": 4.9, "note": "", "logged_at": "2026-08-26T16:00:00-04:00"}
+{"kind": "trade", "date": "2026-08-26", "symbol": "LUCY", "entry": 1.23, "exit": 1.19, "note": "", "logged_at": "2026-08-26T16:00:00-04:00"}
+{"kind": "trade", "date": "2026-08-26", "symbol": "NCPL", "entry": 0.56, "exit": 0.52, "note": "", "logged_at": "2026-08-26T16:00:00-04:00"}
+{"kind": "trade", "date": "2026-08-27", "symbol": "FNGR", "entry": 0.18, "exit": 0.17, "note": "", "logged_at": "2026-08-27T16:00:00-04:00"}
+{"kind": "trade", "date": "2026-08-27", "symbol": "ONFO", "entry": 1.51, "exit": 1.41, "note": "", "logged_at": "2026-08-27T16:00:00-04:00"}
+{"kind": "trade", "date": "2026-08-27", "symbol": "SOAR", "entry": 0.21, "exit": 0.19, "note": "", "logged_at": "2026-08-27T16:00:00-04:00"}
+{"kind": "pass", "date": "2026-09-02", "symbol": "BTCT", "note": "too extended", "logged_at": "2026-09-02T18:13:26.075150-04:00"}

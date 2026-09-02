@@ -71,7 +71,7 @@ def in_session(now: datetime) -> bool:
 
 
 def process_alive() -> bool:
-    return subprocess.run(["pgrep", "-f", "drivers.paper_live"],
+    return subprocess.run(["pgrep", "-f", "drivers.pattern_live"],
                           capture_output=True).returncode == 0
 
 

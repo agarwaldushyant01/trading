@@ -242,6 +242,64 @@ class PaperTrader:
 
     # -------------------------------------------------------------- entries
 
+    def consider_with_stop(self, alert, stop: float, setup: str,
+                           reason: str) -> None:
+        """Enter using a stop the pattern determined.
+
+        The ordinary path sizes from a percentage stop in config. Chart
+        patterns place the stop below the structure that justified the entry
+        — the low of the pullback, not a fixed distance — so the size follows
+        from that instead.
+        """
+        now = datetime.now(ET)
+        self._roll_session(now)
+        self.seen += 1
+
+        if self.halted_for_day or self._halted_for_overexposure():
+            return
+        if alert.symbol in self.taken_today:
+            return
+        if self._broker_position_count() >= self.cfg["risk"]["max_concurrent"]:
+            return
+        if stop <= 0 or stop >= alert.price:
+            return
+
+        stop_pct = (1 - stop / alert.price) * 100
+        shares = self._size(alert.price, stop_pct)
+        if shares <= 0:
+            return
+
+        entry = {
+            "symbol": alert.symbol, "shares": shares,
+            "signal_price": alert.price, "stop": round(stop, 4),
+            "target": None, "setup": setup, "reason": reason,
+            "opened_at": now.isoformat(),
+        }
+
+        if self.dry_run:
+            self._log("dry_run_entry", entry)
+            print(f"  {now:%H:%M}  WOULD BUY {alert.symbol} x{shares} "
+                  f"@ {alert.price:.4f} stop {stop:.4f} [{setup}]", flush=True)
+            return
+
+        if not self._submit_buy(alert, shares):
+            return
+
+        self.taken_today.add(alert.symbol)
+        self.open_positions[alert.symbol] = entry
+        self._save_state()
+        self.filled += 1
+        self._log("entry", entry)
+
+        print(f"  {now:%H:%M}  BUY {alert.symbol} x{shares} @ "
+              f"{alert.price:.4f} stop {stop:.4f} ({stop_pct:.1f}%) "
+              f"[{setup}]", flush=True)
+        self.notifier.send(
+            f"PAPER BUY {alert.symbol} [{setup}]",
+            f"{shares:,} sh @ ~${alert.price:.4f}\n"
+            f"stop {stop:.4f} ({stop_pct:.1f}%)\n{reason}",
+        )
+
     def consider(self, alert) -> None:
         now = datetime.now(ET)
         self._roll_session(now)
@@ -478,6 +536,41 @@ class PaperTrader:
         self.halted_for_day = True
         return True
 
+    def _trail_stop(self, entry: dict, price: float) -> float:
+        """Raise the stop as the position makes new highs.
+
+        The 32 logged manual trades averaged +47.4% on winners against a
+        -11.9% average loser — a 4:1 payoff at a 50% hit rate, +17.8%
+        expectancy. Running those same entries through a fixed 15% target and
+        8% stop collapses expectancy to +3.9%, so the tight exits alone were
+        costing about 14 points a trade. Nine of the sixteen losers also went
+        past -8%, meaning the stop was inside the range these names normally
+        travel.
+
+        A trail keeps the position while the move continues and still caps
+        the loss if it does not. The cost is giving back part of the peak on
+        every winner, which is the price of staying in the ones that run.
+        """
+        cfg = self.cfg["execution"]
+        trail_pct = cfg.get("trail_pct")
+        if not trail_pct:
+            return entry["stop"]
+
+        peak = max(entry.get("peak", entry["signal_price"]), price)
+        entry["peak"] = peak
+
+        # Only trail once the trade is meaningfully up. Before that the trail
+        # sits inside normal noise and stops out trades that go on to work.
+        arm_at = cfg.get("trail_arms_at_pct", 10.0)
+        if peak < entry["signal_price"] * (1 + arm_at / 100):
+            return entry["stop"]
+
+        trailed = round(peak * (1 - trail_pct / 100), 4)
+        if trailed > entry["stop"]:
+            entry["stop"] = trailed
+            self._save_state()
+        return entry["stop"]
+
     def _check_positions(self) -> None:
         """Sweep everything the BROKER holds, not everything we remember.
 
@@ -511,10 +604,13 @@ class PaperTrader:
             price = float(position.current_price)
             pnl_pct = float(position.unrealized_plpc) * 100
 
+            stop = self._trail_stop(entry, price)
+
             reason = None
-            if price <= entry["stop"]:
-                reason = "stop"
-            elif price >= entry["target"]:
+            if price <= stop:
+                trailing = entry.get("peak", 0) > entry["signal_price"] * 1.05
+                reason = "trail" if trailing else "stop"
+            elif entry.get("target") and price >= entry["target"]:
                 reason = "target"
             elif now.time() >= hard_exit:
                 reason = "time"

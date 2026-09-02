@@ -39,9 +39,9 @@ if [ "$DOW" -gt 5 ]; then
 fi
 
 # Only one stream connection is allowed, so clear anything already holding it.
-if pgrep -f "drivers.paper_live" > /dev/null; then
+if pgrep -f "drivers.pattern_live" > /dev/null; then
     echo "  stopping the previous trader..."
-    pkill -f "drivers.paper_live"
+    pkill -f "drivers.pattern_live"
     sleep 5
 fi
 
@@ -63,5 +63,5 @@ echo ""
 # caffeinate -i keeps the machine awake for as long as the trader runs, and
 # exec replaces this shell entirely — so the process launchd is watching IS
 # the trader. Nothing to orphan.
-exec caffeinate -i "$PYTHON" -u -m drivers.paper_live \
+exec caffeinate -i "$PYTHON" -u -m drivers.pattern_live \
     --feed "$FEED" --scanner-config "$SCANNER_CONFIG" $MODE
