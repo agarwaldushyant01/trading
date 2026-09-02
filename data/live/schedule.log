@@ -3726,3 +3726,40 @@ TypeError: unsupported operand type(s) for /: 'NoneType' and 'int'
   [18:08] 1,775,172 bars, 64 alerts seen, 0 entries, 0 open
   [18:14] 1,776,343 bars, 64 alerts seen, 0 entries, 0 open
   [18:19] 1,777,414 bars, 64 alerts seen, 0 entries, 0 open
+
+=== 2026-09-02 18:23:44 EDT — startup, feed sip ===
+  reference data: data/refs/2026-09-02.json (already built)
+  starting paper trader (in the foreground, as this process)...
+
+usage: python3 -m drivers.pattern_live [-h] [--feed {sip,iex}]
+                                       [--rules-config RULES_CONFIG]
+                                       [--min-confluences MIN_CONFLUENCES]
+                                       [--dry-run]
+python3 -m drivers.pattern_live: error: unrecognized arguments: --scanner-config config/scanner.yaml
+
+=== 2026-09-02 18:24:44 EDT — startup, feed sip ===
+  reference data: data/refs/2026-09-02.json (already built)
+  starting paper trader (in the foreground, as this process)...
+
+usage: python3 -m drivers.pattern_live [-h] [--feed {sip,iex}]
+                                       [--rules-config RULES_CONFIG]
+                                       [--min-confluences MIN_CONFLUENCES]
+                                       [--dry-run]
+python3 -m drivers.pattern_live: error: unrecognized arguments: --scanner-config config/scanner.yaml
+
+=== 2026-09-02 18:25:44 EDT — startup, feed sip ===
+  stopping the previous trader...
+  reference data: data/refs/2026-09-02.json (already built)
+  starting paper trader (in the foreground, as this process)...
+
+
+Paper equity   $84,003
+Feed           SIP
+Universe       12,976 symbols
+Strategy       chart patterns on 5-minute bars
+Confluences    2 minimum
+Mode           PAPER ORDERS
+
+Listening.
+
+  [18:25] 1 bars, 0 5m, 0 signals, 0 entries, 0 open

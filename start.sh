@@ -64,4 +64,4 @@ echo ""
 # exec replaces this shell entirely — so the process launchd is watching IS
 # the trader. Nothing to orphan.
 exec caffeinate -i "$PYTHON" -u -m drivers.pattern_live \
-    --feed "$FEED" --scanner-config "$SCANNER_CONFIG" $MODE
+    --feed "$FEED" $MODE
