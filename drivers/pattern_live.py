@@ -111,7 +111,7 @@ def _new_bar(bucket: datetime, o: float, h: float, l: float,
 
 
 async def run(builder, refs, trader, notifier, key, secret, feed_name,
-              min_confluences, dry_run):
+              min_confluences, universe, dry_run):
     from alpaca.data.enums import DataFeed
     from alpaca.data.live import StockDataStream
     from engine.alerts import Alert
@@ -122,7 +122,8 @@ async def run(builder, refs, trader, notifier, key, secret, feed_name,
 
     async def on_bar(raw):
         symbol = raw.symbol
-        if symbol not in refs:
+        ref = refs.get(symbol)
+        if ref is None:
             return
         state["bars"] += 1
 
@@ -144,11 +145,24 @@ async def run(builder, refs, trader, notifier, key, secret, feed_name,
             return
         state["five"] += 1
 
+        # The universe the trader actually trades. Without this the detector
+        # finds textbook retests on large caps and ETFs — SHAK at $69, an
+        # S&P midcap fund at $66 — which are real patterns on stocks that
+        # will never move the way a low-float small cap does. The old scanner
+        # applied these limits from scanner.yaml; this driver does not read
+        # that file, so they belong here.
+        if not (universe["min_price"] <= closed["c"] <= universe["max_price"]):
+            return
+        if ref.shares_outstanding and \
+                ref.shares_outstanding > universe["max_float"]:
+            return
+        if ref.avg_20d_volume and \
+                ref.avg_20d_volume < universe["min_avg_volume"]:
+            return
+
         bars = builder.history(symbol)
         if len(bars) < 20:
             return
-
-        ref = refs[symbol]
         setups = [s for s in detect(bars, daily=None, levels=[],
                                     min_confluences=min_confluences)
                   if not s.rejected]
@@ -222,6 +236,13 @@ def main() -> None:
     args = p.parse_args()
 
     rules_cfg = yaml.safe_load(pathlib.Path(args.rules_config).read_text())
+    universe = rules_cfg.get("universe", {})
+    universe = {
+        "min_price": universe.get("min_price", 0.10),
+        "max_price": universe.get("max_price", 20.0),
+        "max_float": universe.get("max_float", 25_000_000),
+        "min_avg_volume": universe.get("min_daily_volume", 50_000),
+    }
     alert_path = pathlib.Path("config/alerts.yaml")
     alert_cfg = yaml.safe_load(alert_path.read_text()) if alert_path.exists() else {}
 
@@ -238,6 +259,9 @@ def main() -> None:
     print(f"Feed           {args.feed.upper()}")
     print(f"Universe       {len(refs):,} symbols")
     print(f"Strategy       chart patterns on {BAR_MINUTES}-minute bars")
+    print(f"Universe       ${universe['min_price']:.2f}-"
+          f"${universe['max_price']:.0f}, float under "
+          f"{universe['max_float'] / 1e6:.0f}M")
     print(f"Confluences    {args.min_confluences} minimum")
     print(f"Mode           {'DRY RUN' if args.dry_run else 'PAPER ORDERS'}")
     if adopted:
@@ -251,7 +275,8 @@ def main() -> None:
     builder = FiveMinuteBuilder()
     try:
         asyncio.run(run(builder, refs, trader, notifier, key, secret,
-                        args.feed, args.min_confluences, args.dry_run))
+                        args.feed, args.min_confluences, universe,
+                        args.dry_run))
     except KeyboardInterrupt:
         pass
     finally:

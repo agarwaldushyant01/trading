@@ -1,1 +1,13 @@
-{}
+{
+ "BMNZ": {
+  "symbol": "BMNZ",
+  "shares": 1243,
+  "signal_price": 6.75,
+  "stop": 6.5968,
+  "target": null,
+  "setup": "ascending_triangle",
+  "reason": "small bodies into the level, near 6.75",
+  "opened_at": "2026-09-03T06:03:00.059651-04:00",
+  "peak": 6.79
+ }
+}

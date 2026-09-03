@@ -264,6 +264,13 @@ class PaperTrader:
         if stop <= 0 or stop >= alert.price:
             return
 
+        # A structural stop can land very close to the entry — MSTZ came in
+        # at 1.86% on 2026-09-03 and was stopped by ordinary noise. The
+        # six-month study put median adverse excursion near -5%, so anything
+        # tighter than the floor is widened rather than obeyed.
+        floor_pct = self.cfg["execution"].get("min_stop_pct", 5.0)
+        stop = min(stop, alert.price * (1 - floor_pct / 100))
+
         stop_pct = (1 - stop / alert.price) * 100
         shares = self._size(alert.price, stop_pct)
         if shares <= 0:
@@ -565,7 +572,25 @@ class PaperTrader:
         if peak < entry["signal_price"] * (1 + arm_at / 100):
             return entry["stop"]
 
-        trailed = round(peak * (1 - trail_pct / 100), 4)
+        # Two floors under the trailing stop.
+        #
+        # A percentage trail alone is wider than most moves: SDST ran from
+        # 0.28 to 0.3202 on 2026-09-03 — up 14.4% — and a 12% trail put the
+        # stop at 0.2818, exiting at exactly 0.0%. The whole gain was given
+        # back because the trail was wider than the gain.
+        #
+        # So the stop also keeps a share of whatever the trade has actually
+        # made. Giving back half the peak gain still lets a runner run, but a
+        # +14% move now locks in +7% instead of nothing.
+        entry_price = entry["signal_price"]
+        keep = self.cfg["execution"].get("keep_gain_fraction", 0.5)
+        gain = peak - entry_price
+        retained = entry_price + gain * keep
+
+        trailed = max(round(peak * (1 - trail_pct / 100), 4),
+                      round(retained, 4),
+                      round(entry_price * 1.001, 4))
+
         if trailed > entry["stop"]:
             entry["stop"] = trailed
             self._save_state()

@@ -64,6 +64,11 @@ execution:
   adopted_target_pct: null
 
   entry_slippage_pct: 2.0        # limit placed this far above the alert price
+  # Never give back more than half the peak gain, and never accept a stop
+  # tighter than 5% — a structural stop can land inside normal noise.
+  keep_gain_fraction: 0.5
+  min_stop_pct: 5.0
+
   trail_pct: 12.0
   trail_arms_at_pct: 10.0
 
