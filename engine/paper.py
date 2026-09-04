@@ -653,13 +653,44 @@ class PaperTrader:
             if reason:
                 self._close(symbol, entry, price, pnl_pct, reason)
 
+    def _submit_close(self, symbol: str, entry: dict, price: float) -> None:
+        """Exit the position, in a form that can actually fill right now.
+
+        close_position() submits a MARKET order, and Alpaca rejects or queues
+        those outside regular hours. On 2026-09-03 the bot decided to exit
+        SDST at 0.2800 at 07:00; the order sat until the open and filled at
+        0.2150 — 23% below the stop. MSTZ and BMNZ went the same way. Between
+        them that was the day's entire loss, and the journal recorded the
+        intended prices rather than the real ones.
+
+        So outside 09:30-16:00 an exit goes out as a marketable limit with
+        extended_hours set: priced through the current bid to fill, but
+        capped so a thin premarket book cannot fill it at any price.
+        """
+        from alpaca.trading.enums import OrderSide, TimeInForce
+        from alpaca.trading.requests import LimitOrderRequest
+
+        now = datetime.now(ET).time()
+        if time(9, 30) <= now < time(16, 0):
+            self.client.close_position(symbol)
+            return
+
+        slip = self.cfg["execution"].get("exit_slippage_pct", 3.0)
+        limit = round(max(price * (1 - slip / 100), 0.01), 2 if price >= 1 else 4)
+        self.client.submit_order(LimitOrderRequest(
+            symbol=symbol, qty=entry["shares"], side=OrderSide.SELL,
+            time_in_force=TimeInForce.DAY, limit_price=limit,
+            extended_hours=True))
+        print(f"  extended-hours exit for {symbol}: limit {limit}",
+              flush=True)
+
     def _close(self, symbol: str, entry: dict, price: float,
                pnl_pct: float, reason: str) -> None:
         # Mark before submitting. Whether the order is accepted or rejected,
         # retrying every 20 seconds helps nothing and floods the log.
         self.closing.add(symbol)
         try:
-            self.client.close_position(symbol)
+            self._submit_close(symbol, entry, price)
         except Exception as exc:                          # noqa: BLE001
             print(f"  close failed for {symbol}: {exc}", file=sys.stderr)
             return
