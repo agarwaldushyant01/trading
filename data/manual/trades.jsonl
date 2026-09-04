@@ -31,3 +31,27 @@
 {"kind": "trade", "date": "2026-08-27", "symbol": "ONFO", "entry": 1.51, "exit": 1.41, "note": "", "logged_at": "2026-08-27T16:00:00-04:00"}
 {"kind": "trade", "date": "2026-08-27", "symbol": "SOAR", "entry": 0.21, "exit": 0.19, "note": "", "logged_at": "2026-08-27T16:00:00-04:00"}
 {"kind": "pass", "date": "2026-09-02", "symbol": "BTCT", "note": "too extended", "logged_at": "2026-09-02T18:13:26.075150-04:00"}
+{"kind": "trade", "date": "2026-09-03", "symbol": "SPWR", "entry": 0.3364, "note": "Volume + broke VWAP and downtrend", "logged_at": "2026-09-03T23:03:20.715233-04:00", "exit": 0.41}
+{"kind": "trade", "date": "2026-09-03", "symbol": "DSS", "entry": 0.9001, "note": "Volume", "logged_at": "2026-09-03T23:03:20.758157-04:00", "exit": 1.1}
+{"kind": "trade", "date": "2026-09-03", "symbol": "DSS", "entry": 0.9201, "note": "Volume", "logged_at": "2026-09-03T23:03:20.801765-04:00", "exit": 0.9873}
+{"kind": "trade", "date": "2026-09-03", "symbol": "ATER", "entry": 0.5848, "note": "Twitter post", "logged_at": "2026-09-03T23:03:20.844997-04:00", "exit": 0.65}
+{"kind": "trade", "date": "2026-09-03", "symbol": "LHAI", "entry": 1.38, "note": "appeared on scanner + ran previous day", "logged_at": "2026-09-03T23:03:20.890202-04:00", "exit": 1.2801}
+{"kind": "trade", "date": "2026-09-03", "symbol": "HIVE", "entry": 2.87, "note": "steady volume", "logged_at": "2026-09-03T23:03:20.933278-04:00", "exit": 3.0}
+{"kind": "trade", "date": "2026-09-03", "symbol": "TNMG", "entry": 0.4220770492, "note": "mini run before reverse stock split", "logged_at": "2026-09-03T23:03:20.976510-04:00", "exit": 0.4388}
+{"kind": "trade", "date": "2026-09-03", "symbol": "ZBAO", "entry": 0.1758, "note": "related to bitcoin, expected a run but it didnt", "logged_at": "2026-09-03T23:03:21.019431-04:00", "exit": 0.1707}
+{"kind": "trade", "date": "2026-09-03", "symbol": "GELS", "entry": 0.7927, "note": "reversal after huge fall, dumpster diving", "logged_at": "2026-09-03T23:03:21.061660-04:00", "exit": 0.8381}
+{"kind": "trade", "date": "2026-09-03", "symbol": "MIMI", "entry": 0.9853, "note": "reversal", "logged_at": "2026-09-03T23:03:21.104338-04:00", "exit": 0.99}
+{"kind": "trade", "date": "2026-09-03", "symbol": "TANH", "entry": 0.3001, "note": "mini run before reverse stock split", "logged_at": "2026-09-03T23:03:21.147819-04:00", "exit": 0.3599}
+{"kind": "trade", "date": "2026-09-03", "symbol": "ADBT", "entry": 0.4642, "note": "reversal after huge fall, dumpster diving", "logged_at": "2026-09-03T23:03:21.191046-04:00", "exit": 0.505}
+{"kind": "trade", "date": "2026-09-03", "symbol": "ADBT", "entry": 0.3278669094, "note": "after hours run", "logged_at": "2026-09-03T23:03:21.234190-04:00", "exit": 0.3982}
+{"kind": "trade", "date": "2026-09-03", "symbol": "TWG", "entry": 0.5018, "note": "appeared on scanner, quick in and out", "logged_at": "2026-09-03T23:03:21.278106-04:00", "exit": 0.5461}
+{"kind": "trade", "date": "2026-09-03", "symbol": "TOVX", "entry": 0.2605, "note": "expected to run on patent news but it did not", "logged_at": "2026-09-03T23:03:21.320508-04:00", "exit": 0.2467754707}
+{"kind": "trade", "date": "2026-09-03", "symbol": "NCPL", "entry": 0.6539, "note": "reversal after huge fall, dumpster diving", "logged_at": "2026-09-03T23:03:21.364907-04:00", "exit": 0.7200142857}
+{"kind": "trade", "date": "2026-09-03", "symbol": "TRBG", "entry": 14.24529412, "note": "reversal after huge fall, dumpster diving", "logged_at": "2026-09-03T23:03:21.409005-04:00", "exit": 15.49235294}
+{"kind": "trade", "date": "2026-09-03", "symbol": "FNGR", "entry": 0.2006323741, "note": "expected to run on news but it did not", "logged_at": "2026-09-03T23:03:21.455418-04:00", "exit": 0.200719984}
+{"kind": "pass", "date": "2026-09-03", "symbol": "GSUN", "note": "large wicks, have lost on it previously", "logged_at": "2026-09-03T23:07:49.908478-04:00"}
+{"kind": "pass", "date": "2026-09-03", "symbol": "AEHL", "note": "has huge pump and dump price action previously", "logged_at": "2026-09-03T23:07:49.950519-04:00"}
+{"kind": "pass", "date": "2026-09-03", "symbol": "AKAN", "note": "Previous price action was unexpected", "logged_at": "2026-09-03T23:07:49.992430-04:00"}
+{"kind": "pass", "date": "2026-09-03", "symbol": "COSM", "note": "Should have run massively on the news but missed this", "logged_at": "2026-09-03T23:07:50.033821-04:00"}
+{"kind": "pass", "date": "2026-09-03", "symbol": "DFNS", "note": "has huge pump and dump price action previously", "logged_at": "2026-09-03T23:07:50.075323-04:00"}
+{"kind": "pass", "date": "2026-09-03", "symbol": "PLAG", "note": "falls rapidly on dumps", "logged_at": "2026-09-03T23:07:50.117228-04:00"}

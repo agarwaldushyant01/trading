@@ -6869,3 +6869,172 @@ Mode           PAPER ORDERS
 
 Listening.
 
+  DAILY LOSS LIMIT: -3.8% vs cap -2.0% — flattening
+  [14:04] 1 bars, 0 5m, 0 signals, 0 entries, 0 open
+  [14:09] 20,071 bars, 4,236 5m, 0 signals, 0 entries, 0 open
+  [14:14] 40,349 bars, 9,568 5m, 0 signals, 0 entries, 0 open
+  [14:19] 59,829 bars, 15,322 5m, 0 signals, 0 entries, 0 open
+  [14:24] 79,374 bars, 21,148 5m, 0 signals, 0 entries, 0 open
+  [14:29] 98,987 bars, 27,145 5m, 0 signals, 0 entries, 0 open
+  [14:34] 120,018 bars, 33,330 5m, 0 signals, 0 entries, 0 open
+  [14:40] 142,411 bars, 39,539 5m, 0 signals, 0 entries, 0 open
+  [14:45] 162,555 bars, 45,753 5m, 0 signals, 0 entries, 0 open
+  [14:50] 183,796 bars, 52,139 5m, 0 signals, 0 entries, 0 open
+  [14:55] 203,637 bars, 58,395 5m, 0 signals, 0 entries, 0 open
+  [15:00] 223,961 bars, 64,661 5m, 0 signals, 0 entries, 0 open
+  [15:05] 245,626 bars, 71,180 5m, 0 signals, 0 entries, 0 open
+  [15:10] 269,398 bars, 77,845 5m, 0 signals, 0 entries, 0 open
+  [15:16] 293,420 bars, 84,598 5m, 0 signals, 0 entries, 0 open
+  [15:22] 319,442 bars, 95,488 5m, 0 signals, 0 entries, 0 open
+  [15:27] 341,823 bars, 102,313 5m, 0 signals, 0 entries, 0 open
+  [15:32] 367,487 bars, 109,780 5m, 0 signals, 0 entries, 0 open
+  15:36  SIGNAL BBAI ascending_triangle A @ 2.9800 stop 2.9253
+  [15:37] 388,616 bars, 116,100 5m, 1 signals, 0 entries, 0 open
+  15:41  SIGNAL TIC ascending_triangle A @ 9.3050 stop 9.2037
+  15:41  SIGNAL RLJ ascending_triangle A @ 10.9250 stop 10.8306
+  [15:42] 416,111 bars, 123,751 5m, 3 signals, 0 entries, 0 open
+  15:43  SIGNAL GMTL ascending_triangle A @ 11.0400 stop 10.4773
+  15:44  SIGNAL NEWT ascending_triangle A++ @ 12.3600 stop 12.2186
+  15:46  SIGNAL ASYS ascending_triangle A @ 14.2700 stop 14.0693
+  15:46  SIGNAL LHAI ascending_triangle A @ 1.2600 stop 1.2039
+  [15:47] 437,834 bars, 130,356 5m, 7 signals, 0 entries, 0 open
+  15:51  SIGNAL GMTL retest A @ 11.0300 stop 10.8009
+  15:51  SIGNAL AVEX ascending_triangle A @ 16.2300 stop 15.7956
+  15:51  SIGNAL QID retest A @ 14.2100 stop 14.0383
+  15:51  SIGNAL GFR.RT ascending_triangle A @ 1.2100 stop 1.1741
+  15:52  SIGNAL EWZS ascending_triangle A++ @ 13.6100 stop 13.5121
+  [15:53] 468,135 bars, 138,529 5m, 12 signals, 0 entries, 0 open
+  15:56  SIGNAL ATER ascending_triangle A @ 0.6298 stop 0.6149
+  15:56  SIGNAL AVEX retest A @ 16.2950 stop 15.7806
+  15:56  SIGNAL BILI ascending_triangle A @ 15.5250 stop 15.3926
+  15:56  SIGNAL METD ascending_triangle A @ 15.6350 stop 15.4723
+  [15:58] 496,609 bars, 146,284 5m, 16 signals, 0 entries, 0 open
+  16:01  SIGNAL ITUB ascending_triangle A @ 8.2200 stop 8.1093
+  16:01  SIGNAL BHK ascending_triangle A @ 8.9650 stop 8.8853
+  16:01  SIGNAL NWG ascending_triangle A @ 18.9500 stop 18.8154
+  16:01  SIGNAL NVOX ascending_triangle A @ 15.1650 stop 14.9399
+  16:01  SIGNAL IRE ascending_triangle A @ 9.9500 stop 9.6863
+  [16:03] 524,315 bars, 155,045 5m, 21 signals, 0 entries, 0 open
+  [16:09] 527,959 bars, 156,462 5m, 21 signals, 0 entries, 0 open
+  [16:14] 530,219 bars, 157,482 5m, 21 signals, 0 entries, 0 open
+  [16:20] 532,615 bars, 158,556 5m, 21 signals, 0 entries, 0 open
+  [16:25] 534,517 bars, 159,474 5m, 21 signals, 0 entries, 0 open
+  16:26  SIGNAL AEHL ascending_triangle A @ 8.0050 stop 7.1143
+  [16:31] 536,677 bars, 160,468 5m, 22 signals, 0 entries, 0 open
+  [16:36] 538,363 bars, 161,306 5m, 22 signals, 0 entries, 0 open
+  16:40  SIGNAL PAAI pennant A @ 0.9100 stop 0.8160
+  [16:41] 540,299 bars, 162,365 5m, 23 signals, 0 entries, 0 open
+  [16:46] 542,184 bars, 163,465 5m, 23 signals, 0 entries, 0 open
+  [16:51] 543,457 bars, 163,978 5m, 23 signals, 0 entries, 0 open
+  [16:56] 545,122 bars, 164,905 5m, 23 signals, 0 entries, 0 open
+  [17:01] 546,586 bars, 165,662 5m, 23 signals, 0 entries, 0 open
+  17:02  SIGNAL SMR retest A @ 9.7800 stop 9.6723
+  [17:06] 547,852 bars, 166,238 5m, 24 signals, 0 entries, 0 open
+  [17:12] 549,454 bars, 167,206 5m, 24 signals, 0 entries, 0 open
+  17:13  SIGNAL NBIZ ascending_triangle A @ 7.1990 stop 7.0745
+  [17:18] 550,976 bars, 168,005 5m, 25 signals, 0 entries, 0 open
+  17:18  SIGNAL VIOT ascending_triangle A @ 1.3400 stop 1.2736
+  17:22  SIGNAL AEHL retest A++ @ 7.5900 stop 7.3755
+  [17:23] 552,402 bars, 168,762 5m, 27 signals, 0 entries, 0 open
+  17:24  SIGNAL SMR ascending_triangle A @ 9.7886 stop 9.7211
+  17:26  SIGNAL DAIC ascending_triangle A @ 3.5300 stop 3.3333
+  17:26  SIGNAL BTQ ascending_triangle A @ 2.9998 stop 2.9552
+  17:26  SIGNAL VIVK ascending_triangle A @ 0.9300 stop 0.8955
+  [17:28] 553,576 bars, 169,409 5m, 31 signals, 0 entries, 0 open
+  17:32  SIGNAL SMR retest A @ 9.8000 stop 9.6822
+  17:32  SIGNAL NTWO ascending_triangle A @ 10.9425 stop 10.8356
+  [17:34] 554,980 bars, 170,125 5m, 33 signals, 0 entries, 0 open
+  [17:40] 556,538 bars, 170,863 5m, 33 signals, 0 entries, 0 open
+  17:41  SIGNAL SMR retest A++ @ 9.7943 stop 9.6822
+  17:41  SIGNAL NTWO ascending_triangle A @ 10.9425 stop 10.8356
+  [17:45] 557,832 bars, 171,550 5m, 35 signals, 0 entries, 0 open
+  17:46  SIGNAL TSLQ ascending_triangle A @ 17.4800 stop 17.2220
+  17:47  SIGNAL TSLZ ascending_triangle A++ @ 11.0600 stop 10.9251
+  [17:51] 559,306 bars, 172,248 5m, 37 signals, 0 entries, 0 open
+  17:51  SIGNAL BIAF retest A++ @ 12.4246 stop 12.2415
+  [17:56] 560,546 bars, 172,906 5m, 38 signals, 0 entries, 0 open
+  17:56  SIGNAL TSLQ retest A @ 17.7500 stop 17.1354
+  18:01  SIGNAL LHAI pennant A @ 1.2400 stop 1.2039
+  [18:01] 561,828 bars, 173,634 5m, 40 signals, 0 entries, 0 open
+  [18:06] 563,090 bars, 174,245 5m, 40 signals, 0 entries, 0 open
+  18:06  SIGNAL TSLQ retest A @ 17.6200 stop 17.3902
+  18:11  SIGNAL TSLQ retest A @ 17.6600 stop 17.3646
+  [18:11] 564,417 bars, 174,987 5m, 42 signals, 0 entries, 0 open
+  18:11  SIGNAL TSLZ ascending_triangle A @ 11.2191 stop 10.9251
+  18:12  SIGNAL INLF ascending_triangle A @ 4.0301 stop 3.8904
+  18:14  SIGNAL SMR retest A @ 9.7937 stop 9.6822
+  [18:17] 565,759 bars, 175,730 5m, 45 signals, 0 entries, 0 open
+  [18:22] 566,903 bars, 176,357 5m, 45 signals, 0 entries, 0 open
+  18:26  SIGNAL AEHL falling_wedge A++ @ 7.4800 stop 7.2934
+  [18:27] 568,058 bars, 177,006 5m, 46 signals, 0 entries, 0 open
+  18:31  SIGNAL TSLQ retest A @ 17.8400 stop 17.5230
+  [18:32] 569,322 bars, 177,658 5m, 47 signals, 0 entries, 0 open
+  18:33  SIGNAL APLX ascending_triangle A @ 8.1700 stop 8.0595
+  18:35  SIGNAL RDWU ascending_triangle A @ 5.9890 stop 5.8805
+  [18:37] 570,615 bars, 178,337 5m, 49 signals, 0 entries, 0 open
+  18:39  SIGNAL RGTI ascending_triangle A @ 15.2200 stop 15.1240
+  18:41  SIGNAL TSLZ retest A @ 11.3000 stop 11.0979
+  [18:43] 571,757 bars, 178,938 5m, 51 signals, 0 entries, 0 open
+  18:44  SIGNAL CPNG ascending_triangle A @ 15.6300 stop 15.5121
+  18:46  SIGNAL DAIC ascending_triangle A @ 3.6100 stop 3.4427
+  [18:49] 573,072 bars, 179,629 5m, 53 signals, 0 entries, 0 open
+  [18:54] 574,198 bars, 180,236 5m, 53 signals, 0 entries, 0 open
+  18:54  SIGNAL DAIC ascending_triangle A++ @ 3.6000 stop 3.4427
+  18:55  SIGNAL CPNG ascending_triangle A @ 15.6300 stop 15.5121
+  18:56  SIGNAL SMR retest A++ @ 9.7897 stop 9.6754
+  [19:00] 575,491 bars, 180,916 5m, 56 signals, 0 entries, 0 open
+  19:01  SIGNAL WETO ascending_triangle A @ 3.4200 stop 3.3731
+  19:01  SIGNAL SSPC ascending_triangle A++ @ 9.3250 stop 9.2635
+  [19:05] 576,549 bars, 181,474 5m, 58 signals, 0 entries, 0 open
+  [19:10] 577,585 bars, 182,055 5m, 58 signals, 0 entries, 0 open
+  19:11  SIGNAL GELS falling_wedge A @ 0.9200 stop 0.9054
+  19:11  SIGNAL NBIZ ascending_triangle A @ 7.2000 stop 7.1242
+  19:14  SIGNAL SKDD ascending_triangle A @ 10.0100 stop 9.9500
+  19:14  SIGNAL BBAI ascending_triangle A @ 2.9900 stop 2.9552
+  [19:16] 578,831 bars, 182,672 5m, 62 signals, 0 entries, 0 open
+  19:16  SIGNAL BBAI ascending_triangle A @ 2.9900 stop 2.9552
+  19:16  SIGNAL BIAF ascending_triangle A @ 12.4200 stop 12.2683
+  19:17  SIGNAL GELS retest A @ 0.9100 stop 0.8935
+  [19:21] 579,885 bars, 183,252 5m, 65 signals, 0 entries, 0 open
+  19:21  SIGNAL GELS retest A @ 0.9168 stop 0.8935
+  19:23  SIGNAL CDT falling_wedge A @ 0.7069 stop 0.6767
+  19:23  SIGNAL NVDS retest A++ @ 17.6400 stop 17.4455
+  [19:26] 580,966 bars, 183,903 5m, 68 signals, 0 entries, 0 open
+  19:27  SIGNAL BIAF retest A++ @ 12.4320 stop 12.2067
+  [19:31] 581,924 bars, 184,393 5m, 69 signals, 0 entries, 0 open
+  19:32  SIGNAL TSLZ retest A @ 11.2430 stop 11.0592
+  19:34  SIGNAL LHAI ascending_triangle A @ 1.2603 stop 1.2238
+  [19:36] 582,975 bars, 184,986 5m, 71 signals, 0 entries, 0 open
+  19:36  SIGNAL BIAF ascending_triangle A @ 12.4600 stop 12.2683
+  [19:42] 584,215 bars, 185,775 5m, 72 signals, 0 entries, 0 open
+  19:42  SIGNAL LHAI ascending_triangle A++ @ 1.2699 stop 1.2238
+  19:46  SIGNAL DDC falling_wedge A @ 0.3380 stop 0.3362
+  19:46  SIGNAL MIMI falling_wedge A @ 0.9412 stop 0.9162
+  [19:47] 585,331 bars, 186,415 5m, 75 signals, 0 entries, 0 open
+  [19:52] 586,547 bars, 187,063 5m, 75 signals, 0 entries, 0 open
+  19:52  SIGNAL TSLZ retest A++ @ 11.2500 stop 11.0880
+  19:52  SIGNAL ANGX ascending_triangle A @ 4.6000 stop 4.4974
+  19:56  SIGNAL BIAF ascending_triangle A @ 12.4300 stop 12.2683
+  [19:57] 587,862 bars, 187,775 5m, 78 signals, 0 entries, 0 open
+  19:57  SIGNAL RETO ascending_triangle A @ 1.1600 stop 1.0547
+  20:00  SIGNAL BNC ascending_triangle A++ @ 3.4900 stop 3.3034
+
+=== 2026-09-04 00:16:11 EDT — startup, feed sip ===
+  building reference data — about 10 minutes...
+Fetching asset list...
+  13104 listed, tradable US equities
+Fetching daily bars...
+  fetched 200/13104 symbols
+  fetched 400/13104 symbols
+  fetched 600/13104 symbols
+  fetched 800/13104 symbols
+  fetched 1000/13104 symbols
+  fetched 1200/13104 symbols
+  fetched 1400/13104 symbols
+  fetched 1600/13104 symbols
+  fetched 1800/13104 symbols
+  fetched 2000/13104 symbols
+  fetched 2200/13104 symbols
+  fetched 2400/13104 symbols
+  fetched 2600/13104 symbols
+  fetched 2800/13104 symbols

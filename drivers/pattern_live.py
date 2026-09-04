@@ -48,10 +48,48 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))
 
 from alerts.notify import Notifier
 from data.reference import load_credentials, load_refs_for
+from patterns.character import analyse, market_is_thin
 from patterns.detect import detect
+from patterns.dive import DiveConfig, detect_dive
 
 ET = ZoneInfo("America/New_York")
 BAR_MINUTES = 5
+
+
+class MarketBreadth:
+    """How many names are actually moving today.
+
+    The trader's own test for a dead tape: fewer than about ten stocks up 20%
+    or more by mid-morning. That gates the dumpster-diving fallback, which is
+    a last resort and would lose money on a live day where better setups
+    exist.
+
+    Counted across the whole universe from the streaming bars, so it costs
+    nothing extra.
+    """
+
+    def __init__(self, threshold_pct: float = 20.0) -> None:
+        self.threshold_pct = threshold_pct
+        self.movers: set = set()
+
+    def update(self, symbol: str, price: float, prior_close: float) -> None:
+        if prior_close and prior_close > 0:
+            if (price / prior_close - 1) * 100 >= self.threshold_pct:
+                self.movers.add(symbol)
+
+    @property
+    def count(self) -> int:
+        return len(self.movers)
+
+    def thin(self, now) -> bool:
+        """Thin markets are only judged after the tape has had time to move.
+
+        Before about 10:00 almost nothing is up 20% yet, and treating that as
+        a dead day would turn the fallback on every morning.
+        """
+        if (now.hour, now.minute) < (10, 0):
+            return False
+        return market_is_thin(self.count)
 
 
 class FiveMinuteBuilder:
@@ -111,7 +149,8 @@ def _new_bar(bucket: datetime, o: float, h: float, l: float,
 
 
 async def run(builder, refs, trader, notifier, key, secret, feed_name,
-              min_confluences, universe, dry_run):
+              min_confluences, universe, character, breadth, allow_dive,
+              dry_run):
     from alpaca.data.enums import DataFeed
     from alpaca.data.live import StockDataStream
     from engine.alerts import Alert
@@ -144,6 +183,7 @@ async def run(builder, refs, trader, notifier, key, secret, feed_name,
         if closed is None:
             return
         state["five"] += 1
+        breadth.update(symbol, closed["c"], ref.prior_close)
 
         # The universe the trader actually trades. Without this the detector
         # finds textbook retests on large caps and ETFs — SHAK at $69, an
@@ -163,36 +203,64 @@ async def run(builder, refs, trader, notifier, key, secret, feed_name,
         bars = builder.history(symbol)
         if len(bars) < 20:
             return
+
+        # Stock character. Every logged pass on 2026-09-03 was about the
+        # name's history rather than today's chart — "has huge pump and dump
+        # price action previously", "falls rapidly on dumps". A textbook
+        # pattern on a serial pump-and-dump is not a trade the trader takes.
+        char = character.get(symbol)
+        if char is not None and not char.tradeable:
+            return
         setups = [s for s in detect(bars, daily=None, levels=[],
                                     min_confluences=min_confluences)
                   if not s.rejected]
-        if not setups:
+
+        setup = None
+        kind = grade = ""
+        entry = stop = 0.0
+        reason = ""
+
+        if setups and setups[-1].index >= len(bars) - 2:
+            setup = setups[-1]
+            kind, grade = setup.kind, setup.grade
+            entry, stop = setup.entry, setup.stop
+            reason = ", ".join(setup.confluences.detail)
+
+        # Dumpster diving, only when nothing else is moving. Explicitly a
+        # last resort: on a normal day the patterns above are the trade and
+        # this would be taking a bounce inside a collapse for no reason.
+        elif allow_dive and breadth.thin(now):
+            dive = detect_dive(bars, len(bars) - 1)
+            if dive:
+                kind, grade = "dumpster_dive", "fallback"
+                entry, stop = dive["entry"], dive["stop"]
+                reason = dive["reason"]
+                setup = dive
+
+        if setup is None:
             return
 
-        setup = setups[-1]
-        if setup.index < len(bars) - 2:
-            return                      # stale: fired on an earlier bar
-
         state["signals"] += 1
-        print(f"  {now:%H:%M}  SIGNAL {symbol} {setup.kind} {setup.grade} "
-              f"@ {setup.entry:.4f} stop {setup.stop:.4f}", flush=True)
+        print(f"  {now:%H:%M}  SIGNAL {symbol} {kind} {grade} "
+              f"@ {entry:.4f} stop {stop:.4f}"
+              + (f"  [thin market: {breadth.count} movers]"
+                 if kind == "dumpster_dive" else ""), flush=True)
 
         session_volume = sum(b["v"] for b in bars)
         alert = Alert(
             symbol=symbol,
-            pct_change=((setup.entry / ref.prior_close - 1) * 100
+            pct_change=((entry / ref.prior_close - 1) * 100
                         if ref.prior_close else 0.0),
-            price=setup.entry,
+            price=entry,
             volume_1m=bars[-1]["v"], volume_2m=0.0, volume_5m=bars[-1]["v"],
             volume_1d=session_volume,
             float_shares=ref.shares_outstanding or None,
             alert_count=1,
-            tags=[setup.kind, setup.grade],
+            tags=[kind, grade],
             received_at=now,
         )
         # The structural stop comes from the pattern, not from a percentage.
-        trader.consider_with_stop(alert, setup.stop, setup.kind,
-                                  ", ".join(setup.confluences.detail))
+        trader.consider_with_stop(alert, stop, kind, reason)
 
     stream.subscribe_bars(on_bar, "*")
     asyncio.create_task(trader.monitor())
@@ -221,6 +289,39 @@ async def run(builder, refs, trader, notifier, key, secret, feed_name,
         stream.subscribe_bars(on_bar, "*")
 
 
+def load_character(refs: dict) -> dict:
+    """Score every symbol from cached daily history.
+
+    Reads whatever daily bars are already on disk rather than fetching:
+    scoring 13,000 symbols over the wire would take longer than the premarket
+    session. Names with no cached history come back "unknown", which is
+    treated as tradeable — the filter should exclude stocks known to be bad,
+    not stocks nothing is known about.
+    """
+    cache = pathlib.Path("data/bars/validate")
+    if not cache.exists():
+        return {}
+
+    import json
+    from collections import defaultdict
+
+    history = defaultdict(list)
+    for path in cache.glob("*-1d.json"):
+        symbol = path.stem.rsplit("-", 4)[0]
+        try:
+            rows = json.loads(path.read_text())
+        except Exception:                                 # noqa: BLE001
+            continue
+        if len(rows) > len(history[symbol]):
+            history[symbol] = rows
+
+    scored = {}
+    for symbol, rows in history.items():
+        if symbol in refs and len(rows) >= 20:
+            scored[symbol] = analyse(rows)
+    return scored
+
+
 def main() -> None:
     import argparse
 
@@ -233,6 +334,10 @@ def main() -> None:
     p.add_argument("--rules-config", default="config/rules.yaml")
     p.add_argument("--min-confluences", type=int, default=2)
     p.add_argument("--dry-run", action="store_true")
+    p.add_argument("--no-dive", action="store_true",
+                   help="disable the thin-market fallback")
+    p.add_argument("--no-character", action="store_true",
+                   help="skip the stock-character filter")
     args = p.parse_args()
 
     rules_cfg = yaml.safe_load(pathlib.Path(args.rules_config).read_text())
@@ -252,6 +357,8 @@ def main() -> None:
     notifier = Notifier(alert_cfg.get("alerts", {}))
     trader = PaperTrader(trading, rules_cfg, notifier, dry_run=args.dry_run)
 
+    character = {} if args.no_character else load_character(refs)
+
     adopted = trader.reconcile()
     account = trading.get_account()
 
@@ -263,6 +370,11 @@ def main() -> None:
           f"${universe['max_price']:.0f}, float under "
           f"{universe['max_float'] / 1e6:.0f}M")
     print(f"Confluences    {args.min_confluences} minimum")
+    if character:
+        blocked = sum(1 for c in character.values() if not c.tradeable)
+        print(f"Character      {len(character):,} scored, "
+              f"{blocked:,} excluded")
+    print(f"Dive fallback  {'off' if args.no_dive else 'on when thin'}")
     print(f"Mode           {'DRY RUN' if args.dry_run else 'PAPER ORDERS'}")
     if adopted:
         print(f"Adopted        {adopted} existing position(s)")
@@ -272,11 +384,12 @@ def main() -> None:
                   f"{len(refs):,} symbols, {BAR_MINUTES}-minute patterns, "
                   f"{args.min_confluences}+ confluences.", priority="low")
 
+    breadth = MarketBreadth()
     builder = FiveMinuteBuilder()
     try:
         asyncio.run(run(builder, refs, trader, notifier, key, secret,
                         args.feed, args.min_confluences, universe,
-                        args.dry_run))
+                        character, breadth, not args.no_dive, args.dry_run))
     except KeyboardInterrupt:
         pass
     finally:
