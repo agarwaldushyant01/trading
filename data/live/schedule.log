@@ -7038,3 +7038,95 @@ Fetching daily bars...
   fetched 2400/13104 symbols
   fetched 2600/13104 symbols
   fetched 2800/13104 symbols
+  fetched 3000/13104 symbols
+  fetched 3200/13104 symbols
+  fetched 3400/13104 symbols
+  fetched 3600/13104 symbols
+  fetched 3800/13104 symbols
+  fetched 4000/13104 symbols
+  fetched 4200/13104 symbols
+  fetched 4400/13104 symbols
+  fetched 4600/13104 symbols
+  fetched 4800/13104 symbols
+  fetched 5000/13104 symbols
+  fetched 5200/13104 symbols
+  fetched 5400/13104 symbols
+  fetched 5600/13104 symbols
+  fetched 5800/13104 symbols
+  fetched 6000/13104 symbols
+  fetched 6200/13104 symbols
+  fetched 6400/13104 symbols
+  fetched 6600/13104 symbols
+  fetched 6800/13104 symbols
+  fetched 7000/13104 symbols
+  fetched 7200/13104 symbols
+  fetched 7400/13104 symbols
+  fetched 7600/13104 symbols
+  fetched 7800/13104 symbols
+  fetched 8000/13104 symbols
+  fetched 8200/13104 symbols
+  fetched 8400/13104 symbols
+  fetched 8600/13104 symbols
+  fetched 8800/13104 symbols
+  fetched 9000/13104 symbols
+  fetched 9200/13104 symbols
+  fetched 9400/13104 symbols
+  fetched 9600/13104 symbols
+  fetched 9800/13104 symbols
+  fetched 10000/13104 symbols
+  fetched 10200/13104 symbols
+  fetched 10400/13104 symbols
+  fetched 10600/13104 symbols
+  fetched 10800/13104 symbols
+  fetched 11000/13104 symbols
+  fetched 11200/13104 symbols
+  fetched 11400/13104 symbols
+  fetched 11600/13104 symbols
+  fetched 11800/13104 symbols
+  fetched 12000/13104 symbols
+  fetched 12200/13104 symbols
+  fetched 12400/13104 symbols
+  fetched 12600/13104 symbols
+  fetched 12800/13104 symbols
+  fetched 13000/13104 symbols
+  fetched 13104/13104 symbols
+  9071 kept without a share count (foreign filers, funds, warrants) — rules decide
+  108 dropped: under 14 sessions of history
+  12993 symbols in the universe
+Wrote 12993 refs to data/refs/2026-09-04.json
+  starting paper trader (in the foreground, as this process)...
+
+  1 saved position(s) no longer held; discarded
+
+Paper equity   $80,809
+Feed           SIP
+Universe       12,993 symbols
+Strategy       chart patterns on 5-minute bars
+Universe       $0.10-$20, float under 20M
+Confluences    2 minimum
+Character      27 scored, 3 excluded
+Dive fallback  on when thin
+Mode           PAPER ORDERS
+
+Listening.
+
+  DAILY LOSS LIMIT: -3.8% vs cap -2.0% — flattening
+
+=== 2026-09-04 00:23:21 EDT — startup, feed sip ===
+  reference data: data/refs/2026-09-04.json (already built)
+  starting paper trader (in the foreground, as this process)...
+
+  1 saved position(s) no longer held; discarded
+
+Paper equity   $80,809
+Feed           SIP
+Universe       12,993 symbols
+Strategy       chart patterns on 5-minute bars
+Universe       $0.10-$20, float under 20M
+Confluences    2 minimum
+Character      27 scored, 3 excluded
+Dive fallback  on when thin
+Mode           PAPER ORDERS
+
+Listening.
+

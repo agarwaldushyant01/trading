@@ -512,6 +512,16 @@ class PaperTrader:
         account fell 10% with the limit set at 2% and the check silently
         satisfied, because zero trades had been closed.
         """
+        # Only during the session. Outside it, Alpaca's last_equity rolls to
+        # the new day's baseline while equity still reflects the previous
+        # close, so the comparison shows a drawdown that never happened. That
+        # fired at 00:17 on 2026-09-04 reporting -3.8%, and on 2026-08-24
+        # reporting -2.05% on a day with no trades at all — each time
+        # flattening the book and halting on a phantom loss.
+        now = datetime.now(ET)
+        if now.weekday() >= 5 or not (time(4, 0) <= now.time() <= time(20, 0)):
+            return False
+
         cap_pct = self.cfg["risk"].get("max_daily_loss_pct", 2.0)
         try:
             account = self.client.get_account()

@@ -891,3 +891,4 @@
 {"kind": "daily_loss_halt", "at": "2026-09-03T08:12:20.012214-04:00", "drawdown_pct": -2.18, "cap_pct": 2.0}
 {"kind": "daily_loss_halt", "at": "2026-09-03T13:58:14.099432-04:00", "drawdown_pct": -3.8, "cap_pct": 2.0}
 {"kind": "daily_loss_halt", "at": "2026-09-03T14:03:22.252926-04:00", "drawdown_pct": -3.8, "cap_pct": 2.0}
+{"kind": "daily_loss_halt", "at": "2026-09-04T00:17:35.830218-04:00", "drawdown_pct": -3.8, "cap_pct": 2.0}
