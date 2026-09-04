@@ -15,6 +15,21 @@ import sys
 
 import requests
 
+def _latin1_safe(text: str) -> str:
+    """Return text that can go in an HTTP header.
+
+    ntfy puts the title and message in headers, which are Latin-1 only. A
+    single em-dash silently killed every notification on 2026-09-04.
+    """
+    if not isinstance(text, str):
+        return text
+    swaps = {"\u2014": "-", "\u2013": "-", "\u2019": "'", "\u2018": "'",
+             "\u201c": '"', "\u201d": '"', "\u2026": "...",
+             "\u00b7": "-", "\u2192": "->"}
+    for bad, good in swaps.items():
+        text = text.replace(bad, good)
+    return text.encode("latin-1", "ignore").decode("latin-1")
+
 
 class Notifier:
     def __init__(self, cfg: dict) -> None:
@@ -26,6 +41,10 @@ class Notifier:
     def send(self, title: str, body: str, priority: str = "default") -> bool:
         """Never raises. A failed notification must not stop the scanner —
         the journal is the record of truth, the push is a convenience."""
+
+        title = _latin1_safe(title)
+
+        body = _latin1_safe(body)
         try:
             if self.channel == "ntfy" and self.ntfy_topic:
                 requests.post(

@@ -1,13 +1,44 @@
 {
- "BMNZ": {
-  "symbol": "BMNZ",
-  "shares": 1243,
-  "signal_price": 6.75,
-  "stop": 6.5968,
+ "NVTS": {
+  "symbol": "NVTS",
+  "shares": 711,
+  "signal_price": 11.3525,
+  "stop": 10.7849,
   "target": null,
   "setup": "ascending_triangle",
-  "reason": "small bodies into the level, near 6.75",
-  "opened_at": "2026-09-03T06:03:00.059651-04:00",
-  "peak": 6.79
+  "reason": "bottom wick 80% of range, near 11.25",
+  "opened_at": "2026-09-04T06:01:00.130343-04:00",
+  "peak": 11.5
+ },
+ "SPWR": {
+  "symbol": "SPWR",
+  "shares": 22897,
+  "signal_price": 0.341,
+  "stop": 0.3234,
+  "target": null,
+  "setup": "ascending_triangle",
+  "reason": "demand zone 0.3200-0.3365, bottom wick 72% of range",
+  "opened_at": "2026-09-04T07:11:00.421429-04:00",
+  "peak": 0.3604
+ },
+ "LHAI": {
+  "symbol": "LHAI",
+  "shares": 4669,
+  "signal_price": 1.24,
+  "stop": 1.1542,
+  "target": null,
+  "setup": "falling_wedge",
+  "reason": "demand zone 1.1600-1.2016, near 1.25",
+  "opened_at": "2026-09-04T09:41:00.725920-04:00"
+ },
+ "AOUT": {
+  "symbol": "AOUT",
+  "shares": 352,
+  "signal_price": 13.695,
+  "stop": 12.5569,
+  "target": null,
+  "setup": "ascending_triangle",
+  "reason": "bottom wick 65% of range, near 13.75",
+  "opened_at": "2026-09-04T09:41:01.189266-04:00"
  }
 }

@@ -63,6 +63,12 @@ class PaperTrader:
         self.taken_today: set = set()
         self.halted_for_day = False
         self._overexposure_warned = False
+        # Symbols with a buy submitted but not yet showing as a position.
+        # Without this, several five-minute bars closing in the same second
+        # each see the broker holding two positions and each opens a third —
+        # which is how seven entries produced four open positions against a
+        # limit of three on 2026-09-04.
+        self.pending_entries: set = set()
         # Symbols with a close order already submitted. A queued sell does not
         # remove the position at the broker, so without this the exit sweep
         # sees it again, re-adopts it, and closes it again — every 20 seconds,
@@ -169,8 +175,11 @@ class PaperTrader:
                   flush=True)
 
     def _broker_position_count(self) -> int:
+        """Positions held, plus buys submitted and not yet filled."""
         try:
-            return len(self.client.get_all_positions())
+            live = {p.symbol for p in self.client.get_all_positions()}
+            self.pending_entries -= live      # these have landed
+            return len(live | self.pending_entries)
         except Exception:                                 # noqa: BLE001
             # Fail closed: if the broker cannot be reached, assume we are at
             # the limit rather than opening something we cannot see.
@@ -293,6 +302,7 @@ class PaperTrader:
             return
 
         self.taken_today.add(alert.symbol)
+        self.pending_entries.add(alert.symbol)
         self.open_positions[alert.symbol] = entry
         self._save_state()
         self.filled += 1

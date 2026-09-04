@@ -7187,3 +7187,159 @@ Mode           PAPER ORDERS
 
 Listening.
 
+
+=== 2026-09-04 04:00:06 EDT — startup, feed sip ===
+  reference data: data/refs/2026-09-04.json (already built)
+  starting paper trader (in the foreground, as this process)...
+
+  1 saved position(s) no longer held; discarded
+
+Paper equity   $80,802
+Feed           SIP
+Universe       12,993 symbols
+Strategy       chart patterns on 5-minute bars
+Universe       $0.10-$20, float under 20M
+Confluences    2 minimum
+Character      6,541 scored, 841 excluded
+Dive fallback  on when thin
+Mode           PAPER ORDERS
+
+Listening.
+
+  [04:01] 1 bars, 0 5m, 0 signals, 0 entries, 0 open
+  [04:06] 3,426 bars, 0 5m, 0 signals, 0 entries, 0 open
+  [04:12] 5,325 bars, 896 5m, 0 signals, 0 entries, 0 open
+  [04:17] 6,677 bars, 1,466 5m, 0 signals, 0 entries, 0 open
+  [04:22] 7,872 bars, 1,980 5m, 0 signals, 0 entries, 0 open
+  [04:28] 9,299 bars, 2,584 5m, 0 signals, 0 entries, 0 open
+  [04:33] 10,530 bars, 3,125 5m, 0 signals, 0 entries, 0 open
+  [04:39] 11,904 bars, 3,662 5m, 0 signals, 0 entries, 0 open
+  [04:44] 12,952 bars, 4,124 5m, 0 signals, 0 entries, 0 open
+  [04:50] 14,181 bars, 4,617 5m, 0 signals, 0 entries, 0 open
+  [04:55] 15,330 bars, 5,090 5m, 0 signals, 0 entries, 0 open
+  [05:00] 16,329 bars, 5,563 5m, 0 signals, 0 entries, 0 open
+  [05:05] 17,234 bars, 6,023 5m, 0 signals, 0 entries, 0 open
+  [05:10] 18,265 bars, 6,498 5m, 0 signals, 0 entries, 0 open
+  [05:16] 19,524 bars, 7,025 5m, 0 signals, 0 entries, 0 open
+  [05:21] 20,575 bars, 7,488 5m, 0 signals, 0 entries, 0 open
+  [05:27] 21,824 bars, 8,170 5m, 0 signals, 0 entries, 0 open
+  [05:32] 22,758 bars, 8,594 5m, 0 signals, 0 entries, 0 open
+  [05:38] 23,806 bars, 9,100 5m, 0 signals, 0 entries, 0 open
+  [05:43] 24,732 bars, 9,557 5m, 0 signals, 0 entries, 0 open
+  [05:48] 25,595 bars, 9,980 5m, 0 signals, 0 entries, 0 open
+  [05:54] 26,673 bars, 10,483 5m, 0 signals, 0 entries, 0 open
+  [05:59] 27,641 bars, 10,966 5m, 0 signals, 0 entries, 0 open
+  06:01  SIGNAL NVTS ascending_triangle A @ 11.3525 stop 11.2535
+  06:01  BUY NVTS x711 @ 11.3525 stop 10.7849 (5.0%) [ascending_triangle]
+  [06:05] 28,916 bars, 11,555 5m, 1 signals, 1 entries, 1 open
+  [06:10] 30,132 bars, 12,081 5m, 1 signals, 1 entries, 1 open
+  [06:15] 31,075 bars, 12,565 5m, 1 signals, 1 entries, 1 open
+  [06:21] 32,175 bars, 13,046 5m, 1 signals, 1 entries, 1 open
+  [06:26] 33,147 bars, 13,490 5m, 1 signals, 1 entries, 1 open
+  [06:32] 34,524 bars, 14,245 5m, 1 signals, 1 entries, 1 open
+  [06:37] 35,754 bars, 14,815 5m, 1 signals, 1 entries, 1 open
+  [06:42] 36,589 bars, 15,220 5m, 1 signals, 1 entries, 1 open
+  [06:47] 37,465 bars, 15,645 5m, 1 signals, 1 entries, 1 open
+  [06:52] 38,730 bars, 16,251 5m, 1 signals, 1 entries, 1 open
+  [06:58] 39,724 bars, 16,729 5m, 1 signals, 1 entries, 1 open
+  07:01  SIGNAL NVTS ascending_triangle A++ @ 11.3900 stop 11.2833
+  [07:03] 41,974 bars, 17,923 5m, 2 signals, 1 entries, 1 open
+  07:06  SIGNAL ASAN ascending_triangle A @ 9.2074 stop 8.8356
+  07:06  BUY ASAN x877 @ 9.2074 stop 8.7470 (5.0%) [ascending_triangle]
+  [07:08] 44,301 bars, 18,732 5m, 3 signals, 2 entries, 2 open
+  07:10  SIGNAL TTD retest A @ 15.6269 stop 15.3747
+  07:10  BUY TTD x516 @ 15.6269 stop 14.8456 (5.0%) [retest]
+  07:11  SIGNAL SPWR ascending_triangle A @ 0.3410 stop 0.3234
+  07:11  BUY SPWR x22897 @ 0.3410 stop 0.3234 (5.2%) [ascending_triangle]
+  [07:14] 46,361 bars, 19,600 5m, 5 signals, 4 entries, 4 open
+  [07:20] 48,554 bars, 20,493 5m, 5 signals, 4 entries, 4 open
+  07:21  SIGNAL TTD retest A @ 15.4800 stop 15.2757
+  HALTED: 4 positions open against a limit of 3. No new entries until this is resolved.
+  alert delivery failed: 'latin-1' codec can't encode character '\u2014' in position 15: ordinal not in range(256)
+  07:21  SIGNAL BMNZ retest A @ 4.9600 stop 4.8609
+  [07:25] 50,339 bars, 21,312 5m, 7 signals, 4 entries, 4 open
+  07:27  SIGNAL TTD retest A @ 15.4800 stop 15.2757
+  [07:31] 52,537 bars, 22,225 5m, 8 signals, 4 entries, 4 open
+  [07:36] 54,346 bars, 23,039 5m, 8 signals, 4 entries, 4 open
+  07:36  SIGNAL AOUT ascending_triangle A @ 12.5807 stop 12.3380
+  [07:41] 56,200 bars, 23,864 5m, 9 signals, 4 entries, 4 open
+  07:41  SIGNAL AOUT ascending_triangle A++ @ 12.5900 stop 12.3380
+  07:41  SIGNAL PATH retest A++ @ 16.8200 stop 16.5033
+  07:41  SIGNAL XPEV ascending_triangle A @ 11.1800 stop 11.0943
+  07:43  SIGNAL ASAN retest A @ 9.0400 stop 8.8704
+  [07:46] 58,355 bars, 24,980 5m, 13 signals, 4 entries, 4 open
+  07:46  SIGNAL MUZ retest A++ @ 8.7390 stop 8.6229
+  07:47  SIGNAL ASAN retest A++ @ 9.0000 stop 8.8704
+  07:51  SIGNAL MUZ retest A++ @ 8.7400 stop 8.6328
+  [07:51] 59,879 bars, 25,533 5m, 16 signals, 4 entries, 4 open
+  07:51  SIGNAL SPWR retest A @ 0.3479 stop 0.3271
+  [07:56] 62,077 bars, 26,709 5m, 17 signals, 4 entries, 4 open
+  08:01  SIGNAL AOUT ascending_triangle A @ 12.5732 stop 12.3380
+  [08:02] 63,984 bars, 27,593 5m, 18 signals, 4 entries, 4 open
+  [08:07] 66,263 bars, 28,584 5m, 18 signals, 4 entries, 4 open
+  [08:13] 68,952 bars, 29,771 5m, 18 signals, 4 entries, 4 open
+  08:16  SIGNAL PATH retest A @ 16.6800 stop 16.3845
+  [08:19] 71,489 bars, 30,852 5m, 19 signals, 4 entries, 4 open
+  08:21  SIGNAL AOUT retest A @ 12.5800 stop 12.4047
+  08:21  SIGNAL BMNZ retest A++ @ 4.9800 stop 4.8906
+  [08:24] 73,913 bars, 31,859 5m, 21 signals, 4 entries, 4 open
+  08:26  SIGNAL MDCX falling_wedge A @ 0.1624 stop 0.1592
+  [08:29] 76,122 bars, 32,829 5m, 22 signals, 4 entries, 4 open
+  08:30  SIGNAL MDCX falling_wedge A @ 0.1631 stop 0.1592
+  08:31  SIGNAL GDXD ascending_triangle A @ 16.5600 stop 15.2225
+  08:31  SIGNAL PATH retest A++ @ 16.6788 stop 16.3350
+  08:31  SIGNAL PLTZ retest A @ 8.7400 stop 8.5932
+  [08:34] 80,555 bars, 34,522 5m, 26 signals, 4 entries, 4 open
+  [08:39] 84,395 bars, 35,875 5m, 26 signals, 4 entries, 4 open
+  [08:44] 87,266 bars, 37,043 5m, 26 signals, 4 entries, 4 open
+  08:46  SIGNAL SPWR retest A++ @ 0.3450 stop 0.3366
+  08:46  SIGNAL BMNZ ascending_triangle A @ 5.2690 stop 4.8954
+  [08:50] 90,979 bars, 38,414 5m, 28 signals, 4 entries, 4 open
+  08:51  SIGNAL MUZ pennant A @ 8.9500 stop 8.6266
+  extended-hours exit for ASAN: limit 8.46
+  08:51  SELL ASAN @ 8.72 (-6.2%) — stop
+  [08:55] 93,808 bars, 39,584 5m, 29 signals, 4 entries, 3 open
+  08:56  SIGNAL SPWR retest A++ @ 0.3443 stop 0.3366
+  [09:00] 96,717 bars, 40,747 5m, 30 signals, 4 entries, 3 open
+  09:01  SIGNAL WETO pennant A @ 4.2800 stop 3.7313
+  [09:05] 99,399 bars, 41,877 5m, 31 signals, 4 entries, 3 open
+  [09:10] 102,395 bars, 43,108 5m, 31 signals, 4 entries, 3 open
+  [09:15] 104,948 bars, 44,211 5m, 31 signals, 4 entries, 3 open
+  [09:20] 107,906 bars, 45,415 5m, 31 signals, 4 entries, 3 open
+  [09:25] 110,767 bars, 46,611 5m, 31 signals, 4 entries, 3 open
+  [09:30] 115,424 bars, 48,523 5m, 31 signals, 4 entries, 3 open
+  09:31  SIGNAL LITZ ascending_triangle A @ 8.9800 stop 8.5272
+  09:31  SIGNAL CRMG ascending_triangle A @ 10.5200 stop 10.2584
+  09:31  SIGNAL VOD ascending_triangle A @ 16.9200 stop 16.7362
+  09:31  SIGNAL SKHZ ascending_triangle A @ 11.0900 stop 10.9152
+  09:31  SIGNAL ATER ascending_triangle A @ 0.6877 stop 0.6375
+  09:31  SIGNAL FRVO ascending_triangle A @ 17.3508 stop 16.9892
+  09:31  SIGNAL USGG ascending_triangle A @ 7.3300 stop 7.0653
+  [09:35] 140,410 bars, 53,455 5m, 38 signals, 4 entries, 3 open
+  09:36  SIGNAL LABD ascending_triangle A @ 6.5550 stop 6.3481
+  09:36  SIGNAL BITI ascending_triangle A++ @ 18.7099 stop 18.4121
+  09:36  SIGNAL GDXD ascending_triangle A++ @ 16.8000 stop 16.0792
+  09:36  SIGNAL LULG falling_wedge A @ 4.2700 stop 3.8208
+  09:36  SIGNAL ATER ascending_triangle A @ 0.7175 stop 0.6375
+  09:36  SIGNAL TLYS ascending_triangle A @ 4.5400 stop 4.2586
+  09:36  SIGNAL USGG ascending_triangle A @ 7.5450 stop 7.1341
+  09:36  SIGNAL FRVO ascending_triangle A @ 18.0881 stop 16.9892
+  09:38  SELL TTD @ 14.84 (-5.1%) — stop
+  [09:41] 161,825 bars, 59,720 5m, 46 signals, 4 entries, 2 open
+  09:41  SIGNAL ATER ascending_triangle A++ @ 0.7297 stop 0.6375
+  09:41  BUY ATER x4345 @ 0.7297 stop 0.6375 (12.6%) [ascending_triangle]
+  09:41  SIGNAL LHAI falling_wedge A @ 1.2400 stop 1.1542
+  09:41  BUY LHAI x4669 @ 1.2400 stop 1.1542 (6.9%) [falling_wedge]
+  09:41  SIGNAL AOUT ascending_triangle A @ 13.6950 stop 12.5569
+  09:41  BUY AOUT x352 @ 13.6950 stop 12.5569 (8.3%) [ascending_triangle]
+  09:41  SIGNAL SKHZ retest A @ 10.7700 stop 10.6326
+  09:41  SIGNAL CONL falling_wedge A @ 5.9600 stop 5.8257
+  09:41  SIGNAL ETHT falling_wedge A++ @ 16.6050 stop 16.3379
+  09:46  SIGNAL USDE falling_wedge A @ 8.1425 stop 7.7908
+  HALTED: 4 positions open against a limit of 3. No new entries until this is resolved.
+  alert delivery failed: 'latin-1' codec can't encode character '\u2014' in position 15: ordinal not in range(256)
+  [09:46] 183,323 bars, 66,192 5m, 53 signals, 7 entries, 4 open
+  09:46  SIGNAL LABD ascending_triangle A @ 6.5000 stop 6.3680
+  09:46  SIGNAL ETHT falling_wedge A++ @ 16.6400 stop 16.3379
+  09:46  SIGNAL CONL retest A++ @ 5.9650 stop 5.8280
+  09:46  SIGNAL BITI ascending_triangle A @ 18.6700 stop 18.5269
