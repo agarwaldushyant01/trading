@@ -112,13 +112,22 @@ def analyse(daily: list, spike_pct: float = 25.0,
         c.reasons.append(f"only {spikes} spike(s) in {len(daily)} sessions")
         return c
 
-    if c.dump_rate >= 0.7:
+    # Thresholds calibrated against the six names the trader passed on for
+    # reasons of history on 2026-09-03. At the original 70% bar, AEHL and
+    # DFNS (both 4 of 8 spikes retraced) and GSUN (2 of 5) all scored
+    # "clean" — while the trader described AEHL and DFNS as having "huge
+    # pump and dump price action previously".
+    #
+    # A stock that gives back half its spikes is one you lose on half the
+    # time. 40% is the bar those three sit above, and "clean" now requires a
+    # clear majority of spikes to have held rather than a bare half.
+    if c.dump_rate >= 0.4:
         c.verdict = "pump and dump"
         c.reasons.append(f"{dumps} of {spikes} spikes fully retraced")
     elif c.avg_fall_pct <= -45:
         c.verdict = "falls hard"
         c.reasons.append(f"average fall after a spike {c.avg_fall_pct:.0f}%")
-    elif c.follow_through >= 0.5:
+    elif c.follow_through >= 0.7:
         c.verdict = "clean"
         c.reasons.append(f"{held} of {spikes} spikes held their gains")
     else:
