@@ -7149,3 +7149,22 @@ Mode           PAPER ORDERS
 
 Listening.
 
+
+=== 2026-09-04 00:29:42 EDT — startup, feed sip ===
+  reference data: data/refs/2026-09-04.json (already built)
+  starting paper trader (in the foreground, as this process)...
+
+  1 saved position(s) no longer held; discarded
+
+Paper equity   $80,809
+Feed           SIP
+Universe       12,993 symbols
+Strategy       chart patterns on 5-minute bars
+Universe       $0.10-$20, float under 20M
+Confluences    2 minimum
+Character      6,541 scored, 409 excluded
+Dive fallback  on when thin
+Mode           PAPER ORDERS
+
+Listening.
+

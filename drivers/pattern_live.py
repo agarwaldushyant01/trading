@@ -290,35 +290,45 @@ async def run(builder, refs, trader, notifier, key, secret, feed_name,
 
 
 def load_character(refs: dict) -> dict:
-    """Score every symbol from cached daily history.
+    """Read the character cache built by tools.build_character.
 
-    Reads whatever daily bars are already on disk rather than fetching:
-    scoring 13,000 symbols over the wire would take longer than the premarket
-    session. Names with no cached history come back "unknown", which is
-    treated as tradeable — the filter should exclude stocks known to be bad,
-    not stocks nothing is known about.
+    An earlier version scavenged whatever daily bars happened to be left over
+    from validation runs, which covered 27 symbols out of 12,985 — so the
+    filter doing most of the work in the trader's own selection was inactive
+    on 99.8% of the universe.
+
+    Names absent from the cache are treated as tradeable. The filter should
+    exclude stocks known to behave badly, not stocks nothing is known about.
     """
-    cache = pathlib.Path("data/bars/validate")
-    if not cache.exists():
+    import json
+
+    path = pathlib.Path("data/character.json")
+    if not path.exists():
+        print("  No character cache. Run: python3 -m tools.build_character",
+              file=sys.stderr)
         return {}
 
-    import json
-    from collections import defaultdict
+    try:
+        raw = json.loads(path.read_text())
+    except Exception as exc:                              # noqa: BLE001
+        print(f"  Could not read character cache: {exc}", file=sys.stderr)
+        return {}
 
-    history = defaultdict(list)
-    for path in cache.glob("*-1d.json"):
-        symbol = path.stem.rsplit("-", 4)[0]
-        try:
-            rows = json.loads(path.read_text())
-        except Exception:                                 # noqa: BLE001
-            continue
-        if len(rows) > len(history[symbol]):
-            history[symbol] = rows
+    from patterns.character import Character
 
     scored = {}
-    for symbol, rows in history.items():
-        if symbol in refs and len(rows) >= 20:
-            scored[symbol] = analyse(rows)
+    for symbol, row in raw.items():
+        if symbol not in refs:
+            continue
+        scored[symbol] = Character(
+            pump_dumps=row.get("pump_dumps", 0),
+            spikes=row.get("spikes", 0),
+            avg_fall_pct=row.get("avg_fall_pct", 0.0),
+            follow_through=row.get("follow_through", 0.0),
+            sessions=row.get("sessions", 0),
+            verdict=row.get("verdict", "unknown"),
+            reasons=row.get("reasons", []),
+        )
     return scored
 
 
