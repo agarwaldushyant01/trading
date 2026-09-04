@@ -73,7 +73,11 @@ class PaperTrader:
         # remove the position at the broker, so without this the exit sweep
         # sees it again, re-adopts it, and closes it again — every 20 seconds,
         # forever. Cleared when the position actually disappears.
-        self.closing: set = set()
+        # symbol -> when a close was last submitted. Was a plain set, which
+        # meant a close that never filled left the position skipped forever:
+        # no stop, no trail, no 15:50 flatten. That is why four positions were
+        # still open at 16:15 on 2026-09-04, and the same on 25 and 26 August.
+        self.closing: dict = {}
         self._load_state()
         self.seen = self.filled = self.skipped = 0
         self.session_date = None
@@ -167,10 +171,8 @@ class PaperTrader:
             print(f"  restored {len(self.open_positions)} position(s) with "
                   f"their original stops and targets", flush=True)
             for symbol, r in self.open_positions.items():
-                target = (f"target {r['target']:.4f}"
-                          if r.get("target") else "trailing")
                 print(f"    {symbol:<6} entry {r['signal_price']:.4f}  "
-                      f"stop {r['stop']:.4f}  {target}  "
+                      f"stop {r['stop']:.4f}  target {r['target']:.4f}  "
                       f"[{r['setup']}]", flush=True)
         if dropped:
             print(f"  {dropped} saved position(s) no longer held; discarded",
@@ -630,7 +632,8 @@ class PaperTrader:
         hard_exit = time.fromisoformat(self.cfg["execution"]["hard_exit_time"])
 
         # Drop anything that has finished closing.
-        self.closing &= set(live)
+        self.closing = {sym: when for sym, when in self.closing.items()
+                        if sym in live}
 
         for symbol in live:
             if symbol in self.closing:
@@ -638,9 +641,21 @@ class PaperTrader:
             if symbol not in self.open_positions:
                 self.adopt(live[symbol])
 
+        retry_after = self.cfg["execution"].get("close_retry_seconds", 120)
+
         for symbol, entry in list(self.open_positions.items()):
-            if symbol in self.closing:
-                continue                      # waiting on a submitted close
+            submitted = self.closing.get(symbol)
+            if submitted is not None:
+                waited = (now - submitted).total_seconds()
+                past_flatten = now.time() >= hard_exit
+                # Retry rather than skip forever. A close can be rejected —
+                # shares held for another order, a market order outside
+                # session hours — and the position must not become invisible
+                # because of it. After the flatten time, retry every sweep:
+                # nothing may carry overnight.
+                if waited < retry_after and not past_flatten:
+                    continue
+                del self.closing[symbol]
             position = live.get(symbol)
             if position is None:
                 # Closed at the broker, by us or otherwise.
@@ -700,7 +715,7 @@ class PaperTrader:
                pnl_pct: float, reason: str) -> None:
         # Mark before submitting. Whether the order is accepted or rejected,
         # retrying every 20 seconds helps nothing and floods the log.
-        self.closing.add(symbol)
+        self.closing[symbol] = datetime.now(ET)
         try:
             self._submit_close(symbol, entry, price)
         except Exception as exc:                          # noqa: BLE001

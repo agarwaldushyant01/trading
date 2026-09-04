@@ -903,3 +903,5 @@
 {"kind": "entry", "at": "2026-09-04T09:41:00.935657-04:00", "symbol": "LHAI", "shares": 4669, "signal_price": 1.24, "stop": 1.1542, "target": null, "setup": "falling_wedge", "reason": "demand zone 1.1600-1.2016, near 1.25", "opened_at": "2026-09-04T09:41:00.725920-04:00"}
 {"kind": "entry", "at": "2026-09-04T09:41:01.380443-04:00", "symbol": "AOUT", "shares": 352, "signal_price": 13.695, "stop": 12.5569, "target": null, "setup": "ascending_triangle", "reason": "bottom wick 65% of range, near 13.75", "opened_at": "2026-09-04T09:41:01.189266-04:00"}
 {"kind": "halted_overexposure", "at": "2026-09-04T09:46:00.298784-04:00", "held": 4, "limit": 3}
+{"kind": "exit", "at": "2026-09-04T10:15:26.130018-04:00", "symbol": "LHAI", "shares": 4669, "signal_price": 1.24, "stop": 1.3199, "target": null, "setup": "falling_wedge", "reason": "demand zone 1.1600-1.2016, near 1.25", "opened_at": "2026-09-04T09:41:00.725920-04:00", "peak": 1.3999, "exit_price": 1.27, "pnl_pct": 2.42, "exit_reason": "trail"}
+{"kind": "halted_overexposure", "at": "2026-09-04T11:31:00.364928-04:00", "held": 4, "limit": 3}
