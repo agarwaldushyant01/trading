@@ -7343,3 +7343,114 @@ Listening.
   09:46  SIGNAL ETHT falling_wedge A++ @ 16.6400 stop 16.3379
   09:46  SIGNAL CONL retest A++ @ 5.9650 stop 5.8280
   09:46  SIGNAL BITI ascending_triangle A @ 18.6700 stop 18.5269
+
+=== 2026-09-04 09:50:32 EDT — startup, feed sip ===
+  reference data: data/refs/2026-09-04.json (already built)
+  starting paper trader (in the foreground, as this process)...
+
+  restored 4 position(s) with their original stops and targets
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/kanikagupta/trading/drivers/pattern_live.py", line 411, in <module>
+    main()
+    ~~~~^^
+  File "/Users/kanikagupta/trading/drivers/pattern_live.py", line 368, in main
+    trader = PaperTrader(trading, rules_cfg, notifier, dry_run=args.dry_run)
+  File "/Users/kanikagupta/trading/engine/paper.py", line 77, in __init__
+    self._load_state()
+    ~~~~~~~~~~~~~~~~^^
+  File "/Users/kanikagupta/trading/engine/paper.py", line 171, in _load_state
+    f"stop {r['stop']:.4f}  target {r['target']:.4f}  "
+                                   ^^^^^^^^^^^^^^^^^
+TypeError: unsupported format string passed to NoneType.__format__
+
+=== 2026-09-04 09:51:32 EDT — startup, feed sip ===
+  reference data: data/refs/2026-09-04.json (already built)
+  starting paper trader (in the foreground, as this process)...
+
+  restored 4 position(s) with their original stops and targets
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/kanikagupta/trading/drivers/pattern_live.py", line 411, in <module>
+    main()
+    ~~~~^^
+  File "/Users/kanikagupta/trading/drivers/pattern_live.py", line 368, in main
+    trader = PaperTrader(trading, rules_cfg, notifier, dry_run=args.dry_run)
+  File "/Users/kanikagupta/trading/engine/paper.py", line 77, in __init__
+    self._load_state()
+    ~~~~~~~~~~~~~~~~^^
+  File "/Users/kanikagupta/trading/engine/paper.py", line 171, in _load_state
+    f"stop {r['stop']:.4f}  target {r['target']:.4f}  "
+                                   ^^^^^^^^^^^^^^^^^
+TypeError: unsupported format string passed to NoneType.__format__
+
+=== 2026-09-04 09:52:33 EDT — startup, feed sip ===
+  reference data: data/refs/2026-09-04.json (already built)
+  starting paper trader (in the foreground, as this process)...
+
+  restored 4 position(s) with their original stops and targets
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/kanikagupta/trading/drivers/pattern_live.py", line 411, in <module>
+    main()
+    ~~~~^^
+  File "/Users/kanikagupta/trading/drivers/pattern_live.py", line 368, in main
+    trader = PaperTrader(trading, rules_cfg, notifier, dry_run=args.dry_run)
+  File "/Users/kanikagupta/trading/engine/paper.py", line 77, in __init__
+    self._load_state()
+    ~~~~~~~~~~~~~~~~^^
+  File "/Users/kanikagupta/trading/engine/paper.py", line 171, in _load_state
+    f"stop {r['stop']:.4f}  target {r['target']:.4f}  "
+                                   ^^^^^^^^^^^^^^^^^
+TypeError: unsupported format string passed to NoneType.__format__
+
+=== 2026-09-04 09:54:33 EDT — startup, feed sip ===
+  reference data: data/refs/2026-09-04.json (already built)
+  starting paper trader (in the foreground, as this process)...
+
+  restored 4 position(s) with their original stops and targets
+    NVTS   entry 11.3525  stop 10.7849  trailing  [ascending_triangle]
+    SPWR   entry 0.3410  stop 0.3234  trailing  [ascending_triangle]
+    LHAI   entry 1.2400  stop 1.1542  trailing  [falling_wedge]
+    AOUT   entry 13.6950  stop 12.5569  trailing  [ascending_triangle]
+
+Paper equity   $80,711
+Feed           SIP
+Universe       12,993 symbols
+Strategy       chart patterns on 5-minute bars
+Universe       $0.10-$20, float under 20M
+Confluences    2 minimum
+Character      6,541 scored, 841 excluded
+Dive fallback  on when thin
+Mode           PAPER ORDERS
+
+Listening.
+
+  [09:55] 1 bars, 0 5m, 0 signals, 0 entries, 4 open
+
+=== 2026-09-04 09:56:58 EDT — startup, feed sip ===
+  reference data: data/refs/2026-09-04.json (already built)
+  starting paper trader (in the foreground, as this process)...
+
+  restored 4 position(s) with their original stops and targets
+    NVTS   entry 11.3525  stop 10.7849  trailing  [ascending_triangle]
+    SPWR   entry 0.3410  stop 0.3234  trailing  [ascending_triangle]
+    LHAI   entry 1.2400  stop 1.1542  trailing  [falling_wedge]
+    AOUT   entry 13.6950  stop 12.5569  trailing  [ascending_triangle]
+
+Paper equity   $81,041
+Feed           SIP
+Universe       12,993 symbols
+Strategy       chart patterns on 5-minute bars
+Universe       $0.10-$20, float under 20M
+Confluences    2 minimum
+Character      6,541 scored, 841 excluded
+Dive fallback  on when thin
+Mode           PAPER ORDERS
+
+Listening.
+
+  [09:58] 1 bars, 0 5m, 0 signals, 0 entries, 4 open

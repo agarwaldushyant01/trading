@@ -167,8 +167,10 @@ class PaperTrader:
             print(f"  restored {len(self.open_positions)} position(s) with "
                   f"their original stops and targets", flush=True)
             for symbol, r in self.open_positions.items():
+                target = (f"target {r['target']:.4f}"
+                          if r.get("target") else "trailing")
                 print(f"    {symbol:<6} entry {r['signal_price']:.4f}  "
-                      f"stop {r['stop']:.4f}  target {r['target']:.4f}  "
+                      f"stop {r['stop']:.4f}  {target}  "
                       f"[{r['setup']}]", flush=True)
         if dropped:
             print(f"  {dropped} saved position(s) no longer held; discarded",
