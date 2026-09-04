@@ -9226,3 +9226,103 @@ Traceback (most recent call last):
     f"stop {r['stop']:.4f}  target {r['target']:.4f}  "
                                    ^^^^^^^^^^^^^^^^^
 TypeError: unsupported format string passed to NoneType.__format__
+
+=== 2026-09-04 16:32:47 EDT — startup, feed sip ===
+  reference data: data/refs/2026-09-04.json (already built)
+  starting paper trader (in the foreground, as this process)...
+
+  3 saved position(s) no longer held; discarded
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/kanikagupta/trading/drivers/pattern_live.py", line 411, in <module>
+    main()
+    ~~~~^^
+  File "/Users/kanikagupta/trading/drivers/pattern_live.py", line 372, in main
+    adopted = trader.reconcile()
+  File "/Users/kanikagupta/trading/engine/paper.py", line 233, in reconcile
+    record = self.adopt(position)
+  File "/Users/kanikagupta/trading/engine/paper.py", line 212, in adopt
+    "target": round(entry * (1 + target_pct / 100), 4),
+                                 ~~~~~~~~~~~^~~~~
+TypeError: unsupported operand type(s) for /: 'NoneType' and 'int'
+
+=== 2026-09-04 16:33:47 EDT — startup, feed sip ===
+  reference data: data/refs/2026-09-04.json (already built)
+  starting paper trader (in the foreground, as this process)...
+
+  3 saved position(s) no longer held; discarded
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/kanikagupta/trading/drivers/pattern_live.py", line 411, in <module>
+    main()
+    ~~~~^^
+  File "/Users/kanikagupta/trading/drivers/pattern_live.py", line 372, in main
+    adopted = trader.reconcile()
+  File "/Users/kanikagupta/trading/engine/paper.py", line 233, in reconcile
+    record = self.adopt(position)
+  File "/Users/kanikagupta/trading/engine/paper.py", line 212, in adopt
+    "target": round(entry * (1 + target_pct / 100), 4),
+                                 ~~~~~~~~~~~^~~~~
+TypeError: unsupported operand type(s) for /: 'NoneType' and 'int'
+
+=== 2026-09-04 16:34:48 EDT — startup, feed sip ===
+  reference data: data/refs/2026-09-04.json (already built)
+  starting paper trader (in the foreground, as this process)...
+
+  3 saved position(s) no longer held; discarded
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/kanikagupta/trading/drivers/pattern_live.py", line 411, in <module>
+    main()
+    ~~~~^^
+  File "/Users/kanikagupta/trading/drivers/pattern_live.py", line 372, in main
+    adopted = trader.reconcile()
+  File "/Users/kanikagupta/trading/engine/paper.py", line 233, in reconcile
+    record = self.adopt(position)
+  File "/Users/kanikagupta/trading/engine/paper.py", line 212, in adopt
+    "target": round(entry * (1 + target_pct / 100), 4),
+                                 ~~~~~~~~~~~^~~~~
+TypeError: unsupported operand type(s) for /: 'NoneType' and 'int'
+
+=== 2026-09-04 16:35:48 EDT — startup, feed sip ===
+  reference data: data/refs/2026-09-04.json (already built)
+  starting paper trader (in the foreground, as this process)...
+
+  3 saved position(s) no longer held; discarded
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/kanikagupta/trading/drivers/pattern_live.py", line 411, in <module>
+    main()
+    ~~~~^^
+  File "/Users/kanikagupta/trading/drivers/pattern_live.py", line 372, in main
+    adopted = trader.reconcile()
+  File "/Users/kanikagupta/trading/engine/paper.py", line 237, in reconcile
+    record = self.adopt(position)
+  File "/Users/kanikagupta/trading/engine/paper.py", line 216, in adopt
+    "target": round(entry * (1 + target_pct / 100), 4),
+                                 ~~~~~~~~~~~^~~~~
+TypeError: unsupported operand type(s) for /: 'NoneType' and 'int'
+
+=== 2026-09-04 16:36:49 EDT — startup, feed sip ===
+  reference data: data/refs/2026-09-04.json (already built)
+  starting paper trader (in the foreground, as this process)...
+
+  3 saved position(s) no longer held; discarded
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/kanikagupta/trading/drivers/pattern_live.py", line 411, in <module>
+    main()
+    ~~~~^^
+  File "/Users/kanikagupta/trading/drivers/pattern_live.py", line 372, in main
+    adopted = trader.reconcile()
+  File "/Users/kanikagupta/trading/engine/paper.py", line 237, in reconcile
+    record = self.adopt(position)
+  File "/Users/kanikagupta/trading/engine/paper.py", line 216, in adopt
+    "target": round(entry * (1 + target_pct / 100), 4),
+                                 ~~~~~~~~~~~^~~~~
+TypeError: unsupported operand type(s) for /: 'NoneType' and 'int'

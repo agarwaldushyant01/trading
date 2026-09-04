@@ -165,13 +165,21 @@ def check_loss_cap_outside_hours() -> tuple[bool, str]:
     broker.starting_equity = 100_000.0
     trader = PaperTrader(broker, cfg, SilentNotifier(), dry_run=False)
 
+    # Drive the trader's clock, not the machine's. Without this the test
+    # runs at whatever time it happens to be and cannot reach the guard.
+    trader.clock = lambda: datetime(2026, 9, 4, 0, 17, tzinfo=ET)
     broker.set_time(datetime(2026, 9, 4, 0, 17, tzinfo=ET))
     broker.cash = 96_000.0                  # looks like -4% against baseline
 
     if trader.check_daily_loss():
         return (False, "fired at 00:17 — last_equity rolls at the session "
                        "boundary and the comparison is meaningless")
-    return (True, "silent outside market hours")
+    # And it must still fire during the session, or the guard is useless.
+    trader.clock = lambda: datetime(2026, 9, 4, 11, 0, tzinfo=ET)
+    if not trader.check_daily_loss():
+        return (False, "did not fire at 11:00 on a -4% day; the cap is now "
+                       "inert during the session")
+    return (True, "silent at 00:17, fires at 11:00")
 
 
 def check_failed_close_retries() -> tuple[bool, str]:

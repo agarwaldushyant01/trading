@@ -69,6 +69,10 @@ class PaperTrader:
         # which is how seven entries produced four open positions against a
         # limit of three on 2026-09-04.
         self.pending_entries: set = set()
+        # Overridable clock. Time-dependent logic that reads datetime.now()
+        # directly cannot be tested, which is how the loss cap kept firing
+        # at 00:17 for three weeks without a test able to reach the guard.
+        self.clock = lambda: datetime.now(ET)
         # Symbols with a close order already submitted. A queued sell does not
         # remove the position at the broker, so without this the exit sweep
         # sees it again, re-adopts it, and closes it again — every 20 seconds,
@@ -172,7 +176,7 @@ class PaperTrader:
                   f"their original stops and targets", flush=True)
             for symbol, r in self.open_positions.items():
                 print(f"    {symbol:<6} entry {r['signal_price']:.4f}  "
-                      f"stop {r['stop']:.4f}  target {r['target']:.4f}  "
+                      f"stop {r['stop']:.4f}  {'trailing' if r.get('target') is None else format(r['target'], '.4f')}  "
                       f"[{r['setup']}]", flush=True)
         if dropped:
             print(f"  {dropped} saved position(s) no longer held; discarded",
@@ -488,7 +492,7 @@ class PaperTrader:
                 self.notifier.send(
                     f"PAPER BUY {request.symbol}",
                     f"{request.shares:,} sh @ ~${request.price:.2f}\n"
-                    f"stop {entry['stop']:.2f}  target {entry['target']:.2f}",
+                    f"stop {entry['stop']:.2f}  {'trailing' if entry.get('target') is None else format(entry['target'], '.2f')}",
                 )
 
         self.awaiting = still_waiting
@@ -532,7 +536,7 @@ class PaperTrader:
         # fired at 00:17 on 2026-09-04 reporting -3.8%, and on 2026-08-24
         # reporting -2.05% on a day with no trades at all — each time
         # flattening the book and halting on a phantom loss.
-        now = datetime.now(ET)
+        now = self.clock()
         if now.weekday() >= 5 or not (time(4, 0) <= now.time() <= time(20, 0)):
             return False
 
