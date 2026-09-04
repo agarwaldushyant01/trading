@@ -1,35 +1,32 @@
 {
- "NVTS": {
-  "symbol": "NVTS",
-  "shares": 711,
-  "signal_price": 11.3525,
-  "stop": 10.7849,
+ "S0": {
+  "symbol": "S0",
+  "shares": 5000,
+  "signal_price": 1.0,
+  "stop": 0.9,
   "target": null,
-  "setup": "ascending_triangle",
-  "reason": "bottom wick 80% of range, near 11.25",
-  "opened_at": "2026-09-04T06:01:00.130343-04:00",
-  "peak": 11.635
+  "setup": "test",
+  "reason": "",
+  "opened_at": "2026-09-04T16:32:02.956028-04:00"
  },
- "SPWR": {
-  "symbol": "SPWR",
-  "shares": 22897,
-  "signal_price": 0.341,
-  "stop": 0.3599,
+ "S1": {
+  "symbol": "S1",
+  "shares": 5000,
+  "signal_price": 1.0,
+  "stop": 0.9,
   "target": null,
-  "setup": "ascending_triangle",
-  "reason": "demand zone 0.3200-0.3365, bottom wick 72% of range",
-  "opened_at": "2026-09-04T07:11:00.421429-04:00",
-  "peak": 0.3789
+  "setup": "test",
+  "reason": "",
+  "opened_at": "2026-09-04T16:32:02.956216-04:00"
  },
- "AOUT": {
-  "symbol": "AOUT",
-  "shares": 352,
-  "signal_price": 13.695,
-  "stop": 12.5569,
+ "S2": {
+  "symbol": "S2",
+  "shares": 5000,
+  "signal_price": 1.0,
+  "stop": 0.9,
   "target": null,
-  "setup": "ascending_triangle",
-  "reason": "bottom wick 65% of range, near 13.75",
-  "opened_at": "2026-09-04T09:41:01.189266-04:00",
-  "peak": 14.39
+  "setup": "test",
+  "reason": "",
+  "opened_at": "2026-09-04T16:32:02.956390-04:00"
  }
 }

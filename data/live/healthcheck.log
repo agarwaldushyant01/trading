@@ -671,3 +671,5 @@
 15:45 healthy — last heartbeat 4m ago.
 16:00 healthy — last heartbeat 4m ago.
 16:15 healthy — last heartbeat 3m ago.
+16:30 PROBLEM: process is not running
+  restarted via kickstart gui (attempt 2 today)
