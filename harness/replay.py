@@ -192,6 +192,12 @@ def check_failed_close_retries() -> tuple[bool, str]:
     trader.open_positions = {}
     trader.closing = {}
 
+    # Drive the trader's clock too, not just the broker's. This test passed
+    # on a Friday evening only because the real time happened to be past
+    # 15:50; at 09:17 on Monday the same code correctly waits out the retry
+    # window and the test failed. A test that depends on when it runs is not
+    # a test.
+    trader.clock = lambda: datetime(2026, 9, 4, 15, 55, tzinfo=ET)
     broker.set_time(datetime(2026, 9, 4, 15, 55, tzinfo=ET))
     broker.set_price("TEST", 1.00)
     pos = _position("TEST", 1000, 1.00, 1.00)

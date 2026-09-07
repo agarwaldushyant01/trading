@@ -213,10 +213,13 @@ class PaperTrader:
             "shares": int(float(position.qty)),
             "signal_price": entry,
             "stop": round(entry * (1 - stop_pct / 100), 4),
-            "target": round(entry * (1 + target_pct / 100), 4),
+            # adopted_target_pct is null now that exits trail rather than
+            # aim at a fixed price. None means trailing, not zero.
+            "target": (round(entry * (1 + target_pct / 100), 4)
+                       if target_pct else None),
             "setup": "adopted",
             "reason": "position found at startup, not opened by this process",
-            "opened_at": datetime.now(ET).isoformat(),
+            "opened_at": self.clock().isoformat(),
         }
         self.open_positions[position.symbol] = record
         self._save_state()
@@ -254,7 +257,7 @@ class PaperTrader:
         TRADE_LOG.parent.mkdir(parents=True, exist_ok=True)
         with TRADE_LOG.open("a", encoding="utf-8") as handle:
             handle.write(json.dumps({"kind": kind,
-                                     "at": datetime.now(ET).isoformat(),
+                                     "at": self.clock().isoformat(),
                                      **payload}) + "\n")
 
     # -------------------------------------------------------------- entries
@@ -268,7 +271,7 @@ class PaperTrader:
         — the low of the pullback, not a fixed distance — so the size follows
         from that instead.
         """
-        now = datetime.now(ET)
+        now = self.clock()
         self._roll_session(now)
         self.seen += 1
 
@@ -326,7 +329,7 @@ class PaperTrader:
         )
 
     def consider(self, alert) -> None:
-        now = datetime.now(ET)
+        now = self.clock()
         self._roll_session(now)
         self.seen += 1
 
@@ -432,7 +435,7 @@ class PaperTrader:
         from alpaca.trading.enums import OrderSide, TimeInForce
         from alpaca.trading.requests import LimitOrderRequest
 
-        now = datetime.now(ET).time()
+        now = self.clock().time()
         extended = now < time(9, 30) or now >= time(16, 0)
         slip = self.cfg["execution"]["entry_slippage_pct"] / 100
 
@@ -473,7 +476,7 @@ class PaperTrader:
             if not self.approvals.resolve(request):
                 self._log("rejected_by_human", {**entry,
                                                 "seconds": round(request.age, 1)})
-                print(f"  {datetime.now(ET):%H:%M}  SKIP {request.symbol} "
+                print(f"  {self.clock():%H:%M}  SKIP {request.symbol} "
                       f"(not approved)", flush=True)
                 continue
 
@@ -487,7 +490,7 @@ class PaperTrader:
                 self._save_state()
                 self.filled += 1
                 self._log("entry", entry)
-                print(f"  {datetime.now(ET):%H:%M}  BUY  {request.symbol} "
+                print(f"  {self.clock():%H:%M}  BUY  {request.symbol} "
                       f"x{request.shares} (approved)", flush=True)
                 self.notifier.send(
                     f"PAPER BUY {request.symbol}",
@@ -632,7 +635,7 @@ class PaperTrader:
         position cannot be orphaned by a restart.
         """
         live = {p.symbol: p for p in self.client.get_all_positions()}
-        now = datetime.now(ET)
+        now = self.clock()
         hard_exit = time.fromisoformat(self.cfg["execution"]["hard_exit_time"])
 
         # Drop anything that has finished closing.
@@ -701,7 +704,7 @@ class PaperTrader:
         from alpaca.trading.enums import OrderSide, TimeInForce
         from alpaca.trading.requests import LimitOrderRequest
 
-        now = datetime.now(ET).time()
+        now = self.clock().time()
         if time(9, 30) <= now < time(16, 0):
             self.client.close_position(symbol)
             return
@@ -719,7 +722,7 @@ class PaperTrader:
                pnl_pct: float, reason: str) -> None:
         # Mark before submitting. Whether the order is accepted or rejected,
         # retrying every 20 seconds helps nothing and floods the log.
-        self.closing[symbol] = datetime.now(ET)
+        self.closing[symbol] = self.clock()
         try:
             self._submit_close(symbol, entry, price)
         except Exception as exc:                          # noqa: BLE001
@@ -732,7 +735,7 @@ class PaperTrader:
                   "exit_reason": reason}
         self._log("exit", record)
 
-        print(f"  {datetime.now(ET):%H:%M}  SELL {symbol} @ {price:.2f} "
+        print(f"  {self.clock():%H:%M}  SELL {symbol} @ {price:.2f} "
               f"({pnl_pct:+.1f}%) — {reason}", flush=True)
         self.notifier.send(
             f"PAPER SELL {symbol} {pnl_pct:+.1f}%",

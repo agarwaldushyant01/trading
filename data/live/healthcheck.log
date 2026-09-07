@@ -673,3 +673,73 @@
 16:15 healthy — last heartbeat 3m ago.
 16:30 PROBLEM: process is not running
   restarted via kickstart gui (attempt 2 today)
+16:45 PROBLEM: process is not running
+  restarted via kickstart gui (attempt 3 today)
+17:00 PROBLEM: process is not running
+  restarted via kickstart gui (attempt 4 today)
+17:15 PROBLEM: process is not running
+  restarted via kickstart gui (attempt 5 today)
+17:30 PROBLEM: process is not running
+  restarted via kickstart gui (attempt 6 today)
+17:45 PROBLEM: process is not running
+  restart limit reached; giving up for today.
+18:00 PROBLEM: process is not running
+  already gave up today, not retrying.
+18:15 PROBLEM: process is not running
+  already gave up today, not retrying.
+18:30 PROBLEM: process is not running
+  already gave up today, not retrying.
+18:45 PROBLEM: process is not running
+  already gave up today, not retrying.
+19:00 PROBLEM: process is not running
+  already gave up today, not retrying.
+19:15 PROBLEM: process is not running
+  already gave up today, not retrying.
+19:30 PROBLEM: process is not running
+  already gave up today, not retrying.
+19:45 PROBLEM: process is not running
+  already gave up today, not retrying.
+04:00 PROBLEM: process is not running
+  restarted via kickstart gui (attempt 1 today)
+04:15 PROBLEM: process is not running
+  restarted via kickstart gui (attempt 2 today)
+04:30 PROBLEM: process is not running
+  restarted via kickstart gui (attempt 3 today)
+04:45 PROBLEM: process is not running
+  restarted via kickstart gui (attempt 4 today)
+05:00 PROBLEM: process is not running
+  restarted via kickstart gui (attempt 5 today)
+05:15 PROBLEM: process is not running
+  restarted via kickstart gui (attempt 6 today)
+05:30 PROBLEM: process is not running
+  restart limit reached; giving up for today.
+05:45 PROBLEM: process is not running
+  already gave up today, not retrying.
+06:00 PROBLEM: process is not running
+  already gave up today, not retrying.
+06:15 PROBLEM: process is not running
+  already gave up today, not retrying.
+06:30 PROBLEM: process is not running
+  already gave up today, not retrying.
+06:45 PROBLEM: process is not running
+  already gave up today, not retrying.
+07:00 PROBLEM: process is not running
+  already gave up today, not retrying.
+07:15 PROBLEM: process is not running
+  already gave up today, not retrying.
+07:30 PROBLEM: process is not running
+  already gave up today, not retrying.
+07:45 PROBLEM: process is not running
+  already gave up today, not retrying.
+08:00 PROBLEM: process is not running
+  already gave up today, not retrying.
+08:15 PROBLEM: process is not running
+  already gave up today, not retrying.
+08:30 PROBLEM: process is not running
+  already gave up today, not retrying.
+08:45 PROBLEM: process is not running
+  already gave up today, not retrying.
+09:00 PROBLEM: process is not running
+  already gave up today, not retrying.
+09:15 PROBLEM: process is not running
+  already gave up today, not retrying.
