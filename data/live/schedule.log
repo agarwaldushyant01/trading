@@ -30646,3 +30646,1298 @@ Listening.
   23:36  SELL NVTS @ 12.22 (+7.6%) — time
   extended-hours exit for SPWR: limit 0.3348
   23:36  SELL SPWR @ 0.35 (+1.2%) — time
+
+=== 2026-09-08 04:00:06 EDT — startup, feed sip ===
+  building reference data — about 10 minutes...
+Fetching asset list...
+  13106 listed, tradable US equities
+Fetching daily bars...
+  fetched 200/13106 symbols
+  fetched 400/13106 symbols
+  fetched 600/13106 symbols
+  fetched 800/13106 symbols
+  fetched 1000/13106 symbols
+  fetched 1200/13106 symbols
+  fetched 1400/13106 symbols
+  fetched 1600/13106 symbols
+  fetched 1800/13106 symbols
+  fetched 2000/13106 symbols
+  fetched 2200/13106 symbols
+  fetched 2400/13106 symbols
+  fetched 2600/13106 symbols
+  fetched 2800/13106 symbols
+  fetched 3000/13106 symbols
+  fetched 3200/13106 symbols
+  fetched 3400/13106 symbols
+  fetched 3600/13106 symbols
+  fetched 3800/13106 symbols
+  fetched 4000/13106 symbols
+  fetched 4200/13106 symbols
+  fetched 4400/13106 symbols
+  fetched 4600/13106 symbols
+  fetched 4800/13106 symbols
+  fetched 5000/13106 symbols
+  fetched 5200/13106 symbols
+  fetched 5400/13106 symbols
+  fetched 5600/13106 symbols
+  fetched 5800/13106 symbols
+  fetched 6000/13106 symbols
+  fetched 6200/13106 symbols
+  fetched 6400/13106 symbols
+  fetched 6600/13106 symbols
+  fetched 6800/13106 symbols
+  fetched 7000/13106 symbols
+  fetched 7200/13106 symbols
+  fetched 7400/13106 symbols
+  fetched 7600/13106 symbols
+  fetched 7800/13106 symbols
+  fetched 8000/13106 symbols
+  fetched 8200/13106 symbols
+  fetched 8400/13106 symbols
+  fetched 8600/13106 symbols
+  fetched 8800/13106 symbols
+  fetched 9000/13106 symbols
+  fetched 9200/13106 symbols
+  fetched 9400/13106 symbols
+  fetched 9600/13106 symbols
+  fetched 9800/13106 symbols
+  fetched 10000/13106 symbols
+  fetched 10200/13106 symbols
+  fetched 10400/13106 symbols
+  fetched 10600/13106 symbols
+  fetched 10800/13106 symbols
+  fetched 11000/13106 symbols
+  fetched 11200/13106 symbols
+  fetched 11400/13106 symbols
+  fetched 11600/13106 symbols
+  fetched 11800/13106 symbols
+  fetched 12000/13106 symbols
+  fetched 12200/13106 symbols
+  fetched 12400/13106 symbols
+  fetched 12600/13106 symbols
+  fetched 12800/13106 symbols
+  fetched 13000/13106 symbols
+  fetched 13106/13106 symbols
+  9074 kept without a share count (foreign filers, funds, warrants) — rules decide
+  99 dropped: under 14 sessions of history
+  13002 symbols in the universe
+Wrote 13002 refs to data/refs/2026-09-08.json
+  starting paper trader (in the foreground, as this process)...
+
+  3 saved position(s) no longer held; discarded
+  adopted ATER x4345 @ 0.7204 (-7.2%) stop 0.6340
+
+Paper equity   $80,688
+Feed           SIP
+Universe       13,002 symbols
+Strategy       chart patterns on 5-minute bars
+Universe       $0.10-$20, float under 20M
+Confluences    2 minimum
+Character      6,535 scored, 839 excluded
+Dive fallback  on when thin
+Mode           PAPER ORDERS
+Adopted        1 existing position(s)
+
+Listening.
+
+  [04:02] 1 bars, 0 5m, 0 signals, 0 entries, 1 open
+  [04:07] 3,988 bars, 574 5m, 0 signals, 0 entries, 1 open
+  [04:13] 5,832 bars, 1,241 5m, 0 signals, 0 entries, 1 open
+  close failed for ATER: {"available":"0","code":40310000,"existing_qty":"4345","held_for_orders":"4345","message":"insufficient qty available for order (requested: 4345, available: 0)","related_orders":["4656b0bf-60ea-41ae-a721-5cc7f6b26a33"],"symbol":"ATER"}
+  close failed for ATER: {"available":"0","code":40310000,"existing_qty":"4345","held_for_orders":"4345","message":"insufficient qty available for order (requested: 4345, available: 0)","related_orders":["4656b0bf-60ea-41ae-a721-5cc7f6b26a33"],"symbol":"ATER"}
+  close failed for ATER: {"available":"0","code":40310000,"existing_qty":"4345","held_for_orders":"4345","message":"insufficient qty available for order (requested: 4345, available: 0)","related_orders":["4656b0bf-60ea-41ae-a721-5cc7f6b26a33"],"symbol":"ATER"}
+  [04:19] 7,779 bars, 1,957 5m, 0 signals, 0 entries, 1 open
+  close failed for ATER: {"available":"0","code":40310000,"existing_qty":"4345","held_for_orders":"4345","message":"insufficient qty available for order (requested: 4345, available: 0)","related_orders":["4656b0bf-60ea-41ae-a721-5cc7f6b26a33"],"symbol":"ATER"}
+  close failed for ATER: {"available":"0","code":40310000,"existing_qty":"4345","held_for_orders":"4345","message":"insufficient qty available for order (requested: 4345, available: 0)","related_orders":["4656b0bf-60ea-41ae-a721-5cc7f6b26a33"],"symbol":"ATER"}
+  close failed for ATER: {"available":"0","code":40310000,"existing_qty":"4345","held_for_orders":"4345","message":"insufficient qty available for order (requested: 4345, available: 0)","related_orders":["4656b0bf-60ea-41ae-a721-5cc7f6b26a33"],"symbol":"ATER"}
+  [04:24] 9,134 bars, 2,534 5m, 0 signals, 0 entries, 1 open
+  [04:29] 10,432 bars, 3,109 5m, 0 signals, 0 entries, 1 open
+  [04:34] 11,993 bars, 3,764 5m, 0 signals, 0 entries, 1 open
+  [04:40] 13,215 bars, 4,314 5m, 0 signals, 0 entries, 1 open
+  [04:46] 14,578 bars, 4,886 5m, 0 signals, 0 entries, 1 open
+  [04:51] 15,896 bars, 5,532 5m, 0 signals, 0 entries, 1 open
+  [04:56] 16,870 bars, 5,946 5m, 0 signals, 0 entries, 1 open
+  [05:02] 18,059 bars, 6,613 5m, 0 signals, 0 entries, 1 open
+  position check failed: HTTPSConnectionPool(host='paper-api.alpaca.markets', port=443): Max retries exceeded with url: /v2/positions (Caused by NameResolutionError("HTTPSConnection(host='paper-api.alpaca.markets', port=443): Failed to resolve 'paper-api.alpaca.markets' ([Errno 8] nodename nor servname provided, or not known)"))
+data transfer failed
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/websockets/legacy/protocol.py", line 940, in transfer_data
+    message = await self.read_message()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/websockets/legacy/protocol.py", line 1010, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/websockets/legacy/protocol.py", line 1087, in read_data_frame
+    frame = await self.read_frame(max_size)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/websockets/legacy/protocol.py", line 1144, in read_frame
+    frame = await Frame.read(
+            ^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/websockets/legacy/framing.py", line 70, in read
+    data = await reader(2)
+           ^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/streams.py", line 769, in readexactly
+    await self._wait_for_data('readexactly')
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/streams.py", line 539, in _wait_for_data
+    await self._waiter
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/selector_events.py", line 984, in _read_ready__get_buffer
+    nbytes = self._sock.recv_into(buf)
+OSError: [Errno 49] Can't assign requested address
+data websocket error, restarting connection: no close frame received or sent
+error during websocket communication: [Errno 8] nodename nor servname provided, or not known
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 454, in _run_forever
+    await self._start_ws()
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 207, in _start_ws
+    await self._connect()
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 171, in _connect
+    self._ws = await websockets_legacy.connect(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/websockets/legacy/client.py", line 650, in __await_impl__
+    _transport, protocol = await self._create_connection()
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/base_events.py", line 1119, in create_connection
+    infos = await self._ensure_resolved(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        (host, port), family=family,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        type=socket.SOCK_STREAM, proto=proto, flags=flags, loop=self)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/base_events.py", line 1516, in _ensure_resolved
+    return await loop.getaddrinfo(host, port, family=family, type=type,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                  proto=proto, flags=flags)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/base_events.py", line 936, in getaddrinfo
+    return await self.run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        None, getaddr_func, host, port, family, type, proto, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/concurrent/futures/thread.py", line 86, in run
+    result = ctx.run(self.task)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/concurrent/futures/thread.py", line 73, in run
+    return fn(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/socket.py", line 983, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+  position check failed: HTTPSConnectionPool(host='paper-api.alpaca.markets', port=443): Max retries exceeded with url: /v2/positions (Caused by NameResolutionError("HTTPSConnection(host='paper-api.alpaca.markets', port=443): Failed to resolve 'paper-api.alpaca.markets' ([Errno 8] nodename nor servname provided, or not known)"))
+error during websocket communication: [Errno 8] nodename nor servname provided, or not known
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 454, in _run_forever
+    await self._start_ws()
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 207, in _start_ws
+    await self._connect()
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 171, in _connect
+    self._ws = await websockets_legacy.connect(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/websockets/legacy/client.py", line 650, in __await_impl__
+    _transport, protocol = await self._create_connection()
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/base_events.py", line 1119, in create_connection
+    infos = await self._ensure_resolved(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        (host, port), family=family,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        type=socket.SOCK_STREAM, proto=proto, flags=flags, loop=self)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/base_events.py", line 1516, in _ensure_resolved
+    return await loop.getaddrinfo(host, port, family=family, type=type,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                  proto=proto, flags=flags)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/base_events.py", line 936, in getaddrinfo
+    return await self.run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        None, getaddr_func, host, port, family, type, proto, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/concurrent/futures/thread.py", line 86, in run
+    result = ctx.run(self.task)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/concurrent/futures/thread.py", line 73, in run
+    return fn(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/socket.py", line 983, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+error during websocket communication: [Errno 8] nodename nor servname provided, or not known
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 454, in _run_forever
+    await self._start_ws()
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 207, in _start_ws
+    await self._connect()
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 171, in _connect
+    self._ws = await websockets_legacy.connect(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/websockets/legacy/client.py", line 650, in __await_impl__
+    _transport, protocol = await self._create_connection()
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/base_events.py", line 1119, in create_connection
+    infos = await self._ensure_resolved(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        (host, port), family=family,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        type=socket.SOCK_STREAM, proto=proto, flags=flags, loop=self)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/base_events.py", line 1516, in _ensure_resolved
+    return await loop.getaddrinfo(host, port, family=family, type=type,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                  proto=proto, flags=flags)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/base_events.py", line 936, in getaddrinfo
+    return await self.run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        None, getaddr_func, host, port, family, type, proto, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/concurrent/futures/thread.py", line 86, in run
+    result = ctx.run(self.task)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/concurrent/futures/thread.py", line 73, in run
+    return fn(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/socket.py", line 983, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+error during websocket communication: [Errno 8] nodename nor servname provided, or not known
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 454, in _run_forever
+    await self._start_ws()
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 207, in _start_ws
+    await self._connect()
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 171, in _connect
+    self._ws = await websockets_legacy.connect(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/websockets/legacy/client.py", line 650, in __await_impl__
+    _transport, protocol = await self._create_connection()
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/base_events.py", line 1119, in create_connection
+    infos = await self._ensure_resolved(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        (host, port), family=family,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        type=socket.SOCK_STREAM, proto=proto, flags=flags, loop=self)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/base_events.py", line 1516, in _ensure_resolved
+    return await loop.getaddrinfo(host, port, family=family, type=type,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                  proto=proto, flags=flags)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/base_events.py", line 936, in getaddrinfo
+    return await self.run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        None, getaddr_func, host, port, family, type, proto, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/concurrent/futures/thread.py", line 86, in run
+    result = ctx.run(self.task)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/concurrent/futures/thread.py", line 73, in run
+    return fn(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/socket.py", line 983, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+  position check failed: HTTPSConnectionPool(host='paper-api.alpaca.markets', port=443): Max retries exceeded with url: /v2/positions (Caused by NameResolutionError("HTTPSConnection(host='paper-api.alpaca.markets', port=443): Failed to resolve 'paper-api.alpaca.markets' ([Errno 8] nodename nor servname provided, or not known)"))
+error during websocket communication: [Errno 8] nodename nor servname provided, or not known
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 454, in _run_forever
+    await self._start_ws()
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 207, in _start_ws
+    await self._connect()
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/alpaca/data/live/websocket.py", line 171, in _connect
+    self._ws = await websockets_legacy.connect(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/websockets/legacy/client.py", line 650, in __await_impl__
+    _transport, protocol = await self._create_connection()
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/base_events.py", line 1119, in create_connection
+    infos = await self._ensure_resolved(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        (host, port), family=family,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        type=socket.SOCK_STREAM, proto=proto, flags=flags, loop=self)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/base_events.py", line 1516, in _ensure_resolved
+    return await loop.getaddrinfo(host, port, family=family, type=type,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                  proto=proto, flags=flags)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/asyncio/base_events.py", line 936, in getaddrinfo
+    return await self.run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        None, getaddr_func, host, port, family, type, proto, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/concurrent/futures/thread.py", line 86, in run
+    result = ctx.run(self.task)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/concurrent/futures/thread.py", line 73, in run
+    return fn(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/socket.py", line 983, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+  [05:07] 18,870 bars, 6,878 5m, 0 signals, 0 entries, 1 open
+  [05:12] 19,942 bars, 7,532 5m, 0 signals, 0 entries, 1 open
+  [05:18] 21,211 bars, 8,142 5m, 0 signals, 0 entries, 1 open
+  [05:24] 22,471 bars, 8,721 5m, 0 signals, 0 entries, 1 open
+  [05:30] 23,667 bars, 9,264 5m, 0 signals, 0 entries, 1 open
+  [05:36] 25,045 bars, 9,864 5m, 0 signals, 0 entries, 1 open
+  [05:41] 26,222 bars, 10,417 5m, 0 signals, 0 entries, 1 open
+  [05:46] 27,614 bars, 11,139 5m, 0 signals, 0 entries, 1 open
+  [05:51] 28,534 bars, 11,481 5m, 0 signals, 0 entries, 1 open
+  [05:56] 29,601 bars, 11,979 5m, 0 signals, 0 entries, 1 open
+  [06:02] 30,812 bars, 12,692 5m, 0 signals, 0 entries, 1 open
+  [06:07] 31,868 bars, 13,180 5m, 0 signals, 0 entries, 1 open
+  [06:12] 32,868 bars, 13,661 5m, 0 signals, 0 entries, 1 open
+  [06:17] 33,854 bars, 14,122 5m, 0 signals, 0 entries, 1 open
+  06:21  SIGNAL BITU ascending_triangle A @ 13.7900 stop 13.5320
+  06:21  BUY BITU x584 @ 13.7900 stop 13.1005 (5.0%) [ascending_triangle]
+  [06:23] 35,413 bars, 14,984 5m, 1 signals, 1 entries, 2 open
+  06:28  SIGNAL BITU ascending_triangle A @ 13.7698 stop 13.5320
+  [06:29] 36,670 bars, 15,503 5m, 2 signals, 1 entries, 2 open
+  [06:34] 37,747 bars, 16,032 5m, 2 signals, 1 entries, 2 open
+  [06:40] 38,984 bars, 16,573 5m, 2 signals, 1 entries, 2 open
+  [06:45] 40,047 bars, 17,105 5m, 2 signals, 1 entries, 2 open
+  [06:50] 41,257 bars, 17,659 5m, 2 signals, 1 entries, 2 open
+  [06:56] 42,356 bars, 18,198 5m, 2 signals, 1 entries, 2 open
+  06:56  SIGNAL RAM retest A++ @ 14.5500 stop 14.3550
+  06:56  BUY RAM x553 @ 14.5500 stop 13.8225 (5.0%) [retest]
+  [07:01] 43,472 bars, 18,745 5m, 3 signals, 2 entries, 3 open
+  07:01  SIGNAL RGTX ascending_triangle A @ 10.0200 stop 9.3530
+  07:01  SIGNAL ORCU ascending_triangle A @ 9.6801 stop 9.5420
+  07:06  SIGNAL RGTX ascending_triangle A @ 10.0800 stop 9.3530
+  [07:06] 47,245 bars, 20,325 5m, 6 signals, 2 entries, 3 open
+  07:06  SIGNAL RAM ascending_triangle A @ 14.6000 stop 14.3777
+  07:06  SIGNAL NVTS ascending_triangle A @ 12.0570 stop 11.9101
+  07:06  SIGNAL ORCU ascending_triangle A @ 9.8300 stop 9.5420
+  [07:11] 50,277 bars, 21,792 5m, 9 signals, 2 entries, 3 open
+  07:12  SIGNAL ACHR ascending_triangle A++ @ 5.7000 stop 5.6417
+  07:16  SIGNAL RAM retest A @ 14.5100 stop 14.2857
+  07:16  SIGNAL PL retest A @ 18.0550 stop 17.8200
+  [07:16] 52,489 bars, 22,763 5m, 12 signals, 2 entries, 3 open
+  07:21  SIGNAL RAM retest A @ 14.5300 stop 14.2857
+  [07:22] 54,611 bars, 23,787 5m, 13 signals, 2 entries, 3 open
+  07:26  SIGNAL RGTI retest A @ 15.8624 stop 15.5925
+  07:26  SIGNAL RAM retest A++ @ 14.5500 stop 14.2857
+  [07:27] 56,545 bars, 24,657 5m, 15 signals, 2 entries, 3 open
+  07:31  SIGNAL RAM retest A++ @ 14.5105 stop 14.3154
+  07:32  SIGNAL TSLT ascending_triangle A @ 12.7901 stop 12.6315
+  [07:32] 58,457 bars, 25,538 5m, 17 signals, 2 entries, 3 open
+  07:36  SIGNAL TSLL ascending_triangle A @ 9.1902 stop 9.0744
+  [07:37] 60,707 bars, 26,589 5m, 18 signals, 2 entries, 3 open
+  07:41  SIGNAL GME retest A @ 19.2300 stop 19.0080
+  [07:42] 62,866 bars, 27,581 5m, 19 signals, 2 entries, 3 open
+  [07:48] 64,791 bars, 28,452 5m, 19 signals, 2 entries, 3 open
+  07:51  SIGNAL RAM retest A @ 14.3500 stop 14.1669
+  07:51  SIGNAL TSLL retest A @ 9.1900 stop 9.0784
+  07:52  SIGNAL PATH ascending_triangle A @ 15.4100 stop 15.2036
+  [07:53] 67,047 bars, 29,466 5m, 22 signals, 2 entries, 3 open
+  [07:58] 69,167 bars, 30,440 5m, 22 signals, 2 entries, 3 open
+  08:01  SIGNAL RGTI ascending_triangle A @ 16.3546 stop 15.6215
+  08:01  SIGNAL PATH retest A @ 15.4200 stop 15.2163
+  08:01  SIGNAL RGTX ascending_triangle A @ 10.5500 stop 9.7012
+  [08:04] 71,336 bars, 31,410 5m, 25 signals, 2 entries, 3 open
+  08:06  SIGNAL PL retest A @ 18.1800 stop 17.9487
+  [08:09] 73,559 bars, 32,415 5m, 26 signals, 2 entries, 3 open
+  08:11  SIGNAL RAM retest A @ 14.4400 stop 14.1570
+  08:11  SIGNAL PL ascending_triangle A++ @ 18.1900 stop 17.9200
+  [08:14] 75,721 bars, 33,406 5m, 28 signals, 2 entries, 3 open
+  08:17  SIGNAL INFQ ascending_triangle A @ 13.3000 stop 13.0345
+  [08:19] 77,998 bars, 34,436 5m, 29 signals, 2 entries, 3 open
+  08:21  SIGNAL TSLL retest A @ 9.2000 stop 9.0882
+  [08:24] 80,158 bars, 35,421 5m, 30 signals, 2 entries, 3 open
+  08:26  SIGNAL NOK retest A @ 10.4000 stop 10.2762
+  08:27  SIGNAL SPWR ascending_triangle A++ @ 0.3617 stop 0.3477
+  [08:29] 82,254 bars, 36,401 5m, 32 signals, 2 entries, 3 open
+  08:31  SIGNAL CLSK ascending_triangle A @ 12.6600 stop 12.4873
+  08:31  SIGNAL PATH retest A @ 15.3900 stop 15.2064
+  08:31  SIGNAL BIAF falling_wedge A @ 11.4501 stop 11.3131
+  08:32  SIGNAL OLB falling_wedge A++ @ 0.2492 stop 0.2426
+  [08:34] 84,649 bars, 37,483 5m, 36 signals, 2 entries, 3 open
+  08:36  SIGNAL RGTX ascending_triangle A @ 10.6700 stop 10.0893
+  08:36  SIGNAL RGTI ascending_triangle A @ 16.4800 stop 15.9011
+  08:36  SIGNAL INFQ ascending_triangle A @ 13.3760 stop 13.1056
+  [08:39] 86,950 bars, 38,484 5m, 39 signals, 2 entries, 3 open
+  08:41  SIGNAL TSLL retest A @ 9.2195 stop 9.1080
+  [08:44] 89,181 bars, 39,512 5m, 40 signals, 2 entries, 3 open
+  08:46  SIGNAL SOUN ascending_triangle A @ 6.7700 stop 6.6764
+  08:46  SIGNAL TSLL retest A @ 9.2200 stop 9.1080
+  [08:49] 91,424 bars, 40,555 5m, 42 signals, 2 entries, 3 open
+  08:51  SIGNAL NOK retest A @ 10.4200 stop 10.2960
+  08:51  SIGNAL TSLL retest A++ @ 9.2200 stop 9.1080
+  08:51  SIGNAL NVTS retest A++ @ 12.0800 stop 11.9059
+  [08:54] 93,918 bars, 41,677 5m, 45 signals, 2 entries, 3 open
+  08:56  SIGNAL OLB falling_wedge A @ 0.2500 stop 0.2426
+  08:56  SIGNAL AMPX ascending_triangle A @ 10.0700 stop 9.9500
+  08:56  SIGNAL NOK retest A @ 10.4200 stop 10.2960
+  08:57  SIGNAL PL retest A @ 18.1200 stop 17.8992
+  08:57  SIGNAL TSLT ascending_triangle A @ 12.8300 stop 12.7260
+  [08:59] 96,415 bars, 42,827 5m, 50 signals, 2 entries, 3 open
+  09:01  SIGNAL TSLL retest A++ @ 9.2300 stop 9.1080
+  09:01  SIGNAL BNC falling_wedge A @ 5.4600 stop 4.8158
+  09:01  SIGNAL BIAF falling_wedge A @ 10.6578 stop 10.2584
+  09:03  SIGNAL CRMG ascending_triangle A @ 9.9500 stop 9.8107
+  [09:04] 99,317 bars, 44,121 5m, 54 signals, 2 entries, 3 open
+  09:06  SIGNAL GME ascending_triangle A @ 19.3520 stop 18.5966
+  09:06  SIGNAL TSLL retest A @ 9.2700 stop 9.1080
+  [09:09] 102,185 bars, 45,325 5m, 56 signals, 2 entries, 3 open
+  09:11  SIGNAL PCG ascending_triangle A @ 14.3000 stop 14.1688
+  09:11  SIGNAL OLB falling_wedge A @ 0.2525 stop 0.2418
+  [09:14] 104,773 bars, 46,507 5m, 58 signals, 2 entries, 3 open
+  09:16  SIGNAL TSLL ascending_triangle A @ 9.2800 stop 9.1442
+  [09:19] 107,631 bars, 47,793 5m, 59 signals, 2 entries, 3 open
+  09:19  SIGNAL OLB retest A @ 0.2528 stop 0.2406
+  09:20  SIGNAL LHAI ascending_triangle A @ 1.1800 stop 1.1343
+  09:21  SIGNAL CLSK ascending_triangle A++ @ 12.7600 stop 12.5868
+  09:22  SIGNAL AMPX ascending_triangle A @ 10.1500 stop 9.9500
+  09:22  SIGNAL NVTS ascending_triangle A @ 12.1300 stop 11.9576
+  [09:24] 111,065 bars, 49,238 5m, 64 signals, 2 entries, 3 open
+  09:26  SIGNAL NVTS retest A @ 12.1395 stop 11.9394
+  [09:29] 115,149 bars, 51,058 5m, 65 signals, 2 entries, 3 open
+  09:31  SIGNAL CANF ascending_triangle A @ 2.2700 stop 2.2288
+  09:31  SIGNAL RGTI ascending_triangle A @ 16.5820 stop 16.0195
+  09:31  SIGNAL RAM ascending_triangle A @ 14.7300 stop 14.4375
+  09:31  SIGNAL BXBL falling_wedge A @ 4.5000 stop 4.2884
+  09:31  SIGNAL SST ascending_triangle A @ 4.0732 stop 3.7830
+  09:31  SIGNAL QPUX ascending_triangle A @ 15.0000 stop 14.4673
+  09:31  SIGNAL RR ascending_triangle A @ 1.7500 stop 1.7313
+  09:31  SIGNAL SGLY falling_wedge A @ 1.4600 stop 1.4228
+  09:31  SIGNAL NVTS ascending_triangle A @ 12.1800 stop 11.9499
+  09:31  SIGNAL NOK ascending_triangle A @ 10.4625 stop 10.3281
+  09:31  SIGNAL RGTU ascending_triangle A @ 11.5600 stop 11.2136
+  [09:34] 135,757 bars, 56,793 5m, 76 signals, 2 entries, 2 open
+  09:36  SIGNAL AMPX retest A @ 10.1836 stop 9.9792
+  09:36  BUY AMPX x792 @ 10.1836 stop 9.6744 (5.0%) [retest]
+  09:36  SIGNAL TSLG ascending_triangle A @ 4.7300 stop 4.5472
+  09:36  SIGNAL LHAI ascending_triangle A @ 1.2117 stop 1.1343
+  09:36  SIGNAL MSTZ pennant A @ 4.0343 stop 3.8706
+  09:36  SIGNAL QPUX ascending_triangle A @ 15.0367 stop 14.4673
+  09:36  SIGNAL RGTI ascending_triangle A @ 16.5792 stop 16.0195
+  09:36  SIGNAL SMST ascending_triangle A @ 19.9650 stop 19.2134
+  09:36  SIGNAL BMNZ ascending_triangle A @ 5.5400 stop 5.3730
+  09:36  SIGNAL TSLL ascending_triangle A @ 9.5250 stop 9.1540
+  09:36  SIGNAL TMC ascending_triangle A @ 4.4650 stop 4.4177
+  09:36  SIGNAL CLSK ascending_triangle A @ 12.7300 stop 12.4673
+  09:36  SIGNAL VALE ascending_triangle A @ 15.7150 stop 15.4125
+  09:36  SIGNAL ORCU retest A @ 9.9700 stop 9.7218
+  09:36  SIGNAL TSLR ascending_triangle A @ 16.4200 stop 15.7707
+  09:36  SIGNAL INFQ ascending_triangle A @ 13.9450 stop 13.1343
+  09:36  SIGNAL PBR.A ascending_triangle A @ 18.8597 stop 18.5567
+  09:36  SIGNAL TSLT ascending_triangle A @ 13.2800 stop 12.7559
+  09:36  SIGNAL SMR ascending_triangle A @ 10.0777 stop 9.7897
+  09:38  SIGNAL CANF ascending_triangle A @ 2.2700 stop 2.2288
+  [09:39] 159,303 bars, 62,962 5m, 95 signals, 3 entries, 3 open
+  09:41  SIGNAL AOUT pennant A++ @ 15.5900 stop 14.4225
+  09:41  SIGNAL VALE retest A @ 15.7750 stop 15.4688
+  09:41  SIGNAL RAM ascending_triangle A @ 14.6580 stop 14.3379
+  09:41  SIGNAL PTON ascending_triangle A @ 5.2000 stop 5.0546
+  09:42  SIGNAL CVKD ascending_triangle A @ 1.2400 stop 1.1582
+  [09:44] 183,888 bars, 69,808 5m, 100 signals, 3 entries, 3 open
+  09:46  SIGNAL MUZ pennant A @ 8.0301 stop 7.5222
+  09:46  SIGNAL OLB retest A++ @ 0.2525 stop 0.2413
+  09:46  SIGNAL EROC ascending_triangle A @ 13.0900 stop 12.2982
+  09:46  SIGNAL CAN ascending_triangle A @ 0.3534 stop 0.3243
+  09:46  SIGNAL CORZ ascending_triangle A @ 18.3500 stop 17.9398
+  09:46  SIGNAL CLSK ascending_triangle A @ 12.8200 stop 12.4673
+  [09:49] 205,058 bars, 76,479 5m, 106 signals, 3 entries, 3 open
+  09:51  SIGNAL ORCZ retest A++ @ 12.6700 stop 11.8503
+  09:51  SIGNAL GRRR ascending_triangle A @ 14.0700 stop 13.5519
+  09:51  SIGNAL AOUT pennant A @ 15.9438 stop 14.4225
+  09:51  SIGNAL CIEG ascending_triangle A @ 3.7500 stop 3.5882
+  09:51  SIGNAL YQ pennant A @ 3.5000 stop 3.0049
+  [09:54] 228,071 bars, 83,203 5m, 111 signals, 3 entries, 3 open
+  09:56  SIGNAL TSLR retest A++ @ 16.1892 stop 15.8202
+  09:56  SIGNAL TSLL retest A @ 9.3800 stop 9.1674
+  09:56  SIGNAL SOFX retest A @ 9.5600 stop 9.3753
+  09:56  SIGNAL PCG ascending_triangle A @ 14.4450 stop 14.1688
+  09:56  SIGNAL BNC falling_wedge A @ 5.2250 stop 4.8059
+  09:56  SIGNAL HYPD pennant A @ 3.4850 stop 3.1542
+  09:56  SIGNAL TSLG ascending_triangle A @ 4.6550 stop 4.5642
+  [09:59] 253,373 bars, 90,016 5m, 118 signals, 3 entries, 3 open
+  10:01  SIGNAL RAM retest A @ 14.5750 stop 14.1273
+  10:01  SIGNAL EOSE ascending_triangle A @ 4.4600 stop 3.9303
+  10:01  SIGNAL OLB ascending_triangle A @ 0.2733 stop 0.2425
+  10:01  SIGNAL SMST ascending_triangle A @ 19.8500 stop 19.2134
+  10:01  SIGNAL SGLY ascending_triangle A @ 1.5000 stop 1.4228
+  10:01  SIGNAL DSS ascending_triangle A @ 0.8255 stop 0.7895
+  [10:05] 276,608 bars, 96,847 5m, 124 signals, 3 entries, 3 open
+  10:06  SIGNAL TSLG ascending_triangle A @ 4.7300 stop 4.5671
+  10:06  SIGNAL TSLR retest A++ @ 16.4000 stop 15.8895
+  10:06  SIGNAL CVKD retest A++ @ 1.2420 stop 1.2098
+  10:06  SIGNAL SMST retest A++ @ 19.5799 stop 19.2966
+  10:06  SIGNAL TSLT retest A @ 13.2450 stop 12.8304
+  10:06  SIGNAL PCG retest A @ 14.5200 stop 14.1283
+  10:06  SIGNAL TSLL retest A++ @ 9.5150 stop 9.2070
+  10:08  SIGNAL RGTU retest A @ 11.6600 stop 11.4048
+  [10:10] 298,823 bars, 103,467 5m, 132 signals, 3 entries, 3 open
+  10:11  SIGNAL NVTS retest A @ 12.3950 stop 12.0791
+  10:11  SIGNAL RGTU retest A @ 11.6600 stop 11.4048
+  10:11  SIGNAL PBR.A retest A @ 19.0250 stop 18.7753
+  10:11  SIGNAL PCG retest A @ 14.5450 stop 14.1283
+  [10:15] 321,619 bars, 110,293 5m, 136 signals, 3 entries, 3 open
+  10:16  SIGNAL BNC retest A @ 4.9400 stop 4.7916
+  10:16  SIGNAL MSTZ retest A @ 3.9850 stop 3.8907
+  10:16  SIGNAL TSLL retest A @ 9.5500 stop 9.2664
+  10:16  SIGNAL TSLT retest A @ 13.3100 stop 12.9195
+  10:16  SIGNAL TSLR retest A @ 16.4800 stop 16.0083
+  10:16  SIGNAL RGTU retest A++ @ 11.4500 stop 11.2860
+  10:16  SIGNAL CAN retest A @ 0.3350 stop 0.3267
+  [10:20] 343,932 bars, 117,158 5m, 143 signals, 3 entries, 3 open
+  10:21  SIGNAL AMPX retest A @ 10.2250 stop 10.0138
+  10:21  SIGNAL PBR.A retest A @ 18.9500 stop 18.7209
+  10:21  SIGNAL LUNR retest A++ @ 15.2750 stop 14.9316
+  [10:25] 367,082 bars, 123,960 5m, 146 signals, 3 entries, 3 open
+  10:26  SIGNAL NVTS ascending_triangle A @ 12.3850 stop 11.9201
+  10:26  SIGNAL PBR.A retest A @ 18.9800 stop 18.7209
+  10:26  SIGNAL ALTI ascending_triangle A @ 3.3400 stop 3.1840
+  10:26  SIGNAL FLG retest A @ 13.5650 stop 13.4145
+  10:27  SIGNAL NRSN retest A @ 0.5128 stop 0.4853
+  [10:30] 387,766 bars, 130,634 5m, 151 signals, 3 entries, 3 open
+  10:31  SIGNAL TMC retest A @ 4.5201 stop 4.4600
+  10:31  SIGNAL CAN retest A++ @ 0.3292 stop 0.3245
+  10:31  SIGNAL NVTS retest A++ @ 12.4100 stop 12.2117
+  10:31  SIGNAL OLB retest A @ 0.2646 stop 0.2574
+  10:32  SIGNAL QPUX retest A++ @ 14.7800 stop 14.4540
+  [10:35] 411,357 bars, 137,285 5m, 156 signals, 3 entries, 3 open
+  10:36  SIGNAL VG retest A @ 14.8050 stop 14.5282
+  10:36  SIGNAL BMNZ retest A @ 5.4100 stop 5.3312
+  10:36  SIGNAL TGL ascending_triangle A @ 2.7300 stop 2.6069
+  10:36  SIGNAL RGTI retest A++ @ 16.1450 stop 15.9489
+  10:36  SIGNAL VALE retest A @ 15.8000 stop 15.5133
+  10:36  SIGNAL MUD ascending_triangle A @ 9.7700 stop 9.6217
+  10:36  SIGNAL ITUB ascending_triangle A @ 8.4450 stop 8.2983
+  10:36  SIGNAL MSTZ retest A @ 3.9500 stop 3.8558
+  [10:40] 430,568 bars, 143,716 5m, 164 signals, 3 entries, 3 open
+  10:41  SIGNAL CAN retest A++ @ 0.3281 stop 0.3217
+  10:41  SIGNAL TMC ascending_triangle A++ @ 4.5000 stop 4.3780
+  10:41  SIGNAL SOFX retest A @ 9.5100 stop 9.3778
+  10:41  SIGNAL BNC retest A @ 4.7598 stop 4.5441
+  10:41  SIGNAL LUNR retest A @ 15.2850 stop 15.0876
+  10:41  SIGNAL NVTS retest A @ 12.4050 stop 12.1721
+  10:41  SIGNAL RBLU ascending_triangle A++ @ 4.7700 stop 4.5472
+  10:41  SIGNAL GRRR retest A @ 14.2707 stop 14.0481
+  10:41  SIGNAL AMPX ascending_triangle A @ 10.2800 stop 10.0346
+  10:41  SIGNAL QID ascending_triangle A @ 14.2150 stop 14.1190
+  10:43  SIGNAL TGL ascending_triangle A @ 2.7450 stop 2.6069
+  [10:45] 451,442 bars, 150,301 5m, 175 signals, 3 entries, 3 open
+  10:46  SIGNAL ITUB retest A @ 8.4200 stop 8.3161
+  10:46  SIGNAL LUNR retest A++ @ 15.2200 stop 15.0283
+  10:46  SIGNAL BXBL falling_wedge A @ 4.2100 stop 4.0795
+  10:46  SIGNAL RAM retest A @ 14.6599 stop 14.3450
+  10:46  SIGNAL VERU falling_wedge A++ @ 2.7401 stop 2.6168
+  [10:50] 474,030 bars, 156,945 5m, 180 signals, 3 entries, 3 open
+  10:51  SIGNAL VERU falling_wedge A++ @ 2.7552 stop 2.6268
+  10:51  SIGNAL NN retest A @ 15.3300 stop 15.1371
+  [10:55] 494,579 bars, 163,516 5m, 182 signals, 3 entries, 3 open
+  10:56  SIGNAL SVM retest A++ @ 12.5500 stop 12.3750
+  10:56  SIGNAL IPDN falling_wedge A @ 0.1085 stop 0.1046
+  10:56  SIGNAL PCG retest A @ 14.6000 stop 14.4255
+  10:56  SIGNAL NN retest A++ @ 15.3200 stop 15.1371
+  10:56  SIGNAL APLX ascending_triangle A @ 9.6800 stop 9.2635
+  10:56  SIGNAL SST ascending_triangle A @ 3.9400 stop 3.7919
+  10:56  SIGNAL ATRA ascending_triangle A @ 11.2400 stop 10.5572
+  10:56  SIGNAL NOK ascending_triangle A @ 10.4901 stop 10.2883
+  10:57  SIGNAL BTCL ascending_triangle A @ 17.9800 stop 17.4722
+  10:58  SIGNAL BCAT ascending_triangle A @ 16.0516 stop 15.9349
+  [11:00] 515,039 bars, 170,035 5m, 192 signals, 3 entries, 3 open
+  11:01  SIGNAL SVM ascending_triangle A @ 12.5950 stop 12.4375
+  11:01  SIGNAL RGTI retest A++ @ 16.0799 stop 15.7509
+  11:01  SIGNAL CORZ retest A @ 18.4800 stop 18.0081
+  11:01  SIGNAL QPUX ascending_triangle A @ 14.9200 stop 14.5170
+  11:01  SIGNAL CAN retest A @ 0.3300 stop 0.3201
+  11:01  SIGNAL NOK retest A @ 10.5700 stop 10.3158
+  11:01  SIGNAL GLNK retest A++ @ 11.1550 stop 10.9989
+  11:01  SIGNAL BRUN ascending_triangle A @ 18.8132 stop 18.3130
+  11:01  SIGNAL QCML ascending_triangle A @ 17.3464 stop 17.0692
+  11:02  SIGNAL BTCL ascending_triangle A @ 17.9925 stop 17.4722
+  [11:05] 536,347 bars, 176,540 5m, 202 signals, 3 entries, 3 open
+  11:05  SIGNAL IPDN falling_wedge A @ 0.1085 stop 0.1046
+  11:06  SIGNAL NRSN retest A++ @ 0.5029 stop 0.4952
+  11:06  SIGNAL SGMT ascending_triangle A @ 11.0050 stop 10.8206
+  11:06  SIGNAL CAST retest A++ @ 1.4000 stop 1.3662
+  11:06  SIGNAL RGTI retest A @ 16.1450 stop 15.7509
+  [11:10] 556,377 bars, 182,850 5m, 207 signals, 3 entries, 3 open
+  11:10  SIGNAL IPDN falling_wedge A @ 0.1090 stop 0.1063
+  11:11  SIGNAL NOWL falling_wedge A @ 7.2700 stop 7.1242
+  11:11  SIGNAL BNC retest A++ @ 4.9888 stop 4.6530
+  11:11  SIGNAL PLTM ascending_triangle A @ 17.7400 stop 17.5419
+  11:11  SIGNAL VALE retest A @ 15.7500 stop 15.5628
+  11:11  SIGNAL IPDN falling_wedge A @ 0.1090 stop 0.1063
+  11:11  SIGNAL ACHR ascending_triangle A @ 5.7450 stop 5.6417
+  11:11  SIGNAL FLG retest A @ 13.5100 stop 13.3650
+  11:13  SIGNAL NRSN retest A @ 0.5030 stop 0.4952
+  [11:16] 581,072 bars, 189,679 5m, 216 signals, 3 entries, 3 open
+  11:16  SIGNAL BNC retest A++ @ 4.9900 stop 4.6827
+  11:16  SIGNAL BILI retest A @ 16.0000 stop 15.8004
+  11:16  SIGNAL SPAL ascending_triangle A @ 17.0200 stop 16.5468
+  11:16  SIGNAL BRUN retest A @ 19.2200 stop 18.5130
+  11:16  SIGNAL SGMT retest A @ 10.9950 stop 10.8306
+  11:16  SIGNAL MUD retest A++ @ 9.7400 stop 9.6376
+  11:16  SIGNAL RAM retest A++ @ 14.7150 stop 14.3968
+  11:16  SIGNAL MSGM ascending_triangle A++ @ 4.7500 stop 4.6268
+  11:17  SIGNAL QPUX ascending_triangle A @ 15.1100 stop 14.5170
+  [11:21] 602,056 bars, 196,256 5m, 225 signals, 3 entries, 3 open
+  11:21  SIGNAL NOWL retest A @ 7.3287 stop 7.1627
+  11:21  SIGNAL SPAL ascending_triangle A @ 17.1900 stop 16.5468
+  11:21  SIGNAL SAN ascending_triangle A @ 14.9850 stop 14.8106
+  11:21  SIGNAL BNC falling_wedge A @ 5.2990 stop 4.5671
+  11:21  SIGNAL NVTS retest A @ 12.5100 stop 12.3255
+  11:21  SIGNAL USDE pennant A @ 7.9798 stop 7.4625
+  11:21  SIGNAL RGTI retest A @ 16.3050 stop 15.8895
+  11:21  SIGNAL SVM retest A @ 12.5650 stop 12.4245
+  11:22  SIGNAL MSGM ascending_triangle A++ @ 4.7750 stop 4.6268
+  11:22  SIGNAL BIAF falling_wedge A @ 8.9885 stop 8.5073
+  [11:26] 623,733 bars, 203,108 5m, 235 signals, 3 entries, 3 open
+  11:26  SIGNAL SPAL ascending_triangle A @ 17.3500 stop 16.5468
+  11:26  SIGNAL RAM retest A @ 14.6750 stop 14.4639
+  11:26  SIGNAL IMPP ascending_triangle A @ 5.2200 stop 5.1441
+  11:26  SIGNAL ICLN retest A @ 18.3450 stop 18.1269
+  11:27  SIGNAL ALMU retest A @ 13.3696 stop 13.1175
+  [11:31] 644,961 bars, 209,871 5m, 240 signals, 3 entries, 3 open
+  11:31  SIGNAL CAN retest A++ @ 0.3295 stop 0.3226
+  11:31  SIGNAL RGTI retest A @ 16.2950 stop 16.0479
+  11:31  SIGNAL PTON retest A @ 5.1110 stop 5.0540
+  11:32  SIGNAL IMUX retest A++ @ 13.0800 stop 12.6769
+  11:34  SIGNAL NRSN retest A++ @ 0.5050 stop 0.4951
+  11:35  SIGNAL IMPP ascending_triangle A @ 5.2301 stop 5.1441
+  [11:36] 665,014 bars, 215,942 5m, 246 signals, 3 entries, 3 open
+  11:36  SIGNAL WDH falling_wedge A @ 1.1150 stop 1.0547
+  11:36  SIGNAL PSNY ascending_triangle A @ 9.6718 stop 9.3033
+  11:36  SIGNAL PTON retest A @ 5.1150 stop 5.0540
+  11:36  SIGNAL ZTG pennant A @ 0.7532 stop 0.7221
+  11:36  SIGNAL IMUX retest A++ @ 13.1000 stop 12.6769
+  11:36  SIGNAL RGTI retest A @ 16.3750 stop 16.0479
+  11:36  SIGNAL CHAI ascending_triangle A @ 0.2780 stop 0.2727
+  11:36  SIGNAL BILI retest A++ @ 15.9650 stop 15.7905
+  11:36  SIGNAL CAN retest A++ @ 0.3295 stop 0.3238
+  11:36  SIGNAL IMPP retest A++ @ 5.2500 stop 5.1529
+  11:41  SIGNAL OLB ascending_triangle A @ 0.2874 stop 0.2681
+  [11:41] 685,333 bars, 222,433 5m, 257 signals, 3 entries, 3 open
+  11:41  SIGNAL ICLN retest A @ 18.3701 stop 18.1319
+  11:41  SIGNAL PTON retest A @ 5.1099 stop 5.0490
+  11:41  SIGNAL RGTI retest A++ @ 16.3950 stop 16.0578
+  11:41  SIGNAL RAM retest A++ @ 14.6550 stop 14.4455
+  11:41  SIGNAL IMUX retest A++ @ 13.1800 stop 12.8502
+  11:41  SIGNAL ORCU retest A @ 9.6850 stop 9.4941
+  11:41  SIGNAL NTSK retest A++ @ 14.2250 stop 14.0432
+  11:41  SIGNAL QPUX ascending_triangle A @ 15.3500 stop 14.5768
+  11:42  SIGNAL PSNY retest A++ @ 9.7900 stop 9.4446
+  11:43  SIGNAL MSGM ascending_triangle A @ 4.8000 stop 4.6268
+  11:43  SIGNAL CYAB falling_wedge A++ @ 0.3469 stop 0.3357
+  11:45  SIGNAL VMAR falling_wedge A @ 8.7300 stop 8.3987
+  [11:46] 706,097 bars, 228,947 5m, 269 signals, 3 entries, 3 open
+  11:46  SIGNAL YQ ascending_triangle A @ 3.7500 stop 3.4327
+  11:46  SIGNAL VMAR falling_wedge A @ 8.7300 stop 8.3987
+  11:46  SIGNAL PSNY retest A++ @ 9.7700 stop 9.5337
+  11:46  SIGNAL ITUB retest A @ 8.3700 stop 8.2764
+  11:46  SIGNAL ORCU falling_wedge A @ 9.6950 stop 9.4823
+  11:46  SIGNAL BILI retest A++ @ 15.9750 stop 15.7856
+  11:47  SIGNAL FLD pennant A @ 0.5683 stop 0.5211
+  11:51  SIGNAL PROK retest A @ 2.0500 stop 1.9998
+  [11:51] 726,944 bars, 235,824 5m, 277 signals, 3 entries, 3 open
+  11:51  SIGNAL PSNY retest A++ @ 9.7900 stop 9.5337
+  11:51  SIGNAL ITUB retest A @ 8.3700 stop 8.2764
+  11:51  SIGNAL YQ ascending_triangle A @ 3.7800 stop 3.4327
+  11:51  SIGNAL NIO ascending_triangle A @ 3.7823 stop 3.7462
+  11:51  SIGNAL BITO ascending_triangle A @ 10.5936 stop 10.4873
+  11:51  SIGNAL XPEV ascending_triangle A @ 10.9390 stop 10.8107
+  11:53  SIGNAL ZEO ascending_triangle A @ 0.2493 stop 0.2408
+  11:56  SIGNAL SST pennant A @ 4.2600 stop 3.8706
+  [11:56] 747,309 bars, 242,478 5m, 285 signals, 3 entries, 3 open
+  11:56  SIGNAL STDN ascending_triangle A @ 13.9000 stop 13.4922
+  11:56  SIGNAL AMPX retest A @ 10.5350 stop 10.3900
+  11:56  SIGNAL NN retest A @ 15.5000 stop 15.3004
+  11:56  SIGNAL UAE ascending_triangle A @ 19.7900 stop 19.6423
+  11:56  SIGNAL IMPP retest A @ 5.1810 stop 5.1133
+  11:56  SIGNAL IMSR ascending_triangle A @ 5.6950 stop 5.5819
+  11:56  SIGNAL ICLN retest A @ 18.4100 stop 18.1863
+  11:56  SIGNAL CAN retest A++ @ 0.3278 stop 0.3232
+  11:56  SIGNAL ALOY retest A++ @ 10.3500 stop 10.1772
+  11:56  SIGNAL BAOS ascending_triangle A @ 0.3190 stop 0.3108
+  11:57  SIGNAL TIC ascending_triangle A @ 9.5600 stop 9.4077
+  12:01  SIGNAL XE ascending_triangle A @ 18.8650 stop 18.6562
+  [12:01] 766,964 bars, 248,596 5m, 297 signals, 3 entries, 3 open
+  12:01  SIGNAL IMSR ascending_triangle A @ 5.7150 stop 5.5819
+  12:01  SIGNAL SIND pennant A @ 16.5300 stop 16.0991
+  12:01  SIGNAL IMUX ascending_triangle A++ @ 13.1350 stop 12.7410
+  12:01  SIGNAL STDN retest A++ @ 13.8797 stop 13.5040
+  12:01  SIGNAL NOWL retest A++ @ 7.2750 stop 7.1874
+  12:06  SIGNAL BILI retest A @ 15.9400 stop 15.7509
+  12:06  SIGNAL NN retest A @ 15.1988 stop 14.9391
+  [12:06] 787,756 bars, 255,035 5m, 304 signals, 3 entries, 3 open
+  12:06  SIGNAL IMSR retest A @ 5.7150 stop 5.5935
+  12:06  SIGNAL SVM retest A @ 12.5250 stop 12.3651
+  12:06  SIGNAL NOWL retest A++ @ 7.2600 stop 7.1686
+  12:06  SIGNAL ALOY retest A @ 10.3800 stop 10.2069
+  12:06  SIGNAL RGTI retest A++ @ 16.3350 stop 16.0875
+  12:06  SIGNAL BNC retest A @ 5.1400 stop 4.8411
+  12:10  SIGNAL FLD retest A @ 0.5632 stop 0.5516
+  12:11  SIGNAL NBXG ascending_triangle A @ 15.7000 stop 15.4324
+  12:11  SIGNAL MOMO retest A @ 5.2250 stop 5.1480
+  [12:11] 808,755 bars, 262,343 5m, 313 signals, 3 entries, 3 open
+  12:11  SIGNAL POEL ascending_triangle A @ 10.3065 stop 10.1390
+  12:11  SIGNAL TIC retest A @ 9.5850 stop 9.4496
+  12:13  SIGNAL FORR retest A @ 12.5600 stop 12.3156
+  12:14  SIGNAL CLGN falling_wedge A @ 3.3500 stop 3.2835
+  12:16  SIGNAL STDN retest A @ 13.8400 stop 13.5828
+  12:16  SIGNAL SVM retest A @ 12.4500 stop 12.3008
+  [12:16] 829,022 bars, 268,847 5m, 319 signals, 3 entries, 3 open
+  12:16  SIGNAL MS.PRO ascending_triangle A @ 16.3100 stop 16.1488
+  12:16  SIGNAL NN retest A @ 15.0850 stop 14.8500
+  12:16  SIGNAL RAM retest A++ @ 14.6900 stop 14.4941
+  12:16  SIGNAL ODD retest A @ 13.4300 stop 13.2363
+  12:16  SIGNAL PTON retest A @ 5.0400 stop 4.9748
+  12:16  SIGNAL TIC retest A @ 9.5900 stop 9.4496
+  12:17  SIGNAL MSGM retest A @ 4.7981 stop 4.6926
+  12:18  SIGNAL MYN retest A @ 9.4900 stop 9.3439
+  12:20  SIGNAL CLGN falling_wedge A @ 3.3500 stop 3.2835
+  12:21  SIGNAL BNC retest A++ @ 5.2976 stop 5.0193
+  12:21  SIGNAL NTSK retest A++ @ 14.2400 stop 14.0630
+  [12:21] 847,862 bars, 274,337 5m, 330 signals, 3 entries, 3 open
+  12:21  SIGNAL PLSM retest A++ @ 2.4600 stop 2.3638
+  12:21  SIGNAL SMZ falling_wedge A @ 11.5400 stop 10.6764
+  12:21  SIGNAL QPUX retest A @ 15.1500 stop 14.9589
+  12:21  SIGNAL RAM retest A @ 14.6950 stop 14.4941
+  12:21  SIGNAL BITO retest A++ @ 10.5701 stop 10.4544
+  12:21  SIGNAL ALOY ascending_triangle A @ 10.2800 stop 10.1888
+  12:23  SIGNAL IMPP retest A @ 5.2180 stop 5.1232
+  12:24  SIGNAL TEO retest A++ @ 13.1600 stop 12.9888
+  12:24  SIGNAL EDD ascending_triangle A @ 5.9850 stop 5.9402
+  12:26  SIGNAL AMPX retest A @ 10.4536 stop 10.3307
+  12:26  SIGNAL QMLS ascending_triangle A @ 6.5000 stop 6.2148
+  [12:26] 867,760 bars, 281,144 5m, 341 signals, 3 entries, 3 open
+  12:26  SIGNAL RAM retest A++ @ 14.6910 stop 14.4941
+  12:26  SIGNAL BITO retest A @ 10.5800 stop 10.4544
+  12:26  SIGNAL STDN ascending_triangle A @ 13.8457 stop 13.5221
+  12:26  SIGNAL NN retest A @ 15.1000 stop 14.8946
+  12:27  SIGNAL GEL ascending_triangle A @ 16.0000 stop 15.8503
+  12:27  SIGNAL KINS ascending_triangle A @ 19.9400 stop 19.7010
+  12:29  SIGNAL PLSM retest A++ @ 2.4600 stop 2.3638
+  [12:31] 887,995 bars, 287,973 5m, 348 signals, 3 entries, 3 open
+  12:31  SIGNAL ADBG falling_wedge A @ 4.3601 stop 4.3283
+  12:31  SIGNAL SPWR retest A @ 0.3424 stop 0.3376
+  12:31  SIGNAL TSLT ascending_triangle A @ 13.7500 stop 13.4773
+  12:36  SIGNAL TEO retest A @ 13.1800 stop 12.9888
+  12:36  SIGNAL BIAF falling_wedge A @ 9.1726 stop 8.8356
+  12:36  SIGNAL ALOY retest A++ @ 10.2650 stop 10.0980
+  [12:36] 906,474 bars, 293,677 5m, 354 signals, 3 entries, 3 open
+  12:36  SIGNAL BRR ascending_triangle A @ 2.7250 stop 2.6666
+  12:36  SIGNAL QVCG ascending_triangle A @ 17.9600 stop 17.5419
+  12:36  SIGNAL AOUT falling_wedge A++ @ 14.4550 stop 13.7807
+  12:37  SIGNAL CIEG ascending_triangle A @ 4.0000 stop 3.9104
+  12:41  SIGNAL DHC ascending_triangle A @ 7.6200 stop 7.5371
+  12:41  SIGNAL PDI ascending_triangle A @ 15.3500 stop 15.1837
+  [12:41] 925,769 bars, 300,114 5m, 360 signals, 3 entries, 3 open
+  12:41  SIGNAL BITO ascending_triangle A @ 10.5999 stop 10.5072
+  12:41  SIGNAL XTND falling_wedge A @ 5.4060 stop 5.3332
+  12:41  SIGNAL OLB retest A++ @ 0.2778 stop 0.2684
+  12:42  SIGNAL USNA ascending_triangle A @ 15.2300 stop 14.9797
+  12:43  SIGNAL RELL ascending_triangle A @ 17.5500 stop 17.4424
+  12:45  SIGNAL IMPP ascending_triangle A @ 5.2600 stop 5.1342
+  12:46  SIGNAL RMT ascending_triangle A @ 14.0000 stop 13.9101
+  12:46  SIGNAL FLD retest A @ 0.5632 stop 0.5516
+  12:46  SIGNAL NOK ascending_triangle A @ 10.7700 stop 10.6166
+  12:46  SIGNAL XTND falling_wedge A @ 5.4093 stop 5.3332
+  [12:46] 944,637 bars, 306,186 5m, 370 signals, 3 entries, 3 open
+  12:46  SIGNAL MYI retest A++ @ 10.4800 stop 10.3700
+  12:46  SIGNAL BNC retest A++ @ 5.2800 stop 5.0490
+  12:46  SIGNAL FAC ascending_triangle A++ @ 5.9700 stop 5.8804
+  12:46  SIGNAL NOWL retest A @ 7.2250 stop 7.1033
+  12:46  SIGNAL WETO falling_wedge A @ 2.5000 stop 2.4676
+  12:46  SIGNAL ITUB retest A @ 8.3050 stop 8.1972
+  12:47  SIGNAL ALVO ascending_triangle A++ @ 5.2850 stop 5.2387
+  12:47  SIGNAL USNA ascending_triangle A @ 15.2700 stop 14.9797
+  12:49  SIGNAL UZX ascending_triangle A @ 0.1170 stop 0.1144
+  12:51  SIGNAL RKT retest A @ 14.0400 stop 13.8353
+  12:51  SIGNAL PMT ascending_triangle A @ 9.6650 stop 9.5968
+  12:51  SIGNAL RAM retest A @ 14.5900 stop 14.4045
+  12:51  SIGNAL XTND falling_wedge A @ 5.4298 stop 5.3332
+  [12:51] 964,068 bars, 312,673 5m, 383 signals, 3 entries, 3 open
+  12:51  SIGNAL FAC ascending_triangle A @ 5.9800 stop 5.8804
+  12:51  SIGNAL BILI ascending_triangle A @ 16.1850 stop 15.8305
+  12:51  SIGNAL SMZ retest A @ 11.2300 stop 11.0484
+  12:51  SIGNAL ODD retest A @ 13.3100 stop 13.0878
+  12:51  SIGNAL ADUR ascending_triangle A @ 13.6920 stop 13.5022
+  12:52  SIGNAL TKC ascending_triangle A @ 5.2400 stop 5.2039
+  12:52  SIGNAL MYI retest A++ @ 10.4800 stop 10.3700
+  12:53  SIGNAL OLB retest A @ 0.2833 stop 0.2692
+  12:54  SIGNAL IMPP ascending_triangle A @ 5.2400 stop 5.1342
+  12:56  SIGNAL PMT ascending_triangle A @ 9.6650 stop 9.5968
+  12:56  SIGNAL STDN retest A @ 13.8700 stop 13.6224
+  12:56  SIGNAL VIXY ascending_triangle A @ 17.1550 stop 17.0443
+  [12:56] 983,889 bars, 319,483 5m, 395 signals, 3 entries, 3 open
+  12:56  SIGNAL SPWR retest A @ 0.3426 stop 0.3366
+  12:57  SIGNAL RMBI ascending_triangle A++ @ 16.1950 stop 16.0593
+  12:57  SIGNAL SAN retest A @ 14.9000 stop 14.7411
+  12:58  SIGNAL NRSN falling_wedge A++ @ 0.4190 stop 0.3582
+  12:58  SIGNAL ACP ascending_triangle A @ 4.9690 stop 4.9352
+  12:59  SIGNAL XRPI ascending_triangle A @ 7.8156 stop 7.7212
+  13:01  SIGNAL VALE retest A @ 15.6150 stop 15.4143
+  13:01  SIGNAL UZX ascending_triangle A @ 0.1180 stop 0.1144
+  [13:01] 1,003,972 bars, 325,877 5m, 403 signals, 3 entries, 3 open
+  13:01  SIGNAL WETO falling_wedge A++ @ 2.4825 stop 2.4278
+  13:01  SIGNAL NOK retest A @ 10.7850 stop 10.6227
+  13:01  SIGNAL SAN retest A++ @ 14.9000 stop 14.7263
+  13:01  SIGNAL RAM retest A @ 14.6000 stop 14.3649
+  13:01  SIGNAL SMCZ ascending_triangle A @ 2.6499 stop 2.5870
+  13:01  SIGNAL PSQL falling_wedge A++ @ 7.5400 stop 7.2635
+  13:02  SIGNAL XRPI ascending_triangle A @ 7.8156 stop 7.7212
+  13:06  SIGNAL OLB retest A @ 0.2789 stop 0.2723
+  13:06  SIGNAL DAIC ascending_triangle A @ 3.0000 stop 2.9054
+  13:06  SIGNAL QPUX falling_wedge A++ @ 15.0000 stop 14.6166
+  13:06  SIGNAL SAN retest A @ 14.9110 stop 14.7263
+  [13:06] 1,022,619 bars, 331,357 5m, 414 signals, 3 entries, 3 open
+  13:06  SIGNAL ZTG retest A++ @ 0.7486 stop 0.7278
+  13:06  SIGNAL ODD retest A++ @ 13.3000 stop 13.0878
+  13:06  SIGNAL XTND falling_wedge A @ 5.5000 stop 5.3730
+  13:07  SIGNAL FSOL ascending_triangle A @ 12.3800 stop 12.2236
+  13:09  SIGNAL IMSR retest A @ 5.7000 stop 5.6232
+  13:10  SIGNAL SGRX falling_wedge A @ 1.6900 stop 1.6616
+  13:11  SIGNAL TAOX ascending_triangle A @ 4.0800 stop 3.9899
+  13:11  SIGNAL SPWR retest A @ 0.3435 stop 0.3369
+  13:11  SIGNAL XTND retest A @ 5.4800 stop 5.3460
+  13:11  SIGNAL ZTG retest A @ 0.7485 stop 0.7278
+  [13:11] 1,042,814 bars, 338,621 5m, 424 signals, 3 entries, 3 open
+  13:11  SIGNAL XE ascending_triangle A @ 18.7750 stop 18.4573
+  13:11  SIGNAL NFXL ascending_triangle A @ 17.2700 stop 16.9548
+  13:11  SIGNAL RGTI retest A @ 15.9700 stop 15.6915
+  13:11  SIGNAL ODD retest A @ 13.3400 stop 13.1378
+  13:11  SIGNAL MSOS ascending_triangle A @ 5.2100 stop 5.0198
+  13:11  SIGNAL CRMG falling_wedge A @ 9.3700 stop 9.2435
+  13:12  SIGNAL COF.PRL ascending_triangle A @ 15.3900 stop 15.2135
+  13:13  SIGNAL OPENW falling_wedge A @ 0.1439 stop 0.1343
+  13:15  SIGNAL DSS falling_wedge A @ 0.8192 stop 0.7643
+  13:16  SIGNAL KZIA ascending_triangle A @ 12.2600 stop 11.9898
+  13:16  SIGNAL RGTI retest A++ @ 16.0900 stop 15.6915
+  13:16  SIGNAL XTND falling_wedge A @ 5.5000 stop 5.3730
+  13:16  SIGNAL BNC retest A @ 5.2350 stop 5.0688
+  13:16  SIGNAL ZTG pennant A @ 0.7500 stop 0.7258
+  13:16  SIGNAL SPWR retest A @ 0.3452 stop 0.3368
+  [13:16] 1,060,226 bars, 343,630 5m, 439 signals, 3 entries, 3 open
+  13:16  SIGNAL GOOL ascending_triangle A @ 12.2900 stop 12.1190
+  13:16  SIGNAL ITUB retest A @ 8.3000 stop 8.1922
+  13:16  SIGNAL PBR.A retest A @ 18.6950 stop 18.4734
+  13:16  SIGNAL OLB retest A @ 0.2773 stop 0.2722
+  13:16  SIGNAL XE ascending_triangle A @ 18.9900 stop 18.4573
+  13:16  SIGNAL BRR ascending_triangle A @ 2.7350 stop 2.6815
+  13:16  SIGNAL WETO retest A @ 2.4800 stop 2.4156
+  13:17  SIGNAL NA ascending_triangle A @ 2.3100 stop 2.1739
+  13:19  SIGNAL TAOX ascending_triangle A @ 4.0800 stop 3.9899
+  13:21  SIGNAL BRR retest A @ 2.7400 stop 2.6681
+  13:21  SIGNAL SGRX falling_wedge A @ 1.6900 stop 1.6616
+  13:21  SIGNAL SLE retest A @ 4.6200 stop 4.4897
+  [13:21] 1,080,395 bars, 351,164 5m, 451 signals, 3 entries, 3 open
+  13:21  SIGNAL ODD retest A @ 13.3999 stop 13.1621
+  13:21  SIGNAL WETO retest A @ 2.4850 stop 2.4255
+  13:21  SIGNAL SWVL ascending_triangle A++ @ 6.2250 stop 5.9800
+  13:25  SIGNAL ALVO retest A @ 5.3000 stop 5.2123
+  13:26  SIGNAL WETO retest A @ 2.4900 stop 2.4255
+  13:26  SIGNAL IQ ascending_triangle A @ 0.9957 stop 0.9569
+  13:26  SIGNAL FDMT ascending_triangle A++ @ 15.2400 stop 14.9847
+  [13:26] 1,098,850 bars, 356,879 5m, 458 signals, 3 entries, 3 open
+  13:26  SIGNAL BNC retest A @ 5.2888 stop 5.0688
+  13:26  SIGNAL SPWR retest A @ 0.3364 stop 0.3317
+  13:29  SIGNAL SIND retest A @ 16.5000 stop 16.2063
+  13:30  SIGNAL ODD retest A @ 13.3300 stop 13.1670
+  13:31  SIGNAL SVM retest A @ 12.5600 stop 12.4047
+  13:31  SIGNAL BRR retest A @ 2.7300 stop 2.6681
+  [13:31] 1,117,723 bars, 363,237 5m, 464 signals, 3 entries, 3 open
+  13:31  SIGNAL RKT retest A @ 14.0000 stop 13.8303
+  13:31  SIGNAL DHC retest A @ 7.6850 stop 7.5636
+  13:32  SIGNAL ODD retest A @ 13.3300 stop 13.1670
+  13:32  SIGNAL SGRX retest A @ 1.6560 stop 1.6335
+  13:35  SIGNAL BETR falling_wedge A @ 13.6000 stop 13.4833
+  13:36  SIGNAL ACP retest A @ 4.9700 stop 4.9142
+  13:36  SIGNAL BETR falling_wedge A @ 13.6000 stop 13.4833
+  13:36  SIGNAL GIAX ascending_triangle A @ 16.4400 stop 16.3042
+  13:36  SIGNAL ARHS retest A++ @ 8.4900 stop 8.3852
+  [13:36] 1,136,990 bars, 369,514 5m, 473 signals, 3 entries, 3 open
+  13:36  SIGNAL JPM.PRM ascending_triangle A @ 16.7600 stop 16.6265
+  13:37  SIGNAL FSSL ascending_triangle A @ 11.9600 stop 11.8505
+  13:37  SIGNAL XRPI retest A @ 7.7650 stop 7.6774
+  13:39  SIGNAL CSEX ascending_triangle A @ 13.4500 stop 12.9848
+  13:39  SIGNAL ZVIA ascending_triangle A @ 1.3650 stop 1.3433
+  13:41  SIGNAL OLB retest A @ 0.2866 stop 0.2772
+  13:41  SIGNAL BPRE ascending_triangle A @ 11.9400 stop 11.8405
+  13:41  SIGNAL WETO retest A++ @ 2.5000 stop 2.4156
+  13:41  SIGNAL XRPZ ascending_triangle A++ @ 15.5600 stop 15.4125
+  [13:41] 1,155,857 bars, 375,686 5m, 482 signals, 3 entries, 3 open
+  13:41  SIGNAL BNC retest A++ @ 5.2200 stop 5.1084
+  13:41  SIGNAL STDN retest A @ 13.5150 stop 13.3155
+  13:41  SIGNAL VVOS falling_wedge A @ 0.1810 stop 0.1780
+  13:42  SIGNAL CSEX ascending_triangle A @ 13.4500 stop 12.9848
+  13:43  SIGNAL ODD retest A @ 13.3300 stop 13.1769
+  13:46  SIGNAL FBYD retest A @ 8.1250 stop 7.9398
+  13:46  SIGNAL VALE retest A++ @ 15.6050 stop 15.4341
+  13:46  SIGNAL ODD retest A @ 13.3300 stop 13.1670
+  13:46  SIGNAL PSQL falling_wedge A @ 7.7650 stop 7.3555
+  [13:46] 1,175,836 bars, 382,555 5m, 491 signals, 3 entries, 3 open
+  13:47  SIGNAL XRPZ retest A @ 15.5400 stop 15.3450
+  13:47  SIGNAL BTX ascending_triangle A @ 9.0300 stop 8.9451
+  13:49  SIGNAL DAIC ascending_triangle A @ 3.0048 stop 2.9295
+  13:51  SIGNAL NVTS pennant A @ 12.4855 stop 12.3131
+  13:51  SIGNAL VALE retest A++ @ 15.6100 stop 15.4341
+  13:51  SIGNAL USNA ascending_triangle A @ 15.6750 stop 15.2135
+  [13:51] 1,195,234 bars, 388,881 5m, 497 signals, 3 entries, 3 open
+  13:52  SIGNAL CSEX ascending_triangle A @ 13.5000 stop 12.9848
+  13:56  SIGNAL UXRP ascending_triangle A @ 16.7664 stop 16.6312
+  13:56  SIGNAL MNTN ascending_triangle A @ 12.9900 stop 12.8604
+  [13:56] 1,215,415 bars, 395,861 5m, 500 signals, 3 entries, 3 open
+  13:56  SIGNAL PSQL falling_wedge A++ @ 7.7940 stop 7.3555
+  13:56  SIGNAL FBYD retest A @ 8.0800 stop 7.9497
+  13:56  SIGNAL USNA ascending_triangle A @ 15.6750 stop 15.2135
+  13:56  SIGNAL GEVX retest A @ 18.3800 stop 18.0973
+  13:59  SIGNAL QSI ascending_triangle A @ 0.7780 stop 0.7725
+  14:00  SIGNAL GEL retest A @ 15.9600 stop 15.7608
+  14:01  SIGNAL FBYD falling_wedge A++ @ 8.0650 stop 7.9103
+  14:01  SIGNAL MNTN ascending_triangle A @ 12.9900 stop 12.8604
+  14:01  SIGNAL AEYE falling_wedge A @ 8.0600 stop 7.9600
+  [14:01] 1,234,197 bars, 401,192 5m, 509 signals, 3 entries, 3 open
+  14:01  SIGNAL ANY ascending_triangle A @ 2.4828 stop 2.3482
+  14:02  SIGNAL GEL retest A @ 15.9600 stop 15.7608
+  14:02  SIGNAL SGRX falling_wedge A @ 1.6500 stop 1.6318
+  14:03  SIGNAL GEVX retest A @ 18.3800 stop 18.0984
+  14:04  SIGNAL YQ ascending_triangle A @ 3.7900 stop 3.5820
+  14:06  SIGNAL YQ retest A++ @ 3.7000 stop 3.6184
+  14:06  SIGNAL NOK retest A @ 10.7950 stop 10.6722
+  14:06  SIGNAL PBR.A retest A @ 18.7902 stop 18.5427
+  14:06  SIGNAL IMPP pennant A @ 5.2200 stop 5.1641
+  [14:06] 1,253,304 bars, 407,273 5m, 518 signals, 3 entries, 3 open
+  14:06  SIGNAL BETR retest A++ @ 13.6350 stop 13.3640
+  14:06  SIGNAL XTND falling_wedge A @ 5.7800 stop 5.4825
+  14:06  SIGNAL NVTS retest A @ 12.4300 stop 12.2463
+  14:06  SIGNAL SIND ascending_triangle A @ 16.4900 stop 16.1986
+  14:06  SIGNAL VALE retest A @ 15.6250 stop 15.4440
+  14:06  SIGNAL BTX retest A++ @ 9.0400 stop 8.9348
+  14:07  SIGNAL LHAI retest A @ 1.1500 stop 1.1187
+  14:07  SIGNAL MINE retest A @ 3.2400 stop 3.1779
+  14:08  SIGNAL VACI pennant A @ 6.8400 stop 6.5173
+  14:08  SIGNAL AEYE falling_wedge A @ 8.1800 stop 7.9600
+  14:11  SIGNAL PDI retest A @ 15.2800 stop 15.0975
+  14:11  SIGNAL NOK retest A @ 10.8099 stop 10.6722
+  [14:11] 1,273,472 bars, 414,474 5m, 530 signals, 3 entries, 3 open
+  14:11  SIGNAL SVM retest A @ 12.5650 stop 12.4146
+  14:11  SIGNAL XTND falling_wedge A @ 5.7400 stop 5.4825
+  14:12  SIGNAL MQ ascending_triangle A @ 16.2800 stop 16.0792
+  14:12  SIGNAL USGO ascending_triangle A @ 8.8200 stop 8.3779
+  14:12  SIGNAL IMPP ascending_triangle A @ 5.2500 stop 5.1641
+  14:14  SIGNAL NHP ascending_triangle A @ 16.7600 stop 16.5170
+  14:16  SIGNAL CIG ascending_triangle A @ 2.2600 stop 2.2288
+  14:16  SIGNAL BKKT ascending_triangle A @ 8.4800 stop 8.3281
+  14:16  SIGNAL CRMG retest A @ 9.3200 stop 9.2169
+  14:16  SIGNAL MYI retest A @ 10.4800 stop 10.3663
+  14:16  SIGNAL JFR ascending_triangle A @ 7.6750 stop 7.6217
+  [14:16] 1,291,679 bars, 419,757 5m, 541 signals, 3 entries, 3 open
+  14:16  SIGNAL WETO retest A @ 2.5360 stop 2.4750
+  14:16  SIGNAL XPEV retest A @ 10.9600 stop 10.8009
+  14:16  SIGNAL BILI retest A @ 16.3299 stop 16.1419
+  14:18  SIGNAL IMPP ascending_triangle A @ 5.2850 stop 5.1641
+  14:19  SIGNAL VIP ascending_triangle A @ 2.0150 stop 1.9353
+  14:21  SIGNAL BLW ascending_triangle A @ 12.5600 stop 12.4643
+  14:21  SIGNAL AEYE retest A @ 8.2500 stop 8.0190
+  [14:21] 1,311,904 bars, 426,378 5m, 548 signals, 3 entries, 3 open
+  14:21  SIGNAL IMPP retest A++ @ 5.2900 stop 5.1579
+  14:21  SIGNAL PBR.A retest A @ 18.8950 stop 18.5526
+  14:24  SIGNAL HPEL ascending_triangle A @ 17.5268 stop 17.3627
+  14:25  SIGNAL PSQH falling_wedge A @ 5.0300 stop 4.9451
+  14:26  SIGNAL NOK retest A @ 10.7867 stop 10.6722
+  14:26  SIGNAL TSMY ascending_triangle A @ 15.6284 stop 15.5121
+  14:26  SIGNAL CIG ascending_triangle A @ 2.2650 stop 2.2288
+  14:26  SIGNAL IMPP retest A++ @ 5.3000 stop 5.1777
+  [14:26] 1,331,685 bars, 432,923 5m, 556 signals, 3 entries, 3 open
+  14:27  SIGNAL DSL ascending_triangle A @ 10.5100 stop 10.4475
+  14:28  SIGNAL HPEL ascending_triangle A @ 17.5268 stop 17.3627
+  14:29  SIGNAL FDMT retest A @ 15.0400 stop 14.8599
+  14:29  SIGNAL ADUR ascending_triangle A @ 13.6600 stop 13.4823
+  14:31  SIGNAL WETO retest A @ 2.5700 stop 2.4948
+  14:31  SIGNAL SPWR falling_wedge A @ 0.3319 stop 0.3285
+  14:31  SIGNAL TIC ascending_triangle A @ 9.5550 stop 9.4575
+  14:31  SIGNAL HYPD retest A @ 3.5500 stop 3.4947
+  [14:31] 1,350,725 bars, 438,503 5m, 564 signals, 3 entries, 3 open
+  14:31  SIGNAL PDI retest A @ 15.2800 stop 15.1173
+  14:31  SIGNAL IMPP ascending_triangle A @ 5.3000 stop 5.1740
+  14:36  SIGNAL FDMT retest A++ @ 15.0594 stop 14.8599
+  14:36  SIGNAL BABX ascending_triangle A @ 18.0799 stop 17.8503
+  [14:36] 1,371,179 bars, 445,327 5m, 568 signals, 3 entries, 3 open
+  14:36  SIGNAL RTB ascending_triangle A @ 8.2800 stop 7.7809
+  14:37  SIGNAL QMLS ascending_triangle A++ @ 6.6100 stop 6.4178
+  14:37  SIGNAL KPLT ascending_triangle A @ 9.2000 stop 8.9351
+  14:38  SIGNAL SGRX retest A @ 1.6300 stop 1.6038
+  14:38  SIGNAL JPM.PRM retest A @ 16.7300 stop 16.5429
+  14:39  SIGNAL NEWT retest A @ 12.4200 stop 12.2760
+  14:41  SIGNAL TAC ascending_triangle A @ 12.4900 stop 12.3778
+  14:41  SIGNAL NHP retest A @ 16.6600 stop 16.3746
+  14:41  SIGNAL RMBI retest A @ 16.1500 stop 15.9390
+  14:41  SIGNAL BNC falling_wedge A @ 5.2600 stop 5.0248
+  14:41  SIGNAL DAIC retest A++ @ 3.0300 stop 2.9205
+  [14:41] 1,390,578 bars, 450,933 5m, 579 signals, 3 entries, 3 open
+  14:41  SIGNAL XE retest A++ @ 18.8550 stop 18.6169
+  14:41  SIGNAL KPLT ascending_triangle A @ 9.4500 stop 8.9351
+  14:41  SIGNAL IMRN falling_wedge A++ @ 1.7350 stop 1.6417
+  14:41  SIGNAL RKT pennant A @ 13.9600 stop 13.7559
+  14:42  SIGNAL VACI pennant A @ 6.8400 stop 6.5173
+  14:43  SIGNAL QVCG retest A++ @ 17.5100 stop 17.2359
+  14:45  SIGNAL MUJ ascending_triangle A @ 12.0900 stop 11.9898
+  14:46  SIGNAL LHAI retest A @ 1.1500 stop 1.1286
+  14:46  SIGNAL CIG retest A @ 2.2700 stop 2.2374
+  14:46  SIGNAL XPEV retest A @ 10.9350 stop 10.8108
+  14:46  SIGNAL QSI retest A @ 0.7735 stop 0.7624
+  [14:46] 1,410,336 bars, 457,040 5m, 590 signals, 3 entries, 3 open
+  14:46  SIGNAL VBIO falling_wedge A @ 2.4900 stop 2.4278
+  14:46  SIGNAL MQ ascending_triangle A @ 16.2500 stop 16.1041
+  14:47  SIGNAL MUJ ascending_triangle A @ 12.0900 stop 11.9898
+  14:48  SIGNAL FSOL ascending_triangle A @ 12.3600 stop 12.2485
+  14:48  SIGNAL QMLS ascending_triangle A @ 6.6200 stop 6.4178
+  14:49  SIGNAL DDI retest A @ 12.7550 stop 12.5878
+  14:51  SIGNAL NATR ascending_triangle A @ 13.8900 stop 13.7857
+  14:51  SIGNAL VMAR ascending_triangle A @ 9.1700 stop 8.9649
+  14:51  SIGNAL RFIL ascending_triangle A @ 10.8400 stop 10.7311
+  [14:51] 1,435,066 bars, 464,938 5m, 599 signals, 3 entries, 3 open
+  14:51  SIGNAL TSDD falling_wedge A @ 7.7300 stop 7.6018
+  14:51  SIGNAL BGX ascending_triangle A @ 10.6850 stop 10.5868
+  14:51  SIGNAL SAN retest A @ 14.8924 stop 14.7263
+  14:51  SIGNAL RTB retest A @ 8.2900 stop 7.9299
+  14:53  SIGNAL GLO ascending_triangle A @ 5.7000 stop 5.6218
+  14:53  SIGNAL BPRE ascending_triangle A @ 11.9350 stop 11.8405
+  14:53  SIGNAL GEL retest A @ 15.8900 stop 15.7014
+  14:56  SIGNAL VALE retest A @ 15.6150 stop 15.4143
+  14:56  SIGNAL HCM retest A @ 13.8950 stop 13.7313
+  14:56  SIGNAL CX ascending_triangle A @ 11.0200 stop 10.9201
+  14:56  SIGNAL NOK retest A @ 10.7450 stop 10.6029
+  [14:56] 1,456,591 bars, 471,284 5m, 610 signals, 3 entries, 3 open
+  14:56  SIGNAL TIC retest A @ 9.5600 stop 9.4397
+  14:57  SIGNAL DSS falling_wedge A @ 0.8012 stop 0.7661
+  14:58  SIGNAL RTB retest A @ 8.4700 stop 7.9299
+  14:59  SIGNAL VMAR ascending_triangle A @ 9.1700 stop 8.9649
+  15:00  SIGNAL AMRN ascending_triangle A @ 14.2000 stop 13.9002
+  15:01  SIGNAL WETO retest A @ 2.6000 stop 2.4948
+  15:01  SIGNAL USOY ascending_triangle A @ 7.4900 stop 7.3730
+  15:01  SIGNAL SGRX falling_wedge A @ 1.6500 stop 1.6019
+  [15:01] 1,477,075 bars, 477,841 5m, 618 signals, 3 entries, 3 open
+  15:01  SIGNAL NOK retest A @ 10.7450 stop 10.6029
+  15:01  SIGNAL PSQL pennant A @ 8.2900 stop 7.8754
+  15:01  SIGNAL BNC retest A++ @ 5.2599 stop 5.0589
+  15:04  SIGNAL MSS ascending_triangle A @ 1.5400 stop 1.5124
+  15:05  SIGNAL NATR ascending_triangle A @ 13.8850 stop 13.7857
+  15:06  SIGNAL VALE retest A @ 15.6250 stop 15.4143
+  15:06  SIGNAL CORZ retest A @ 18.8600 stop 18.5922
+  15:06  SIGNAL OLB retest A++ @ 0.2835 stop 0.2722
+  [15:06] 1,499,034 bars, 484,630 5m, 626 signals, 3 entries, 3 open
+  15:06  SIGNAL XE retest A++ @ 18.7400 stop 18.4783
+  15:06  SIGNAL MSS ascending_triangle A @ 1.5400 stop 1.5124
+  15:06  SIGNAL BNC falling_wedge A @ 5.2899 stop 5.0496
+  15:06  SIGNAL CIG retest A @ 2.2600 stop 2.2275
+  15:06  SIGNAL MSGM falling_wedge A++ @ 4.7300 stop 4.6268
+  15:06  SIGNAL BILI retest A @ 16.2550 stop 16.0677
+  15:11  SIGNAL JQC ascending_triangle A @ 4.7790 stop 4.7461
+  15:11  SIGNAL LITZ falling_wedge A @ 6.2998 stop 6.0198
+  15:11  SIGNAL SGRX retest A++ @ 1.6600 stop 1.6137
+  15:11  SIGNAL RGTU falling_wedge A++ @ 10.5910 stop 10.3181
+  [15:11] 1,520,350 bars, 490,882 5m, 636 signals, 3 entries, 3 open
+  15:11  SIGNAL MSGM falling_wedge A++ @ 4.7300 stop 4.6268
+  15:11  SIGNAL XE retest A++ @ 18.7500 stop 18.4783
+  15:11  SIGNAL CIG retest A @ 2.2597 stop 2.2275
+  15:16  SIGNAL KRRO ascending_triangle A @ 13.4750 stop 13.0843
+  15:16  SIGNAL GLAS retest A @ 8.4200 stop 8.2236
+  15:16  SIGNAL RYLD retest A @ 16.2400 stop 16.0677
+  15:16  SIGNAL PSQL retest A++ @ 8.2650 stop 7.9497
+  [15:16] 1,542,097 bars, 497,415 5m, 643 signals, 3 entries, 3 open
+  15:16  SIGNAL NBXG ascending_triangle A @ 15.6600 stop 15.5409
+  15:16  SIGNAL DFH ascending_triangle A @ 13.4600 stop 13.2733
+  15:21  SIGNAL XE retest A++ @ 18.7400 stop 18.5130
+  15:21  SIGNAL VOD ascending_triangle A @ 17.3300 stop 17.2234
+  15:21  SIGNAL BILI retest A @ 16.2800 stop 16.0677
+  [15:21] 1,564,918 bars, 504,420 5m, 648 signals, 3 entries, 3 open
+  15:21  SIGNAL RFIL retest A @ 10.8250 stop 10.7068
+  15:21  SIGNAL TKC ascending_triangle A @ 5.2650 stop 5.2188
+  15:21  SIGNAL VALE retest A++ @ 15.6100 stop 15.4341
+  15:26  SIGNAL SMZ retest A @ 11.2299 stop 10.8751
+  15:26  SIGNAL CORZ retest A++ @ 18.8027 stop 18.5724
+  15:26  SIGNAL PSQL retest A @ 8.1500 stop 7.9993
+  15:26  SIGNAL QMLS retest A @ 6.6100 stop 6.4861
+  15:26  SIGNAL PDBC ascending_triangle A @ 19.3050 stop 19.1538
+  15:26  SIGNAL ITUB retest A @ 8.3350 stop 8.2368
+  [15:26] 1,587,248 bars, 511,215 5m, 657 signals, 3 entries, 3 open
+  15:26  SIGNAL SPWR retest A @ 0.3374 stop 0.3277
+  15:27  SIGNAL TSLT retest A @ 13.6600 stop 13.5036
+  15:27  SIGNAL OCS retest A @ 12.1600 stop 12.0285
+  15:27  SIGNAL YLD ascending_triangle A @ 18.8900 stop 18.7856
+  15:29  SIGNAL BSL ascending_triangle A @ 12.9550 stop 12.8753
+  15:31  SIGNAL AEF ascending_triangle A @ 9.9550 stop 9.8903
+  15:31  SIGNAL KINS retest A++ @ 19.6800 stop 19.4634
+  15:31  SIGNAL USOY ascending_triangle A @ 7.4850 stop 7.4028
+  15:31  SIGNAL YLD ascending_triangle A @ 18.8900 stop 18.7856
+  [15:31] 1,610,435 bars, 518,369 5m, 666 signals, 3 entries, 3 open
+  15:31  SIGNAL SPWR retest A @ 0.3360 stop 0.3277
+  15:31  SIGNAL SMZ falling_wedge A @ 10.9891 stop 10.8853
+  15:31  SIGNAL AI ascending_triangle A @ 10.5190 stop 10.3928
+  15:31  SIGNAL WETO retest A @ 2.5900 stop 2.5443
+  15:33  SIGNAL RELL ascending_triangle A @ 17.7300 stop 17.5518
+  15:34  SIGNAL BTX retest A @ 9.0360 stop 8.9397
+  15:35  SIGNAL IQI ascending_triangle A @ 9.9799 stop 9.8903
+  15:36  SIGNAL PSO ascending_triangle A @ 15.7050 stop 15.5916
+  15:36  SIGNAL USNA ascending_triangle A++ @ 15.5400 stop 15.4225
+  15:36  SIGNAL VALE retest A++ @ 15.5850 stop 15.3946
+  15:36  SIGNAL SAN retest A @ 14.8950 stop 14.7213
+  15:36  SIGNAL JFR ascending_triangle A @ 7.6799 stop 7.6217
+  [15:36] 1,635,042 bars, 525,528 5m, 678 signals, 3 entries, 3 open
+  15:36  SIGNAL PDI retest A @ 15.2150 stop 15.0431
+  15:36  SIGNAL MNTN retest A++ @ 12.8200 stop 12.6571
+  15:36  SIGNAL SPXX retest A @ 19.0200 stop 18.8100
+  15:36  SIGNAL VIXM ascending_triangle A @ 13.3400 stop 13.1937
+  15:36  SIGNAL GEL retest A @ 15.8800 stop 15.6816
+  15:36  SIGNAL SIND retest A++ @ 16.4100 stop 15.8301
+  15:36  SIGNAL LVLU falling_wedge A @ 11.6000 stop 11.1639
+  15:36  SIGNAL COPR falling_wedge A @ 3.5060 stop 3.4626
+  15:37  SIGNAL ADBG retest A++ @ 4.3599 stop 4.3015
+  15:37  SIGNAL BPRE ascending_triangle A @ 11.9400 stop 11.8604
+  15:38  SIGNAL BIOX falling_wedge A++ @ 0.4293 stop 0.4143
+  15:38  SIGNAL KRRO ascending_triangle A @ 13.5700 stop 13.0843
+  15:41  SIGNAL RTB ascending_triangle A @ 8.8100 stop 7.9699
+  15:41  SIGNAL BIOX falling_wedge A++ @ 0.4293 stop 0.4143
+  15:41  SIGNAL ANL pennant A @ 16.0500 stop 15.1837
+  15:41  SIGNAL WB ascending_triangle A @ 6.7100 stop 6.6516
+  15:41  SIGNAL HYPD retest A @ 3.5450 stop 3.4848
+  [15:41] 1,658,783 bars, 532,354 5m, 695 signals, 3 entries, 3 open
+  15:41  SIGNAL XRPZ ascending_triangle A @ 15.5045 stop 15.3877
+  15:41  SIGNAL XE retest A++ @ 18.7000 stop 18.3843
+  15:41  SIGNAL BNC retest A @ 5.3390 stop 5.2173
+  15:42  SIGNAL COPR falling_wedge A @ 3.5060 stop 3.4626
+  15:42  SIGNAL CING ascending_triangle A @ 5.2600 stop 5.0695
+  15:42  SIGNAL SMZ falling_wedge A @ 11.0063 stop 10.8853
+  15:46  SIGNAL PBR.A ascending_triangle A @ 18.8799 stop 18.7657
+  15:46  SIGNAL QCML falling_wedge A @ 16.5600 stop 16.3379
+  15:46  SIGNAL HYPD retest A @ 3.5400 stop 3.4848
+  15:46  SIGNAL SECZ ascending_triangle A @ 8.2800 stop 8.1192
+  15:46  SIGNAL TIC ascending_triangle A @ 9.5750 stop 9.4873
+  15:46  SIGNAL ANGI ascending_triangle A @ 4.7400 stop 4.6467
+  [15:46] 1,682,340 bars, 538,499 5m, 707 signals, 3 entries, 3 open
+  15:46  SIGNAL NHP retest A++ @ 16.5800 stop 16.3697
+  15:46  SIGNAL RNA ascending_triangle A @ 11.5600 stop 10.8753
+  15:47  SIGNAL RTB ascending_triangle A++ @ 9.0101 stop 7.9699
+  15:48  SIGNAL CEPL falling_wedge A @ 5.7000 stop 5.6616
+  15:50  SIGNAL CING ascending_triangle A @ 5.2550 stop 5.0695
+  15:50  SELL BITU @ 13.61 (-1.5%) — time
+  15:50  SELL RAM @ 14.44 (-0.8%) — time
+  15:50  SELL AMPX @ 10.46 (+2.7%) — time
+  15:51  SIGNAL DMRC retest A @ 5.3300 stop 5.2272
+  15:51  BUY DMRC x1518 @ 5.3300 stop 5.0635 (5.0%) [retest]
+  15:51  SIGNAL SPCF ascending_triangle A @ 17.8700 stop 17.6513
+  15:51  BUY SPCF x452 @ 17.8700 stop 16.9765 (5.0%) [ascending_triangle]
+  15:51  SIGNAL SPAL ascending_triangle A @ 18.1300 stop 17.9050
+  15:51  BUY SPAL x446 @ 18.1300 stop 17.2235 (5.0%) [ascending_triangle]
+  [15:51] 1,707,805 bars, 545,436 5m, 715 signals, 6 entries, 3 open
+  15:51  SIGNAL TSLT retest A @ 13.7700 stop 13.5630
+  15:51  SIGNAL TWG retest A @ 0.5175 stop 0.4901
+  15:51  SIGNAL TEI ascending_triangle A @ 6.7880 stop 6.7361
+  15:51  SIGNAL BKKT retest A @ 8.2600 stop 8.1576
+  15:51  SIGNAL GIAX retest A++ @ 16.3100 stop 16.1172
+  15:51  SIGNAL TIC ascending_triangle A++ @ 9.5850 stop 9.5023
+  15:51  SIGNAL DUG falling_wedge A @ 14.1900 stop 14.0793
+  15:51  SIGNAL RGTX falling_wedge A @ 9.7200 stop 9.3828
+  15:51  SIGNAL TOYO ascending_triangle A @ 4.5350 stop 4.4874
+  15:51  SIGNAL PCG ascending_triangle A @ 14.8550 stop 14.6514
+  15:51  SIGNAL TSLR ascending_triangle A @ 17.0500 stop 16.8155
+  15:51  SIGNAL SSG ascending_triangle A @ 11.6500 stop 11.5221
+  15:51  SIGNAL JFR retest A @ 7.6800 stop 7.5933
+  15:51  SIGNAL MPG falling_wedge A @ 5.2096 stop 5.1093
+  15:51  SELL DMRC @ 5.34 (-0.3%) — time
+  15:51  SELL SPCF @ 17.77 (-0.3%) — time
+  close failed for SPAL: {"bid":"18.01","buy_limit_price":"18.49","code":40310000,"existing_order_id":"af7b2a11-1206-4f3d-b682-602b84f0ec3e","message":"potential wash trade detected. use complex orders","reject_reason":"buy order exists, quote bid should be greater than existing buy limit price"}
+  15:51  SELL SPAL @ 18.00 (-0.3%) — time
+  15:52  SIGNAL ANY ascending_triangle A @ 2.4800 stop 2.4139
+  15:52  BUY ANY x3260 @ 2.4800 stop 2.3560 (5.0%) [ascending_triangle]
+  15:52  SIGNAL CBAT ascending_triangle A @ 0.9913 stop 0.9408
+  15:52  BUY CBAT x8001 @ 0.9913 stop 0.9408 (5.1%) [ascending_triangle]
+  15:52  SELL ANY @ 2.48 (+0.0%) — time
+  15:52  SELL CBAT @ 1.00 (+0.0%) — time
+  15:56  SIGNAL LOVE pennant A++ @ 16.1200 stop 15.8902
+  15:56  BUY LOVE x500 @ 16.1200 stop 15.3140 (5.0%) [pennant]
+  15:56  SIGNAL MGRX retest A @ 0.4198 stop 0.4011
+  15:56  BUY MGRX x19206 @ 0.4198 stop 0.3988 (5.0%) [retest]
+  15:56  SIGNAL BNAI falling_wedge A @ 10.6300 stop 10.5470
+  [15:56] 1,736,980 bars, 553,886 5m, 734 signals, 10 entries, 2 open
+  15:56  SIGNAL FORR pennant A++ @ 12.3200 stop 11.9599
+  15:56  SIGNAL CBAT ascending_triangle A @ 0.9999 stop 0.9408
+  15:56  SIGNAL ADBG retest A @ 4.3800 stop 4.3115
+  15:56  SIGNAL SGRX falling_wedge A @ 1.6299 stop 1.6120
+  15:56  SIGNAL DUG falling_wedge A @ 14.2000 stop 14.0793
+  15:56  SIGNAL MNTN retest A++ @ 12.8500 stop 12.6918
+  15:56  SIGNAL CRMG ascending_triangle A @ 9.4000 stop 9.1143
+  15:56  SIGNAL EDZ ascending_triangle A @ 13.6290 stop 13.3430
+  15:56  SIGNAL PCG retest A++ @ 14.8650 stop 14.6520
+  15:56  SIGNAL RGTI retest A @ 15.8250 stop 15.3564
+  15:56  SIGNAL NXTC pennant A @ 8.5450 stop 7.9600
+  15:56  SIGNAL JFR retest A @ 7.6800 stop 7.5933
+  15:56  SELL LOVE @ 16.06 (-0.2%) — time
+  15:56  SELL MGRX @ 0.41 (-0.4%) — time
+  15:59  SIGNAL HDGE ascending_triangle A @ 14.3100 stop 14.1787
+  15:59  BUY HDGE x562 @ 14.3100 stop 13.5945 (5.0%) [ascending_triangle]
+  15:59  SELL HDGE @ 14.31 (+0.0%) — time
+  16:01  SIGNAL AXG falling_wedge A @ 2.0200 stop 1.9253
+  16:01  BUY AXG x3983 @ 2.0200 stop 1.9190 (5.0%) [falling_wedge]
+  16:01  SIGNAL TIC ascending_triangle A @ 9.5700 stop 9.4525
+  16:01  SIGNAL QCML retest A @ 16.8900 stop 16.3390
+  16:01  SIGNAL AEFC ascending_triangle A @ 18.2000 stop 18.0592
+  16:01  SIGNAL BABX ascending_triangle A++ @ 18.0500 stop 17.8802
+  16:01  SIGNAL IQI retest A++ @ 9.9900 stop 9.8703
+  16:01  SIGNAL CRMG retest A++ @ 9.3950 stop 9.2713
+  [16:01] 1,769,284 bars, 562,548 5m, 754 signals, 12 entries, 1 open
+  16:01  SIGNAL RNA retest A++ @ 11.3500 stop 10.8999
+  16:01  SIGNAL VAI falling_wedge A @ 2.1800 stop 2.1094
+  16:01  SIGNAL ABTC ascending_triangle A @ 8.4300 stop 8.3082
+  16:01  SIGNAL AI ascending_triangle A @ 10.5100 stop 10.3679
+  16:01  SIGNAL TGL ascending_triangle A @ 2.7600 stop 2.7163
+  16:01  SIGNAL VERX ascending_triangle A @ 12.9300 stop 12.7758
+  16:01  SIGNAL PSQL retest A++ @ 8.0200 stop 7.8408
+  16:01  SIGNAL CEPL retest A++ @ 5.7200 stop 5.5935
+  16:01  SIGNAL SCD retest A @ 15.6200 stop 15.4341
+  16:01  SIGNAL BSL ascending_triangle A @ 12.9600 stop 12.8753
+  16:01  SIGNAL BCBP ascending_triangle A @ 8.7200 stop 8.6465
+  16:01  SIGNAL BCX ascending_triangle A @ 13.2100 stop 13.1042
+  16:01  SIGNAL SINT ascending_triangle A @ 1.7350 stop 1.6616
+  16:01  SIGNAL SAR retest A @ 17.4600 stop 17.2260
+  16:01  SIGNAL SSL ascending_triangle A @ 13.3000 stop 13.2086
+  16:01  SIGNAL NAC ascending_triangle A++ @ 11.3900 stop 11.3131
+  16:01  SIGNAL NMAD retest A @ 3.8800 stop 3.7917
+  16:01  SIGNAL PTN ascending_triangle A @ 12.6800 stop 12.3728
+  16:01  SIGNAL YDES retest A++ @ 4.2800 stop 4.0590
+  16:01  SIGNAL FEED ascending_triangle A @ 4.2600 stop 4.0099
+  16:06  SIGNAL VIXY retest A @ 17.3453 stop 17.1072
+  16:06  SIGNAL STDN falling_wedge A @ 13.2500 stop 13.1340
+  [16:07] 1,777,416 bars, 568,362 5m, 776 signals, 12 entries, 0 open
+  16:07  SIGNAL ANY ascending_triangle A @ 2.7700 stop 2.4147
+  16:07  SIGNAL CRMG retest A++ @ 9.4100 stop 9.2664
+  16:10  SIGNAL EROC ascending_triangle A @ 13.9360 stop 13.4723
+  [16:12] 1,779,884 bars, 569,524 5m, 779 signals, 12 entries, 0 open
+  [16:17] 1,781,988 bars, 570,495 5m, 779 signals, 12 entries, 0 open
+  16:21  SIGNAL CRDU retest A++ @ 7.0695 stop 6.9003
+  [16:22] 1,784,029 bars, 571,461 5m, 780 signals, 12 entries, 0 open
+  16:26  SIGNAL RGTI retest A++ @ 15.8183 stop 15.5925
+  16:26  SIGNAL SGLY pennant A @ 1.7500 stop 1.5522
+  [16:27] 1,785,973 bars, 572,423 5m, 782 signals, 12 entries, 0 open
+  [16:32] 1,787,993 bars, 573,481 5m, 782 signals, 12 entries, 0 open
+  16:36  SIGNAL RGTI retest A @ 15.8000 stop 15.6321
+  [16:37] 1,789,673 bars, 574,337 5m, 783 signals, 12 entries, 0 open
+  16:41  SIGNAL ATER falling_wedge A @ 0.7500 stop 0.6975
+  [16:42] 1,791,672 bars, 575,484 5m, 784 signals, 12 entries, 0 open
+  16:46  SIGNAL ATER retest A @ 0.7331 stop 0.7128
+  16:46  SIGNAL CRDU retest A++ @ 7.0598 stop 6.9399
+  [16:47] 1,793,220 bars, 576,305 5m, 786 signals, 12 entries, 0 open
+  16:51  SIGNAL ATER retest A @ 0.7528 stop 0.7128
+  16:51  SIGNAL CRDU retest A++ @ 7.0700 stop 6.9411
+  [16:52] 1,794,785 bars, 577,087 5m, 788 signals, 12 entries, 0 open
+  [16:57] 1,796,266 bars, 577,854 5m, 788 signals, 12 entries, 0 open

@@ -277,6 +277,21 @@ class PaperTrader:
 
         if self.halted_for_day or self._halted_for_overexposure():
             return
+
+        # No entries near the close. A position opened at 15:51 has nine
+        # minutes to live and is closed by the time rule before it can do
+        # anything except pay the spread. A trade needs room to work, and
+        # stopping entries well before the flatten is the only sensible
+        # reading of a rule that says nothing carries overnight.
+        from tools.calendar import flatten_time
+
+        flatten = flatten_time(now.date(),
+                               self.cfg["execution"]["hard_exit_time"])
+        buffer_min = self.cfg["execution"].get("no_entry_before_close_min", 45)
+        cutoff = flatten.hour * 60 + flatten.minute - buffer_min
+        if now.hour * 60 + now.minute >= cutoff:
+            return
+
         if alert.symbol in self.taken_today:
             return
         if self._broker_position_count() >= self.cfg["risk"]["max_concurrent"]:

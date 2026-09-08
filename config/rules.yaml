@@ -76,6 +76,10 @@ execution:
   trail_pct: 12.0
   trail_arms_at_pct: 10.0
 
+  # Stop opening positions this many minutes before the flatten. At 45,
+  # nothing opens after 15:05 on a normal day or 12:05 on a half day.
+  no_entry_before_close_min: 45
+
   hard_exit_time: "15:50"        # nothing carries overnight in v1
 
 # --- Setups ------------------------------------------------------------
