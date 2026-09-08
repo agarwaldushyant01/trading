@@ -38,6 +38,13 @@ if [ "$DOW" -gt 5 ]; then
     exit 0
 fi
 
+# Market holidays. Without this the bot woke on Labor Day 2026, rebuilt
+# reference data for 13,000 symbols and streamed nothing for twelve hours.
+if ! "$PYTHON" -m tools.calendar --quiet 2>/dev/null; then
+    echo "  market closed today, not starting."
+    exit 0
+fi
+
 # Only one stream connection is allowed, so clear anything already holding it.
 if pgrep -f "drivers.pattern_live" > /dev/null; then
     echo "  stopping the previous trader..."

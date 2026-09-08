@@ -67,7 +67,17 @@ HEARTBEAT = re.compile(r"\[(\d{2}):(\d{2})\]\s+([\d,]+) bars")
 
 
 def in_session(now: datetime) -> bool:
-    return now.weekday() < 5 and SESSION_START <= now.time() <= SESSION_END
+    """Weekday, market open, and inside the session.
+
+    Restarting or alerting on a holiday is worse than useless: the scanner is
+    correctly idle, and an alarm that cries wolf on Thanksgiving is one
+    nobody reads in March.
+    """
+    from tools.calendar import is_trading_day
+
+    if not is_trading_day(now.date()):
+        return False
+    return SESSION_START <= now.time() <= SESSION_END
 
 
 def process_alive() -> bool:

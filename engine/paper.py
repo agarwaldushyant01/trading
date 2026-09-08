@@ -636,7 +636,12 @@ class PaperTrader:
         """
         live = {p.symbol: p for p in self.client.get_all_positions()}
         now = self.clock()
-        hard_exit = time.fromisoformat(self.cfg["execution"]["hard_exit_time"])
+        # Ten minutes before the close, which is 12:50 on a half day. A
+        # 15:50 flatten never arrives when the market shuts at 13:00, so
+        # positions carry overnight twice a year without a word.
+        from tools.calendar import flatten_time
+        hard_exit = flatten_time(now.date(),
+                                 self.cfg["execution"]["hard_exit_time"])
 
         # Drop anything that has finished closing.
         self.closing = {sym: when for sym, when in self.closing.items()
