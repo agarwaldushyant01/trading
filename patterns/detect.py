@@ -38,6 +38,16 @@ from patterns.confluence import Confluences, evaluate, find_demand_zones
 from patterns.geometry import (Trendline, find_swings, find_trendlines,
                                horizontal_level)
 
+# Context-setup thresholds. First guesses in the sense of config/rules.yaml
+# — corrected by tools.tune once 100 trades are labelled, or by asking the
+# trader. drivers/pattern_live.py overwrites these from config at startup;
+# a context is disabled by putting its gate out of reach.
+RUNNER_MIN_PREV_CHANGE_PCT = 25.0     # closed up at least this much yesterday
+CONTEXT_MAX_TODAY_CHANGE_PCT = 50.0   # already this extended today -> skip
+VOLUME_OPEN_RANK = 3                  # opening bar among the N heaviest so far
+VOLUME_OPEN_MIN_BARS = 6             # ...judged only this many bars past the open
+CONTEXT_MIN_GAP = 6                   # bars between successive context entries
+
 
 def wedge_pair(upper: Trendline, lower: Trendline, bars: list,
                index: int) -> str | None:
@@ -94,6 +104,8 @@ class Setup:
     note: str = ""
     rejected: str = ""         # why a near-miss was refused
     detail: dict = field(default_factory=dict)
+    runner: bool = False       # name closed up >= threshold the prior session
+    volume_open: bool = False  # opening five-minute bar among the day's heaviest
 
     @property
     def grade(self) -> str:
@@ -242,16 +254,63 @@ def had_premarket_volume(bars: list, min_share: float = 0.10) -> bool:
     return total > 0 and pre / total >= min_share
 
 
+def session_open_index(bars: list) -> int | None:
+    """Index of the first bar at or after 09:30, or None if there isn't one."""
+    for k, b in enumerate(bars):
+        hour, minute = bar_time(b)
+        if hour < 0:
+            return None
+        if (hour, minute) >= (9, 30):
+            return k
+    return None
+
+
+def today_change_pct(bars: list, index: int, open_idx: int | None) -> float:
+    """Percent move from the session open to the close of bar `index`."""
+    ref = bars[open_idx]["o"] if open_idx is not None else bars[0]["o"]
+    if ref <= 0:
+        return 0.0
+    return (bars[index]["c"] / ref - 1) * 100
+
+
+def opening_bar_is_heavy(bars: list, index: int, open_idx: int | None,
+                         rank: int) -> bool:
+    """Was the opening five-minute bar among the `rank` heaviest bars so far?
+
+    Counted, not sorted: detect() re-runs this on every bar of every replay
+    pass, so an O(n) tally beats an O(n log n) sort and allocation.
+    """
+    if rank < 1 or open_idx is None or open_idx > index:
+        return False
+    open_vol = bars[open_idx]["v"]
+    heavier = sum(1 for b in bars[:index + 1] if b["v"] > open_vol)
+    return heavier < rank
+
+
 def detect(bars: list, daily: list | None = None,
            levels: list | None = None,
            min_confluences: int = 2,
            window_only: bool = False,
-           require_premarket: bool = False) -> list:
+           require_premarket: bool = False,
+           news_at=None,
+           prev_day_change: float | None = None) -> list:
     """Every qualifying setup in the session, in order.
 
     Returns near-misses too, marked with why they were refused — those are
     more informative than the hits when tuning, because they show whether the
     rule is too tight or looking at the wrong thing.
+
+    `news_at`, if given, is called with a bar and returns whether a fresh
+    news catalyst existed for this symbol as of that bar. It adds the fifth
+    confluence (patterns/confluence.py): it raises the grade of setups that
+    already clear `min_confluences`, and never changes which setups clear it.
+
+    `prev_day_change` is this symbol's prior-session close-to-close percent
+    move. When it is over RUNNER_MIN_PREV_CHANGE_PCT, or the opening bar is
+    among the heaviest of the session, a pullback holding >= min_confluences
+    confluences fires as a "runner" / "volume_open" setup — the daily and
+    volume context replacing the wedge/triangle/retest geometry. Falls back
+    to `daily` when the scalar is not supplied.
     """
     warmup = min(25, max(10, len(bars) // 3))
     if len(bars) < warmup + 5:
@@ -266,8 +325,21 @@ def detect(bars: list, daily: list | None = None,
     levels = levels or []
     downtrend = trend_is_down(daily) if daily else False
 
+    open_idx = session_open_index(bars)
+    if prev_day_change is not None:
+        prev_change = prev_day_change
+    elif daily and len(daily) >= 2 and daily[-2].get("c", 0) > 0:
+        prev_change = (daily[-1]["c"] / daily[-2]["c"] - 1) * 100
+    else:
+        prev_change = None
+    last_context_at = -CONTEXT_MIN_GAP
+
     setups = []
     broken = []                  # (level, index) for each confirmed breakout
+
+    def _news_at(i: int) -> bool:
+        return bool(news_at(bars[i])) if news_at is not None else False
+
     upper_lines = find_trendlines(bars, swings, is_upper=True)
     lower_lines = find_trendlines(bars, swings, is_upper=False)
     # 3% rather than 2%: on GIPR the highs at 0.3390 and 0.3300 are one
@@ -287,7 +359,7 @@ def detect(bars: list, daily: list | None = None,
         # versions were firing on.
         for level, broke_at in broken:
             if retest_entry(bars, i, level, broke_at):
-                conf = evaluate(bars, i, zones)
+                conf = evaluate(bars, i, zones, news=_news_at(i))
                 if conf.count < min_confluences:
                     setups.append(Setup("retest", i, bar["c"], 0, None, conf,
                                         rejected=f"retest, only "
@@ -365,6 +437,46 @@ def detect(bars: list, daily: list | None = None,
               hit = (kind, line, level)
               break
 
+        # ---- context setups: the name is already in play -------------
+        # No wedge, triangle or retest here. On a name that closed up
+        # sharply yesterday, or whose opening five-minute bar was among the
+        # day's heaviest, a pullback that holds (>= min_confluences) is the
+        # entry in itself — "previous day runner" and "volume at open",
+        # behind several of the trader's largest manual winners. The daily /
+        # volume context stands in for the chart geometry. It is a fallback:
+        # a real retest at this bar is the better signal and wins.
+        retest_fired = bool(setups and setups[-1].index == i
+                            and not setups[-1].rejected)
+        if (hit is None and not blocked and not retest_fired
+                and bar["c"] > bar["o"]):
+            today_pct = today_change_pct(bars, i, open_idx)
+            extended = today_pct > CONTEXT_MAX_TODAY_CHANGE_PCT
+            is_runner = (not extended and prev_change is not None
+                         and prev_change >= RUNNER_MIN_PREV_CHANGE_PCT)
+            is_vol_open = (not extended and open_idx is not None
+                           and i - open_idx >= VOLUME_OPEN_MIN_BARS
+                           and opening_bar_is_heavy(bars, i, open_idx,
+                                                    VOLUME_OPEN_RANK))
+            if is_runner or is_vol_open:
+                ctx_kind = "runner" if is_runner else "volume_open"
+                conf = evaluate(bars, i, zones, news=_news_at(i))
+                if conf.count < min_confluences:
+                    setups.append(Setup(
+                        ctx_kind, i, bar["c"], 0, None, conf,
+                        runner=is_runner, volume_open=is_vol_open,
+                        rejected=f"{ctx_kind}, only "
+                                 f"{conf.count} confluence(s)"))
+                elif i - last_context_at >= CONTEXT_MIN_GAP:
+                    last_context_at = i
+                    recent_low = min(b["l"]
+                                     for b in bars[max(0, i - 10):i + 1])
+                    note = (f"prior day {prev_change:+.0f}%" if is_runner
+                            else f"heavy open bar, {today_pct:+.0f}% on day")
+                    setups.append(Setup(
+                        ctx_kind, i, bar["c"], recent_low * 0.995, None,
+                        conf, runner=is_runner, volume_open=is_vol_open,
+                        note=note))
+
         if hit is None:
             continue
 
@@ -383,7 +495,7 @@ def detect(bars: list, daily: list | None = None,
                                 rejected="breakout against a falling trend"))
             continue
 
-        conf = evaluate(bars, i, zones)
+        conf = evaluate(bars, i, zones, news=_news_at(i))
         if conf.count < min_confluences:
             setups.append(Setup(kind, i, bar["c"], 0, None, conf,
                                 rejected=f"only {conf.count} confluence(s)"))

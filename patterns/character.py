@@ -138,12 +138,13 @@ def analyse(daily: list, spike_pct: float = 25.0,
     return c
 
 
-def market_is_thin(movers: int, threshold: int = 10) -> bool:
+def market_is_thin(movers: int, threshold: int = 20) -> bool:
     """Is anything actually moving today?
 
-    The trader's own test: fewer than about ten names up 20% or more by
-    mid-morning means conditions are thin, and the setups that need a live
-    tape will not appear. Used to gate the dumpster-diving fallback, which
-    should never run on a normal day.
+    Started at "fewer than about ten names up 20%". Raised to twenty after
+    the trader took dumpster-dive setups (SCNX +16%, the MGN pass) on days
+    the old bar called normal — they take these more freely than it allowed.
+    Gates the dumpster-diving fallback, which should never run on a genuinely
+    live day. drivers/pattern_live.py passes the configured value.
     """
     return movers < threshold

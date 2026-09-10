@@ -75,6 +75,9 @@ def compute_ref(
     adv_window = daily_bars[-ADV_PERIOD:]
     avg_volume = sum(b["volume"] for b in adv_window) / len(adv_window)
 
+    prev = daily_bars[-2]["close"] if len(daily_bars) >= 2 else 0
+    prior_change = round((prior["close"] / prev - 1) * 100, 2) if prev else 0.0
+
     return TickerRef(
         symbol=symbol,
         exchange=exchange,
@@ -83,6 +86,7 @@ def compute_ref(
         prior_close=round(prior["close"], 4),
         prior_high=round(prior["high"], 4),
         atr_14=round(atr(daily_bars), 4),
+        prior_change_pct=prior_change,
     )
 
 

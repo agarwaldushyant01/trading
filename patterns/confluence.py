@@ -50,16 +50,28 @@ class Confluences:
     bottom_wick: bool = False
     low_volume_pullback: bool = False
     psychological: bool = False
+    news: bool = False
     detail: list = field(default_factory=list)
 
     @property
     def count(self) -> int:
+        """The four chart confluences. This is what the min-confluences gate
+        gates on: a fresh news catalyst raises the grade of a setup that
+        already qualifies, it does not push a near-miss over the line."""
         return sum([self.demand_zone, self.bottom_wick,
                     self.low_volume_pullback, self.psychological])
 
     @property
+    def score(self) -> int:
+        """Confluence strength for grading: the four chart signals plus a
+        fresh news catalyst as a fifth. The detector cannot tell whether the
+        news matters, only that it exists, so it lifts the grade rather than
+        deciding the trade."""
+        return self.count + (1 if self.news else 0)
+
+    @property
     def grade(self) -> str:
-        n = self.count
+        n = self.score
         if n >= 3:
             return "A++"
         if n == 2:
@@ -149,8 +161,14 @@ def near_psychological(price: float, tolerance_pct: float = 1.0) -> bool:
     return abs(price - quarter) / price * 100 <= tolerance_pct
 
 
-def evaluate(bars: list, index: int, zones: list) -> Confluences:
-    """Score the four confluences at one bar."""
+def evaluate(bars: list, index: int, zones: list,
+             news: bool = False) -> Confluences:
+    """Score the confluences at one bar.
+
+    `news` is the fifth: whether a fresh headline exists for the symbol as of
+    this bar. The caller supplies it (patterns/detect.py threads it in from
+    patterns/news.py) because it cannot be read from price alone.
+    """
     bar = bars[index]
     price = bar["c"]
     c = Confluences()
@@ -174,5 +192,9 @@ def evaluate(bars: list, index: int, zones: list) -> Confluences:
     if near_psychological(price):
         c.psychological = True
         c.detail.append(f"near {round(price * 4) / 4:.2f}")
+
+    if news:
+        c.news = True
+        c.detail.append("fresh news catalyst")
 
     return c

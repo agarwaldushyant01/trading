@@ -109,3 +109,35 @@ new_high:
   min_rel_volume_1m: 8.0
   stop_pct: 12.0
   target_pct: null
+
+# --- News catalyst ---------------------------------------------------
+# The trader's highest-expectancy setup — five logged catalyst trades
+# averaged +57%, and the detector had no representation for it. It cannot
+# read a headline or judge whether it matters; all it knows is whether one
+# exists in the recent past. A fresh headline is a fifth confluence: it
+# lifts a qualifying A setup to A++, it never turns a near-miss into a
+# trade on its own.
+news:
+  enabled: true
+  lookback_minutes: 120     # a catalyst from the open still drives a 14:00 setup
+  cache_seconds: 180        # at most one lookup per symbol per five-minute bar
+
+# --- Context setups: the name is already in play -------------------
+# Behind several of the trader's biggest manual winners (OLB +22%
+# "previous day runner", AGRZ +40% "volume at open") and the detector
+# had no representation for either. Each fires as its own setup when
+# >= min_confluences confluences line up on the bar — the daily / volume
+# context replaces the wedge/triangle/retest geometry. First guesses.
+runner:
+  enabled: true
+  min_prev_day_change_pct: 25.0   # closed up at least this much yesterday
+  max_today_change_pct: 50.0      # already extended today -> skip (ceilings, not floors)
+volume_open:
+  enabled: true
+  open_volume_rank: 3             # opening 5-minute bar among the N heaviest so far
+  min_bars_after_open: 6          # ...only judged this many bars past 09:30
+
+dumpster:
+  # patterns/dive.py is gated to a thin tape. The trader takes these more
+  # freely than "< ~10 movers" allowed (SCNX +16%, and the MGN pass).
+  thin_threshold: 20

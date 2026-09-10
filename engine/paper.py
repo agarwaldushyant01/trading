@@ -146,7 +146,11 @@ class PaperTrader:
         """
         try:
             STATE_FILE.parent.mkdir(parents=True, exist_ok=True)
-            STATE_FILE.write_text(json.dumps(self.open_positions, indent=1))
+            # Atomic: a health-check restart that catches a half-written
+            # file must not leave invalid JSON for _load_state to trip on.
+            tmp = STATE_FILE.with_name(STATE_FILE.name + ".tmp")
+            tmp.write_text(json.dumps(self.open_positions, indent=1))
+            os.replace(tmp, STATE_FILE)
         except Exception as exc:                          # noqa: BLE001
             print(f"  could not save state: {exc}", file=sys.stderr)
 
@@ -193,6 +197,33 @@ class PaperTrader:
             # the limit rather than opening something we cannot see.
             return self.cfg["risk"]["max_concurrent"]
 
+    def _recover_entry(self, symbol: str):
+        """The real entry record for a still-open position, from the log.
+
+        Scans trades.jsonl for the most recent `entry` for this symbol with
+        no `exit` after it. Returns None when there is nothing to recover —
+        a genuinely foreign position, or a log that no longer reaches back
+        far enough — and adopt() falls back to the configured default stop.
+        """
+        if not TRADE_LOG.exists():
+            return None
+        found = None
+        for line in TRADE_LOG.read_text(encoding="utf-8").splitlines():
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                row = json.loads(line)
+            except ValueError:
+                continue
+            if row.get("symbol") != symbol:
+                continue
+            if row.get("kind") == "entry":
+                found = row
+            elif row.get("kind") == "exit":
+                found = None
+        return found
+
     def adopt(self, position) -> dict:
         """Take responsibility for a broker position this process did not open.
 
@@ -200,27 +231,50 @@ class PaperTrader:
         target and no time exit — it simply runs, which is how a -54% loss
         sat open all day with a 12% stop configured.
 
-        The original stop and target are gone with the previous process, so
-        they are rebuilt from the entry price using the configured defaults.
+        The stop and target the bot originally chose are recovered from the
+        trade log when the entry is still there; only when it is not are they
+        rebuilt from the entry price using the wide configured defaults.
         Approximate management beats none.
         """
-        entry = float(position.avg_entry_price)
-        stop_pct = self.cfg["execution"].get("adopted_stop_pct", 12.0)
-        target_pct = self.cfg["execution"].get("adopted_target_pct", 25.0)
+        recovered = self._recover_entry(position.symbol)
+        if recovered is not None:
+            # The entry that opened this position was journalled with its
+            # real stop, target and setup. A restart loses the in-memory
+            # copy, but the log still has it — reuse it rather than rebuild
+            # the stop from a wide default. Broker qty still wins, in case
+            # of a partial fill or partial exit while we were down.
+            record = {
+                "symbol": position.symbol,
+                "shares": int(float(position.qty)),
+                "signal_price": recovered.get(
+                    "signal_price", float(position.avg_entry_price)),
+                "stop": recovered["stop"],
+                "target": recovered.get("target"),
+                "setup": recovered.get("setup", "adopted"),
+                "reason": "restored from the trade log after a restart",
+                "opened_at": recovered.get(
+                    "opened_at", self.clock().isoformat()),
+            }
+            if "peak" in recovered:
+                record["peak"] = recovered["peak"]
+        else:
+            entry = float(position.avg_entry_price)
+            stop_pct = self.cfg["execution"].get("adopted_stop_pct", 12.0)
+            target_pct = self.cfg["execution"].get("adopted_target_pct", 25.0)
 
-        record = {
-            "symbol": position.symbol,
-            "shares": int(float(position.qty)),
-            "signal_price": entry,
-            "stop": round(entry * (1 - stop_pct / 100), 4),
-            # adopted_target_pct is null now that exits trail rather than
-            # aim at a fixed price. None means trailing, not zero.
-            "target": (round(entry * (1 + target_pct / 100), 4)
-                       if target_pct else None),
-            "setup": "adopted",
-            "reason": "position found at startup, not opened by this process",
-            "opened_at": self.clock().isoformat(),
-        }
+            record = {
+                "symbol": position.symbol,
+                "shares": int(float(position.qty)),
+                "signal_price": entry,
+                "stop": round(entry * (1 - stop_pct / 100), 4),
+                # adopted_target_pct is null now that exits trail rather than
+                # aim at a fixed price. None means trailing, not zero.
+                "target": (round(entry * (1 + target_pct / 100), 4)
+                           if target_pct else None),
+                "setup": "adopted",
+                "reason": "position found at startup, not opened by this process",
+                "opened_at": self.clock().isoformat(),
+            }
         self.open_positions[position.symbol] = record
         self._save_state()
         self._log("adopted", record)
@@ -263,7 +317,9 @@ class PaperTrader:
     # -------------------------------------------------------------- entries
 
     def consider_with_stop(self, alert, stop: float, setup: str,
-                           reason: str) -> None:
+                           reason: str, news: bool = False,
+                           runner: bool = False,
+                           volume_open: bool = False) -> None:
         """Enter using a stop the pattern determined.
 
         The ordinary path sizes from a percentage stop in config. Chart
@@ -315,6 +371,9 @@ class PaperTrader:
             "symbol": alert.symbol, "shares": shares,
             "signal_price": alert.price, "stop": round(stop, 4),
             "target": None, "setup": setup, "reason": reason,
+            "news": bool(news),
+            "prev_day_runner": bool(runner),
+            "volume_at_open": bool(volume_open),
             "opened_at": now.isoformat(),
         }
 
@@ -393,6 +452,9 @@ class PaperTrader:
             "symbol": alert.symbol, "shares": shares,
             "signal_price": alert.price, "stop": stop, "target": target,
             "setup": verdict.setup, "reason": verdict.reason,
+            "news": False,
+            "prev_day_runner": False,
+            "volume_at_open": False,
             "opened_at": now.isoformat(),
         }
 

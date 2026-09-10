@@ -51,6 +51,7 @@ from data.reference import load_credentials, load_refs_for
 from patterns.character import analyse, market_is_thin
 from patterns.detect import detect
 from patterns.dive import DiveConfig, detect_dive
+from patterns.news import NewsFeed
 
 ET = ZoneInfo("America/New_York")
 BAR_MINUTES = 5
@@ -68,8 +69,10 @@ class MarketBreadth:
     nothing extra.
     """
 
-    def __init__(self, threshold_pct: float = 20.0) -> None:
+    def __init__(self, threshold_pct: float = 20.0,
+                 thin_threshold: int = 20) -> None:
         self.threshold_pct = threshold_pct
+        self.thin_threshold = thin_threshold
         self.movers: set = set()
 
     def update(self, symbol: str, price: float, prior_close: float) -> None:
@@ -89,7 +92,7 @@ class MarketBreadth:
         """
         if (now.hour, now.minute) < (10, 0):
             return False
-        return market_is_thin(self.count)
+        return market_is_thin(self.count, self.thin_threshold)
 
 
 class FiveMinuteBuilder:
@@ -150,7 +153,7 @@ def _new_bar(bucket: datetime, o: float, h: float, l: float,
 
 async def run(builder, refs, trader, notifier, key, secret, feed_name,
               min_confluences, universe, character, breadth, allow_dive,
-              dry_run):
+              dry_run, news):
     from alpaca.data.enums import DataFeed
     from alpaca.data.live import StockDataStream
     from engine.alerts import Alert
@@ -211,8 +214,10 @@ async def run(builder, refs, trader, notifier, key, secret, feed_name,
         char = character.get(symbol)
         if char is not None and not char.tradeable:
             return
+        prev_change = getattr(ref, "prior_change_pct", None)
         setups = [s for s in detect(bars, daily=None, levels=[],
-                                    min_confluences=min_confluences)
+                                    min_confluences=min_confluences,
+                                    prev_day_change=prev_change)
                   if not s.rejected]
 
         setup = None
@@ -222,6 +227,21 @@ async def run(builder, refs, trader, notifier, key, secret, feed_name,
 
         if setups and setups[-1].index >= len(bars) - 2:
             setup = setups[-1]
+            # Fresh news is a fifth confluence. Only checked once a pattern
+            # has formed — never per symbol per bar — so the cache in
+            # patterns/news.py sees a handful of lookups a session, not
+            # 13,000. It raises the grade; it cannot create the setup.
+            if news is not None and news.fresh(symbol):
+                graded = [s for s in detect(
+                              bars, daily=None, levels=[],
+                              min_confluences=min_confluences,
+                              prev_day_change=prev_change,
+                              news_at=lambda bar: news.fresh(
+                                  symbol,
+                                  datetime.fromisoformat(bar["t"])))
+                          if not s.rejected]
+                if graded and graded[-1].index == setup.index:
+                    setup = graded[-1]
             kind, grade = setup.kind, setup.grade
             entry, stop = setup.entry, setup.stop
             reason = ", ".join(setup.confluences.detail)
@@ -240,6 +260,10 @@ async def run(builder, refs, trader, notifier, key, secret, feed_name,
         if setup is None:
             return
 
+        news_flag = bool(getattr(setup, "confluences", None)
+                         and setup.confluences.news)
+        runner_flag = bool(getattr(setup, "runner", False))
+        vol_open_flag = bool(getattr(setup, "volume_open", False))
         state["signals"] += 1
         print(f"  {now:%H:%M}  SIGNAL {symbol} {kind} {grade} "
               f"@ {entry:.4f} stop {stop:.4f}"
@@ -256,11 +280,16 @@ async def run(builder, refs, trader, notifier, key, secret, feed_name,
             volume_1d=session_volume,
             float_shares=ref.shares_outstanding or None,
             alert_count=1,
-            tags=[kind, grade],
+            tags=([kind, grade]
+                  + (["news"] if news_flag else [])
+                  + (["runner"] if runner_flag else [])
+                  + (["vol_open"] if vol_open_flag else [])),
             received_at=now,
         )
         # The structural stop comes from the pattern, not from a percentage.
-        trader.consider_with_stop(alert, stop, kind, reason)
+        trader.consider_with_stop(alert, stop, kind, reason, news=news_flag,
+                                  runner=runner_flag,
+                                  volume_open=vol_open_flag)
 
     stream.subscribe_bars(on_bar, "*")
     asyncio.create_task(trader.monitor())
@@ -348,6 +377,8 @@ def main() -> None:
                    help="disable the thin-market fallback")
     p.add_argument("--no-character", action="store_true",
                    help="skip the stock-character filter")
+    p.add_argument("--no-news", action="store_true",
+                   help="skip the news-catalyst confluence")
     args = p.parse_args()
 
     rules_cfg = yaml.safe_load(pathlib.Path(args.rules_config).read_text())
@@ -367,6 +398,29 @@ def main() -> None:
     notifier = Notifier(alert_cfg.get("alerts", {}))
     trader = PaperTrader(trading, rules_cfg, notifier, dry_run=args.dry_run)
 
+    news_cfg = rules_cfg.get("news", {})
+    news = None if (args.no_news or not news_cfg.get("enabled", True)) else \
+        NewsFeed(key=key, secret=secret,
+                 lookback_minutes=news_cfg.get("lookback_minutes", 120),
+                 cache_seconds=news_cfg.get("cache_seconds", 180))
+
+    # Context setups (previous-day runner, volume at open). Push the
+    # configured thresholds into patterns.detect the way tools.tune does,
+    # rather than threading them through every detect() call.
+    from patterns import detect as _detect_mod
+    _run_cfg = rules_cfg.get("runner", {})
+    _vo_cfg = rules_cfg.get("volume_open", {})
+    _detect_mod.RUNNER_MIN_PREV_CHANGE_PCT = (
+        _run_cfg.get("min_prev_day_change_pct", 25.0)
+        if _run_cfg.get("enabled", True) else float("inf"))
+    _detect_mod.CONTEXT_MAX_TODAY_CHANGE_PCT = _run_cfg.get(
+        "max_today_change_pct", 50.0)
+    _detect_mod.VOLUME_OPEN_RANK = (
+        _vo_cfg.get("open_volume_rank", 3)
+        if _vo_cfg.get("enabled", True) else 0)
+    _detect_mod.VOLUME_OPEN_MIN_BARS = _vo_cfg.get("min_bars_after_open", 6)
+    _thin = rules_cfg.get("dumpster", {}).get("thin_threshold", 20)
+
     character = {} if args.no_character else load_character(refs)
 
     adopted = trader.reconcile()
@@ -384,7 +438,17 @@ def main() -> None:
         blocked = sum(1 for c in character.values() if not c.tradeable)
         print(f"Character      {len(character):,} scored, "
               f"{blocked:,} excluded")
-    print(f"Dive fallback  {'off' if args.no_dive else 'on when thin'}")
+    news_state = "off" if news is None else \
+        f"on, {news_cfg.get('lookback_minutes', 120):.0f}m lookback"
+    _ctx_bits = []
+    if _detect_mod.RUNNER_MIN_PREV_CHANGE_PCT != float("inf"):
+        _ctx_bits.append(f"runner >={_detect_mod.RUNNER_MIN_PREV_CHANGE_PCT:.0f}%")
+    if _detect_mod.VOLUME_OPEN_RANK >= 1:
+        _ctx_bits.append(f"vol-open rank {_detect_mod.VOLUME_OPEN_RANK}")
+    print(f"Dive fallback  {'off' if args.no_dive else 'on when thin'}"
+          f" (thin < {_thin})")
+    print(f"News catalyst  {news_state}")
+    print(f"Context setups {', '.join(_ctx_bits) if _ctx_bits else 'off'}")
     print(f"Mode           {'DRY RUN' if args.dry_run else 'PAPER ORDERS'}")
     if adopted:
         print(f"Adopted        {adopted} existing position(s)")
@@ -394,12 +458,13 @@ def main() -> None:
                   f"{len(refs):,} symbols, {BAR_MINUTES}-minute patterns, "
                   f"{args.min_confluences}+ confluences.", priority="low")
 
-    breadth = MarketBreadth()
+    breadth = MarketBreadth(thin_threshold=_thin)
     builder = FiveMinuteBuilder()
     try:
         asyncio.run(run(builder, refs, trader, notifier, key, secret,
                         args.feed, args.min_confluences, universe,
-                        character, breadth, not args.no_dive, args.dry_run))
+                        character, breadth, not args.no_dive, args.dry_run,
+                        news))
     except KeyboardInterrupt:
         pass
     finally:

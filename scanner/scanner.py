@@ -53,6 +53,7 @@ class TickerRef:
     prior_close: float
     prior_high: float
     atr_14: float
+    prior_change_pct: float = 0.0   # prior session close-to-close %, 0 if unknown
 
 
 @dataclass
