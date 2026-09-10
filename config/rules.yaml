@@ -49,6 +49,13 @@ risk:
   max_position_pct: 10.0         # ceiling regardless of how tight the stop is
   max_concurrent: 3
 
+  # Position size scales with setup grade. risk_per_trade_pct above is the
+  # 1.0 case; max_position_pct still binds regardless. First guesses.
+  grade_size_multiplier:
+    "A++": 1.5
+    "A": 1.0
+    fallback: 0.5               # dumpster dives are a last resort — size down
+
   # Flatten and stop for the day past this drawdown. Counts UNREALISED loss,
   # not just realised — on 2026-08-20 nothing ever closed, so a realised-only
   # cap sat satisfied while the account fell 10%.

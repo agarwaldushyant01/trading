@@ -289,7 +289,7 @@ async def run(builder, refs, trader, notifier, key, secret, feed_name,
         # The structural stop comes from the pattern, not from a percentage.
         trader.consider_with_stop(alert, stop, kind, reason, news=news_flag,
                                   runner=runner_flag,
-                                  volume_open=vol_open_flag)
+                                  volume_open=vol_open_flag, grade=grade)
 
     stream.subscribe_bars(on_bar, "*")
     asyncio.create_task(trader.monitor())

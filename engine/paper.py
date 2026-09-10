@@ -99,14 +99,27 @@ class PaperTrader:
         except Exception:                                 # noqa: BLE001
             return self.cfg["risk"]["fallback_equity"]
 
-    def _size(self, price: float, stop_pct: float) -> int:
+    def _grade_multiplier(self, grade: str) -> float:
+        """Position-size multiplier for a setup grade. Unknown or missing
+        grade returns 1.0, so the spike path (which has no grade) and any
+        older caller are unaffected."""
+        table = self.cfg["risk"].get("grade_size_multiplier", {})
+        return float(table.get(grade, 1.0))
+
+    def _size(self, price: float, stop_pct: float,
+              risk_multiplier: float = 1.0) -> int:
         """Shares such that hitting the stop costs the per-trade risk budget.
+
+        `risk_multiplier` scales that budget by setup grade — A++ is a
+        stronger read than A and is sized up, the dumpster fallback down.
+        The max-position cap below is a hard ceiling and is not scaled.
 
         Capped by position size so a very tight stop cannot imply an
         enormous position.
         """
         risk = self.cfg["risk"]
-        risk_dollars = self._equity() * risk["risk_per_trade_pct"] / 100
+        risk_dollars = (self._equity() * risk["risk_per_trade_pct"] / 100
+                        * risk_multiplier)
         per_share = price * stop_pct / 100
         if per_share <= 0:
             return 0
@@ -319,7 +332,8 @@ class PaperTrader:
     def consider_with_stop(self, alert, stop: float, setup: str,
                            reason: str, news: bool = False,
                            runner: bool = False,
-                           volume_open: bool = False) -> None:
+                           volume_open: bool = False,
+                           grade: str = "") -> None:
         """Enter using a stop the pattern determined.
 
         The ordinary path sizes from a percentage stop in config. Chart
@@ -363,7 +377,8 @@ class PaperTrader:
         stop = min(stop, alert.price * (1 - floor_pct / 100))
 
         stop_pct = (1 - stop / alert.price) * 100
-        shares = self._size(alert.price, stop_pct)
+        size_mult = self._grade_multiplier(grade)
+        shares = self._size(alert.price, stop_pct, size_mult)
         if shares <= 0:
             return
 
@@ -371,6 +386,8 @@ class PaperTrader:
             "symbol": alert.symbol, "shares": shares,
             "signal_price": alert.price, "stop": round(stop, 4),
             "target": None, "setup": setup, "reason": reason,
+            "grade": grade or None,
+            "size_mult": size_mult,
             "news": bool(news),
             "prev_day_runner": bool(runner),
             "volume_at_open": bool(volume_open),
@@ -452,6 +469,8 @@ class PaperTrader:
             "symbol": alert.symbol, "shares": shares,
             "signal_price": alert.price, "stop": stop, "target": target,
             "setup": verdict.setup, "reason": verdict.reason,
+            "grade": None,
+            "size_mult": 1.0,
             "news": False,
             "prev_day_runner": False,
             "volume_at_open": False,

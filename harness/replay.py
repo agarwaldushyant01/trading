@@ -492,6 +492,50 @@ def check_context_setups() -> tuple[bool, str]:
                   "capped when extended; thin < 20")
 
 
+def check_grade_sizing() -> tuple[bool, str]:
+    """Position size scales with setup grade, and the max-position cap still
+    binds regardless of the multiplier."""
+    from engine.alerts import Alert
+    from engine.paper import PaperTrader
+
+    cfg = _cfg()
+    cfg.setdefault("risk", {})["grade_size_multiplier"] = {
+        "A++": 1.5, "A": 1.0, "fallback": 0.5}
+
+    def shares_for(grade: str, stop: float = 0.90) -> int:
+        broker = FakeBroker()
+        t = PaperTrader(broker, cfg, SilentNotifier(), dry_run=False)
+        t.open_positions = {}
+        t.closing = {}
+        t.clock = lambda: datetime(2026, 9, 4, 10, 0, tzinfo=ET)
+        broker.set_time(datetime(2026, 9, 4, 10, 0, tzinfo=ET))
+        broker.set_price("G", 1.00)
+        a = Alert(symbol="G", pct_change=10.0, price=1.00, volume_1m=1e5,
+                  volume_2m=0, volume_5m=1e5, volume_1d=5e6,
+                  float_shares=None, alert_count=1, tags=[],
+                  received_at=broker.now)
+        t.consider_with_stop(a, stop, "test", "", grade=grade)
+        pos = broker.positions.get("G")
+        return int(float(pos.qty)) if pos else 0
+
+    a_plus, a, fb = shares_for("A++"), shares_for("A"), shares_for("fallback")
+    missing = shares_for("")
+    if not (a_plus > a > fb > 0):
+        return (False, f"grade did not scale size: A++={a_plus} A={a} "
+                       f"fallback={fb}")
+    if missing != a:
+        return (False, f"missing grade should size as 1.0, got {missing} "
+                       f"vs A={a}")
+
+    # The max-position cap is not scaled by the multiplier: at a stop tight
+    # enough to exceed it, every grade clamps to the same number.
+    t = PaperTrader(FakeBroker(), cfg, SilentNotifier(), dry_run=False)
+    if t._size(1.00, 0.5, 1.5) != t._size(1.00, 0.5, 1.0):
+        return (False, "max-position cap not binding across grades")
+
+    return (True, f"A++ {a_plus} > A {a} > fallback {fb}; cap binds")
+
+
 CHECKS = [
     ("premarket stops can fill", check_premarket_stop_fills),
     ("loss cap silent outside hours", check_loss_cap_outside_hours),
@@ -500,6 +544,7 @@ CHECKS = [
     ("position limit holds", check_position_limit),
     ("news raises grade, never triggers alone", check_news_confluence),
     ("context setups fire on context, not alone", check_context_setups),
+    ("grade scales position size", check_grade_sizing),
 ]
 
 
