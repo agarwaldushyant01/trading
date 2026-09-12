@@ -4,6 +4,7 @@
     python -m tools.log OLOX 2.52 2.24            # a loser
     python -m tools.log SIDU 3.55 --open          # still holding
     python -m tools.log --passed BTCT              # saw it, did not take it
+    python -m tools.log --missed BTCT               # a good setup, caught too late
     python -m tools.log --show                     # what is recorded
 
 Every line here is fuel for the parameter search. The detector currently
@@ -15,6 +16,11 @@ result means anything: 32 fits noise, 100 becomes meaningful, 300 is solid.
 Passes matter as much as trades. A rule that finds every winner is worthless
 if it also takes everything else, and without recorded passes there is no way
 to measure that.
+
+A pass and a miss are opposite signals and must not be logged as the same
+thing. A pass means you looked at it and said no — that is what the search
+should learn to avoid. A miss means you would have taken it but were too
+slow — scoring that as "avoid" teaches the search the wrong lesson entirely.
 
 Dates default to today. Entry and exit are prices, not percentages, because
 that is what a broker statement shows and it avoids arithmetic at 4am.
@@ -52,15 +58,21 @@ def show() -> None:
 
     taken = [r for r in rows if r["kind"] == "trade"]
     passed = [r for r in rows if r["kind"] == "pass"]
+    missed = [r for r in rows if r["kind"] == "missed"]
     closed = [r for r in taken if r.get("exit")]
 
-    print(f"\n  {len(taken)} trades, {len(passed)} passes\n")
+    print(f"\n  {len(taken)} trades, {len(passed)} passes, "
+          f"{len(missed)} missed\n")
     print(f"  {'date':<12}{'':<7}{'entry':>9}{'exit':>9}{'result':>9}  note")
     print(f"  {'-' * 62}")
     for r in rows[-25:]:
         if r["kind"] == "pass":
             print(f"  {r['date']:<12}{r['symbol']:<7}{'':>9}{'':>9}"
                   f"{'passed':>9}  {r.get('note', '')}")
+            continue
+        if r["kind"] == "missed":
+            print(f"  {r['date']:<12}{r['symbol']:<7}{'':>9}{'':>9}"
+                  f"{'missed':>9}  {r.get('note', '')}")
             continue
         exit_px = r.get("exit")
         if exit_px:
@@ -86,6 +98,10 @@ def show() -> None:
             print(f"   losers {sum(losses) / len(losses):+.1f}%", end="")
         print(f"\n    expectancy {exp:+.2f}% per trade")
 
+    if missed:
+        print(f"  ({len(missed)} missed setup(s) excluded from the "
+              f"parameter search — a miss is not a reject)")
+
     # The number that governs whether tuning means anything.
     n = len(closed)
     print(f"\n  Labelled trades for the parameter search: {n}")
@@ -110,8 +126,15 @@ def main() -> None:
     p.add_argument("--open", action="store_true", help="still holding")
     p.add_argument("--passed", action="store_true",
                    help="you saw it and did not take it")
+    p.add_argument("--missed", action="store_true",
+                   help="a good setup you would have taken but caught too "
+                        "late -- NOT the same as --passed")
     p.add_argument("--show", action="store_true")
     args = p.parse_args()
+
+    if args.passed and args.missed:
+        raise SystemExit("--passed and --missed are opposite signals; "
+                         "pick one.")
 
     if args.show or not args.symbol:
         show()
@@ -125,6 +148,13 @@ def main() -> None:
                 "note": args.note,
                 "logged_at": datetime.now(ET).isoformat()})
         print(f"  passed: {symbol} {when}")
+        return
+
+    if args.missed:
+        append({"kind": "missed", "date": when, "symbol": symbol,
+                "note": args.note,
+                "logged_at": datetime.now(ET).isoformat()})
+        print(f"  missed: {symbol} {when}")
         return
 
     if args.entry is None:

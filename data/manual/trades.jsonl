@@ -52,6 +52,71 @@
 {"kind": "pass", "date": "2026-09-03", "symbol": "GSUN", "note": "large wicks, have lost on it previously", "logged_at": "2026-09-03T23:07:49.908478-04:00"}
 {"kind": "pass", "date": "2026-09-03", "symbol": "AEHL", "note": "has huge pump and dump price action previously", "logged_at": "2026-09-03T23:07:49.950519-04:00"}
 {"kind": "pass", "date": "2026-09-03", "symbol": "AKAN", "note": "Previous price action was unexpected", "logged_at": "2026-09-03T23:07:49.992430-04:00"}
-{"kind": "pass", "date": "2026-09-03", "symbol": "COSM", "note": "Should have run massively on the news but missed this", "logged_at": "2026-09-03T23:07:50.033821-04:00"}
+{"kind": "missed", "date": "2026-09-03", "symbol": "COSM", "note": "Should have run massively on the news but missed this", "logged_at": "2026-09-03T23:07:50.033821-04:00"}
 {"kind": "pass", "date": "2026-09-03", "symbol": "DFNS", "note": "has huge pump and dump price action previously", "logged_at": "2026-09-03T23:07:50.075323-04:00"}
 {"kind": "pass", "date": "2026-09-03", "symbol": "PLAG", "note": "falls rapidly on dumps", "logged_at": "2026-09-03T23:07:50.117228-04:00"}
+{"kind": "trade", "date": "2026-09-08", "symbol": "ADBT", "entry": 0.34, "note": "volume at open", "logged_at": "2026-09-08T20:12:01.086055-04:00", "exit": 0.38}
+{"kind": "trade", "date": "2026-09-08", "symbol": "ARBE", "entry": 0.69, "note": "premarket news + volume", "logged_at": "2026-09-08T20:12:01.135186-04:00", "exit": 0.85}
+{"kind": "trade", "date": "2026-09-08", "symbol": "ATER", "entry": 0.73, "note": "volume at open", "logged_at": "2026-09-08T20:12:01.183596-04:00", "exit": 0.87}
+{"kind": "trade", "date": "2026-09-08", "symbol": "BJDX", "entry": 0.99, "note": "volume during premarket", "logged_at": "2026-09-08T20:12:01.229968-04:00", "exit": 1.07}
+{"kind": "trade", "date": "2026-09-08", "symbol": "BMR", "entry": 1.32, "note": "news but it didnt pan out", "logged_at": "2026-09-08T20:12:01.275383-04:00", "exit": 1.21}
+{"kind": "trade", "date": "2026-09-08", "symbol": "BRNX", "entry": 2.67, "note": "wrong entry", "logged_at": "2026-09-08T20:12:01.321147-04:00", "exit": 2.57}
+{"kind": "trade", "date": "2026-09-08", "symbol": "CMND", "entry": 1.31, "note": "volume but it dumped", "logged_at": "2026-09-08T20:12:01.367345-04:00", "exit": 1.27}
+{"kind": "trade", "date": "2026-09-08", "symbol": "ETS", "entry": 1.16, "note": "hit stop loss", "logged_at": "2026-09-08T20:12:01.415376-04:00", "exit": 1.12}
+{"kind": "trade", "date": "2026-09-08", "symbol": "GCDT", "entry": 0.7, "note": "volume + news", "logged_at": "2026-09-08T20:12:01.462600-04:00", "exit": 0.78}
+{"kind": "trade", "date": "2026-09-08", "symbol": "GMEX", "entry": 0.79, "note": "volume but dumped quickly", "logged_at": "2026-09-08T20:12:01.508626-04:00", "exit": 0.8}
+{"kind": "trade", "date": "2026-09-08", "symbol": "GPUS", "entry": 0.2, "note": "previous runner which dumped", "logged_at": "2026-09-08T20:12:01.555877-04:00", "exit": 0.19}
+{"kind": "trade", "date": "2026-09-08", "symbol": "LHSW", "entry": 0.99, "note": "dumpster diving", "logged_at": "2026-09-08T20:12:01.604397-04:00", "exit": 1.12}
+{"kind": "trade", "date": "2026-09-08", "symbol": "LHSW", "entry": 1.29, "note": "dumpster diving", "logged_at": "2026-09-08T20:12:01.651502-04:00", "exit": 1.62}
+{"kind": "trade", "date": "2026-09-08", "symbol": "SUNE", "entry": 2.66, "note": "previous runner", "logged_at": "2026-09-08T20:12:01.699658-04:00", "exit": 2.97}
+{"kind": "pass", "date": "2026-09-08", "symbol": "TWG", "note": "dumps quickly", "logged_at": "2026-09-08T20:12:58.545325-04:00"}
+{"kind": "missed", "date": "2026-09-08", "symbol": "SYNR", "note": "another dumpster diving possible but missed it", "logged_at": "2026-09-08T20:12:58.596515-04:00"}
+{"kind": "pass", "date": "2026-09-08", "symbol": "TRUG", "note": "drops quickly", "logged_at": "2026-09-08T20:12:58.646485-04:00"}
+{"kind": "missed", "date": "2026-09-08", "symbol": "ANY", "note": "missed this", "logged_at": "2026-09-08T20:12:58.692292-04:00"}
+{"kind": "pass", "date": "2026-09-08", "symbol": "CURX", "note": "pump and dump", "logged_at": "2026-09-08T20:12:58.736813-04:00"}
+{"kind": "missed", "date": "2026-09-08", "symbol": "EOSE", "note": "missed this", "logged_at": "2026-09-08T20:12:58.782247-04:00"}
+{"kind": "pass", "date": "2026-09-08", "symbol": "INDP", "note": "slow mover", "logged_at": "2026-09-08T20:12:58.827684-04:00"}
+{"kind": "pass", "date": "2026-09-08", "symbol": "KEEL", "note": "slow mover", "logged_at": "2026-09-08T20:12:58.872147-04:00"}
+{"kind": "pass", "date": "2026-09-08", "symbol": "MOBX", "note": "slow mover", "logged_at": "2026-09-08T20:12:58.917683-04:00"}
+{"kind": "pass", "date": "2026-09-08", "symbol": "OLB", "note": "dumps but it moved again later", "logged_at": "2026-09-08T20:12:58.964422-04:00"}
+{"kind": "pass", "date": "2026-09-08", "symbol": "XFOR", "note": "dumps", "logged_at": "2026-09-08T20:12:59.009330-04:00"}
+{"kind": "trade", "date": "2026-09-09", "symbol": "SCNX", "entry": 0.32, "note": "Dumpster diving", "logged_at": "2026-09-09T22:01:14.977682-04:00", "exit": 0.37}
+{"kind": "trade", "date": "2026-09-09", "symbol": "OLB", "entry": 0.36, "note": "Previous day runner", "logged_at": "2026-09-09T22:01:15.030026-04:00", "exit": 0.44}
+{"kind": "trade", "date": "2026-09-09", "symbol": "MIMI", "entry": 1.02, "note": "News", "logged_at": "2026-09-09T22:01:15.077623-04:00", "exit": 1.1}
+{"kind": "trade", "date": "2026-09-09", "symbol": "GLMD", "entry": 3.89, "note": "I thought this was going to run, sold breakeven", "logged_at": "2026-09-09T22:01:15.122676-04:00", "exit": 3.89}
+{"kind": "trade", "date": "2026-09-09", "symbol": "BIAF", "entry": 10.37, "note": "News", "logged_at": "2026-09-09T22:01:15.167651-04:00", "exit": 12.0}
+{"kind": "trade", "date": "2026-09-09", "symbol": "PRZO", "entry": 0.91, "note": "There was news but this didnt run", "logged_at": "2026-09-09T22:01:15.215505-04:00", "exit": 0.82}
+{"kind": "trade", "date": "2026-09-09", "symbol": "QNTM", "entry": 3.52, "note": "There was news but this didnt run", "logged_at": "2026-09-09T22:01:15.261819-04:00", "exit": 3.53}
+{"kind": "trade", "date": "2026-09-09", "symbol": "TNON", "entry": 3.79, "note": "News", "logged_at": "2026-09-09T22:01:15.309096-04:00", "exit": 4.43}
+{"kind": "trade", "date": "2026-09-09", "symbol": "AGRZ", "entry": 0.25, "note": "News", "logged_at": "2026-09-09T22:01:15.354836-04:00", "exit": 0.35}
+{"kind": "trade", "date": "2026-09-09", "symbol": "YJ", "entry": 2.03, "note": "It hit the sanner but didnt really move", "logged_at": "2026-09-09T22:01:15.400780-04:00", "exit": 2.02}
+{"kind": "trade", "date": "2026-09-09", "symbol": "FTFT", "entry": 2.82, "note": "Volume", "logged_at": "2026-09-09T22:01:15.445167-04:00", "exit": 3.03}
+{"kind": "trade", "date": "2026-09-09", "symbol": "FTFT", "entry": 2.2, "note": "After hours spike", "logged_at": "2026-09-09T22:01:15.492179-04:00", "exit": 2.27}
+{"kind": "trade", "date": "2026-09-09", "symbol": "HCAI", "entry": 5.0, "note": "After hours spike", "logged_at": "2026-09-09T22:01:15.537829-04:00", "exit": 5.22}
+{"kind": "pass", "date": "2026-09-09", "symbol": "UFG", "note": "There was news but the candles were very unpredictable", "logged_at": "2026-09-09T22:01:15.582236-04:00"}
+{"kind": "pass", "date": "2026-09-09", "symbol": "MGN", "note": "This could have been a good dumpster diving opportunity as soon as it opened", "logged_at": "2026-09-09T22:01:15.627946-04:00"}
+{"kind": "missed", "date": "2026-09-09", "symbol": "SUNE", "note": "Slow moving but missed it", "logged_at": "2026-09-09T22:01:15.676496-04:00"}
+{"kind": "pass", "date": "2026-09-09", "symbol": "YMAT", "note": "Could have taken this on reclaiming volume", "logged_at": "2026-09-09T22:01:15.721717-04:00"}
+{"kind": "missed", "date": "2026-09-09", "symbol": "ARBE", "note": "Missed at opening but a really good trade", "logged_at": "2026-09-09T22:01:15.768645-04:00"}
+{"kind": "pass", "date": "2026-09-09", "symbol": "FAMI", "note": "Too fast", "logged_at": "2026-09-09T22:01:15.814835-04:00"}
+{"kind": "pass", "date": "2026-09-09", "symbol": "FRTT", "note": "Too fast", "logged_at": "2026-09-09T22:01:15.860132-04:00"}
+{"kind": "trade", "date": "2026-09-11", "symbol": "ACHA", "entry": 10.09, "note": "volume at after hours", "logged_at": "2026-09-11T21:47:46.438809-04:00", "exit": 10.24}
+{"kind": "trade", "date": "2026-09-11", "symbol": "SWRD", "entry": 2.59, "note": "volume at open", "logged_at": "2026-09-11T21:47:46.486166-04:00", "exit": 4.6}
+{"kind": "trade", "date": "2026-09-11", "symbol": "FTFT", "entry": 2.82, "note": "volume at open", "logged_at": "2026-09-11T21:47:46.531776-04:00", "exit": 3.2}
+{"kind": "trade", "date": "2026-09-11", "symbol": "LBGJ", "entry": 2.12, "note": "reclaim after faling", "logged_at": "2026-09-11T21:47:46.582428-04:00", "exit": 2.4}
+{"kind": "trade", "date": "2026-09-11", "symbol": "AEON", "entry": 0.33, "note": "Volume", "logged_at": "2026-09-11T21:47:46.627162-04:00", "exit": 0.36}
+{"kind": "trade", "date": "2026-09-11", "symbol": "SXTC", "entry": 2.56, "note": "Volume", "logged_at": "2026-09-11T21:47:46.670552-04:00", "exit": 2.9}
+{"kind": "trade", "date": "2026-09-11", "symbol": "PMAX", "entry": 1.0, "note": "Volume", "logged_at": "2026-09-11T21:47:46.718579-04:00", "exit": 1.25}
+{"kind": "trade", "date": "2026-09-11", "symbol": "ADBT", "entry": 0.24, "note": "Dumpster diving but it didnt pan out", "logged_at": "2026-09-11T21:47:46.763426-04:00", "exit": 0.24}
+{"kind": "missed", "date": "2026-09-11", "symbol": "TNON", "note": "Missed from premarket and opening. risky play as this dumps quickly", "logged_at": "2026-09-11T21:47:57.631654-04:00"}
+{"kind": "pass", "date": "2026-09-11", "symbol": "AIXC", "note": "slow moving but a good setup", "logged_at": "2026-09-11T21:47:57.678076-04:00"}
+{"kind": "pass", "date": "2026-09-11", "symbol": "ARBE", "note": "slow moving but a good setup", "logged_at": "2026-09-11T21:47:57.723791-04:00"}
+{"kind": "missed", "date": "2026-09-11", "symbol": "BDRX", "note": "good setup after vwap reclaim. missed this.", "logged_at": "2026-09-11T21:47:57.768851-04:00"}
+{"kind": "pass", "date": "2026-09-11", "symbol": "FGL", "note": "very wicky and large unpredictable candles", "logged_at": "2026-09-11T21:47:57.812489-04:00"}
+{"kind": "missed", "date": "2026-09-11", "symbol": "HCAI", "note": "Good dumpster diving opportunity. missed this", "logged_at": "2026-09-11T21:47:57.856523-04:00"}
+{"kind": "missed", "date": "2026-09-11", "symbol": "IPDN", "note": "Good dumpster diving opportunity. missed this", "logged_at": "2026-09-11T21:47:57.901458-04:00"}
+{"kind": "missed", "date": "2026-09-11", "symbol": "RXT", "note": "Good dumpster diving opportunity. missed this", "logged_at": "2026-09-11T21:47:57.944746-04:00"}
+{"kind": "missed", "date": "2026-09-11", "symbol": "SGRX", "note": "good volume. missed this", "logged_at": "2026-09-11T21:47:57.991866-04:00"}
+{"kind": "missed", "date": "2026-09-11", "symbol": "SOAR", "note": "good volume at after hours. missed this", "logged_at": "2026-09-11T21:47:58.036291-04:00"}
+{"kind": "missed", "date": "2026-09-11", "symbol": "SUNE", "note": "Good dumpster diving opportunity. missed this", "logged_at": "2026-09-11T21:47:58.082321-04:00"}
+{"kind": "missed", "date": "2026-09-11", "symbol": "TRUG", "note": "good volume from the premarket that continued into opening. missed this.", "logged_at": "2026-09-11T21:47:58.127010-04:00"}
